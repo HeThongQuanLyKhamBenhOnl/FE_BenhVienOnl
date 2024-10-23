@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import Login from "../components/Login/Login";
 import Home from "../pages/Home";
@@ -18,8 +19,27 @@ import ManageDoctor from "../components/Admin/ManageDoctor";
 import DoctorProfile from "../components/Doctor/DoctorProfile";
 import ControlPanel from "../components/Admin/ControlPanel";
 import CreateAppoiment from "../components/Appointment/CreateAppoiment";
+
 import Introduce from "../components/Introduce/Introduce";
-import Introduce1 from "../components/Introduce/Introduce1";
+import ReasonAboutUs from "../components/Introduce/Reason-Aboutus";
+import Facilities from "../components/Introduce/Facilities";
+
+import CheckupPersonal from "../components/Services/CheckupPersonal";
+import CheckupCooperate from "../components/Services/CheckupCooperate";
+import RespiratoryFunctionScreening from "../components/Services/RespiratoryFunctionScreening";
+import HepatobiliaryDigestiveScreening from "../components/Services/HepatobiliaryDigestiveScreening";
+import CardiovascularScreening from "../components/Services/CardiovascularScreening";
+import CancerScreening from "../components/Services/CancerScreening";
+import InsuranceServices from "../components/Services/InsuranceServices";
+import OtherServicePackages from "../components/Services/OtherServicePackages";
+import Support from "../components/Services/Support";
+import Train from "../components/Services/Train";
+import Advise from "../components/Services/Advise";
+
+import Software from "../components/Products/Software";
+import Hardware from "../components/Products/Hardware";
+import Accessory from "../components/Products/Accessory";
+
 
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
@@ -61,12 +81,36 @@ function AppRouter() {
           <Route path="department" element={<Department />} />
           <Route path="control" element={<ControlPanel />} />
         </Route>
-        <Route path="/doctorDashboard" element={<DoctorProfile />}>
+
+        <Route path="/doctorDashboard/*" element={<DoctorProfile />}>
           {/* <Route path="user" element={<ManageUser />} /> */}
         </Route>
-        <Route path="/createAppoiment" element={<CreateAppoiment />}></Route>
-        <Route path="/gioi-thieu" element={<Introduce />}></Route>
-        <Route path="tai-sao-chon-chung-toi" element={<Introduce1 />} />
+
+        {/* Gioi thieu */}
+        <Route path="/createAppoiment" element={<CreateAppoiment />} />
+        <Route path="/gioi-thieu" element={<Introduce />} />
+        <Route path="/tai-sao-chon-chung-toi" element={<ReasonAboutUs />} />
+        <Route path="/co-so-vat-chat" element={<Facilities />} />
+
+        {/* Dich-vu */}
+        <Route path="/kham-suc-khoe-tong-quat-ca-nhan" element={<CheckupPersonal />}/>
+        <Route path="/kham-suc-khoe-tong-quat-doanh-nghiep" element={<CheckupCooperate />}/>
+        <Route path="/tam-soat-chuc-nang-ho-hap" element={<RespiratoryFunctionScreening />}/>
+        <Route path="/tam-soat-tieu-hoa-gan-mat" element={<HepatobiliaryDigestiveScreening />}/>
+        <Route path="/tam-soat-tim-mach" element={<CardiovascularScreening />}/>
+        <Route path="/tam-soat-ung-thu" element={<CancerScreening />}/>
+        <Route path="/dich-vu-bao-hiem" element={<InsuranceServices />}/>
+        <Route path="/cac-goi-dich-vu-khac" element={<OtherServicePackages />}/>
+        <Route path="/ho-tro" element={<Support />}/>
+        <Route path="/dao-tao" element={<Train />}/>
+        <Route path="/tu-van" element={<Advise />}/>
+
+        {/* San-pham */}
+        <Route path="/phan-mem" element={<Software />}/>
+        <Route path="/phan-cung" element={<Hardware />}/>
+        <Route path="/phu-kien" element={<Accessory />}/>
+
+
       </Routes>
     </Router>
   );

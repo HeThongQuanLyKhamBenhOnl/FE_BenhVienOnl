@@ -35,32 +35,56 @@ const Navigation = () => {
           <a href="/tai-sao-chon-chung-toi">Tại sao chọn chúng tôi</a>
         </Menu.Item>
         <Menu.Item key="2-3">
-          <a href="/introduce/support">Cơ sở vật chất</a>
+          <a href="/co-so-vat-chat">Cơ sở vật chất</a>
         </Menu.Item>
       </SubMenu>
 
-      <SubMenu key="services" icon={<SnippetsOutlined />} title="Dịch Vụ">
+      <SubMenu key="dich-vu" icon={<SnippetsOutlined />} title="Dịch Vụ">
         <Menu.Item key="3-1">
-          <a href="/services/consultation">Tư Vấn</a>
+        <a href="/kham-suc-khoe-tong-quat-ca-nhan">Khám sức khỏe tổng quát cá nhân</a>
         </Menu.Item>
         <Menu.Item key="3-2">
-          <a href="/services/training">Đào Tạo</a>
+        <a href="/kham-suc-khoe-tong-quat-doanh-nghiep">Khám sức khỏe tổng quát doanh nghiệp</a>
         </Menu.Item>
         <Menu.Item key="3-3">
-          <a href="/services/support">Hỗ Trợ</a>
+        <a href="/tam-soat-chuc-nang-ho-hap">Tầm soát chức năng hô hấp</a>
+        </Menu.Item>
+        <Menu.Item key="3-4">
+        <a href="/tam-soat-tieu-hoa-gan-mat">Tầm soát tiêu hóa gan mật</a>
+        </Menu.Item>
+        <Menu.Item key="3-5">
+        <a href="/tam-soat-tim-mach">Tầm soát Tim mạch</a>
+        </Menu.Item>
+        <Menu.Item key="3-6">
+        <a href="/tam-soat-ung-thu">Tầm soát Ung thư</a>
+        </Menu.Item>
+        <Menu.Item key="3-7">
+        <a href="/dich-vu-bao-hiem">Dịch vụ Bảo hiểm</a>
+        </Menu.Item>
+        <Menu.Item key="3-8">
+        <a href="/cac-goi-dich-vu-khac">Các gói dịch vụ khác</a>
+        </Menu.Item>
+        <Menu.Item key="3-9">
+          <a href="/ho-tro">Hỗ Trợ</a>
+        </Menu.Item>
+        <Menu.Item key="3-10">
+        <a href="/dao-tao">Đào Tạo</a>
+        </Menu.Item>
+        <Menu.Item key="3-11">
+        <a href="/tu-van">Tư Vấn</a>
         </Menu.Item>
       </SubMenu>
 
       {/* Sản Phẩm */}
-      <SubMenu key="products" icon={<AppstoreOutlined />} title="Sản Phẩm">
+      <SubMenu key="san-pham" icon={<AppstoreOutlined />} title="Sản Phẩm">
         <Menu.Item key="3-1">
-          <a href="/products/software">Phần Mềm</a>
+          <a href="/phan-mem">Phần Mềm</a>
         </Menu.Item>
         <Menu.Item key="3-2">
-          <a href="/products/hardware">Phần Cứng</a>
+          <a href="/phan-cung">Phần Cứng</a>
         </Menu.Item>
         <Menu.Item key="3-3">
-          <a href="/products/accessories">Phụ Kiện</a>
+          <a href="/phu-kien">Phụ Kiện</a>
         </Menu.Item>
       </SubMenu>
 
