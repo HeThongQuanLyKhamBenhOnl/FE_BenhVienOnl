@@ -75,6 +75,7 @@ function AppRouter() {
           path="/profile"
           element={<ProtectedRoute element={<Profile />} redirectTo="/login" />}
         />
+        
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
           <Route path="doctor" element={<ManageDoctor />} />
@@ -110,7 +111,7 @@ function AppRouter() {
         <Route path="/phan-cung" element={<Hardware />}/>
         <Route path="/phu-kien" element={<Accessory />}/>
 
-
+        
       </Routes>
     </Router>
   );

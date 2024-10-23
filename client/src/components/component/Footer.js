@@ -64,7 +64,7 @@ const FooterComponent = () => {
             <ul className="text-gray-700 space-y-3 mt-4">
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                <a href="/">Giới thiệu</a>
+                <a href="/gioi-thieu">Giới thiệu</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
@@ -132,8 +132,6 @@ const FooterComponent = () => {
             <div className="mt-4">
               <div
                 style={{
-                  width: "280px",
-                  height: "150px",
                   backgroundColor: "#f0f0f0",
                   textAlign: "center",
                   lineHeight: "150px",
@@ -142,7 +140,7 @@ const FooterComponent = () => {
                 }}
               >
                 {/* Facebook Page Placeholder */}
-                <img src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/t%E1%BA%A7m-quan-tr%E1%BB%8Dng-c%E1%BB%A7a-ki%E1%BB%83m-tra-sk-h%E1%BA%ADu-covid/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19.jpg" alt="footer-banner"/>
+                <img style={{width: "90%"}} src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/t%E1%BA%A7m-quan-tr%E1%BB%8Dng-c%E1%BB%A7a-ki%E1%BB%83m-tra-sk-h%E1%BA%ADu-covid/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19.jpg" alt="footer-banner"/>
               </div>
             </div>
           </Col>
