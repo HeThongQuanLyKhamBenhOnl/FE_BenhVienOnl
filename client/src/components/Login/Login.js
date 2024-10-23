@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser, clearError } from "../../Redux/User/userSlice"; // Sử dụng loginUser từ slice
+import { loginUser, clearError } from "../../Redux/User/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
-  const [username, setUsername] = useState(""); // Sửa thành username thay vì email
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();

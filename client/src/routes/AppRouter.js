@@ -39,7 +39,9 @@ import Advise from "../components/Services/Advise";
 import Software from "../components/Products/Software";
 import Hardware from "../components/Products/Hardware";
 import Accessory from "../components/Products/Accessory";
+import BookAppointment from "../components/Appointment/BookAppointment";
 
+import DetailDoctor from "../components/Appointment/DetailDoctor";
 
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
@@ -88,29 +90,48 @@ function AppRouter() {
 
         {/* Gioi thieu */}
         <Route path="/createAppoiment" element={<CreateAppoiment />} />
+        <Route path="/bookingAppointment/:doctorId" element={<BookAppointment/>} />
         <Route path="/gioi-thieu" element={<Introduce />} />
         <Route path="/tai-sao-chon-chung-toi" element={<ReasonAboutUs />} />
         <Route path="/co-so-vat-chat" element={<Facilities />} />
 
         {/* Dich-vu */}
-        <Route path="/kham-suc-khoe-tong-quat-ca-nhan" element={<CheckupPersonal />}/>
-        <Route path="/kham-suc-khoe-tong-quat-doanh-nghiep" element={<CheckupCooperate />}/>
-        <Route path="/tam-soat-chuc-nang-ho-hap" element={<RespiratoryFunctionScreening />}/>
-        <Route path="/tam-soat-tieu-hoa-gan-mat" element={<HepatobiliaryDigestiveScreening />}/>
-        <Route path="/tam-soat-tim-mach" element={<CardiovascularScreening />}/>
-        <Route path="/tam-soat-ung-thu" element={<CancerScreening />}/>
-        <Route path="/dich-vu-bao-hiem" element={<InsuranceServices />}/>
-        <Route path="/cac-goi-dich-vu-khac" element={<OtherServicePackages />}/>
-        <Route path="/ho-tro" element={<Support />}/>
-        <Route path="/dao-tao" element={<Train />}/>
-        <Route path="/tu-van" element={<Advise />}/>
+        <Route
+          path="/kham-suc-khoe-tong-quat-ca-nhan"
+          element={<CheckupPersonal />}
+        />
+        <Route
+          path="/kham-suc-khoe-tong-quat-doanh-nghiep"
+          element={<CheckupCooperate />}
+        />
+        <Route
+          path="/tam-soat-chuc-nang-ho-hap"
+          element={<RespiratoryFunctionScreening />}
+        />
+        <Route
+          path="/tam-soat-tieu-hoa-gan-mat"
+          element={<HepatobiliaryDigestiveScreening />}
+        />
+        <Route
+          path="/tam-soat-tim-mach"
+          element={<CardiovascularScreening />}
+        />
+        <Route path="/tam-soat-ung-thu" element={<CancerScreening />} />
+        <Route path="/dich-vu-bao-hiem" element={<InsuranceServices />} />
+        <Route
+          path="/cac-goi-dich-vu-khac"
+          element={<OtherServicePackages />}
+        />
+        <Route path="/ho-tro" element={<Support />} />
+        <Route path="/dao-tao" element={<Train />} />
+        <Route path="/tu-van" element={<Advise />} />
 
         {/* San-pham */}
-        <Route path="/phan-mem" element={<Software />}/>
-        <Route path="/phan-cung" element={<Hardware />}/>
-        <Route path="/phu-kien" element={<Accessory />}/>
+        <Route path="/phan-mem" element={<Software />} />
+        <Route path="/phan-cung" element={<Hardware />} />
+        <Route path="/phu-kien" element={<Accessory />} />
 
-
+        <Route path="/doctor/:doctorId" element={<DetailDoctor />} />
       </Routes>
     </Router>
   );
