@@ -64,27 +64,27 @@ const FooterComponent = () => {
             <ul className="text-gray-700 space-y-3 mt-4">
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                <span>Giới thiệu</span>
+                <a href="/">Giới thiệu</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                <span>Chuyên khoa</span>
+                <a href="/">Chuyên khoa</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                <span>Đội ngũ bác sĩ</span>
+                <a href="/">Đội ngũ bác sĩ</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                <span>Tin tức</span>
+                <a href="/">Tin tức</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                <span>Hướng dẫn khách hàng</span>
+                <a href="/">Hướng dẫn khách hàng</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                <span>Liên hệ</span>
+                <a href="/">Liên hệ</a>
               </li>
             </ul>
           </Col>
@@ -97,15 +97,15 @@ const FooterComponent = () => {
             <ul className="text-gray-700 space-y-3 mt-4">
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                Đã thông báo Bộ Công Thương
+                <a href="/">Đã thông báo Bộ Công Thương</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                Chính sách bảo mật
+                <a href="/">Chính sách bảo mật</a>
               </li>
               <li className="flex items-center">
                 <CheckCircleOutlined className="text-blue-500 mr-2" />
-                Chính sách hoàn trả
+                <a href="/">Chính sách hoàn trả</a>
               </li>
             </ul>
           </Col>
@@ -118,15 +118,15 @@ const FooterComponent = () => {
             <ul className="text-gray-700 space-y-3 mt-4">
               <li className="flex items-center">
                 <LinkOutlined className="text-blue-500 mr-2" />
-                Cổng thông tin điện tử Sở Y tế TP.HCM
+                <a href="/">Cổng thông tin điện tử Sở Y tế TP.HCM</a>
               </li>
               <li className="flex items-center">
                 <LinkOutlined className="text-blue-500 mr-2" />
-                Cập nhật thông báo Sở Y tế TP.HCM
+                <a href="/">Cập nhật thông báo Sở Y tế TP.HCM</a>
               </li>
               <li className="flex items-center">
                 <LinkOutlined className="text-blue-500 mr-2" />
-                Bệnh viện Đại học Y dược TP.HCM
+                <a href="/">Bệnh viện Đại học Y dược TP.HCM</a>
               </li>
             </ul>
             <div className="mt-4">
@@ -141,7 +141,8 @@ const FooterComponent = () => {
                   color: "#333",
                 }}
               >
-                Facebook Page Placeholder
+                {/* Facebook Page Placeholder */}
+                <img src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/t%E1%BA%A7m-quan-tr%E1%BB%8Dng-c%E1%BB%A7a-ki%E1%BB%83m-tra-sk-h%E1%BA%ADu-covid/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19.jpg" alt="footer-banner"/>
               </div>
             </div>
           </Col>

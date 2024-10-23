@@ -3,6 +3,7 @@ import { Layout, Row, Col } from "antd";
 import Navigation from "./Navigation";
 import UserMenu from "./UserMenu";
 import logo1 from "../../img/logo.jfif";
+
 const { Header } = Layout;
 
 const HeaderComponent = () => {
