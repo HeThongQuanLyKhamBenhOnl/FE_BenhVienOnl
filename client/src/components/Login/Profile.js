@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProfile, updateProfile, clearError } from "../../Redux/User/userSlice"; // Sử dụng các action từ slice người dùng
-import { useGetAppointmentsQuery } from "../../Redux/Appointment/api"; // Sử dụng hook để lấy danh sách lịch hẹn từ RTK slice
-import moment from 'moment';
+import {
+  getProfile,
+  updateProfile,
+  clearError,
+} from "../../Redux/User/userSlice";
 
 const Profile = () => {
   const dispatch = useDispatch();
-  const { userInfo, loading: profileLoading, error: profileError } = useSelector((state) => state.user);
-  const { data: appointmentsData, isLoading: appointmentsLoading, error: appointmentsError } = useGetAppointmentsQuery(); // Lấy danh sách lịch hẹn
+  const {
+    userInfo,
+    loading: profileLoading,
+    error: profileError,
+  } = useSelector((state) => state.user);
 
   // Tạo state để lưu trữ các giá trị trong form
   const [name, setName] = useState("");
@@ -56,17 +61,16 @@ const Profile = () => {
     }
   }, [profileError, dispatch]);
 
-  if (profileLoading || appointmentsLoading) {
+  if (profileLoading) {
     return <p>Đang tải...</p>;
   }
-
-  // Kiểm tra nếu appointmentsData là mảng, nếu không thì gán là mảng rỗng
-  const appointments = appointmentsData?.appointments || [];
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-semibold text-center mb-6">Thông tin cá nhân</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6">
+          Thông tin cá nhân
+        </h2>
         {updateError && (
           <p className="text-red-500 text-center mb-4">{updateError}</p>
         )}
@@ -109,45 +113,6 @@ const Profile = () => {
             Cập nhật thông tin
           </button>
         </form>
-      </div>
-
-      {/* Hiển thị lịch hẹn đã đặt */}
-      <div className="bg-white p-8 mt-10 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-semibold text-center mb-6">Lịch hẹn của bạn</h2>
-        {appointmentsError && <p className="text-red-500">Đã xảy ra lỗi khi tải lịch hẹn</p>}
-        {appointments.length === 0 ? (
-          <p className="text-center">Bạn chưa có lịch hẹn nào.</p>
-        ) : (
-          <ul className="space-y-4">
-            {appointments.map((appointment) => (
-              <li key={appointment._id} className="border p-4 rounded-lg shadow">
-                <p>
-                  <strong>Bác sĩ:</strong> {appointment.doctor.user.fullName}
-                </p>
-                <p>
-                  <strong>Chuyên khoa:</strong> {appointment.doctor.specialty}
-                </p>
-                <p>
-                  <strong>Ngày:</strong> {moment(appointment.date).format("DD/MM/YYYY")}
-                </p>
-                <p>
-                  <strong>Giờ:</strong> {appointment.startTime} - {appointment.endTime}
-                </p>
-                <p>
-                  <strong>Lý do khám:</strong> {appointment.reasonForVisit}
-                </p>
-                {appointment.notes && (
-                  <p>
-                    <strong>Ghi chú:</strong> {appointment.notes}
-                  </p>
-                )}
-                <p>
-                  <strong>Trạng thái:</strong> {appointment.status}
-                </p>
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
     </div>
   );
