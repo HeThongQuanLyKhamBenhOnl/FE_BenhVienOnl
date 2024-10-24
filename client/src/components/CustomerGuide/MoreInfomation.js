@@ -45,59 +45,46 @@ const CheckupCard = ({ imgSrc, title, description }) => (
   </Col>
 );
 
-const CheckupPersonal = () => {
+const MoreInfomation = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 7;
+  const itemsPerPage = 4;
 
   const checkupCardsData = [
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/g%C3%B3i-covid/chuy%C3%AAn-s%C3%A2u/goi-kham-suc-khoe-hau-covid-19-chuyen-sau.jpg",
-      title: "GÓI KHÁM SỨC KHỎE HẬU COVID-19 CHUYÊN SÂU",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/821/danh-sach-van-bang-chuyen-mon-ph%E1%BA%A1m-vi-hoat-dong.png",
+      title: "DANH SÁCH VĂN BẰNG CHUYÊN MÔN VÀ PHẠM VI HOẠT ĐỘNG",
       description:
-        "Gói kiểm tra sức khỏe hậu Covid-19 nâng cao giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Sau khi nhiễm bệnh và đã khỏi, nhiều bệnh nhân Covid-19 lại gặp phải hội chứng hậu Covid-19 với các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới trong nhiều tuần hoặc nhiều tháng sau đó. ",
+        "Danh sách văn bằng chuyên môn và phạm vi hoạt động của đội ngũ Bác sĩ của Phòng khám Bệnh viện Đại học Y Dược 1",
     },
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/462/goi-kiem-tra-suc-khoa-hau-covid-19-co-ban.jpg",
-      title: "GÓI KIỂM TRA HẬU SỨC KHỎE COVID-19 NÂNG CAO",
+      imgSrc: "",
+      title: "",
       description:
-        "Kiểm tra sức khỏe hậu Covid-19 giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Hầu hết những người bị Covid-19 có thể hoàn toàn khỏi bệnh trong vài tuần kể từ khi mắc bệnh. Nhưng một số người khác gặp các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới ngay cả khi đã khỏi bệnh. Tình trạng này gọi là hội chứng hậu Covid-19.",
+      "",
     },
     {
-      imgSrc:
-        "	https://umcclinic.com.vn/Data/Sites/1/News/212/goi-kham-suc-khoe-tong-quat-platinum-6.jpg",
-      title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT PLATINUM",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/820/danh-muc-ky-thuat.png",
+      title: "DANH MỤC KỸ THUẬT",
       description:
-        "Một sức khỏe tốt giúp chúng ta yên tâm học tập, làm việc, theo đuổi hạnh phúc và sống với đam mê. Để bảo vệ sức khỏe chúng ta cần thường xuyên khám sức khỏe tổng quát định kỳ. Đây là phương pháp hiệu quả nhất để kịp thời phát hiện ra những bất thường trong cơ thể, tăng hiệu quả điều trị, hạn chế nguy cơ biến chứng, tiết kiệm thời gian và chi phí điều trị.",
+        "Phòng khám Bệnh viện Đại học Y Dược 1 được phê duyệt danh mục kỹ thuật trong khám chữa bệnh theo quyết định số 467/QĐ-SYT ngày 26 tháng 5 năm 2020 của Sở Y tế. Phòng khám đa khoa Bệnh viện Đại học Y Dược 1 do TS,BS, Nguyễn Thị Thanh Thủy chịu trách nhiệm chuyên môn tại địa chỉ 20-22 Dương Quang Trung, Phường 12, Quận 10",
     },
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/211/goi-kham-suc-khoe-tong-quat-gold-6.jpg",
-      title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT VIP GOLD",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/819/gia-dich-vu-kham-chua-benh.png",
+      title: "BẢNG GIÁ DỊCH VỤ KHÁM CHỮA BỆNH VÀ VẬT TƯ Y TẾ",
       description:
-        "Gói khám sức khỏe tổng quát Gold là gói khám sức khoẻ VIP được đội ngũ chuyên môn của Phòng khám xây dựng giúp khách hàng có thể tầm soát toàn diện các bộ phận của cơ thể gồm xét nghiệm và các dịch vụ cận lâm sàng từ cơ bản đến chuyên sâu.",
+        "Phòng khám Bệnh viện Đại Học Y Dược 1 trân trọng kính gửi đến Quý khách hàng bảng giá một số dịch vụ y tế ",
     },
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/g%C3%B3i-covid/goi-kiem-tra-suc-khoe-hau-covid-19-nang-cao.jpg",
-      title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT CHUYÊN SÂU",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/786/luat-kham-benh-chua-benh.jpg",
+      title: "LUẬT KHÁM CHỮA BỆNH 2023 (15.2023.QH15)",
       description:
-        "Khi lựa chọn một gói khám sức khoẻ tổng quát chuyên sâu, bạn luôn mong muốn gói khám có thể kiểm tra được bao quát tình hình sức khoẻ với chi phí hợp lý.",
+        "Ngày 09/01/2023, Quốc Hội Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XV, trong kỳ họp bất thường lần thứ 2 đã thông qua Luật Khám bệnh, chữa bệnh.",
     },
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/209/1goi-kham-suc-khoe-tong-quat-nang-cao.jpg",
-      title: "GÓI KHÁM SỨC KHOẺ TỔNG QUÁT NÂNG CAO",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/447/huong-dan-khai-bao-y-te-dien-tu.jpg",
+      title: "Hướng dẫn khai báo y tế điện tử",
       description:
-        "Kiểm tra sức khỏe hậu Covid-19 giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Hầu hết những người bị Covid-19 có thể hoàn toàn khỏi bệnh trong vài tuần kể từ khi mắc bệnh. Nhưng một số người khác gặp các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới ngay cả khi đã khỏi bệnh. Tình trạng này gọi là hội chứng hậu Covid-19. ",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/206/goi-kham-suc-khoe-tong-quat-va-tam-soat-ung-thu-1.jpg",
-      title: "KHÁM SỨC KHỎE TỔNG QUÁT VÀ TẦM SOÁT UNG THƯ",
-      description:
-        "Khám sức khỏe tổng quát và tầm soát ung thư định kỳ đóng vai trò quan trọng trong việc phát hiện sớm các vấn đề bất thường về sức khỏe (nếu có) trước khi chuyển thành bệnh hoặc phát hiện bệnh ở giai đoạn sớm khi chưa có biểu hiện ra bên ngoài để điều trị hiệu quả hơn, khả năng lành bệnh cao hơn, tiết kiệm được thời gian, tiền bạc và tránh được các biến chứng do bệnh gây ra.",
+        "Trước diễn biến phức tạp của dịch bệnh Covid-19, theo quy định của Sở Y tế và để đảm bảo an toàn cho bệnh nhân, người nhà, khách đến liên hệ công tác và nhân viên y tế, Phòng khám Bệnh viện Đại học Y Dược 1 triển khai “khai báo y tế điện tử” trên hệ thống dữ liệu của Sở Y tế.",
     },
   ];
 
@@ -106,7 +93,10 @@ const CheckupPersonal = () => {
   const endIndex = startIndex + itemsPerPage;
 
   // Slice the data array to display only the current page items
-  const currentData = checkupCardsData.slice(startIndex, endIndex);
+  const currentData =
+    currentPage === 1
+      ? checkupCardsData.slice(1, itemsPerPage + 1) // On page 1, exclude the first card
+      : checkupCardsData.slice(startIndex, endIndex);
 
   return (
     <div className="container mx-auto py-8">
@@ -123,7 +113,7 @@ const CheckupPersonal = () => {
         }}
       >
         <h2 className="text-2xl font-bold text-blue-900">
-          KHÁM SỨC KHỎE TỔNG QUÁT CÁ NHÂN
+          THÔNG TIN THAM KHẢO
           <div
             style={{
               display: "flex",
@@ -188,7 +178,7 @@ const CheckupPersonal = () => {
             alt={checkupCardsData[0].title}
             style={{
               width: "100%",
-              height: "200px",
+              height: "240px",
               objectFit: "cover",
               borderRadius: "10px",
             }}
@@ -224,11 +214,7 @@ const CheckupPersonal = () => {
           >
             {checkupCardsData[0].description}
           </p>
-          <button
-            className="btn btn-outline-primary"
-          >
-            Xem chi tiết
-          </button>
+          <button className="btn btn-outline-primary">Xem chi tiết</button>
         </Col>
       </Row>
 
@@ -265,4 +251,4 @@ const CheckupPersonal = () => {
   );
 };
 
-export default CheckupPersonal;
+export default MoreInfomation;

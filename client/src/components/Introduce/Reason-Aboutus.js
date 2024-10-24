@@ -10,11 +10,44 @@ const Introduce1 = () => {
       <HeaderComponent />
 
       <div className="container mx-auto py-8">
-        <h2 style={{padding: "3em"}}>
+        <h2 style={{ padding: "3em" }}>
           <span className="text-3xl font-bold text-blue-900">
             TẠI SAO CHỌN CHÚNG TÔI
           </span>
-          <hr />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "0.5rem",
+            }}
+          >
+            <span
+              style={{
+                width: "50px",
+                height: "1px",
+                backgroundColor: "#a3d1ef" /* Màu xanh nhạt */,
+                margin: "0 10px",
+              }}
+            ></span>
+            <span
+              style={{
+                fontSize: "1.5rem",
+                color: "#73c2ec" /* Màu xanh của biểu tượng */,
+              }}
+            >
+              ✦
+            </span>{" "}
+            {/* Bạn có thể thay thế icon này */}
+            <span
+              style={{
+                width: "50px",
+                height: "1px",
+                backgroundColor: "#a3d1ef",
+                margin: "0 10px",
+              }}
+            ></span>
+          </div>
         </h2>
 
         <Row
@@ -49,14 +82,24 @@ const Introduce1 = () => {
           </Col>
         </Row>
 
-        <br/>
+        <br />
 
-        <Row style={{display: "flex", justifyContent: "space-between"}}>
-          <Col xs={24} md={12} style={{maxWidth: "600px", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
+        <Row style={{ display: "flex", justifyContent: "space-between" }}>
+          <Col
+            xs={24}
+            md={12}
+            style={{
+              maxWidth: "600px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
             <img
               src="https://umcclinic.com.vn/Data/Sites/1/News/119/layer-5111-(2).jpg"
               alt="img-5111"
-              style={{width: "70%",}}
+              style={{ width: "70%" }}
             />
             <br />
             <h3 className="text-2xl font-bold text-blue-900">
@@ -69,11 +112,21 @@ const Introduce1 = () => {
               giỏi, luôn tận tâm và chu đáo với người bệnh...
             </p>
           </Col>
-          <Col xs={24} md={12} style={{maxWidth: "600px", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
+          <Col
+            xs={24}
+            md={12}
+            style={{
+              maxWidth: "600px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
             <img
               src="https://umcclinic.com.vn/Data/Sites/1/News/117/layer-6041.jpg"
               alt="img-117"
-              style={{width: "70%",}}
+              style={{ width: "70%" }}
             />
             <br />
             <h3 className="text-2xl font-bold text-blue-900">

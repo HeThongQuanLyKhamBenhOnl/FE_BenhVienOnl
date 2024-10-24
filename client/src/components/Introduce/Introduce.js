@@ -68,7 +68,7 @@ const Introduce = () => {
 
         {/* Nội dung chính */}
         <Row gutter={[32, 32]}>
-          <Col xs={24} md={12}>
+          <Col xs={24} md={12} style={{display: "flex", alignItems: "center"}}>
             <img
               src="https://umcclinic.com.vn/Data/Sites/1/News/82/layer-597.png"
               alt="Team"

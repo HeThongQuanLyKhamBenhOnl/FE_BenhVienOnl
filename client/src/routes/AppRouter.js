@@ -41,7 +41,14 @@ import Hardware from "../components/Products/Hardware";
 import Accessory from "../components/Products/Accessory";
 import BookAppointment from "../components/Appointment/BookAppointment";
 
-import DetailDoctor from "../components/Appointment/DetailDoctor";
+
+import QuestionAnswer from "../components/News/QuestionAnswer";
+
+import MoreInfomation from "../components/CustomerGuide/MoreInfomation";
+import PACS from "../components/CustomerGuide/PACS";
+import CommonMedicine from "../components/News/CommonMedicine";
+import NewsEvent from "../components/News/NewsEvent";
+
 
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
@@ -77,6 +84,7 @@ function AppRouter() {
           path="/profile"
           element={<ProtectedRoute element={<Profile />} redirectTo="/login" />}
         />
+        
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
           <Route path="doctor" element={<ManageDoctor />} />
@@ -127,11 +135,20 @@ function AppRouter() {
         <Route path="/tu-van" element={<Advise />} />
 
         {/* San-pham */}
-        <Route path="/phan-mem" element={<Software />} />
-        <Route path="/phan-cung" element={<Hardware />} />
-        <Route path="/phu-kien" element={<Accessory />} />
 
-        <Route path="/doctor/:doctorId" element={<DetailDoctor />} />
+        <Route path="/phan-mem" element={<Software />}/>
+        <Route path="/phan-cung" element={<Hardware />}/>
+        <Route path="/phu-kien" element={<Accessory />}/>
+
+        {/* Tin-tuc */}
+        <Route path="/y-hoc-thuong-thuc" element={<CommonMedicine />}/>
+        <Route path="/tin-tuc-su-kien" element={<NewsEvent />}/>
+        <Route path="/hoi-dap-y-khoa" element={<QuestionAnswer />}/>
+
+        {/* Huong-dan-khach-hang */}
+        <Route path="/thong-tin-tham-khao" element={<MoreInfomation />}/>
+        <Route path="/huong-dan-tru-cap-he-thong-luu-tru-va-quan-ly-hinh-anh" element={<PACS />}/>
+
       </Routes>
     </Router>
   );

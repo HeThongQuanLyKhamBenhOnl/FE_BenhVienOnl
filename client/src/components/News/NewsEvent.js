@@ -45,59 +45,111 @@ const CheckupCard = ({ imgSrc, title, description }) => (
   </Col>
 );
 
-const CheckupPersonal = () => {
+const NewsEvent = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 7;
 
   const checkupCardsData = [
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/g%C3%B3i-covid/chuy%C3%AAn-s%C3%A2u/goi-kham-suc-khoe-hau-covid-19-chuyen-sau.jpg",
-      title: "GÓI KHÁM SỨC KHỎE HẬU COVID-19 CHUYÊN SÂU",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/440/390x246.jpg",
+      title: "Những ưu điểm vượt trội của đo loãng xương bằng phương pháp DEXA",
       description:
-        "Gói kiểm tra sức khỏe hậu Covid-19 nâng cao giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Sau khi nhiễm bệnh và đã khỏi, nhiều bệnh nhân Covid-19 lại gặp phải hội chứng hậu Covid-19 với các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới trong nhiều tuần hoặc nhiều tháng sau đó. ",
+        "Biến chứng nặng nề nhất của Loãng xương là làm gia tăng nguy cơ gãy xương...",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/462/goi-kiem-tra-suc-khoa-hau-covid-19-co-ban.jpg",
-      title: "GÓI KIỂM TRA HẬU SỨC KHỎE COVID-19 NÂNG CAO",
+        "https://umcclinic.com.vn/Data/Sites/1/News/891/nguyen-nhan-gay-benh-gan-nhiem-mo.jpg",
+      title: "NGUYÊN NHÂN GÂY BỆNH GAN NHIỄM MỠ",
       description:
-        "Kiểm tra sức khỏe hậu Covid-19 giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Hầu hết những người bị Covid-19 có thể hoàn toàn khỏi bệnh trong vài tuần kể từ khi mắc bệnh. Nhưng một số người khác gặp các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới ngay cả khi đã khỏi bệnh. Tình trạng này gọi là hội chứng hậu Covid-19.",
+        "Gan nhiễm mỡ là tình trạng dư thừa mỡ trong gan quá nhiều, nếu không được điều trị kịp thời...",
+    },
+    {
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/893/soi-mat.jpg",
+      title: "SỎI MẬT: NGUYÊN NHÂN, TRIỆU CHỨNG, CÁCH CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
+      description:
+        "Sỏi mật là các viên sỏi có kích thước từ hạt cát đến quả bóng bàn...",
     },
     {
       imgSrc:
-        "	https://umcclinic.com.vn/Data/Sites/1/News/212/goi-kham-suc-khoe-tong-quat-platinum-6.jpg",
-      title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT PLATINUM",
+        "https://umcclinic.com.vn/Data/Sites/1/News/894/8-cach-don-gian-giup-giam-dau-bung-kinh-hieu-qua.jpg",
+      title: "8 CÁCH ĐƠN GIẢN GIÚP GIẢM ĐAU BỤNG KINH HIỆU QUẢ",
       description:
-        "Một sức khỏe tốt giúp chúng ta yên tâm học tập, làm việc, theo đuổi hạnh phúc và sống với đam mê. Để bảo vệ sức khỏe chúng ta cần thường xuyên khám sức khỏe tổng quát định kỳ. Đây là phương pháp hiệu quả nhất để kịp thời phát hiện ra những bất thường trong cơ thể, tăng hiệu quả điều trị, hạn chế nguy cơ biến chứng, tiết kiệm thời gian và chi phí điều trị.",
+        "Nhiều chị nữ phụ nữ gặp phải tình trạng đau bụng kinh trước và trong kỳ kinh nguyệt...",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/211/goi-kham-suc-khoe-tong-quat-gold-6.jpg",
-      title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT VIP GOLD",
+        "https://umcclinic.com.vn/Data/Sites/1/News/886/bien-chung-cua-dai-thao-duong-va-cach-phong-ngua.jpg",
+      title: "BIẾN CHỨNG CỦA BỆNH TIỂU ĐƯỜNG VÀ CÁCH PHÒNG NGỪA",
       description:
-        "Gói khám sức khỏe tổng quát Gold là gói khám sức khoẻ VIP được đội ngũ chuyên môn của Phòng khám xây dựng giúp khách hàng có thể tầm soát toàn diện các bộ phận của cơ thể gồm xét nghiệm và các dịch vụ cận lâm sàng từ cơ bản đến chuyên sâu.",
+        "Người bệnh tiểu đường nếu không thể kiểm soát tốt mức đường huyết có thể xảy ra nhiều biến chứng nguy hiểm...",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/g%C3%B3i-covid/goi-kiem-tra-suc-khoe-hau-covid-19-nang-cao.jpg",
-      title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT CHUYÊN SÂU",
+        "https://umcclinic.com.vn/Data/Sites/1/News/887/khi-noi-soi-da-day-can-luy-y-nhung-gi.jpg",
+      title: "KHI NỘI SOI DẠ DÀY CẦN LƯU Ý NHỮNG GÌ?",
       description:
-        "Khi lựa chọn một gói khám sức khoẻ tổng quát chuyên sâu, bạn luôn mong muốn gói khám có thể kiểm tra được bao quát tình hình sức khoẻ với chi phí hợp lý.",
+        "Nội soi dạ dày là phương pháp đưa ống soi vào đường tiêu hóa của bệnh nhân giúp quan sát trực tiếp...",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/209/1goi-kham-suc-khoe-tong-quat-nang-cao.jpg",
-      title: "GÓI KHÁM SỨC KHOẺ TỔNG QUÁT NÂNG CAO",
+        "https://umcclinic.com.vn/Data/Sites/1/News/890/phong-ngua-benh-gan-nhiem-mo.jpg",
+      title: "PHÒNG NGỪA BỆNH GAN NHIỄM MỠ",
       description:
-        "Kiểm tra sức khỏe hậu Covid-19 giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Hầu hết những người bị Covid-19 có thể hoàn toàn khỏi bệnh trong vài tuần kể từ khi mắc bệnh. Nhưng một số người khác gặp các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới ngay cả khi đã khỏi bệnh. Tình trạng này gọi là hội chứng hậu Covid-19. ",
+        "Phòng ngừa bệnh gan nhiễm mỡ là cách để chúng ta có một lá gan khỏe mạnh...",
+    },
+    {
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/882/ung-thu-vu.jpg",
+      title: "UNG THƯ VÚ: NGUYÊN NHÂN, TRIỆU CHỨNG, CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
+      description:
+        "Ung thư vú xảy ra khi các tế bào ác tính hình thành từ trong mô tuyến vú...",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/206/goi-kham-suc-khoe-tong-quat-va-tam-soat-ung-thu-1.jpg",
-      title: "KHÁM SỨC KHỎE TỔNG QUÁT VÀ TẦM SOÁT UNG THƯ",
+        "https://umcclinic.com.vn/Data/Sites/1/News/888/trieu-chung-cua-gan-nhiem-mo-la-gi.jpg",
+      title: "TRIỆU CHỨNG CỦA GAN NHIỄM MỠ LÀ GÌ?",
       description:
-        "Khám sức khỏe tổng quát và tầm soát ung thư định kỳ đóng vai trò quan trọng trong việc phát hiện sớm các vấn đề bất thường về sức khỏe (nếu có) trước khi chuyển thành bệnh hoặc phát hiện bệnh ở giai đoạn sớm khi chưa có biểu hiện ra bên ngoài để điều trị hiệu quả hơn, khả năng lành bệnh cao hơn, tiết kiệm được thời gian, tiền bạc và tránh được các biến chứng do bệnh gây ra.",
+        "Người bị gan nhiễm mỡ khi có dấu hiệu rối loạn chức năng gan hay không có triệu chứng cũng nên chủ động thăm khám...",
+    },
+    {
+      imgSrc:
+        "https://umcclinic.com.vn/Data/Sites/1/News/881/viem-gan-a-nguyen-nhan-trieu-chung-va-cach-dieu-tri.jpg",
+      title: "XUẤT HUYẾT DẠ DÀY CÓ NGUY HIỂM KHÔNG?",
+      description:
+        "Xuất huyết dạ dày là triệu chứng rối loạn đường tiêu hóa, có nguy cơ gây biến chứng nguy hiểm nếu không điều trị kịp thời...",
+    },
+    {
+      imgSrc:
+        "https://umcclinic.com.vn/Data/Sites/1/News/892/u-xo-tu-cung-co-bien-chung-thanh-ung-thu-khong.jpg",
+      title: "U XƠ TỬ CUNG CÓ BIẾN CHỨNG THÀNH UNG THƯ KHÔNG?",
+      description:
+        "U xơ tử cung thường gặp ở nữ giới trong độ tuổi sinh sản, ít phát triển thành ung thư...",
+    },
+    {
+      imgSrc:
+        "https://umcclinic.com.vn/Data/Sites/1/News/881/viem-gan-a-nguyen-nhan-trieu-chung-va-cach-dieu-tri.jpg",
+      title: "VIÊM GAN A: NGUYÊN NHÂN, TRIỆU CHỨNG VÀ ĐIỀU TRỊ",
+      description:
+        "Viêm gan siêu vi A là nguyên nhân gây bệnh viêm gan A, ảnh hưởng đến hoạt động ổn định của gan...",
+    },
+    {
+      imgSrc:
+        "https://umcclinic.com.vn/Data/Sites/1/News/884/khi-nao-can-chup-cong-huong-tu(mri)-mach-mau-nao.jpg",
+      title: "KHI NÀO CẦN CHỤP CỘNG HƯỞNG TỪ (MRI) MẠCH MÁU NÃO?",
+      description:
+        "Chụp cộng hưởng từ (MRI) mạch máu não giúp tạo ra hình ảnh 3 chiều của mạch máu não...",
+    },
+    {
+      imgSrc:
+        "https://umcclinic.com.vn/Data/Sites/1/News/887/khi-noi-soi-da-day-can-luy-y-nhung-gi.jpg",
+      title: "KHI NỘI SOI DẠ DÀY CẦN LƯU Ý NHỮNG GÌ?",
+      description:
+        "Nội soi dạ dày là phương pháp đưa ống soi vào đường tiêu hóa giúp quan sát trực tiếp các tổn thương...",
+    },
+    {
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/882/ung-thu-vu.jpg",
+      title: "UNG THƯ VÚ: NGUYÊN NHÂN, TRIỆU CHỨNG, CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
+      description:
+        "Ung thư vú xảy ra khi các tế bào ác tính hình thành từ trong mô tuyến vú...",
     },
   ];
 
@@ -123,7 +175,7 @@ const CheckupPersonal = () => {
         }}
       >
         <h2 className="text-2xl font-bold text-blue-900">
-          KHÁM SỨC KHỎE TỔNG QUÁT CÁ NHÂN
+          TIN TỨC SỰ KIỆN
           <div
             style={{
               display: "flex",
@@ -188,7 +240,7 @@ const CheckupPersonal = () => {
             alt={checkupCardsData[0].title}
             style={{
               width: "100%",
-              height: "200px",
+              height: "240px",
               objectFit: "cover",
               borderRadius: "10px",
             }}
@@ -224,11 +276,7 @@ const CheckupPersonal = () => {
           >
             {checkupCardsData[0].description}
           </p>
-          <button
-            className="btn btn-outline-primary"
-          >
-            Xem chi tiết
-          </button>
+          <button className="btn btn-outline-primary">Xem chi tiết</button>
         </Col>
       </Row>
 
@@ -265,4 +313,4 @@ const CheckupPersonal = () => {
   );
 };
 
-export default CheckupPersonal;
+export default NewsEvent;
