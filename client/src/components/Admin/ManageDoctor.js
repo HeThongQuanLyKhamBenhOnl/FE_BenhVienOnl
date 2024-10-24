@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllDoctors, createDoctor } from "../../Redux/User/userSlice"; // Import async thunk để lấy và tạo bác sĩ
+import { getAllDoctors, createDoctor } from "../../Redux/User/userSlice"; 
 import {
   Table,
   Button,
@@ -11,29 +11,23 @@ import {
   Select,
   DatePicker,
   message,
+  InputNumber, // Thêm InputNumber để nhập số liệu kinh nghiệm
 } from "antd";
 
 const ManageDoctor = () => {
   const dispatch = useDispatch();
 
-  // Lấy dữ liệu bác sĩ từ Redux store
   const { doctors, loading, error } = useSelector((state) => state.user);
 
-  const [isDrawerVisible, setIsDrawerVisible] = useState(false); // Trạng thái để mở Drawer
-  const [form] = Form.useForm(); // Form từ Ant Design
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false);
+  const [form] = Form.useForm();
 
-  // Gọi API lấy danh sách bác sĩ khi component mount
   useEffect(() => {
     dispatch(getAllDoctors());
   }, [dispatch]);
 
-  // Xử lý khi người dùng nhấn nút "Tạo Bác Sĩ"
   const handleCreateDoctor = () => {
     form.validateFields().then((values) => {
-      // Kiểm tra dữ liệu form
-      console.log(values);
-
-      // Chuyển ngày sinh sang định dạng mong muốn
       const formattedValues = {
         ...values,
         dateOfBirth: values.dateOfBirth.format("YYYY-MM-DD"),
@@ -44,8 +38,8 @@ const ManageDoctor = () => {
         .then(() => {
           message.success("Tạo bác sĩ thành công!");
           setIsDrawerVisible(false);
-          form.resetFields(); // Reset form sau khi tạo bác sĩ thành công
-          dispatch(getAllDoctors()); // Cập nhật lại danh sách bác sĩ sau khi tạo
+          form.resetFields(); 
+          dispatch(getAllDoctors());
         })
         .catch(() => {
           message.error("Có lỗi xảy ra khi tạo bác sĩ.");
@@ -53,55 +47,67 @@ const ManageDoctor = () => {
     });
   };
 
-  // Cột hiển thị thông tin bác sĩ
   const columns = [
     {
       title: "Họ Tên",
       dataIndex: "fullName",
       key: "fullName",
-      width: 150, // Đặt độ rộng để tránh ngắt dòng không hợp lý
+      width: 150,
     },
     {
       title: "Email",
       dataIndex: "email",
       key: "email",
-      width: 200, // Điều chỉnh độ rộng phù hợp
+      width: 200,
     },
     {
       title: "Số Điện Thoại",
       dataIndex: "phone",
       key: "phone",
-      width: 120, // Đặt độ rộng cố định
+      width: 120,
     },
     {
       title: "Chuyên Khoa",
       dataIndex: "specialty",
       key: "specialty",
-      width: 150, // Đặt độ rộng phù hợp với nội dung
+      width: 150,
     },
     {
       title: "Giới Tính",
       dataIndex: "gender",
       key: "gender",
-      width: 100, // Giới hạn độ rộng
+      width: 100,
     },
     {
       title: "Ngày Sinh",
       dataIndex: "dateOfBirth",
       key: "dateOfBirth",
-      width: 120, // Đặt độ rộng cho cột ngày sinh
+      width: 120,
       render: (text) => new Date(text).toLocaleDateString(),
     },
     {
       title: "Địa Chỉ",
       dataIndex: "address",
       key: "address",
-      width: 150, // Điều chỉnh độ rộng cho địa chỉ
+      width: 150,
     },
     {
+      title: "Kinh Nghiệm (năm)",
+      dataIndex: "experience",
+      key: "experience",
+      width: 100,
+    },
+    {
+      title: "Bằng Cấp",
+      dataIndex: "qualifications",
+      key: "qualifications",
+      width: 200,
+      render: (text) => Array.isArray(text) ? text.join(", ") : "Không có bằng cấp", // Kiểm tra nếu là mảng, nếu không thì hiển thị giá trị mặc định    },
+    },
+      {
       title: "Hành Động",
       key: "action",
-      width: 150, // Điều chỉnh độ rộng cho cột hành động
+      width: 150,
       render: (text, record) => (
         <Space size="middle">
           <Button type="primary">Sửa</Button>
@@ -116,13 +122,10 @@ const ManageDoctor = () => {
   return (
     <div>
       <h1>Quản Lý Bác Sĩ</h1>
-
-      {/* Nút mở Drawer để tạo bác sĩ luôn hiển thị */}
       <Button type="primary" onClick={() => setIsDrawerVisible(true)}>
         Tạo Bác Sĩ
       </Button>
 
-      {/* Kiểm tra nếu đang tải hoặc có lỗi */}
       {loading ? (
         <p>Đang tải dữ liệu...</p>
       ) : error ? (
@@ -130,21 +133,19 @@ const ManageDoctor = () => {
       ) : doctors && doctors.length === 0 ? (
         <p>Hiện tại không có bác sĩ nào. Bạn có thể tạo mới.</p>
       ) : (
-        // Hiển thị bảng nếu có dữ liệu bác sĩ
         <Table
           columns={columns}
           dataSource={doctors}
           rowKey="id"
-          pagination={{ pageSize: 5 }} // Thêm phân trang nếu dữ liệu nhiều
+          pagination={{ pageSize: 5 }}
         />
       )}
 
-      {/* Drawer tạo bác sĩ */}
       <Drawer
         title="Tạo Bác Sĩ Mới"
         width={720}
         onClose={() => setIsDrawerVisible(false)}
-        open={isDrawerVisible} // Điều kiện mở Drawer
+        open={isDrawerVisible}
         footer={
           <div style={{ textAlign: "right" }}>
             <Button
@@ -206,9 +207,9 @@ const ManageDoctor = () => {
             rules={[{ required: true, message: "Hãy chọn giới tính!" }]}
           >
             <Select placeholder="Chọn giới tính">
-              <Select.Option value="male">Nam</Select.Option>
-              <Select.Option value="female">Nữ</Select.Option>
-              <Select.Option value="other">Khác</Select.Option>
+              <Select.Option value="Male">Nam</Select.Option>
+              <Select.Option value="Female">Nữ</Select.Option>
+              <Select.Option value="Other">Khác</Select.Option>
             </Select>
           </Form.Item>
 
@@ -229,11 +230,26 @@ const ManageDoctor = () => {
           </Form.Item>
 
           <Form.Item
-            name="specialty"
+            name="specialization"
             label="Chuyên Khoa"
             rules={[{ required: true, message: "Hãy nhập chuyên khoa!" }]}
           >
             <Input placeholder="Nhập chuyên khoa" />
+          </Form.Item>
+
+          <Form.Item
+            name="experience"
+            label="Kinh Nghiệm (năm)"
+            rules={[{ required: true, message: "Hãy nhập số năm kinh nghiệm!" }]}
+          >
+            <InputNumber placeholder="Nhập số năm kinh nghiệm" min={0} />
+          </Form.Item>
+
+          <Form.Item
+            name="qualifications"
+            label="Bằng Cấp"
+          >
+            <Input placeholder="Nhập bằng cấp, cách nhau bằng dấu phẩy" />
           </Form.Item>
         </Form>
       </Drawer>
@@ -242,3 +258,4 @@ const ManageDoctor = () => {
 };
 
 export default ManageDoctor;
+  

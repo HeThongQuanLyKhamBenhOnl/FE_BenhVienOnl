@@ -29,10 +29,12 @@ export const doctorApiSlice = createApi({
     getDoctorProfile: builder.query({
       query: () => "/api/doctor/profile",
     }),
-    // Cập nhật hồ sơ bác sĩ
+    getDoctorById: builder.query({
+      query: (doctorId) => `/api/doctor/${doctorId}`,
+    }),
     updateDoctorProfile: builder.mutation({
       query: (updatedDoctorProfile) => ({
-        url: "/api/doctor/profile/update", // Sử dụng đúng route PUT
+        url: "/api/doctor/profile/update",
         method: "PUT",
         body: updatedDoctorProfile,
       }),
@@ -45,6 +47,7 @@ export const {
   useGetAllDoctorsQuery,
   useGetDoctorProfileQuery,
   useUpdateDoctorProfileMutation,
+  useGetDoctorByIdQuery,
 } = doctorApiSlice;
 
 export default doctorApiSlice;
