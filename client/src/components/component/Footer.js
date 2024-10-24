@@ -140,7 +140,17 @@ const FooterComponent = () => {
                 }}
               >
                 {/* Facebook Page Placeholder */}
-                <img style={{width: "90%"}} src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/t%E1%BA%A7m-quan-tr%E1%BB%8Dng-c%E1%BB%A7a-ki%E1%BB%83m-tra-sk-h%E1%BA%ADu-covid/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19.jpg" alt="footer-banner"/>
+                <img
+                  src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/t%E1%BA%A7m-quan-tr%E1%BB%8Dng-c%E1%BB%A7a-ki%E1%BB%83m-tra-sk-h%E1%BA%ADu-covid/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19.jpg"
+                  alt="footer-banner"
+                  style={{
+                    width: "90%",
+                    height: "140px",
+                    objectFit: "cover",
+                    objectPosition: "bottom",
+                    borderRadius: "10px",
+                  }}
+                />
               </div>
             </div>
           </Col>
