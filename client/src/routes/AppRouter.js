@@ -150,10 +150,7 @@ function AppRouter() {
 
         {/* Huong-dan-khach-hang */}
         <Route path="/thong-tin-tham-khao" element={<MoreInfomation />} />
-        <Route
-          path="/huong-dan-tru-cap-he-thong-luu-tru-va-quan-ly-hinh-anh"
-          element={<PACS />}
-        />
+        <Route path="/huong-dan-tru-cap-he-thong-luu-tru-va-quan-ly-hinh-anh" element={<PACS />} />
 
         <Route path="/appointments" element={<Appointments />} />
       </Routes>
