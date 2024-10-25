@@ -28,18 +28,24 @@ const Appointments = () => {
           <ul style={styles.appointmentList}>
             {appointments.map((appointment) => (
               <li key={appointment._id} style={styles.appointmentCard}>
-                <p>
-                  <strong>Bác sĩ:</strong>{" "}
-                  <span style={styles.doctorName}>
-                    {appointment.doctor.user.fullName}
-                  </span>
-                </p>
-                <p>
-                  <strong>Chuyên khoa:</strong>{" "}
-                  <span style={styles.specialty}>
-                    {appointment.doctor.specialty}
-                  </span>
-                </p>
+                {appointment.doctor ? (
+                  <>
+                    <p>
+                      <strong>Bác sĩ:</strong>{" "}
+                      <span style={styles.doctorName}>
+                        {appointment.doctor.user.fullName}
+                      </span>
+                    </p>
+                    <p>
+                      <strong>Chuyên khoa:</strong>{" "}
+                      <span style={styles.specialty}>
+                        {appointment.doctor.specialty}
+                      </span>
+                    </p>
+                  </>
+                ) : (
+                  <p>Không có bác sĩ được chỉ định</p>
+                )}
                 <p>
                   <strong>Ngày:</strong>{" "}
                   <span style={styles.date}>

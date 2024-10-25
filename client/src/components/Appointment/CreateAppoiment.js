@@ -6,8 +6,10 @@ import {
   useGetDoctorByIdQuery,
 } from "../../Redux/Doctor/api"; // Import cả API slice và API chi tiết
 import doctor1 from "../../img/doctor1.png";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const CreateAppoiment = () => {
+  const Navigate = useNavigate();
   const { data: doctors, isLoading, error } = useGetAllDoctorsQuery(); // Gọi API để lấy danh sách bác sĩ
   const [selectedSpecialty, setSelectedSpecialty] = useState(null); // State để lưu chuyên khoa được chọn
   const [selectedDoctorId, setSelectedDoctorId] = useState(null); // State để lưu doctorId được chọn
@@ -40,6 +42,9 @@ const CreateAppoiment = () => {
   // Hàm đóng Modal và reset lại doctorId
   const handleCloseModal = () => {
     setSelectedDoctorId(null); // Reset lại doctorId khi đóng modal
+  };
+  const handleBookAppointment = (doctorId) => {
+    Navigate(`/bookingAppointment/${doctorId}`); // Điều hướng sang trang đặt lịch với doctorId
   };
 
   return (
@@ -115,7 +120,11 @@ const CreateAppoiment = () => {
                       >
                         Xem Chi Tiết
                       </Button>
-                      <Button type="primary" className="bg-blue-600">
+                      <Button
+                        type="primary"
+                        className="bg-blue-600"
+                        onClick={() => handleBookAppointment(doctor._id)}
+                      >
                         Đặt Lịch Khám
                       </Button>
                     </div>

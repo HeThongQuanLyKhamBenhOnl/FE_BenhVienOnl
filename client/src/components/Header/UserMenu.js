@@ -17,7 +17,7 @@ const UserMenu = () => {
   };
 
   const handleProfile = () => {
-    navigate("/profile");
+    navigate("/user/profile");
   };
 
   const handleAppointments = () => {

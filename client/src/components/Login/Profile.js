@@ -18,6 +18,9 @@ const Profile = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [gender, setGender] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [address, setAddress] = useState("");
   const [updateError, setUpdateError] = useState(null);
 
   useEffect(() => {
@@ -30,6 +33,9 @@ const Profile = () => {
       setName(userInfo.fullName || "");
       setEmail(userInfo.email || "");
       setPhone(userInfo.phone || "");
+      setGender(userInfo.gender || "");
+      setDateOfBirth(userInfo.dateOfBirth || "");
+      setAddress(userInfo.address || "");
     }
   }, [userInfo]);
 
@@ -38,7 +44,14 @@ const Profile = () => {
     e.preventDefault();
     setUpdateError(null);
 
-    const updatedData = { fullName: name, email, phone };
+    const updatedData = {
+      fullName: name,
+      email,
+      phone,
+      gender,
+      dateOfBirth,
+      address,
+    };
 
     try {
       const response = await dispatch(updateProfile(updatedData));
@@ -67,48 +80,81 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-semibold text-center mb-6">
+      <div className="bg-white p-10 rounded-lg shadow-lg max-w-2xl w-full">
+        <h2 className="text-3xl font-semibold text-center mb-6">
           Thông tin cá nhân
         </h2>
         {updateError && (
           <p className="text-red-500 text-center mb-4">{updateError}</p>
         )}
         <form onSubmit={handleUpdateProfile} className="space-y-6">
-          <div>
-            <label className="block mb-2">Họ và tên</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-            />
-          </div>
-          <div>
-            <label className="block mb-2">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-              disabled // Không cho phép thay đổi email
-            />
-          </div>
-          <div>
-            <label className="block mb-2">Số điện thoại</label>
-            <input
-              type="text"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <label className="block mb-2">Họ và tên</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Số điện thoại</label>
+              <input
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Giới tính</label>
+              <select
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+              >
+                <option value="Male">Nam</option>
+                <option value="Female">Nữ</option>
+              </select>
+            </div>
+            <div>
+              <label className="block mb-2">Ngày sinh</label>
+              <input
+                type="date"
+                value={dateOfBirth.split("T")[0]} // Chuyển đổi định dạng ngày sinh để phù hợp với input date
+                onChange={(e) => setDateOfBirth(e.target.value)}
+                required
+                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Địa chỉ</label>
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                required
+                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                disabled // Không cho phép thay đổi email
+              />
+            </div>
           </div>
           <button
             type="submit"
-            className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition duration-300"
+            className="w-full bg-teal-600 text-white py-4 rounded-lg hover:bg-teal-700 transition duration-300"
           >
             Cập nhật thông tin
           </button>

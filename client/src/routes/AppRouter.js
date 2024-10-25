@@ -50,6 +50,7 @@ import NewsEvent from "../components/News/NewsEvent";
 
 import Appointments from "../components/Login/Appointments";
 
+import UserProfile from "../components/User/UserProfile";
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
   return userInfo ? element : <Navigate to={redirectTo} />;
@@ -80,10 +81,15 @@ function AppRouter() {
           path="/register"
           element={!userInfo ? <SignUp /> : <Navigate to="/" />}
         /> */}
-        <Route
-          path="/profile"
-          element={<ProtectedRoute element={<Profile />} redirectTo="/login" />}
-        />
+        <Route path="/user/*" element={<UserProfile />}>
+          <Route
+            path="profile"
+            element={
+              <ProtectedRoute element={<Profile />} redirectTo="/login" />
+            }
+          />
+          <Route path="appointments" element={<Appointments />} />
+        </Route>
 
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
