@@ -51,6 +51,8 @@ import NewsEvent from "../components/News/NewsEvent";
 import Appointments from "../components/Login/Appointments";
 
 import UserProfile from "../components/User/UserProfile";
+import DoctorDashboard from "../components/Doctor/DoctorDashboard";
+
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
   return userInfo ? element : <Navigate to={redirectTo} />;
@@ -91,6 +93,9 @@ function AppRouter() {
           <Route path="appointments" element={<Appointments />} />
         </Route>
 
+        <Route path="/doctor/*" element={<DoctorDashboard />}>
+          <Route path="infoDoctor" element={<DoctorProfile />} />
+        </Route>
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
           <Route path="doctor" element={<ManageDoctor />} />
@@ -156,7 +161,10 @@ function AppRouter() {
 
         {/* Huong-dan-khach-hang */}
         <Route path="/thong-tin-tham-khao" element={<MoreInfomation />} />
-        <Route path="/huong-dan-tru-cap-he-thong-luu-tru-va-quan-ly-hinh-anh" element={<PACS />} />
+        <Route
+          path="/huong-dan-tru-cap-he-thong-luu-tru-va-quan-ly-hinh-anh"
+          element={<PACS />}
+        />
 
         <Route path="/appointments" element={<Appointments />} />
       </Routes>

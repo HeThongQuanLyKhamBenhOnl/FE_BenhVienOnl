@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useGetDoctorProfileQuery, useUpdateDoctorProfileMutation } from '../../Redux/Doctor/api';
-import { Form, Input, Button, message } from 'antd';  // Import các component từ AntD
+import { Form, Input, Button, message } from 'antd';
 
 const DoctorProfile = () => {
   const { data: profile, error, isLoading } = useGetDoctorProfileQuery();
@@ -14,11 +14,11 @@ const DoctorProfile = () => {
 
   // Cập nhật formData khi dữ liệu profile từ API được trả về
   useEffect(() => {
-    if (profile) {
+    if (profile && profile.data) {
       setFormData({
-        specialty: profile.doctor.specialty || '',
-        experience: profile.doctor.experience || '',
-        qualifications: profile.doctor.qualifications || []
+        specialty: profile.data.specialty || '',
+        experience: profile.data.experience || '',
+        qualifications: profile.data.qualifications || []
       });
     }
   }, [profile]);
@@ -35,6 +35,7 @@ const DoctorProfile = () => {
   // Loading và error xử lý
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading profile</div>;
+  if (!profile || !profile.data) return <div>No profile data available</div>;
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">

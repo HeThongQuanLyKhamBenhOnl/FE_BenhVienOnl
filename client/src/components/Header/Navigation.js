@@ -135,7 +135,7 @@ const Navigation = () => {
 
       {userInfo && userInfo.role === "doctor" && (
         <Menu.Item key="8" icon={<UserOutlined />}>
-          <a href="/doctorDashboard">Dành Cho Bác Sĩ</a>
+          <a href="/doctor/infoDoctor">Dành Cho Bác Sĩ</a>
         </Menu.Item>
       )}
     </Menu>
