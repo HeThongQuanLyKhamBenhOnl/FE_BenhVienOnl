@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllDoctors, createDoctor } from "../../Redux/User/userSlice"; 
+import { getAllDoctors, createDoctor } from "../../Redux/User/userSlice";
 import {
   Table,
   Button,
@@ -11,7 +11,7 @@ import {
   Select,
   DatePicker,
   message,
-  InputNumber, // Thêm InputNumber để nhập số liệu kinh nghiệm
+  InputNumber,
 } from "antd";
 
 const ManageDoctor = () => {
@@ -38,7 +38,7 @@ const ManageDoctor = () => {
         .then(() => {
           message.success("Tạo bác sĩ thành công!");
           setIsDrawerVisible(false);
-          form.resetFields(); 
+          form.resetFields();
           dispatch(getAllDoctors());
         })
         .catch(() => {
@@ -102,9 +102,10 @@ const ManageDoctor = () => {
       dataIndex: "qualifications",
       key: "qualifications",
       width: 200,
-      render: (text) => Array.isArray(text) ? text.join(", ") : "Không có bằng cấp", // Kiểm tra nếu là mảng, nếu không thì hiển thị giá trị mặc định    },
+      render: (text) =>
+        Array.isArray(text) ? text.join(", ") : "Không có bằng cấp", // Kiểm tra nếu là mảng, nếu không thì hiển thị giá trị mặc định    },
     },
-      {
+    {
       title: "Hành Động",
       key: "action",
       width: 150,
@@ -240,15 +241,14 @@ const ManageDoctor = () => {
           <Form.Item
             name="experience"
             label="Kinh Nghiệm (năm)"
-            rules={[{ required: true, message: "Hãy nhập số năm kinh nghiệm!" }]}
+            rules={[
+              { required: true, message: "Hãy nhập số năm kinh nghiệm!" },
+            ]}
           >
             <InputNumber placeholder="Nhập số năm kinh nghiệm" min={0} />
           </Form.Item>
 
-          <Form.Item
-            name="qualifications"
-            label="Bằng Cấp"
-          >
+          <Form.Item name="qualifications" label="Bằng Cấp">
             <Input placeholder="Nhập bằng cấp, cách nhau bằng dấu phẩy" />
           </Form.Item>
         </Form>
@@ -258,4 +258,3 @@ const ManageDoctor = () => {
 };
 
 export default ManageDoctor;
-  

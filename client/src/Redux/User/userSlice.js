@@ -1,17 +1,18 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import API from '../api'; 
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import API from "../api";
 
 // Đăng ký người dùng
 export const registerUser = createAsyncThunk(
-  'user/register',
+  "user/register",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await API.post('/api/users/register', userData);
+      const response = await API.post("/api/users/register", userData);
       return response.data;
     } catch (error) {
-      const message = error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
       return rejectWithValue({ message });
     }
   }
@@ -19,103 +20,107 @@ export const registerUser = createAsyncThunk(
 
 // Đăng nhập người dùng
 export const loginUser = createAsyncThunk(
-  'user/login',
+  "user/login",
   async (userCredentials, { rejectWithValue }) => {
     try {
-      const response = await API.post('/api/users/login', userCredentials);
+      const response = await API.post("/api/users/login", userCredentials);
       return response.data;
     } catch (error) {
-      const message = error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
       return rejectWithValue({ message });
     }
   }
 );
 
 export const getProfile = createAsyncThunk(
-  'user/getProfile',
+  "user/getProfile",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await API.get('/api/users/profile');
+      const response = await API.get("/api/users/profile");
       return response.data;
     } catch (error) {
-      const message = error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
       return rejectWithValue({ message });
     }
   }
 );
 
 export const updateProfile = createAsyncThunk(
-  'user/updateProfile',
+  "user/updateProfile",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await API.put('/api/users/profile', userData);
+      const response = await API.put("/api/users/profile", userData);
       return response.data;
     } catch (error) {
-      const message = error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
       return rejectWithValue({ message });
     }
   }
 );
 
 export const getAllPatients = createAsyncThunk(
-  'user/getAllPatients',
+  "user/getAllPatients",
   async (_, { rejectWithValue }) => {
     try {
-      const token = localStorage.getItem('token');  // Lấy token từ localStorage
+      const token = localStorage.getItem("token"); // Lấy token từ localStorage
       const config = {
         headers: {
-          Authorization: `Bearer ${token}`,  // Gửi token trong header
+          Authorization: `Bearer ${token}`, // Gửi token trong header
         },
       };
-      const response = await API.get('/api/users/getAllPatients', config);
+      const response = await API.get("/api/users/getAllPatients", config);
       return response.data;
     } catch (error) {
-      const message = error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
       return rejectWithValue({ message });
     }
   }
 );
 
-
-
 export const getAllDoctors = createAsyncThunk(
-  'user/getAllDoctors',
+  "user/getAllDoctors",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await API.get('/api/users/getAllDoctors');
+      const response = await API.get("/api/users/getAllDoctors");
       return response.data;
     } catch (error) {
-      const message = error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
       return rejectWithValue({ message });
     }
   }
 );
 export const createDoctor = createAsyncThunk(
-  'user/createDoctor',
+  "user/createDoctor",
   async (doctorData, { rejectWithValue }) => {
     try {
-      const response = await API.post('/api/users/createDoctor', doctorData);
+      const response = await API.post("/api/users/createDoctor", doctorData);
       return response.data;
     } catch (error) {
-      const message = error.response && error.response.data.message
-        ? error.response.data.message
-        : error.message;
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
       return rejectWithValue({ message });
     }
   }
 );
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
     userInfo: null,
     token: null,
@@ -126,8 +131,8 @@ const userSlice = createSlice({
     logout: (state) => {
       state.userInfo = null;
       state.token = null;
-      localStorage.removeItem('userInfo');
-      localStorage.removeItem('token'); 
+      localStorage.removeItem("userInfo");
+      localStorage.removeItem("token");
     },
     setUser: (state, action) => {
       state.userInfo = action.payload.user;
@@ -148,8 +153,8 @@ const userSlice = createSlice({
         state.loading = false;
         state.userInfo = action.payload.user;
         state.token = action.payload.token;
-        localStorage.setItem('userInfo', JSON.stringify(action.payload.user)); // Lưu userInfo vào localStorage
-        localStorage.setItem('token', action.payload.token); // Lưu token vào localStorage
+        localStorage.setItem("userInfo", JSON.stringify(action.payload.user)); // Lưu userInfo vào localStorage
+        localStorage.setItem("token", action.payload.token); // Lưu token vào localStorage
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
@@ -165,8 +170,8 @@ const userSlice = createSlice({
         state.loading = false;
         state.userInfo = action.payload.user;
         state.token = action.payload.token;
-        localStorage.setItem('userInfo', JSON.stringify(action.payload.user)); // Lưu userInfo vào localStorage
-        localStorage.setItem('token', action.payload.token); // Lưu token vào localStorage
+        localStorage.setItem("userInfo", JSON.stringify(action.payload.user)); // Lưu userInfo vào localStorage
+        localStorage.setItem("token", action.payload.token); // Lưu token vào localStorage
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
@@ -208,7 +213,7 @@ const userSlice = createSlice({
       .addCase(updateProfile.fulfilled, (state, action) => {
         state.loading = false;
         state.userInfo = action.payload.user;
-        localStorage.setItem('userInfo', JSON.stringify(action.payload.user)); // Cập nhật thông tin trong localStorage
+        localStorage.setItem("userInfo", JSON.stringify(action.payload.user)); // Cập nhật thông tin trong localStorage
       })
       .addCase(updateProfile.rejected, (state, action) => {
         state.loading = false;

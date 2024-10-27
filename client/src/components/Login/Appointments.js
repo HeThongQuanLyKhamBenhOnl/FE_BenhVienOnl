@@ -33,7 +33,7 @@ const Appointments = () => {
                     <p>
                       <strong>Bác sĩ:</strong>{" "}
                       <span style={styles.doctorName}>
-                        {appointment.doctor.user.fullName}
+                        {appointment.doctor?.fullName}
                       </span>
                     </p>
                     <p>

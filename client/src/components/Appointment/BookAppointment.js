@@ -25,11 +25,12 @@ const BookAppointment = () => {
       return message.error("Vui lòng nhập đầy đủ thông tin!");
     }
 
+    // Định dạng ngày và giờ đúng để gửi lên API
     const appointmentData = {
       doctorId,
-      date: moment(date).format("YYYY-MM-DD"),
-      startTime: moment(startTime).format("HH:mm"),
-      endTime: moment(endTime).format("HH:mm"),
+      date: date.format("YYYY-MM-DD"), // Định dạng ngày thành YYYY-MM-DD
+      startTime: startTime.format("HH:mm"), // Định dạng giờ bắt đầu thành HH:mm
+      endTime: endTime.format("HH:mm"), // Định dạng giờ kết thúc thành HH:mm
       reasonForVisit,
       notes,
     };
@@ -75,7 +76,7 @@ const BookAppointment = () => {
           <div style={styles.formContainer}>
             <h2 style={styles.title}>Đăng Ký Khám</h2>
             <p style={styles.subtitle}>
-              vui lòng điền thông tin vào form bên dưới để đăng ký khám bệnh
+              Vui lòng điền thông tin vào form bên dưới để đăng ký khám bệnh
               theo yêu cầu
             </p>
             <form style={styles.form}>
@@ -84,7 +85,7 @@ const BookAppointment = () => {
                   placeholder="Họ và Tên"
                   value={user?.fullName || ""}
                   disabled
-                  style={styles.inputBold} // Sử dụng font đậm cho các trường thông tin
+                  style={styles.inputBold}
                 />
                 <Input
                   placeholder="Email"
@@ -201,10 +202,10 @@ const styles = {
   },
   notesContainer: {
     flex: 0.5,
-    backgroundColor: "#007bff", // Màu nền xanh
+    backgroundColor: "#007bff",
     padding: "20px",
     borderRadius: "12px",
-    color: "#fff", // Chữ màu trắng
+    color: "#fff",
     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
   },
   title: {
@@ -241,7 +242,7 @@ const styles = {
     padding: "10px",
     borderRadius: "8px",
     border: "1px solid #e0e0e0",
-    fontWeight: "bold", // Đậm hơn
+    fontWeight: "bold",
   },
   textArea: {
     width: "100%",
@@ -256,7 +257,7 @@ const styles = {
     backgroundColor: "#007bff",
     color: "#fff",
     fontSize: "16px",
-    fontWeight: "bold", // Đậm hơn cho nút xác nhận
+    fontWeight: "bold",
     borderRadius: "8px",
   },
   notesTitle: {
@@ -266,7 +267,7 @@ const styles = {
   },
   noteText: {
     fontSize: "14px",
-    color: "#fff", // Đổi màu chữ thành trắng cho phù hợp với nền xanh
+    color: "#fff",
     marginBottom: "10px",
   },
 };

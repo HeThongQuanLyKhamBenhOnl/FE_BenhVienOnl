@@ -2,17 +2,19 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Menu } from "antd";
 import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-  UserOutlined,
-  SnippetsOutlined,
-} from "@ant-design/icons";
+  FaHome,
+  FaInfoCircle,
+  FaStethoscope,
+  FaNewspaper,
+  FaUserShield,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const { SubMenu } = Menu;
 
+const iconStyle = { fontSize: "18px" }; // You can increase this value to make icons larger
+
 const Navigation = () => {
-  // Lấy thông tin userInfo từ Redux store
   const { userInfo } = useSelector((state) => state.user);
 
   return (
@@ -22,12 +24,15 @@ const Navigation = () => {
       defaultSelectedKeys={["1"]}
       className="navigation-menu"
     >
-      {/* Trang Chủ */}
-      <Menu.Item key="1" icon={<AppstoreOutlined />}>
+      <Menu.Item key="1" icon={<FaHome style={iconStyle} />}>
         <a href="/">Trang Chủ</a>
       </Menu.Item>
 
-      <SubMenu key="gioi-thieu" icon={<SettingOutlined />} title="Giới Thiệu">
+      <SubMenu
+        key="gioi-thieu"
+        icon={<FaInfoCircle style={iconStyle} />}
+        title="Giới Thiệu"
+      >
         <Menu.Item key="2-1">
           <a href="/gioi-thieu">Giới Thiệu</a>
         </Menu.Item>
@@ -39,7 +44,11 @@ const Navigation = () => {
         </Menu.Item>
       </SubMenu>
 
-      <SubMenu key="dich-vu" icon={<SnippetsOutlined />} title="Dịch Vụ">
+      <SubMenu
+        key="dich-vu"
+        icon={<FaStethoscope style={iconStyle} />}
+        title="Dịch Vụ"
+      >
         <Menu.Item key="3-1">
           <a href="/kham-suc-khoe-tong-quat-ca-nhan">
             Khám sức khỏe tổng quát cá nhân
@@ -79,21 +88,11 @@ const Navigation = () => {
         </Menu.Item>
       </SubMenu>
 
-      {/* Sản Phẩm */}
-      <SubMenu key="san-pham" icon={<AppstoreOutlined />} title="Sản Phẩm">
-        <Menu.Item key="4-1">
-          <a href="/phan-mem">Phần Mềm</a>
-        </Menu.Item>
-        <Menu.Item key="4-2">
-          <a href="/phan-cung">Phần Cứng</a>
-        </Menu.Item>
-        <Menu.Item key="4-3">
-          <a href="/phu-kien">Phụ Kiện</a>
-        </Menu.Item>
-      </SubMenu>
-
-      {/* Tin tức */}
-      <SubMenu key="tin-tuc" icon={<AppstoreOutlined />} title="Tin Tức">
+      <SubMenu
+        key="tin-tuc"
+        icon={<FaNewspaper style={iconStyle} />}
+        title="Tin Tức"
+      >
         <Menu.Item key="5-1">
           <a href="/y-hoc-thuong-thuc">Y học thường thức</a>
         </Menu.Item>
@@ -105,10 +104,9 @@ const Navigation = () => {
         </Menu.Item>
       </SubMenu>
 
-      {/* Hướng dẫn khách hàng */}
       <SubMenu
         key="huong-dan-khach-hang"
-        icon={<AppstoreOutlined />}
+        icon={<FaInfoCircle style={iconStyle} />}
         title="Hướng dẫn khách hàng"
       >
         <Menu.Item key="6-1">
@@ -121,20 +119,18 @@ const Navigation = () => {
         </Menu.Item>
       </SubMenu>
 
-      {/* Liên Hệ */}
-      <Menu.Item key="7" icon={<MailOutlined />}>
+      <Menu.Item key="7" icon={<FaEnvelope style={iconStyle} />}>
         <a href="/contact">Liên Hệ</a>
       </Menu.Item>
 
-      {/* Menu cho Admin */}
       {userInfo && userInfo.role === "admin" && (
-        <Menu.Item key="8" icon={<UserOutlined />}>
+        <Menu.Item key="8" icon={<FaUserShield style={iconStyle} />}>
           <a href="/adminDashboard">Quản lý Hệ thống</a>
         </Menu.Item>
       )}
 
       {userInfo && userInfo.role === "doctor" && (
-        <Menu.Item key="8" icon={<UserOutlined />}>
+        <Menu.Item key="8" icon={<FaUserShield style={iconStyle} />}>
           <a href="/doctor/infoDoctor">Dành Cho Bác Sĩ</a>
         </Menu.Item>
       )}

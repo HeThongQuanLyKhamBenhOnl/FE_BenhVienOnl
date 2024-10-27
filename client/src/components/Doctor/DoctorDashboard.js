@@ -1,34 +1,54 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom"; // Sử dụng Outlet để render nội dung từ các route con
+import { Link, Outlet } from "react-router-dom";
+import HeaderComponent from "../Header/Header";
+import FooterComponent from "../component/Footer";
+// Import icon từ react-icons
+import { FaUserMd, FaCalendarAlt, FaFileMedical } from "react-icons/fa";
 
 const DoctorDashboard = () => {
   const menuItems = [
-    { name: "Thông tin bác sĩ", path: "/doctor/infoDoctor" },
-    { name: "Quản lý bệnh nhân", path: "/doctor/manage-patients" },
-    { name: "Hồ sơ bệnh nhân", path: "/doctor/patient-records" },
+    {
+      name: "Thông tin bác sĩ",
+      path: "/doctor/infoDoctor",
+      icon: <FaUserMd />,
+    },
+    {
+      name: "Quản lý lịch hẹn",
+      path: "/doctor/manage-patients",
+      icon: <FaCalendarAlt />,
+    },
+    {
+      name: "Hồ sơ bệnh nhân",
+      path: "/doctor/patient-records",
+      icon: <FaFileMedical />,
+    },
   ];
 
   return (
-    <div style={styles.container}>
-      {/* Sidebar */}
-      <div style={styles.sidebar}>
-        <h2 style={styles.sidebarTitle}>Bảng Điều Khiển Bác Sĩ</h2>
-        <ul style={styles.sidebarList}>
-          {menuItems.map((item, index) => (
-            <li key={index} style={styles.sidebarItem}>
-              <Link to={item.path} style={styles.sidebarLink}>
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div>
+      <HeaderComponent />
+      <div style={styles.container}>
+        {/* Sidebar */}
+        <div style={styles.sidebar}>
+          <h2 style={styles.sidebarTitle}>Bảng Điều Khiển Bác Sĩ</h2>
+          <ul style={styles.sidebarList}>
+            {menuItems.map((item, index) => (
+              <li key={index} style={styles.sidebarItem}>
+                <Link to={item.path} style={styles.sidebarLink}>
+                  <span style={styles.icon}>{item.icon}</span>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {/* Content */}
-      <div style={styles.content}>
-        {/* Render nội dung từ các route con */}
-        <Outlet />
+        {/* Content */}
+        <div style={styles.content}>
+          <Outlet />
+        </div>
       </div>
+      <FooterComponent />
     </div>
   );
 };
@@ -42,9 +62,9 @@ const styles = {
   },
   sidebar: {
     width: "250px",
-    backgroundColor: "#007bff",
+    backgroundColor: "#fff", // Đổi nền sidebar thành trắng
     padding: "20px",
-    color: "#fff",
+    color: "#333", // Chữ sidebar đổi thành màu đen
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     borderRadius: "8px",
   },
@@ -52,7 +72,7 @@ const styles = {
     fontSize: "22px",
     fontWeight: "bold",
     marginBottom: "20px",
-    color: "#fff",
+    color: "#333", // Tiêu đề sidebar đổi thành màu đen
     textAlign: "center",
   },
   sidebarList: {
@@ -63,15 +83,21 @@ const styles = {
     marginBottom: "15px",
   },
   sidebarLink: {
-    display: "block",
+    display: "flex",
+    alignItems: "center",
     padding: "10px",
-    color: "#fff",
+    color: "#333", // Đổi màu chữ thành đen
     textDecoration: "none",
     borderRadius: "8px",
+    backgroundColor: "#fff", // Nền trắng cho link
     transition: "background-color 0.3s ease",
   },
   sidebarLinkHover: {
-    backgroundColor: "#0056b3",
+    backgroundColor: "#f0f0f0", // Đổi nền khi hover thành màu xám nhạt
+  },
+  icon: {
+    marginRight: "10px", // Khoảng cách giữa icon và text
+    fontSize: "18px",
   },
   content: {
     flex: 1,
