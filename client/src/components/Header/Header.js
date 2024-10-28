@@ -16,10 +16,10 @@ const HeaderComponent = () => {
             <a href="/"> </a>
           </div>
         </Col>
-        <Col span={18}>
+        <Col span={17}>
           <Navigation />
         </Col>
-        <Col span={2}>
+        <Col span={3}>
           <UserMenu />
         </Col>
       </Row>
