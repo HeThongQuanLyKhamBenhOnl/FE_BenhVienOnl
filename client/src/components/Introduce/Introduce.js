@@ -78,17 +78,15 @@ const Introduce = () => {
           <Col xs={24} md={12}>
             <div className="bg-blue-50 p-6 rounded-lg shadow-md">
               <p className="text-lg leading-relaxed text-gray-700">
-                Phòng Khám Bệnh viện Đại học Y Dược 1 là Phòng Khám đầu tiên
-                được thành lập theo mô hình hợp tác công – tư giữa Bệnh viện Đại
-                Học Y Dược Tp. HCM và Công Ty Cổ Phần Y Việt – Phòng khám Bệnh
-                viện Đại học Y Dược 1. Phòng Khám chính thức khai trương và đi
+                Phòng Khám Bệnh viện là Phòng Khám đầu tiên
+                được thành lập. Phòng Khám chính thức khai trương và đi
                 vào hoạt động từ ngày 03 tháng 03 năm 2018.
               </p>
               <p className="text-lg leading-relaxed text-gray-700 mt-4">
                 Cùng theo đuổi những giá trị cốt lõi “Tiên phong – Thấu hiểu –
                 Chuẩn mực – An toàn” và mô hình quản lý dịch vụ y tế chuyên
-                nghiệp theo chuẩn quốc tế của Bệnh Viện Đại Học Y Dược Tp. HCM,
-                Phòng Khám Bệnh viện Đại học Y Dược 1 là một làn gió mới góp
+                nghiệp theo chuẩn quốc tế của Bệnh Viện,
+                Phòng Khám Bệnh viện là một làn gió mới góp
                 phần thay đổi tích cực trong việc chăm sóc sức khỏe cho cộng
                 đồng và tạo thêm nhiều lựa chọn trong dịch vụ khám chữa bệnh cho
                 người dân.

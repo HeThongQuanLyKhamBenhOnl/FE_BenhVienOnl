@@ -21,7 +21,8 @@ import ControlPanel from "../components/Admin/ControlPanel";
 import CreateAppoiment from "../components/Appointment/CreateAppoiment";
 
 import Introduce from "../components/Introduce/Introduce";
-import ReasonAboutUs from "../components/Introduce/Reason-Aboutus";
+import ReasonAboutUs from "../components/Introduce/ReasonAboutus";
+import HighTechDevice from "../components/Introduce/Introduces/HighTechDevice";
 import Facilities from "../components/Introduce/Facilities";
 
 import CheckupPersonal from "../components/Services/CheckupPersonal";
@@ -52,6 +53,8 @@ import DoctorDashboard from "../components/Doctor/DoctorDashboard";
 import ManageAppointment from "../components/Doctor/ManageAppointment";
 import MedicalRecordDoctor from "../components/Doctor/MedicalRecordDoctor";
 
+import Package1 from "../components/Services/CheckupPersonal/Package1";
+
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
   return userInfo ? element : <Navigate to={redirectTo} />;
@@ -78,8 +81,7 @@ function AppRouter() {
           path="/login"
           element={!userInfo ? <Login /> : <Navigate to="/" />}
         />
-        {/* <Route
-          path="/register"
+        {/* <Route path="/register"
           element={!userInfo ? <SignUp /> : <Navigate to="/" />}
         /> */}
         <Route path="/user/*" element={<UserProfile />}>
@@ -114,15 +116,24 @@ function AppRouter() {
           path="/bookingAppointment/:doctorId"
           element={<BookAppointment />}
         />
-        <Route path="/gioi-thieu" element={<Introduce />} />
-        <Route path="/tai-sao-chon-chung-toi" element={<ReasonAboutUs />} />
+        <Route path="/gioi-thieu/*" element={<Introduce />} />
+        <Route path="/tai-sao-chon-chung-toi" >
+            <Route index element={<ReasonAboutUs />} />
+            <Route path="trang-thiet-bi-hien-ai" element={<HighTechDevice/>}/>
+        </Route>
         <Route path="/co-so-vat-chat" element={<Facilities />} />
 
         {/* Dich-vu */}
-        <Route
-          path="/kham-suc-khoe-tong-quat-ca-nhan"
-          element={<CheckupPersonal />}
-        />
+        <Route path="/kham-suc-khoe-tong-quat-ca-nhan/*">
+          <Route index element={<CheckupPersonal />} />
+          <Route path="goi-kham-suc-khoe-hau-covid19-chuyen-sau" element={<Package1 />} />
+          <Route path="goi-kiem-tra-hau-suc-khoe-covid19-nang-cao" element={<Package1 />} />
+          <Route path="goi-kham-suc-khoe-tong-quat-platinum" element={<Package1 />} />
+          <Route path="goi-kham-suc-khoe-tong-quat-vip-gold" element={<Package1 />} />
+          <Route path="goi-kham-suc-khoe-tong-quat-chuyen-sau" element={<Package1 />} />
+          <Route path="goi-kham-suc-khoe-tong-quat-nang-cao" element={<Package1 />} />
+          <Route path="goi-kham-suc-khoe-tong-quat-va-tam-soat-ung-thu" element={<Package1 />} />
+        </Route>
         <Route
           path="/kham-suc-khoe-tong-quat-doanh-nghiep"
           element={<CheckupCooperate />}

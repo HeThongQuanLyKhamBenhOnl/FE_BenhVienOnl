@@ -99,7 +99,7 @@ const renderInfoSection = () => (
           width: "1200px",
         }}
       >
-        Từ ngày 07/08/2023, Phòng Khám Bệnh viện Đại học Y Dược 1 triển khai
+        Từ ngày 07/08/2023, Phòng Khám triển khai
         hình thức trả kết quả chẩn đoán hình ảnh thông qua hệ thống PACS thay
         thế in phim đối với các dịch vụ kỹ thuật: Chụp cộng hưởng từ (MRI), Chụp
         cắt lớp vi tính (CT-Scan), X-Quang kỹ thuật số cho khách hàng.
@@ -195,13 +195,12 @@ const renderAccessGuideSection = () => (
         nhập, sử dụng và quản lý tài khoản truy cập:
       </p>
       <img
-        src="https://umcclinic.com.vn/Data/Sites/1/media/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-kh/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-truy-c%E1%BA%ADp-h%E1%BB%87-th%E1%BB%91ng-l%C6%B0u-tr%E1%BB%AF-v%C3%A0-qu%E1%BA%A3n-l%C3%BD-h%C3%ACnh-%E1%BA%A3nh-(pacs)/pacs.jpg"
+        src="https://i.postimg.cc/brSFmkqt/pacs.jpg"
         alt="Access Guide"
         style={{
           width: "100%",
-          height: "1670px",
           objectFit: "cover",
-          objectPosition: "top",
+          objectPosition: "center top",
           borderRadius: "10px",
         }}
       />
