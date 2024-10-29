@@ -7,65 +7,53 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const formatTitleForURL = (title) =>
   title
-    .normalize("NFD") // Normalize to split characters and their diacritics
-    .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
-    .replace(/[^a-zA-Z0-9\s]/g, "") // Remove any special characters
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9\s]/g, "")
+    .replace(/\s+/g, "-")
     .toLowerCase();
 
-const ReasonCard = ({ imgSrc, title, description }) => (
-  <Col
+const ReasonCard = ({ imgSrc, title, description, isFirst }) => (
+  <div
     style={{
-      flexBasis: "30%",
-      flexGrow: 1,
       backgroundColor: "#cecece26",
       padding: "10px",
       margin: "10px",
       borderRadius: "15px",
       display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
+      flexDirection: isFirst ? "row" : "column",
+      alignItems: isFirst ? "center" : "stretch",
     }}
-    xs={24}
-    sm={12}
-    md={8}
-    lg={7}
-    xl={6}
   >
-    <Link
-      to={`/tai-sao-chon-chung-toi/${formatTitleForURL(title)}`}
-      style={{ cursor: "pointer" }}
-    >
+    <Link to={`/tai-sao-chon-chung-toi/${formatTitleForURL(title)}`}>
       <img
         src={imgSrc}
         alt="reason-img"
         style={{
-          width: "100%",
-          height: "160px",
+          width: isFirst ? "90%" : "100%",
+          height: isFirst ? "auto" : "250px",
           objectFit: "cover",
           borderRadius: "10px",
         }}
       />
     </Link>
-    <Link
-      to={`/tai-sao-chon-chung-toi/${formatTitleForURL(title)}`}
-      style={{ cursor: "pointer" }}
-    >
-      <h4
-        className="text-lg font-bold text-blue-900"
-        style={{ padding: "25px 0px" }}
-      >
-        {title}
-      </h4>
-    </Link>
-
-    <p style={{ textAlign: "justify" }}>{description}</p>
-  </Col>
+    <div style={{ flex: 1 }}>
+      <Link to={`/tai-sao-chon-chung-toi/${formatTitleForURL(title)}`}>
+        <h4
+          className="text-lg font-bold text-blue-900"
+          style={{ padding: isFirst ? "0px" : "25px 0px" }}
+        >
+          {title}
+        </h4>
+      </Link>
+      <p style={{ textAlign: "justify" }}>{description}</p>
+    </div>
+  </div>
 );
 
 const ReasonAboutus = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 3;
 
   const reasonsData = [
     {
@@ -138,25 +126,38 @@ const ReasonAboutus = () => {
         </h2>
       </Row>
 
-      {/* Render reason cards */}
+      <Row justify="center">
+        {currentData[0] && (
+          <Col span={24} style={{ display: "flex", justifyContent: "center" }}>
+            <ReasonCard {...currentData[0]} isFirst={true} />
+          </Col>
+        )}
+      </Row>
+
       <Row
+        justify="center"
         style={{
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-evenly",
+          marginTop: "20px",
         }}
       >
-        {currentData.map((reason) => (
-          <ReasonCard
+        {currentData.slice(1).map((reason) => (
+          <Col
             key={reason.title}
-            imgSrc={reason.imgSrc}
-            title={reason.title}
-            description={reason.description}
-          />
+            xs={24}
+            sm={12}
+            md={12}
+            lg={10}
+            xl={10}
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <ReasonCard {...reason} />
+          </Col>
         ))}
       </Row>
 
-      {/* Pagination Component */}
       <Row justify="center" style={{ marginTop: "20px" }}>
         <Pagination
           current={currentPage}

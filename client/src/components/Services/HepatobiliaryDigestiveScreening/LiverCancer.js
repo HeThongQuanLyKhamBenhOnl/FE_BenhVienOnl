@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const LiverCancer = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI TẦM SOÁT UNG THƯ GAN
       <div
         style={{
           display: "flex",
@@ -95,20 +94,54 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Tại sao bạn nên tầm soát ung thư gan?",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+        <br />- Hiện Việt Nam là nước có tỷ lệ nhiễm virus viêm gan B và C cao nhất trong khu vực. Theo báo cáo của Cục Y tế Dự phòng (BYT), Việt Nam có 10 triệu trường hợp nhiễm viêm gan B và gần 1 triệu người nhiễm virus viêm gan C. Điều cần quan tâm là bệnh viêm gan B, C có thể dẫn đến xơ gan, ung thư gan. Do vậy, bạn nên thực hiện tầm soát viêm gan để có thể phát hiện sớm các yếu tố nguy cơ giúp điều trị hiệu quả các bệnh lý về gan.
+        <br />- Đa phần người bị ung thư gan là do bị nhiễm virus viêm gan B, C mạn tính. Hiện nay, các bệnh lý về viêm gan đã có thể được phát hiện và điều trị tốt ở giai đoạn sớm nhưng thực tế lại thường được phát hiện và điều trị muộn khiến việc điều trị trở nên khó khăn và tốn kém hơn.
+        <br />- Do đó, tầm soát viêm gan thực sự rất quan trọng và mang lại nhiều lợi ích. Việc tầm soát này sẽ giúp Bác sĩ phát hiện bệnh sớm, đánh giá việc tiêm vắc-xin phòng bệnh có hiệu quả hay không….
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Những đối tượng cần thực hiện tầm soát ung thư gan",
       `
+        <br />- Những người có tiền sử gia đình mắc các bệnh về gan đặc biệt xơ gan, ung thư gan;
+        <br />- Những đối tượng đã từng tiếp xúc với người bị nhiễm virus Viêm gan B, C;
+        <br />- Sử dụng nhiều đồ uống có cồn;
+        <br />- Người bị béo phì, thừa cân;
+        <br />- Sống ở môi trường ô nhiễm;
+        <br />- Có triệu chứng, mệt mỏi, vàng da.
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Thông tin chi tiết Gói khám Tầm soát ung thư gan",
+      `
+        <br />- Gói khám Tầm soát viêm gan tại Phòng khám Bệnh viện Đại học Y Dược 1 được xây dựng dựa trên nhu cầu thực tế của khách hàng.
+        <br />- Khi thực hiện tầm soát viêm gan, khách hàng sẽ được thực hiện các xét nghiệm từ cơ bản đến nâng cao để đánh giá tình trạng hoạt động hiện tại của gan, phát hiện sớm các bệnh lý của gan như: Viêm gan siêu vi B, C, xơ gan, ung thư gan và có những hướng dẫn điều trị kịp thời.
+        <br />
+        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/gan-mat/t%E1%BA%A7m-so%C3%A1t-ung-th%C6%B0-gan/goi-tam-soat-ung-thu-gan.jpg" /></div>
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Lợi ích nhận được khi thực hiện tầm soát viêm gan tại Phòng khám Bệnh viện",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là các Giáo sư, Tiến Sĩ, Bác Sĩ đầu ngành, có chuyên môn cao từ Bệnh viện Đại học Y dược TP.HCM;
+        <br />- Trang thiết bị được đầu tư hiện đại theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ có những chẩn đoán chính xác và điều trị hiệu quả;
+        <br />- Thời gian chờ đợi ít, bác sĩ thăm khám và tư vấn kỹ lưỡng;
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6923
+    `
+    )}
+    {renderAccessContent(
+      5,
+      "Thông tin Phòng khám Bệnh viện",
+      `
+        <br />- Thời gian làm việc: 7h30 đến 16h30 từ thứ 2 đến thứ 7
+        <br />- Địa chỉ phòng khám: 20-22 Dương Quang Trung, Phường 12, Quận 10, TP.HCM
+        <br /><b>Lưu ý: Gói khám chỉ mang tính tham khảo. Khách hàng vui lòng đăng ký gặp Bác sĩ để được tư vấn chi tiết. </b>
+    `
     )}
   </div>
 );
@@ -232,4 +265,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default LiverCancer;

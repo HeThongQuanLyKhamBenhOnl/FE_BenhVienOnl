@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const Package1 = () => {
+const Covid19AfterDeeper = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      GÓI KIỂM TRA HẬU SỨC KHỎE COVID-19 NÂNG CAO
+      GÓI KIỂM TRA HẬU SỨC KHỎE COVID-19 CHUYÊN SÂU
       <div
         style={{
           display: "flex",
@@ -97,7 +96,7 @@ const AccessSection = () => (
       1,
       "Thông tin gói kiểm tra sức khỏe hậu Covid-19 chuyên sâu",
       `
-      Hội chứng hậu Covid-19 với các triệu chứng tái phát, kéo dài hoặc xuất
+        Hội chứng hậu Covid-19 với các triệu chứng tái phát, kéo dài hoặc xuất
         hiện các vấn đề sức khỏe mới trong nhiều tuần hoặc nhiều tháng sau khi
         khỏi bệnh, gây ảnh hưởng đến sức khỏe và cuộc sống của nhiều người. Hiểu
         được những nguy cơ của hội chứng hậu Covid -19 đội ngũ chuyên môn của
@@ -110,21 +109,25 @@ const AccessSection = () => (
         được xây dựng với 32 hạng mục, giúp đánh giá chức năng và chẩn đoán bệnh
         lý đa cơ quan. Từ đó có phương pháp điều trị các di chứng Covid-19 hiện
         tại và dự phòng các nguy cơ có thể xảy ra trong tương lai như:
+
         <br />
-        a) Dịch vụ Khám
+        <b><i>a) Dịch vụ Khám</i></b>
         <br />- Bác sĩ Nội Tổng khám và tư vấn bệnh sử.
+
         <br />
-        b) Xét nghiệm máu trong và ngoài nước;
+        <b><i>b) Xét nghiệm máu trong và ngoài nước;</i></b>
         <br />- Đánh giá tình trạng tế bào máu, đường huyết, rối loạn chuyển
         hóa, chức năng thận, men gan;
         <br />- Đánh giá tình trạng tăng đông;
         <br />- Giảm tác hại cho môi trường do việc in phim gây ra.
+
         <br />
-        c) Xét nghiệm nước tiểu
+        <b><i>c) Xét nghiệm nước tiểu</i></b>
         <br />- Phát hiện tổn thương thận, đường tiết niệu và một số bệnh lý
         khác như đái tháo đường, bệnh gan mật...
+        
         <br />
-        d) Chẩn đoán hình ảnh và thăm dò chức năng
+        <b><i>d) Chẩn đoán hình ảnh và thăm dò chức năng</i></b>
         <br />- Đánh giá chức năng và phát hiện bất thường các cơ quan như: tim,
         gan, phổi, thận, não, tình trạng mạch máu và xơ vữa mạch máu.
     `
@@ -164,12 +167,15 @@ const AccessSection = () => (
         tiết, tiêu hóa, thần kinh, tim mạch…
         <br />- Khi sử dụng gói khám này quý khách hàng sẽ được kiểm tra các
         dịch vụ như:
+
         <br />
-        a. Dịch vụ khám và tư vấn
+        <b><i>a. Dịch vụ khám và tư vấn</i></b>
         <br />- Khám và nhận tư vấn của Bác sĩ Nội Tổng quát;
+
         <br />
-        b. Dịch vụ xét nghiệm - Tổng phân tích tế bào máu ngoại vi (bằng máy đếm
-        laser)- 22 thông số: Phát hiện bất thường về các loại tế bào máu, đánh
+        <b><i>b. Dịch vụ xét nghiệm</i></b>
+        <br />- Tổng phân tích tế bào máu ngoại vi (bằng máy đếm laser)
+        <br />- 22 thông số: Phát hiện bất thường về các loại tế bào máu, đánh
         giá tình trạng thiếu máu, nhiễm trùng và rối loạn đông máu liên quan đến
         tiểu cầu;
         <br />- Xét nghiệm máu lắng (VS) (bằng máy tự động): Phát hiện và theo
@@ -215,8 +221,9 @@ const AccessSection = () => (
         <br />- Tổng phân tích nước tiểu (Bằng máy tự động): Phát hiện tổn
         thương thận, đường tiết niệu và một số bệnh lý khác như đái tháo đường,
         bệnh gan mật...;
+
         <br />
-        c. Chẩn đoán hình ảnh
+        <b><i>c. Chẩn đoán hình ảnh</i></b>
         <br />- Điện tim thường (ECG): Phát hiện một số bất thường: dày thất,
         dày nhĩ, thiếu máu cơ tim, nhồi máu cơ tim, rối loạn nhịp tim…;
         <br />- Siêu âm bụng tổng quát (màu): Phát hiện một số hình ảnh bất
@@ -237,7 +244,7 @@ const AccessSection = () => (
       4,
       "Giá gói kiểm tra sức khỏe hậu Covid-19 chuyên sâu",
       `
-      - Giá gói khám: 5.100.000 đồng -------> <a href="/">ĐĂNG KÝ NGAY</a>
+      - Giá gói khám: 7.650.000 đồng -------> <a href="/">ĐĂNG KÝ NGAY</a>
     `
     )}
     {renderAccessContent(
@@ -392,4 +399,4 @@ const NewsSection = () => {
   );
 };
 
-export default Package1;
+export default Covid19AfterDeeper;

@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const Stroke = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI TẦM SOÁT NGUY CƠ ĐỘT QUỴ
       <div
         style={{
           display: "flex",
@@ -95,20 +94,48 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Tại sao nên tầm soát nguy cơ đột quỵ",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+      Đột quỵ có thể tấn công sức khỏe của bạn một cách ngẫu nhiên và đôi khi không có dấu hiệu báo trước nào. Có một số đối tượng đã được nghiên cứu chứng minh là sẽ có nguy cơ cao hơn người hình thường như: người bị cao huyết áp, đái tháo đường, Cholesterol cao, người có bệnh lý về tim mạch, hút thuốc lá, tiền sử gia đình có nguy cơ đột quỵ…Do vậy, việc tầm soát nguy cơ đột quỵ là rất cần thiết để có thể phát hiện sớm các yếu tố, nguy cơ giúp bạn có thể kịp thời điều chỉnh lối sống phù hợp và bác sĩ sẽ có những lời khuyên cũng như có phác đồ điều trị bệnh kịp thời nếu bạn có bất kỳ dấu hiệu bất thường nào, tránh các biến chứng nguy hiểm do đột quỵ gây ra.
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Những lợi ích nhận được khi thự hiện tầm soát nguy cơ đột quỵ định kỳ",
       `
+        <br />- Phát hiện sớm những chỉ số không tốt của cơ thể;
+        <br />- Được bác sĩ tư vấn và giải thích cặn kẽ về những dấu hiệu đột quỵ bạn có thể gặp phải;
+        <br />- Điều trị kịp thời, tránh các biến chứng nguy hiểm.
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Chi tiết gói tầm soát nguy cơ đột quỵ tại Phòng khám Bệnh viện",
+      `
+      <br />
+      <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://umcclinic.com.vn/Data/Sites/1/media/goi-tam-soat-nguy-co-dot-quy-2.jpg" /></div>
+      <br />- Chi phí gói tầm soát nguy cơ đột quỵ: 6.000.000đ
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Những giá trị công thêm khi thực hiện tầm soát nguy cơ đột quỵ tại Phòng khám Bệnh viện",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là các Giáo sư, Tiến Sĩ, Bác Sĩ đầu ngành, có chuyên môn cao từ Bệnh viện Đại học Y dược TP.HCM;
+        <br />- Trang thiết bị được đầu tư hiện đại theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ có những chẩn đoán chính xác và điều trị hiệu quả;
+        <br />- Thời gian chờ đợi ít, bác sĩ thăm khám và tư vấn kỹ lưỡng;
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6923
+    `
+    )}
+    {renderAccessContent(
+      5,
+      "Thông tin chung",
+      `
+        <br />- Thời gian làm việc: 7h30 đến 16h30 từ thứ 2 đến thứ 7
+        <br />- Địa chỉ phòng khám: 20-22 Dương Quang Trung, Phường 12, Quận 10, TP.HCM
+        <br /><b>Lưu ý: Giá Gói khám có thể thay đổi theo từng thời điểm mà không báo trước. Quý khách vui lòng liên hệ tổng đài: 1900 6923 để biết thêm thông tin.</b>
+    `
     )}
   </div>
 );
@@ -122,6 +149,7 @@ const renderAccessContent = (index, title, content) => (
     </Row>
     <Row>
       <p
+        style={{width: "100%"}}
         className="text-justify text-lg"
         dangerouslySetInnerHTML={{ __html: content }}
       />
@@ -232,4 +260,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default Stroke;

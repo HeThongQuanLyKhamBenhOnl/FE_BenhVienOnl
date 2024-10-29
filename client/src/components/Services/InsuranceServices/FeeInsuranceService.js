@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const FeeInsuranceService = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      DỊCH VỤ BẢO LÃNH VIỆN PHÍ
       <div
         style={{
           display: "flex",
@@ -95,20 +94,43 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "DỊCH VỤ BẢO LÃNH VIỆN PHÍ",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+      Nhằm đáp ứng nhu cầu cho khách hàng sử dụng dịch vụ bảo lãnh viện phí, Phòng khám Bệnh viện đại học Y Dược 1 đã không ngừng mở rộng hệ thống liên kết với các công ty, đối tác bảo hiểm lớn nhằm tạo sự thuận tiện cho khách hàng khi sử dụng dịch vụ tại Phòng khám. 
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Các đối tác bảo hiểm có liên kết bảo lãnh viện phí với Phòng khám Bệnh viện",
       `
+      <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://i.postimg.cc/6qXy1gSK/cong-ty-bao-hiem-lien-ket-bao-lanh-vien-phi-tai-phong-kham.jpg" /></div>
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Quy trình bảo lãnh viện phí tại  Phòng khám Bệnh viện",
+      `
+        <br />Bước 1: Điền thông tin khách hàng tại quầy tiếp nhận 
+        <br />Bước 2: Xuất trình thẻ bảo hiểm, CMND, Căn cước công dân, Passport hoặc Giấy khai sinh (đối với trẻ nhỏ)
+        <br />Bước 3: Đăng ký sử dụng các dịch vụ khám chữa bệnh tại Phòng khám 
+        <br />Bước 4: Thanh toán tạm ứng tất cả các dịch vụ đã đăng ký 
+        <br />Bước 5: Bộ phận Bảo hiểm bảo lãnh của Phòng khám Bệnh viện Đại học Y Dược 1 sẽ tiền hành làm thủ tục xác nhận bảo lãnh với công ty bảo hiểm sau khi khách hàng có đầy đủ các kết quả xét nghiệm và chẩn đoán của Bác sĩ. Khách hàng sẽ ký xác nhận chi phí điều trị đồng thời thanh toán các khoản chi phí mà công ty Bảo hiểm từ chối bồi thường (nếu có).
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Những lưu ý khi sử dụng dịch vụ bảo lãnh viện phí tại phòng khám.",
+      `
+        <br />- Quý khách vui lòng cung cấp đầy đủ giấy tờ và thanh toán tạm ứng tất cả các dịch vụ khám chữa bệnh cho nhân viên phòng khám theo quy định;
+        <br />- Chi phí tạm ứng sẽ được hoàn lại một phần hoặc toàn bộ cho khách hàng tuỳ thuộc vào quyền lợi của khách hàng và chính sách của công ty bảo hiểm;
+        <br />- Trường hợp công ty bảo hiểm từ chối bảo lãnh trực tiếp quý khách hàng có thể xuất hoá đơn và lấy giấy tờ liên quan để thực hiện thanh toán với công ty bảo hiểm;
+        <br />- Đối với các công ty bảo hiểm chưa liên kết dịch vụ bảo lãnh viện phí với phòng khám bệnh viện Đại học Y Dược 1 quý khách vui lòng yêu cầu nhân viên của Phòng khám cung cấp đầy đủ hoá đơn và các giấy tờ cần thiết để quý khách hàng tự tiến hành thanh toán với công ty Bảo hiểm.
+        <br />- Thủ tục giải quyết 01 bộ hồ sơ Bảo lãnh viện phí sẽ mất nhiều thời gian hơn so với bình thường (từ 45 phút đến 60 phút) vì vậy quý khách hàng vui lòng sắp xếp thời gian phù hợp để tránh ảnh hưởng đến công việc.
+        <br />
+        <br /><h5 style="color: blue"><b>PHÒNG KHÁM BỆNH VIỆN</b></h5>
+        <br /> Địa chỉ: 20-22 Dương Quang Trung, Phường 12, Quận 10
+        <br /> Hotline: 1900 6923
+    `
     )}
   </div>
 );
@@ -122,6 +144,7 @@ const renderAccessContent = (index, title, content) => (
     </Row>
     <Row>
       <p
+        style={{ width: "100%" }}
         className="text-justify text-lg"
         dangerouslySetInnerHTML={{ __html: content }}
       />
@@ -232,4 +255,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default FeeInsuranceService;

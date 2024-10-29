@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Row, Col, Pagination } from "antd";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../component/Footer";
-
 import "bootstrap/dist/css/bootstrap.css";
+
+// Helper function to format title for URL
+const formatTitleForURL = (title) =>
+  title
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9\s]/g, "")
+    .replace(/\s+/g, "-")
+    .toLowerCase();
 
 const CheckupCard = ({ imgSrc, title, description }) => (
   <Col
@@ -24,23 +33,33 @@ const CheckupCard = ({ imgSrc, title, description }) => (
     lg={7}
     xl={6}
   >
-    <img
-      src={imgSrc}
-      alt="img"
-      style={{
-        width: "100%",
-        height: "160px",
-        objectFit: "cover",
-        objectPosition: "bottom",
-        borderRadius: "10px",
-      }}
-    />
-    <h4
-      className="text-lg font-bold text-blue-900"
-      style={{ padding: "25px 0px" }}
+    <Link
+      to={`/dich-vu-bao-hiem/${formatTitleForURL(title)}`}
+      style={{ cursor: "pointer" }}
     >
-      {title}
-    </h4>
+      <img
+        src={imgSrc}
+        alt="img"
+        style={{
+          width: "100%",
+          height: "160px",
+          objectFit: "cover",
+          objectPosition: "bottom",
+          borderRadius: "10px",
+        }}
+      />
+    </Link>
+    <Link
+      to={`/dich-vu-bao-hiem/${formatTitleForURL(title)}`}
+      style={{ cursor: "pointer" }}
+    >
+      <h4
+        className="text-lg font-bold text-blue-900"
+        style={{ padding: "25px 0px" }}
+      >
+        {title}
+      </h4>
+    </Link>
     <p style={{ textAlign: "justify" }}>{description}</p>
   </Col>
 );
@@ -57,6 +76,7 @@ const InsuranceServices = () => {
       description:
         "Nhằm đáp ứng nhu cầu cho khách hàng sử dụng dịch vụ bảo lãnh viện phí, Phòng khám Bệnh viện đại học Y Dược 1 đã không ngừng mở rộng hệ thống liên kết với các công ty, đối tác bảo hiểm lớn nhằm tạo sự thuận tiện cho khách hàng khi sử dụng dịch vụ tại Phòng khám.",
     },
+    // Add other services here if needed
   ];
 
   // Calculate the start and end indices for slicing the array
@@ -70,7 +90,6 @@ const InsuranceServices = () => {
     <div className="container mx-auto py-8">
       <HeaderComponent />
 
-      {/* First full-width card */}
       <Row
         style={{
           display: "flex",
@@ -94,19 +113,11 @@ const InsuranceServices = () => {
               style={{
                 width: "50px",
                 height: "1px",
-                backgroundColor: "#a3d1ef" /* Màu xanh nhạt */,
+                backgroundColor: "#a3d1ef",
                 margin: "0 10px",
               }}
             ></span>
-            <span
-              style={{
-                fontSize: "1.5rem",
-                color: "#73c2ec" /* Màu xanh của biểu tượng */,
-              }}
-            >
-              ✦
-            </span>{" "}
-            {/* Bạn có thể thay thế icon này */}
+            <span style={{ fontSize: "1.5rem", color: "#73c2ec" }}>✦</span>
             <span
               style={{
                 width: "50px",
@@ -119,70 +130,70 @@ const InsuranceServices = () => {
         </h2>
       </Row>
 
-      {/* Full-width first card */}
+      {/* First full-width card */}
       <Row
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          flexDirection: "row",
+          justifyContent: "space-around",
           alignItems: "center",
-          padding: "20px 100px",
+          padding: "20px 10%",
           flexWrap: "wrap",
+          gap: "1rem",
         }}
       >
-        {/* Image on the left */}
-        <Col
-          xs={24}
-          sm={24}
-          md={10} // Takes 10/24 columns on medium screens and larger
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingRight: "20px",
-          }}
-        >
-          <img
-            src={checkupCardsData[0].imgSrc}
-            alt={checkupCardsData[0].title}
+        <Col xs={24} sm={24} md={10}>
+          <Link
+            to={`/dich-vu-bao-hiem/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
             style={{
-              width: "100%",
-              height: "240px",
-              objectFit: "cover",
-              borderRadius: "10px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              cursor: "pointer",
             }}
-          />
+          >
+            <img
+              src={checkupCardsData[0].imgSrc}
+              alt={checkupCardsData[0].title}
+              style={{
+                width: "100%",
+                height: "200px",
+                objectFit: "cover",
+                borderRadius: "10px",
+              }}
+            />
+          </Link>
         </Col>
-
-        {/* Content (Title, Description, Button) on the right */}
-        <Col
-          xs={24}
-          sm={24}
-          md={14} // Takes 14/24 columns on medium screens and larger
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingLeft: "20px",
-          }}
-        >
-          <h4
-            className="text-xl font-bold text-blue-900"
+        <Col xs={24} sm={24} md={12} style={{ textAlign: "justify" }}>
+          <Link
+            to={`/dich-vu-bao-hiem/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
             style={{
-              marginBottom: "15px",
+              textDecoration: "none",
+              color: "inherit",
+              cursor: "pointer",
             }}
           >
-            {checkupCardsData[0].title}
-          </h4>
-          <p
-            style={{
-              textAlign: "justify",
-              marginBottom: "20px",
-            }}
-          >
+            <h4
+              className="text-xl font-bold text-blue-900"
+              style={{ marginBottom: "15px" }}
+            >
+              {checkupCardsData[0].title}
+            </h4>
+          </Link>
+          <p style={{ marginBottom: "20px" }}>
             {checkupCardsData[0].description}
           </p>
-          <button className="btn btn-outline-primary">Xem chi tiết</button>
+          <Link
+            to={`/dich-vu-bao-hiem/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
+          >
+            <button className="btn btn-outline-primary">Xem chi tiết</button>
+          </Link>
         </Col>
       </Row>
 
