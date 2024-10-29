@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const DHGScreening = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI TẦM SOÁT ĐÁI THÁO ĐƯỜNG, RỐI LOẠN MỠ MÁU VÀ GÚT
       <div
         style={{
           display: "flex",
@@ -95,20 +94,73 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Tại sao bạn nên tầm soát đái tháo đường, rỗi loại mỡ máu và Gút?",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+      - Tăng cholesterol, triglycerid, đường trong máu là các yếu tố nguy cơ gây ra các bệnh lý tim mạch, đái tháo đường và một số biến chứng nguy hiểm như đột quỵ, nhồi máu cơ tim…Tăng acid uric máu dễ dẫn đến bệnh gút, lâu dài có thể ảnh hưởng đến thận và các cơ quan khác.
+      <br />- Hiện nay, lối sống tĩnh tại ít vận động, khẩu phần ăn chưa hợp lý, ít rau xanh, nhiều chất bột đường, chất béo, nhiều muối, nhiều loại thức ăn nhanh…có thể làm tăng nguy cơ dẫn đến các rối loạn trên.
+      <br />- Việc tầm soát đái tháo đường, rối loạn mỡ máu và gút định kỳ giúp bạn có thể phát hiện sớm các yếu tố nguy cơ gây bệnh nhằm có biện pháp ngăn chặn và điều trị bệnh sớm, tránh gặp phải những biến chứng nguy hiểm.
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Những đối tượng nào nên tầm soát đái tháo đường, rỗi loại mỡ máu và Gút",
       `
+        <br />- Nam giới sau 40 tuổi và nữ ở độ tuổi mãn kinh;
+        <br />- Mệt mỏi;
+        <br />- Chán ăn, hoặc ăn nhiều;
+        <br />- Khát nước, tiểu nhiều;
+        <br />- Sụt cân không rõ nguyên nhân;
+        <br />- Mờ mắt;
+        <br />- Tăng huyết áp;
+        <br />- Béo phì nhất là béo bụng (cơ thể hình quả táo);
+        <br />- Tiểu sử gia đình có người mắc bệnh Tăng huyết áp, Đái tháo đường, Gút;
+        <br />- Người dùng nhiều bia rượu và hút thuốc lá.
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Chi tiết tầm soát đái tháo đường, rỗi loại mỡ máu và Gút",
+      `
+      - Khi thực hiện tầm soát đái tháo đường, rối loạn mỡ máu và gút tại Phòng khám Bệnh viện Đại học Y dược 1 khách hàng sẽ được các bác sĩ là những chuyên gia đầu ngành khám, tư vấn và thực hiện các xét nghiệm sau:
+      <br />
+      <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/01/goi-tam-soat-dai-thao-duong-roi-loan-mo-mau-va-gut-2-768x848.jpg" /></div>
+      <br />- Chi phí gói tầm soát nguy cơ đột quỵ: 6.000.000đ
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Những lưu ý để phòng ngừa đái tháo đường, rỗi loại mỡ máu và Gút",
+      `
+        <br />- Có chế độ ăn uống khoa học, lành mạnh, nhiều chất xơ, hạn schế thức ăn chứa nhiều đường, tinh bột, chất béo, đạm…;
+        <br />- Thường xuyên tập thể dục, ít nhất 30 phút mỗi ngày;
+        <br />- Hạn chế sử dụng rượu bia, thức uống có cồn;
+        <br />- Nói không với thuốc lá, các chất kích thích;
+        <br />- Khám, kiểm tra huyết áp các chỉ số đường huyết, mỡ máu định kỳ.
+    `
+    )}
+    {renderAccessContent(
+      5,
+      "Giá trị công thêm khi tầm soát đái tháo đường, rỗi loại mỡ máu và Gút tại Phòng khám Bệnh viện",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là các Giáo sư, Tiến Sĩ, Bác Sĩ đầu ngành, có chuyên môn cao từ Bệnh viện Đại học Y dược TP.HCM;
+        <br />- Trang thiết bị được đầu tư hiện đại theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ có những chẩn đoán chính xác và điều trị hiệu quả;
+        <br />- Thời gian chờ đợi ít, bác sĩ thăm khám và tư vấn kỹ lưỡng;
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6923.
+    `
+    )}
+    {renderAccessContent(
+      6,
+      "Thông tin chung",
+      `
+        <br />- Thời gian làm việc: 7h30 đến 16h30 từ thứ 2 đến thứ 7
+        <br />- Địa chỉ Phòng khám: 20-22 Dương Quang Trung, Phường 12, Quận 10, TP.HCM
+        <br />- Thời gian chờ đợi ít, bác sĩ thăm khám và tư vấn kỹ lưỡng;
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6923.
+        <br /><b>Lưu ý: Gói khám chỉ mang tính tham khảo. Khách hàng vui lòng đăng ký gặp Bác sĩ để được tư vấn chi tiết.</b>
+        <br /><b style="color: red">GỌI 1900 6923 ĐỂ ĐĂNG KÝ TẦM SOÁT ĐÁI THÁO ĐƯỜNG, RỐI LOẠN MỠ MÁU VÀ GÚT TẠI PHÒNG KHÁM BỆNH VIỆN ĐẠI HỌC Y DƯỢC 1</b>
+    `
     )}
   </div>
 );
@@ -122,6 +174,7 @@ const renderAccessContent = (index, title, content) => (
     </Row>
     <Row>
       <p
+        style={{ width: "100%" }}
         className="text-justify text-lg"
         dangerouslySetInnerHTML={{ __html: content }}
       />
@@ -232,4 +285,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default DHGScreening;

@@ -53,7 +53,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      DỊCH VỤ CHUẨN QUỐC TẾ
       <div
         style={{
           display: "flex",
@@ -95,19 +95,10 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Dịch vụ chuẩn quốc tế",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+        <br />- Phòng khám Bệnh viện Đại học Y Dược 1 được quản lý và vận hành theo tiêu chuẩn quốc tế, cơ sở vật chất hiện đại, tiện nghi, không gian khám chữa bệnh rộng rãi, sạch sẽ.
+        <br />- Thủ tục đặt hẹn tiện lợi qua tổng đài 1800 6023 (Miễn phí cuộc gọi) mà không cần phải xếp hàng lấy số.
       `
     )}
   </div>

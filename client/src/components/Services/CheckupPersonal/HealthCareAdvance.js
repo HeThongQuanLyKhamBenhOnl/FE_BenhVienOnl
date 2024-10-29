@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const HealthCareAdvance = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI KHÁM SỨC KHOẺ TỔNG QUÁT NÂNG CAO
       <div
         style={{
           display: "flex",
@@ -95,20 +94,47 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Thông tin về gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+        <br />- Gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện Đại học Y Dược 1 với 37 hạng mục từ cơ bản đến nâng cao được đội ngũ chuyên môn của Phòng khám thiết kế khoa học.
+        <br />- Gói khám này có thể bao quát được tình trạng sức khoẻ của bạn giúp phát hiện sớm các bệnh lý để có thể điều trị hiệu quả hơn, giảm thiểu những biến chứng nguy hiểm của bệnh, tiết kiệm chi phí điều trị.
+        <br />- Khi sử dụng gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện Đại học Y Dược 1, khách hàng sẽ được:
+        <br />+ Làm các xét nghiệm máu, xét nghiệm nước tiểu, nội soi tai-mũi-họng, điện tim thường (ECG), chụp X-quang, siêu âm bụng tổng quát, siêu âm tuyến giáp, siêu âm tuyến vú 2 bên (đối với nữ), siêu âm doppler màu động mạch cảnh.
+        <br />+ Được khám các chuyên khoa: răng-hàm-mặt, mắt, tai-mũi-họng, sản phụ khoa và khám tuyến vú (đối với khách nữ).
+        <br />+ Khám và nhận tư vấn với Bác sĩ Nội tổng quát.
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Một số lưu ý khi sử dụng gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện",
       `
+        <br />- Trong gói khám sức khoẻ tổng quát nâng cao có một số dịch vụ chỉ được xây dựng riêng cho khách hàng nam, nữ độc thân hoặc nữ đã có gia đình;
+        <br />- Khách hàng là nữ nếu đang có thai hoặc nghi ngờ có thai vui lòng thông báo ngay cho nhân viên y tế để không chụp X-quang;
+        <br />- Khi đi khám nếu cơ thể có bất kỳ dấu hiệu bất thường, bạn vui lòng thông báo ngay với nhân viên y tế để nhận tư vấn và được khám với chuyên khoa phù hợp;
+        <br />- Gói khám sức khoẻ tổng quát nâng cao thường sẽ được thực hiện trong vòng 01 buổi, do vậy quý khách hàng vui lòng sắp xếp thời gian phù hợp để thuận tiện cho việc thăm khám;
+        <br />- Khi khám sức khoẻ tổng quát tại Phòng khám Bệnh viện Đại học Y Dược 1, quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát bổ trợ nếu thấy thực sự cần thiết như: Xét nghiệm dấu ấn ung thư bằng huyết thanh, huyết thanh chuẩn đoán giun sán, nội soi tiêu hoá không đau, đo gắng sức tim mạch-hô hấp (CPET), MRI, CT Scanner…
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Chi tiết gói khám sức khoẻ tổng quát nâng cao",
+      `
+        <br />+ Giá gói áp dụng cho Nam: 3.900.000đ
+        <br />+ Giá gói áp dụng cho Nữ độc thân: 4.250.000đ
+        <br />+ Giá gói áp dụng cho Nữ có gia đình: 5.300.000đ
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Tại sao nên chọn Phòng khám Bệnh viện để khám sức khoẻ tổng quát định kỳ?",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là các Giáo sư, Tiến sĩ, Bác sĩ đầu ngành, có chuyên môn cao từ Trường và Bệnh viện Đại học Y Dược TP.HCM;
+        <br />- Trang thiết bị được đầu tư hiện đại theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp Bác sĩ có những chẩn đoán chính xác và điều trị hiệu quả;
+        <br />- Thời gian chờ đợi ít, Bác sĩ thăm khám và tư vấn kỹ lưỡng;
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6023.
+        <br/><b>Lưu ý: Giá gói khám có thể thay đổi theo từng thời điểm mà không báo trước.</b>
+    `
     )}
   </div>
 );
@@ -232,4 +258,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default HealthCareAdvance;

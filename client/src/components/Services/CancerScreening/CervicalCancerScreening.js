@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const CervicalCancerScreening = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI TẦM SOÁT UNG THƯ CỔ TỬ CUNG
       <div
         style={{
           display: "flex",
@@ -95,20 +94,66 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "GÓI TẦM SOÁT UNG THƯ CỔ TỬ CUNG",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+      Tầm soát ung thư cổ tử cung là cách hiệu quả nhất để phát hiện và ngăn chặn ung thư cổ tử cung, căn bệnh gây tử vong hàng đầu trong các loại ung thư ở phụ nữ. 
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Vì sao nên thực hiện tầm soát ung thư cổ tử cung",
       `
+        <br /> - Ung thư cổ tử cung có thể được điều trị dễ dàng với phương pháp cắt bỏ mô ung thư nếu được phát hiện sớm. Nhưng thực tế, tiên lượng sống sót của bệnh lý này không cao vì thường người bệnh chỉ đến khám khi đã có những triệu chứng rõ ràng, khi đó ung thư đã tiến vào giai đoạn cuối rất khó điều trị.
+        <br /> - Việc tầm soát ung thư cổ tử cung định kỳ không chỉ giúp người bệnh phát hiện ung thư, từ đó có pháp đồ điều trị hiệu quả, rút ngắn thời gian điều trị, tốn ít chi phí, tránh được các rủi ro do biến chứng, nâng cao tỷ lệ sống, mà còn giúp người bệnh có kế hoạch phòng tránh ung thư từ những dấu hiệu bất thường của tế bào tại cổ tử cung.
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Ai nên thực hiện tầm soát ung thư cổ tử cung",
+      `
+        <br />- Người nhiễm vi rút HPV;
+        <br />- Suy giảm miễn dịch do mắc các bệnh lây qua đường tình dục;
+        <br />- Người lạm dụng thuốc lá, thuốc tránh thai trong thời gian dài;
+        <br />- Sinh con quá sớm (trước 17 tuổi) hoặc sinh đẻ nhiều lần;
+        <br />- Người có tiền sử ung thư hoặc tiền sử gia đình mắc ung thư cổ tử cung;
+        <br />- Đặc biệt người có các triệu chứng sau cần đi tầm soát ung thư cổ tử cung ngay: chảy máu âm đạo bất thường, đau vùng chậu, dịch tiết âm đạo nhiều hơn và có màu khác thường, tiểu tiện bất thường, sưng đau ở chân …
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Thông tin chi tiết gói tầm soát ung thư cổ tử cung tại Phòng khám Bệnh viện",
+      `
+        Gói tầm soát ung thư cổ tử cung tại được đội ngũ chuyên môn của Phòng khám Bệnh viện Đại học Y Dược 1 xây dựng dựa trên nguyên tắc: khoa học, hiệu quả và chính xác. Chi tiết gói khám gồm:
+        
+        <br />
+        <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/ung-thu/ung-th%C6%B0-c%E1%BB%95-t%E1%BB%AD-cung/goi-tam-soat-ung-thu-co-tu-cung-1.jpg" /></div>
+    `
+    )}
+    {renderAccessContent(
+      5,
+      "Giá chi tiết của gói tầm soát ung thư cổ tử cung",
+      `
+        <br />- Giá áp dụng: 2.300.000đ
+    `
+    )}
+    {renderAccessContent(
+      6,
+      "Những giá trị cộng thêm khi tầm soát ung thư cổ tử cung tại Phòng khám Bệnh viện",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là các Giáo sư, Tiến Sĩ, Bác Sĩ đầu ngành, có chuyên môn cao từ Bệnh viện Đại học Y Dược TP.HCM;
+        <br />- Trang thiết bị được đầu tư hiện đại theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ có những chẩn đoán chính xác và điều trị hiệu quả;
+        <br />- Thời gian chờ đợi ít, bác sĩ thăm khám và tư vấn kỹ lưỡng;
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6923.
+        <br /><i>Lưu ý trước khi đi tầm soát ung thư cổ tử cung:</i>
+        <br />- Một số danh mục trong dịch vụ sẽ không áp dụng theo khuyến cáo của Bác sĩ;
+        <br />- Trang phục thuận tiện để Bác sĩ có thể thăm khám dễ dàng hơn;
+        <br />- Nhịn ăn sáng để thực hiện các xét nghiệm tầm soát ung thư;
+        <br />- Không uống các loại nước uống như cà phê, trà, sữa, nước ngọt và nước trái cây, chỉ nên uống một ít nước lọc trước khi đến khám;
+        <br />- Không nên hút thuốc và uống bia rượu trong vòng 24 tiếng trước khi đến khám;
+        <br />- Người bệnh chỉ nên thực hiện gói tầm soát ung thư sau chu kỳ kinh nguyệt 5 đến 7 ngày;
+        <br />- Không quan hệ tình dục, không sử dụng thuốc tránh thai, không bôi kem hoặc sử dụng thuốc đặt âm đạo trong vòng 2-3 ngày trước khi đi tầm soát;
+    `
     )}
   </div>
 );
@@ -122,6 +167,7 @@ const renderAccessContent = (index, title, content) => (
     </Row>
     <Row>
       <p
+        style={{ width: "100%" }}
         className="text-justify text-lg"
         dangerouslySetInnerHTML={{ __html: content }}
       />
@@ -232,4 +278,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default CervicalCancerScreening;

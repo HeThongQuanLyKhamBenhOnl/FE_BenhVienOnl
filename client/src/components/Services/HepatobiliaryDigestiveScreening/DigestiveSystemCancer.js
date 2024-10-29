@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const DigestiveSystemCancer = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI TẦM SOÁT UNG THƯ HỆ TIÊU HÓA
       <div
         style={{
           display: "flex",
@@ -95,20 +94,49 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Ý nghĩa gói tầm soát ung thư hệ tiêu hoá",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+      <br />- Tầm soát ung thư hệ tiêu hóa là một tầm soát rất quan trọng.Việc tầm soát ung thư hệ tiêu nên được thực hiện định kỳ hàng năm nhằm phát hiện sớm những dấu hiệu bất thường của hệ tiêu hóa.
+      <br />- Gói tầm soát ung thư hệ tiêu hóa nên được thực hiện ở những đối tượng có nguy cơ cao mắc các bệnh về ung thư như: người có tiền sử gia đình có bệnh lý ung thư hệ tiêu hóa, hoặc thường xuyên tiếp xúc với yếu tố nguy cơ, thói quen ăn thực phẩm muối chua, mặn, hút thuốc lá thường xuyên, làm việc trong môi trường ô nhiễm…
+      <br />Ngoài ra, theo lời khuyên của các chuyên gia về các bệnh lý của hệ tiêu hóa thì Nam/Nữ ở độ tuổi trên 40 cũng nên đi tầm soát định kỳ để phát hiện sớm bệnh lý ung thư hệ tiêu hóa.
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Thông tin chi tiết gói khám tầm soát ung thư hệ tiêu hoá tại Phòng khám Bệnh viện",
       `
+        <br />- Liên hệ tổng đài 1900 6923 để biết thông tin chi tiết 
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Những giá trị cộng thêm khi thực hiện tầm soát ung thư đường tiêu hóa tại Phòng khám Bệnh viện",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là Giáo sư, Tiến sĩ, Bác sĩ đầu ngành, có chuyên môn cao từ Bệnh viện Đại học Y Dược TP. HCM.
+        <br />- Trang thiết bị được đầu tư hiện đại theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ có những chẩn đoán chính xác và điều trị hiệu quả.
+        <br />- Thời gian chờ đợi ít, Bác sĩ thăm khám và tư vấn kỹ lưỡng.
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp.
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6023 (miễn phí cuộc gọi)
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Những lưu ý trước khi thực hiện tầm soát ung thư hệ tiêu hóa.",
+      `
+        <br />- Gói tầm soát ung thư đường tiêu hóa bao gồm nội soi thực quản - dạ dày - tá tràng do đó, quý khách hàng cần nhịn ăn khoảng 6 tiếng trước khi thực hiện, có thể uống nước lọc nhưng với số lượng hạn chế.
+        <br />- Nên tránh ăn những thức ăn có nhiều chất xơ như rau trong vài ngày. Có thể ăn thức ăn nhẹ vào buổi tối hôm trước như cháo, soup. Đặc biệt, nếu phải làm nội soi sau 12 giờ trưa, quý khách có thể uống dịch lỏng 6 giờ trước khi tiến hành nội soi như: nước lọc, nước ép táo,…
+        <br />- Nên đặt hẹn thực hiện tầm soát ung thư đường tiêu hóa trước qua hotline 1800 6023 để được hướng dẫn cụ thể trước khi tầm soát.
+        <br />- Đối với những khách hàng không đủ điều kiện nội soi do các yếu tố về bệnh lý và có chỉ định rõ ràng của bác sĩ sẽ được hoàn tiền phần dịch vụ nội soi.
+    `
+    )}
+    {renderAccessContent(
+      5,
+      "THÔNG TIN PHÒNG KHÁM BỆNH VIỆN",
+      `
+        <br />- Thời gian làm việc: 7h30 đến 16h30 từ thứ 2 đến thứ7.
+        <br />- Địa chỉ phòng khám: 20-22 Dương Quang Trung, Phường 12, Quận 10, TP.HCM
+        <br /><b>Quý khách hàng vui lòng đặt hẹn trước qua hotline 1900 6023 để được phục vụ tốt nhất.</b>
+    `
     )}
   </div>
 );
@@ -232,4 +260,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default DigestiveSystemCancer;

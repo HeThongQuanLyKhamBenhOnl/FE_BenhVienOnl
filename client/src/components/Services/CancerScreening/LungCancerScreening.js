@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const LungCancerScreening = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI KHÁM TẦM SOÁT UNG THƯ PHỔI
       <div
         style={{
           display: "flex",
@@ -95,20 +94,61 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Vì sao nên thực hiện tầm soát ung thư phổi?",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+        Tầm soát ung thư phổi là phương pháp phát hiện dấu hiệu ung thư ngay cả khi chưa có các triệu chứng rõ ràng giúp người bệnh phát hiện bệnh sớm, điều trị và chăm sóc sức khỏe kịp thời, giảm đau đớn, tăng khả năng khỏi bệnh, ngăn chặn di căn và các biến chứng nguy hiểm khác.
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Những đối tượng cần thực hiện tầm soát ung thư phổi",
       `
+        Những nhóm đối tượng sau được khuyến nghị nên tầm soát ung thư phổi định kì ít nhất mỗi năm một lần hoặc sớm hơn theo chỉ định của bác sĩ:
+        <br />- Nhóm nguy cơ trung bình: nhóm người từ 50 tuổi, không hút thuốc, sinh hoạt làm việc trong môi trường thường xuyên tiếp thu thuốc lá thụ động, hoặc hút thuốc ít, từng hút thuốc nhiều nhưng đã ngưng trong 15 năm qua.
+        <br />- Nhóm nguy cơ cao: nhóm người từ 50 tuổi, hút nhiều thuốc trên 30 năm, một gói mỗi ngày trong 30 năm hoặc 2 gói mỗi ngày trong 15 năm.
+        <br />- Đặc biệt người có các biểu hiện sau cần tầm soát ung thư phổi ngay: ho kéo dài, ho ra máu hoặc tái phát nhiều lần, đau tại vùng ngực, thay đổi giọng nói, khò khè khó thở, khi nuốt bị đau, cơ thể suy nhược, thường xuyên mệt mỏi.
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Thông tin chi tiết gói tầm soát ung thư phổi tại Phòng khám Bệnh viện",
+      `
+      <br /> - Ngày nay y học đã có nhiều tiến bộ trong việc chẩn đoán và điều trị ung thư nhưng tỷ lệ tử vong vì ung thư phổi trên thế giới nói chung, ở Việt Nam nói riêng vẫn rất cao. Nguyên nhân chủ yếu là do ung thư phổi có rất ít triệu chứng ở giai đoạn đầu, thậm chí là không có, vì vậy nhiều người thường chủ quan và chỉ đến khám khi bệnh đã diễn tiến nặng.
+      <br /> - Gói khám tầm soát ung thư phổi của Phòng khám Bệnh viện Đại học Y Dược 1 được đội ngũ chuyên môn xây dựng theo nguyên tắc: khoa học, hiệu quả, có tính thực tiễn cao và tiết kiệm chi phí cho khách hàng.
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Giá chi tiết của gói tầm soát ung thư phổi",
+      `
+        - Giá áp dụng cho cả nam và nữ: 2.850.000đ
+    `
+    )}
+    {renderAccessContent(
+      5,
+      "Lưu ý trước khi thực hiện tầm soát ung thư phổi",
+      `
+        <br />- Một số danh mục trong dịch vụ sẽ không áp dụng theo khuyến cáo của Bác sĩ
+        <br />- Trang phục thuận tiện để Bác sĩ có thể thăm khám dễ dàng hơn;
+        <br />- Nhịn ăn sáng để thực hiện các xét nghiệm tầm soát ung thư;
+        <br />- Không uống các loại nước uống như cà phê, trà, sữa, nước ngọt và nước trái cây, chỉ nên uống một ít nước lọc trước khi đến khám;
+        <br />- Không nên hút thuốc và uống bia rượu trong vòng 24 tiếng trước khi đến khám.
+    `
+    )}
+    {renderAccessContent(
+      6,
+      "Những lợi ích cộng thêm khi tầm soát ung thư phổi tại Phòng khám Bệnh viện",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là các Giáo sư, Tiến Sĩ, Bác Sĩ đầu ngành, có chuyên môn cao từ Bệnh viện Đại học Y Dược TP.HCM;
+        <br />- Trang thiết bị được đầu tư hiện đại theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ có những chẩn đoán chính xác và điều trị hiệu quả;
+        <br />- Thời gian chờ đợi ít, bác sĩ thăm khám và tư vấn kỹ lưỡng;
+        <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6923.
+        <br />
+        <br /><h5 style="color: blue"><b>PHÒNG KHÁM BỆNH VIỆN</b></h5>
+        <br /> Địa chỉ: 20-22 Dương Quang Trung, Phường 12, Quận 10
+        <br /> Hotline: 1900 6923
+    `
     )}
   </div>
 );
@@ -122,6 +162,7 @@ const renderAccessContent = (index, title, content) => (
     </Row>
     <Row>
       <p
+        style={{ width: "100%" }}
         className="text-justify text-lg"
         dangerouslySetInnerHTML={{ __html: content }}
       />
@@ -232,4 +273,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default LungCancerScreening;

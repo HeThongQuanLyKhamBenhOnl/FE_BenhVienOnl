@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
 import { Row, Col, Carousel, Button } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import HeaderComponent from "../../Header/Header";
@@ -30,7 +29,7 @@ const newsItems = [
   },
 ];
 
-const HighTechDevice = () => {
+const HealthCareVIPGOLD = () => {
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
@@ -53,7 +52,7 @@ const HeaderSection = () => (
     }}
   >
     <h2 className="text-2xl font-bold text-blue-900">
-      TRANG THIẾT BỊ HIỆN ĐẠI
+      GÓI KHÁM SỨC KHOẺ TỔNG QUÁT VIP GOLD
       <div
         style={{
           display: "flex",
@@ -95,20 +94,58 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       1,
-      "Trang thiết bị hiện đại",
+      "Thông tin về gói khám sức khoẻ tổng quát Gold tại Phòng khám Bệnh viện",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
-        <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
-        <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
-        <br />+ Máy X-Quang Kỹ thuật số (Drgem);
-        <br />+ Máy đo loãng xương (Hologic)
-        <br />+ Máy siêu âm tim (Philips);
-        <br />+ Máy nội soi tiêu hóa (Olympus)
-        <br />+ Máy  nội soi Tai-Mũi-Họng
-        <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
-        <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+        <br />- Gói khám sức khỏe tổng quát Gold là gói khám sức khoẻ VIP được đội ngũ chuyên môn của Phòng khám xây dựng giúp khách hàng có thể tầm soát toàn diện các bộ phận của cơ thể gồm xét nghiệm và các dịch vụ cận lâm sàng từ cơ bản đến chuyên sâu.
+        <br />- Gói khám sức khoẻ tổng quát Gold với 63 hạng mục khám được Phòng khám Bệnh viện Đại học Y Dược 1 thiết kế nhằm đáp ứng nhu cầu kiểm tra toàn diện tình hình sức khỏe của bạn và gia đình. Gói khám tổng quát Gold bao gồm:
+        
+        <br /><b><i>a. Khám lâm sàng và nhận tư vấn của Bác sĩ chuyên khoa</i></b>
+        <br />- Kiểm tra mạch, huyết áp, chiều cao, cân nặng, chỉ số BMI… Sau đó, bác sĩ sẽ khám, kiểm tra và tư vấn các vấn đề về: Nội tổng quát, mắt, tai mũi họng, răng, phụ khoa, tuyến vú, trao đổi bệnh sử và đánh giá các yếu tố, nguy cơ.
+        
+        <br /><b><i>b. Chuyên khoa dành cho nữ </i></b>
+        <br />- Xét nghiệm mẫu bệnh phẩm tế bào cổ tử cung, soi tươi huyết trắng, soi tươi cổ tử cung, phát hiện nhiễm HPV.
+
+        <br /><b><i>c. Xét nghiệm máu</i></b>
+        <br />- Xét nghiệm công thức máu và sinh hóa nhằm phát hiện số lượng và tỷ lệ các thành phần. Thông qua các số liệu phản ánh tình trạng dinh dưỡng và chức năng hoạt động của các cơ quan thận, gan, tụy, dạ dày, đại trực tràng, buồng trứng…; tầm soát khả năng đái tháo đường, viêm khớp, gout, ung thư…
+
+        <br /><b><i>d. Xét nghiệm nước tiểu</i></b>
+        <br />- Tổng phân tích các thông số nước tiểu giúp phát hiện các bệnh lý về thận hoặc viêm nhiễm đường tiết niệu và một số bệnh lý rối loạn chuyển hóa khác.
+
+        <br /><b><i>e. Chẩn đoán hình ảnh và thăm dò chức năng</i></b>
+        <br />- Thực hiện nội soi, siêu âm, chụp cắt lớp, chụp cộng hưởng, điện tim nhằm phát hiện và chẩn đoán một số bệnh lý về tai mũi họng, gan mật, tụy, thận, tử cung, buồng trứng, tiền liệt tuyến…, đánh giá chức năng tim, tình trạng loãng xương…
+    `
+    )}
+    {renderAccessContent(
+      2,
+      "Giá chi tiết của gói khám sức khỏe tổng quát Gold",
       `
+        <br />- Giá áp dụng cho nữ độc thân: 28.500.000đ
+        <br />- Giá áp dụng cho nữ có gia đình: 31.000.000đ
+        <br />- Giá áp dụng cho nam: 28.000.000đ
+    `
+    )}
+    {renderAccessContent(
+      3,
+      "Một số lưu ý khi sử dụng gói khám sức khoẻ tổng quát Gold tại Phòng khám Bệnh viện",
+      `
+        <br />- Trong gói khám sức khoẻ tổng quát Gold có một số dịch vụ chỉ được xây dựng riêng cho khách hàng nữ, khách hàng nữ đã có gia đình hoặc khách hàng nam;
+        <br />- Khách hàng là nữ nếu đang có thai hoặc nghi ngờ có thai vui lòng thông báo ngay cho nhân viên y tế để không chụp X-quang;
+        <br />- Khi đi khám nếu cơ thể có bất kỳ dấu hiệu bất thường, bạn vui lòng thông báo ngay với nhân viên y tế để nhận tư vấn và được khám với chuyên khoa phù hợp;
+        <br />- Gói khám sức khoẻ tổng quát Gold thường sẽ được thực hiện trong vòng 02 ngày, do vậy quý khách hàng vui lòng sắp xếp thời gian phù hợp để thuận tiện cho việc thăm khám;
+        <br />- Khi khám sức khoẻ tổng quát tại Phòng khám Bệnh viện Đại học Y Dược 1, quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát bổ trợ nếu thấy thực sự cần thiết như: xét nghiệm huyết thanh chẩn đoán giun sán, đo gắng sức tim mạch - hô hấp.
+        <br />- Để thực hiện khám gói Gold quý khách hàng vui lòng đăng ký trước qua hotline 1900 6923 để được phục vụ tốt nhất.
+    `
+    )}
+    {renderAccessContent(
+      4,
+      "Khi thực hiện gói khám sức khoẻ tổng quát Gold bạn sẽ được gì?",
+      `
+        <br />- Được thăm khám và nhận tư vấn từ đội ngũ chuyên gia là các Giáo sư, Tiến sĩ, Bác sĩ đầu ngành, có chuyên môn cao từ Trường và Bệnh viện Đại học Y Dược TP.HCM;
+        <br />- Thời gian chờ đợi ít, được ưu tiên thực hiện trước các dịch vụ cận lâm sàng;
+        <br />- Có phòng chờ và nhân viên hướng dẫn riêng;
+        <br />- Có nhân viên hương dẫn riêng
+        <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6023.
+    `
     )}
   </div>
 );
@@ -232,4 +269,4 @@ const NewsSection = () => {
   );
 };
 
-export default HighTechDevice;
+export default HealthCareVIPGOLD;
