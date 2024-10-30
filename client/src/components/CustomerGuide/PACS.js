@@ -99,10 +99,10 @@ const renderInfoSection = () => (
           width: "1200px",
         }}
       >
-        Từ ngày 07/08/2023, Phòng Khám triển khai
-        hình thức trả kết quả chẩn đoán hình ảnh thông qua hệ thống PACS thay
-        thế in phim đối với các dịch vụ kỹ thuật: Chụp cộng hưởng từ (MRI), Chụp
-        cắt lớp vi tính (CT-Scan), X-Quang kỹ thuật số cho khách hàng.
+        Từ ngày 07/08/2023, Phòng Khám triển khai hình thức trả kết quả chẩn
+        đoán hình ảnh thông qua hệ thống PACS thay thế in phim đối với các dịch
+        vụ kỹ thuật: Chụp cộng hưởng từ (MRI), Chụp cắt lớp vi tính (CT-Scan),
+        X-Quang kỹ thuật số cho khách hàng.
       </h5>
     </Col>
   </Row>
@@ -194,16 +194,18 @@ const renderAccessGuideSection = () => (
         lý tài khoản truy cập: Quý Khách hàng vui lòng tham khảo hướng dẫn đăng
         nhập, sử dụng và quản lý tài khoản truy cập:
       </p>
-      <img
-        src="https://i.postimg.cc/brSFmkqt/pacs.jpg"
-        alt="Access Guide"
-        style={{
-          width: "100%",
-          objectFit: "cover",
-          objectPosition: "center top",
-          borderRadius: "10px",
-        }}
-      />
+      <p style={{display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
+        <img
+          src="https://i.postimg.cc/brSFmkqt/pacs.jpg"
+          alt="Access Guide"
+          style={{
+            width: "50%",
+            objectFit: "cover",
+            objectPosition: "center top",
+            borderRadius: "10px",
+          }}
+        />
+      </p>
     </Row>
   </Col>
 );

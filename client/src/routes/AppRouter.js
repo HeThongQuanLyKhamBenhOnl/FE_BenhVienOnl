@@ -77,6 +77,7 @@ import PACS from "../components/CustomerGuide/PACS";
 import CommonMedicine from "../components/News/CommonMedicine";
 import NewsEvent from "../components/News/NewsEvent";
 
+import SignupAppointMent from "../components/Signup/SignupAppointMent"
 import Appointments from "../components/Login/Appointments";
 
 import UserProfile from "../components/User/UserProfile";
@@ -89,6 +90,31 @@ import CervicalCancerScreening from "../components/Services/CancerScreening/Cerv
 import LungCancerScreening from "../components/Services/CancerScreening/LungCancerScreening";
 import FeeInsuranceService from "../components/Services/InsuranceServices/FeeInsuranceService";
 import Premarital from "../components/Services/OtherServicePackages/Premarital";
+import ListDoctor from "../components/CustomerGuide/MoreInfomation/ListDoctor";
+import ListTechnical from "../components/CustomerGuide/MoreInfomation/ListTechnical";
+import ListPrice from "../components/CustomerGuide/MoreInfomation/ListPrice";
+import ListRules from "../components/CustomerGuide/MoreInfomation/ListRules";
+import AdvantagesOfBoneDensityMeasurement from "../components/News/CommonMedicine/AdvantagesOfBoneDensityMeasurement";
+import EightSimpleWays from "../components/News/CommonMedicine/EightSimpleWays";
+import Gallstones from "../components/News/CommonMedicine/Gallstones";
+import UterineFibroids from "../components/News/CommonMedicine/UterineFibroids";
+import FattyLiver from "../components/News/CommonMedicine/FattyLiver";
+import FattyLiverDefense from "../components/News/CommonMedicine/FattyLiverDefense";
+import FattyLiverSymptomAndPrevention from "../components/News/CommonMedicine/FattyLiverSymptomAndPrevention";
+import DiabetesPrevention from "../components/News/CommonMedicine/DiabetesPrevention";
+import GastricBleeding from "../components/News/CommonMedicine/GastricBleeding";
+import MRI from "../components/News/CommonMedicine/MRI";
+import BreastCancer from "../components/News/CommonMedicine/BreastCancer";
+import Hepatitis from "../components/News/CommonMedicine/Hepatitis";
+import FattyLiverSymptom from "../components/News/CommonMedicine/FattyLiverSymptom";
+import TriAnSucKhoe from "../components/News/NewEvents/TriAnSucKhoe";
+import LeQuocKhanh from "../components/News/NewEvents/LeQuocKhanh";
+import NgayDanSoTheGioi from "../components/News/NewEvents/NgayDanSoTheGioi";
+import LichNghiLe from "../components/News/NewEvents/LichNghiLe";
+import GioToHungVuong from "../components/News/NewEvents/GioToHungVuong";
+import MungSinhNhat from "../components/News/NewEvents/MungSinhNhat";
+import MungKhaiTruongGoiGoldVaPlatinum from "../components/News/NewEvents/MungKhaiTruongGoiGoldVaPlatinum";
+
 
 
 
@@ -201,15 +227,58 @@ function AppRouter() {
         </Route>
 
         {/* Tin-tuc */}
-        <Route path="/y-hoc-thuong-thuc" element={<CommonMedicine />} />
-        <Route path="/tin-tuc-su-kien" element={<NewsEvent />} />
-        <Route path="/hoi-dap-y-khoa" element={<QuestionAnswer />} />
+        <Route path="/y-hoc-thuong-thuc/*" >
+          <Route index element={<CommonMedicine />} />
+          <Route path="nhung-uu-iem-vuot-troi-cua-o-loang-xuong-bang-phuong-phap-dexa" element={<AdvantagesOfBoneDensityMeasurement />} />
+          <Route path="8-cach-on-gian-giup-giam-au-bung-kinh-hieu-qua" element={<EightSimpleWays />} />
+          <Route path="soi-mat-nguyen-nhan-trieu-chung-cach-chan-oan-va-ieu-tri" element={<Gallstones />} />
+          <Route path="u-xo-tu-cung-co-bien-chung-thanh-ung-thu-khong" element={<UterineFibroids />} />
+          <Route path="nguyen-nhan-gay-benh-gan-nhiem-mo" element={<FattyLiver />} />
+          <Route path="phong-ngua-benh-gan-nhiem-mo" element={<FattyLiverDefense />} />
+          <Route path="xo-gan-nguyen-nhan-trieu-chung-va-phong-ngua" element={<FattyLiverSymptomAndPrevention />} />
+          <Route path="bien-chung-cua-benh-tieu-uong-va-cach-phong-ngua" element={<DiabetesPrevention />} />
+          <Route path="xuat-huyet-da-day-co-nguy-hiem-khong" element={<GastricBleeding />} />
+          <Route path="khi-nao-can-chup-cong-huong-tu-mri-mach-mau-nao" element={<MRI />} />
+          <Route path="ung-thu-vu-nguyen-nhan-trieu-chung-chan-oan-va-ieu-tri" element={<BreastCancer />} />
+          <Route path="viem-gan-a-nguyen-nhan-trieu-chung-va-ieu-tri" element={<Hepatitis />} />
+          <Route path="trieu-chung-cua-gan-nhiem-mo-la-gi" element={<FattyLiverSymptom />} />
+        </Route>
+        <Route path="/tin-tuc-su-kien/*" >
+          <Route index element={<NewsEvent />} />
+          <Route path="5-nam-vi-suc-khoe-ngan-qua-tang-tri-an" element={<TriAnSucKhoe />} />
+          <Route path="thong-bao-nghi-le-quoc-khanh-02-thang-09" element={<LeQuocKhanh />} />
+          <Route path="ngay-dan-so-the-gioi-11-thang-7" element={<NgayDanSoTheGioi />} />
+          <Route path="thong-bao-lich-nghi-le-3004-va-0105" element={<LichNghiLe />} />
+          <Route path="thong-bao-lich-nghi-le-gio-to-hung-vuong-nam-2024" element={<GioToHungVuong />} />
+          <Route path="mung-sinh-nhat-6th-tung-bung-uu-ai" element={<MungSinhNhat />} />
+          <Route path="mung-khai-truong-khu-kham-vip-uu-ai-10-goi-kham-gold-va-platinum" element={<MungKhaiTruongGoiGoldVaPlatinum />} />
+        </Route>
+        <Route path="/hoi-dap-y-khoa/*" >
+          <Route index element={<QuestionAnswer />} />
+          <Route path="tinh-trang-ho-khan-hau-covid19" element={<QuestionAnswer />} />
+          <Route path="hoi-chung-viem-a-he-thong-o-tre-em-misc-la-gi" element={<QuestionAnswer />} />
+          <Route path="ban-co-the-bi-tai-nhiem-covid19-bao-nhieu-lan" element={<QuestionAnswer />} />
+          <Route path="ai-co-nguy-co-mac-benh-covid19-nang" element={<QuestionAnswer />} />
+          <Route path="ai-can-tiem-vaccine-covid-19-mui-4" element={<QuestionAnswer />} />
+          <Route path="test-nhanh-co-phat-hien-uoc-omicron-tang-hinh-khong" element={<QuestionAnswer />} />
+          <Route path="trieu-chung-cua-hoi-chung-hau-covid19-la-gi" element={<QuestionAnswer />} />
+          <Route path="hoi-chung-hau-covid19-keo-dai-bao-lau" element={<QuestionAnswer />} />
+          <Route path="bao-lau-sau-khi-khoi-benh-co-the-i-kham-hau-covid19" element={<QuestionAnswer />} />
+        </Route>
 
         {/* Huong-dan-khach-hang */}
-        <Route path="/thong-tin-tham-khao" element={<MoreInfomation />} />
+        <Route path="/thong-tin-tham-khao" >
+          <Route index element={<MoreInfomation />} />
+          <Route path="danh-sach-van-bang-chuyen-mon-va-pham-vi-hoat-ong" element={<ListDoctor />} />
+          <Route path="danh-muc-ky-thuat" element={<ListTechnical />} />
+          <Route path="bang-gia-dich-vu-kham-chua-benh-va-vat-tu-y-te" element={<ListPrice />} />
+          <Route path="luat-kham-chua-benh-2023-152023qh15" element={<ListRules />} />
+        </Route>
         <Route path="/huong-dan-tru-cap-he-thong-luu-tru-va-quan-ly-hinh-anh" element={<PACS />} />
 
         <Route path="/appointments" element={<Appointments />} />
+
+        <Route path="/dang-ky" element={<SignupAppointMent />}/>
       </Routes>
     </Router>
   );
