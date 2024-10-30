@@ -124,10 +124,6 @@ const FooterComponent = () => {
                 <LinkOutlined className="text-blue-500 mr-2" />
                 <a href="/">Cập nhật thông báo Sở Y tế TP.HCM</a>
               </li>
-              <li className="flex items-center">
-                <LinkOutlined className="text-blue-500 mr-2" />
-                <a href="/">Bệnh viện Đại học Y dược TP.HCM</a>
-              </li>
             </ul>
             <div className="mt-4">
               <div

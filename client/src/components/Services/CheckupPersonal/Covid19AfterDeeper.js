@@ -244,7 +244,7 @@ const AccessSection = () => (
       4,
       "Giá gói kiểm tra sức khỏe hậu Covid-19 chuyên sâu",
       `
-      - Giá gói khám: 7.650.000 đồng -------> <a href="/">ĐĂNG KÝ NGAY</a>
+      - Giá gói khám: 7.650.000 đồng -------> <a href="/dang-ky">ĐĂNG KÝ NGAY</a>
     `
     )}
     {renderAccessContent(
