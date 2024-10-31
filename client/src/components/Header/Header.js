@@ -12,14 +12,15 @@ const HeaderComponent = () => {
       <Row align="middle">
         <Col span={4}>
           <div className="logo">
-            <img src={logo1} className="h-12 mx-auto" />
-            <a href="/"> </a>
+            <a href="/">
+              <img src={logo1} className="h-12 mx-auto" />
+            </a>
           </div>
         </Col>
-        <Col span={18}>
+        <Col span={17}>
           <Navigation />
         </Col>
-        <Col span={2}>
+        <Col span={3}>
           <UserMenu />
         </Col>
       </Row>

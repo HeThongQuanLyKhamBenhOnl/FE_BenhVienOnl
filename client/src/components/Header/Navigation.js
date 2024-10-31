@@ -77,15 +77,6 @@ const Navigation = () => {
         <Menu.Item key="3-8">
           <a href="/cac-goi-dich-vu-khac">Các gói dịch vụ khác</a>
         </Menu.Item>
-        <Menu.Item key="3-9">
-          <a href="/ho-tro">Hỗ Trợ</a>
-        </Menu.Item>
-        <Menu.Item key="3-10">
-          <a href="/dao-tao">Đào Tạo</a>
-        </Menu.Item>
-        <Menu.Item key="3-11">
-          <a href="/tu-van">Tư Vấn</a>
-        </Menu.Item>
       </SubMenu>
 
       <SubMenu
@@ -120,7 +111,7 @@ const Navigation = () => {
       </SubMenu>
 
       <Menu.Item key="7" icon={<FaEnvelope style={iconStyle} />}>
-        <a href="/contact">Liên Hệ</a>
+        <a href="/lien-he">Liên Hệ</a>
       </Menu.Item>
 
       {userInfo && userInfo.role === "admin" && (

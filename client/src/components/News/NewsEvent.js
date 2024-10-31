@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Row, Col, Pagination } from "antd";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../component/Footer";
-
 import "bootstrap/dist/css/bootstrap.css";
+
+// Helper function to format title for URL
+const formatTitleForURL = (title) =>
+  title
+    .normalize("NFD") // Normalize to split characters and their diacritics
+    .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+    .replace(/[^a-zA-Z0-9\s]/g, "") // Remove any special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .toLowerCase();
 
 const CheckupCard = ({ imgSrc, title, description }) => (
   <Col
@@ -24,23 +33,33 @@ const CheckupCard = ({ imgSrc, title, description }) => (
     lg={7}
     xl={6}
   >
-    <img
-      src={imgSrc}
-      alt="img"
-      style={{
-        width: "100%",
-        height: "160px",
-        objectFit: "cover",
-        objectPosition: "bottom",
-        borderRadius: "10px",
-      }}
-    />
-    <h4
-      className="text-lg font-bold text-blue-900"
-      style={{ padding: "25px 0px" }}
+    <Link
+      to={`/tin-tuc-su-kien/${formatTitleForURL(title)}`}
+      style={{ cursor: "pointer" }}
     >
-      {title}
-    </h4>
+      <img
+        src={imgSrc}
+        alt="img"
+        style={{
+          width: "100%",
+          height: "160px",
+          objectFit: "cover",
+          objectPosition: "bottom",
+          borderRadius: "10px",
+        }}
+      />
+    </Link>
+    <Link
+      to={`/tin-tuc-su-kien/${formatTitleForURL(title)}`}
+      style={{ cursor: "pointer" }}
+    >
+      <h4
+        className="text-lg font-bold text-blue-900"
+        style={{ padding: "25px 0px" }}
+      >
+        {title}
+      </h4>
+    </Link>
     <p style={{ textAlign: "justify" }}>{description}</p>
   </Col>
 );
@@ -51,105 +70,57 @@ const NewsEvent = () => {
 
   const checkupCardsData = [
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/440/390x246.jpg",
-      title: "Những ưu điểm vượt trội của đo loãng xương bằng phương pháp DEXA",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/702/website.jpg",
+      title: "5 NĂM VÌ SỨC KHOẺ NGÀN QUÀ TẶNG TRI ÂN",
       description:
-        "Biến chứng nặng nề nhất của Loãng xương là làm gia tăng nguy cơ gãy xương...",
+        "Nhân kỷ niệm 5 năm thành lập Phòng khám Bệnh viện Đại học Y Dược 1, ưu đãi và tặng nhiều phần quà xinh xắn cho tất cả các khách hàng đăng ký gói khám sức khỏe bất kỳ.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/891/nguyen-nhan-gay-benh-gan-nhiem-mo.jpg",
-      title: "NGUYÊN NHÂN GÂY BỆNH GAN NHIỄM MỠ",
+        "https://umcclinic.com.vn/Data/Sites/1/News/883/thong-bao-nghi-le-quoc-khanh-02.09_600-x-380-px.jpg",
+      title: "THÔNG BÁO NGHỈ LỄ QUỐC KHÁNH 02 THÁNG 09",
       description:
-        "Gan nhiễm mỡ là tình trạng dư thừa mỡ trong gan quá nhiều, nếu không được điều trị kịp thời...",
+        "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ Quốc khánh ngày 02/09/2024 của Phòng khám như sau: ...",
     },
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/893/soi-mat.jpg",
-      title: "SỎI MẬT: NGUYÊN NHÂN, TRIỆU CHỨNG, CÁCH CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/876/1.jpg",
+      title: "NGÀY DÂN SỐ THẾ GIỚI 11 THÁNG 7",
       description:
-        "Sỏi mật là các viên sỏi có kích thước từ hạt cát đến quả bóng bàn...",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/894/8-cach-don-gian-giup-giam-dau-bung-kinh-hieu-qua.jpg",
-      title: "8 CÁCH ĐƠN GIẢN GIÚP GIẢM ĐAU BỤNG KINH HIỆU QUẢ",
-      description:
-        "Nhiều chị nữ phụ nữ gặp phải tình trạng đau bụng kinh trước và trong kỳ kinh nguyệt...",
+        "Ngày Dân số Thế giới 11.07 hàng năm là lời nhắc nhở mỗi quốc gia và mỗi người trên trái đất về nguy cơ bùng nổ dân số.Bùng nổ dân số quá nhanh khiến đời sống con người gặp nhiều khó khăn - là căn nguyên khởi sinh của nhiều vấn đề trong xã hội, kìm hãm sự phát triển kinh tế. ",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/886/bien-chung-cua-dai-thao-duong-va-cach-phong-ngua.jpg",
-      title: "BIẾN CHỨNG CỦA BỆNH TIỂU ĐƯỜNG VÀ CÁCH PHÒNG NGỪA",
+        "https://umcclinic.com.vn/Data/Sites/1/News/865/thong-bao-nghi-le-30-4_002.jpg",
+      title: "THÔNG BÁO LỊCH NGHỈ LỄ 30/04 VÀ 01/05",
       description:
-        "Người bệnh tiểu đường nếu không thể kiểm soát tốt mức đường huyết có thể xảy ra nhiều biến chứng nguy hiểm...",
+        "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ 30.04 và 01.05 như sau:...",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/887/khi-noi-soi-da-day-can-luy-y-nhung-gi.jpg",
-      title: "KHI NỘI SOI DẠ DÀY CẦN LƯU Ý NHỮNG GÌ?",
+        "	https://umcclinic.com.vn/Data/Sites/1/News/863/thong-bao-gio-to-hung-vuong_000.jpg",
+      title: "THÔNG BÁO LỊCH NGHỈ LỄ GIỖ TỔ HÙNG VƯƠNG NĂM 2024",
       description:
-        "Nội soi dạ dày là phương pháp đưa ống soi vào đường tiêu hóa của bệnh nhân giúp quan sát trực tiếp...",
+        "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ Giỗ tổ Hùng Vương như sau:...",
+    },
+    {
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/852/600x380.png",
+      title: "MỪNG SINH NHẬT 6th - TƯNG BỪNG ƯU ĐÃI",
+      description:
+        "Từ ngày 04/03 - 15/04/2024, Phòng khám Bệnh viện Đại học Y Dược 1 tri ân khách hàng đăng ký sử dụng gói khám sức khỏe bất kỳ sẽ nhận được nhiều quà tặng...",
+    },
+    {
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/673/600x380px.jpg",
+      title:
+        "MỪNG KHAI TRƯƠNG KHU KHÁM VIP ƯU ĐÃI 10% GÓI KHÁM GOLD VÀ PLATINUM",
+      description:
+        "Tại Phòng khám Bệnh viện Đại học Y Dược 1, chúng tôi cung cấp dịch vụ y tế không chỉ là “chữa bệnh” mà là “chăm sóc sức khỏe”. Bởi vì có rất nhiều bệnh lý có thể ngăn ngừa được nếu phát hiện kịp thời. Với các gói khám sức khỏe tổng quát toàn diện như Gold và Platinum, chúng tôi nỗ lực giúp bạn khỏe mạnh và giữ cho bạn luôn khỏe mạnh.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/890/phong-ngua-benh-gan-nhiem-mo.jpg",
-      title: "PHÒNG NGỪA BỆNH GAN NHIỄM MỠ",
+        "https://umcclinic.com.vn/Data/Sites/1/News/672/mung-khai-truong-khu-kham-vip.jpg",
+      title: "RA MẮT KHU KHÁM VIP ƯU ĐÃI 50% PHÍ KHÁM BÁC SĨ",
       description:
-        "Phòng ngừa bệnh gan nhiễm mỡ là cách để chúng ta có một lá gan khỏe mạnh...",
-    },
-    {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/882/ung-thu-vu.jpg",
-      title: "UNG THƯ VÚ: NGUYÊN NHÂN, TRIỆU CHỨNG, CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
-      description:
-        "Ung thư vú xảy ra khi các tế bào ác tính hình thành từ trong mô tuyến vú...",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/888/trieu-chung-cua-gan-nhiem-mo-la-gi.jpg",
-      title: "TRIỆU CHỨNG CỦA GAN NHIỄM MỠ LÀ GÌ?",
-      description:
-        "Người bị gan nhiễm mỡ khi có dấu hiệu rối loạn chức năng gan hay không có triệu chứng cũng nên chủ động thăm khám...",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/881/viem-gan-a-nguyen-nhan-trieu-chung-va-cach-dieu-tri.jpg",
-      title: "XUẤT HUYẾT DẠ DÀY CÓ NGUY HIỂM KHÔNG?",
-      description:
-        "Xuất huyết dạ dày là triệu chứng rối loạn đường tiêu hóa, có nguy cơ gây biến chứng nguy hiểm nếu không điều trị kịp thời...",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/892/u-xo-tu-cung-co-bien-chung-thanh-ung-thu-khong.jpg",
-      title: "U XƠ TỬ CUNG CÓ BIẾN CHỨNG THÀNH UNG THƯ KHÔNG?",
-      description:
-        "U xơ tử cung thường gặp ở nữ giới trong độ tuổi sinh sản, ít phát triển thành ung thư...",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/881/viem-gan-a-nguyen-nhan-trieu-chung-va-cach-dieu-tri.jpg",
-      title: "VIÊM GAN A: NGUYÊN NHÂN, TRIỆU CHỨNG VÀ ĐIỀU TRỊ",
-      description:
-        "Viêm gan siêu vi A là nguyên nhân gây bệnh viêm gan A, ảnh hưởng đến hoạt động ổn định của gan...",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/884/khi-nao-can-chup-cong-huong-tu(mri)-mach-mau-nao.jpg",
-      title: "KHI NÀO CẦN CHỤP CỘNG HƯỞNG TỪ (MRI) MẠCH MÁU NÃO?",
-      description:
-        "Chụp cộng hưởng từ (MRI) mạch máu não giúp tạo ra hình ảnh 3 chiều của mạch máu não...",
-    },
-    {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/887/khi-noi-soi-da-day-can-luy-y-nhung-gi.jpg",
-      title: "KHI NỘI SOI DẠ DÀY CẦN LƯU Ý NHỮNG GÌ?",
-      description:
-        "Nội soi dạ dày là phương pháp đưa ống soi vào đường tiêu hóa giúp quan sát trực tiếp các tổn thương...",
-    },
-    {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/882/ung-thu-vu.jpg",
-      title: "UNG THƯ VÚ: NGUYÊN NHÂN, TRIỆU CHỨNG, CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
-      description:
-        "Ung thư vú xảy ra khi các tế bào ác tính hình thành từ trong mô tuyến vú...",
+        "Trong thời gian từ 21/9 - 28/9/2022, Quý khách hàng có thể liên hệ đặt lịch khám VIP để nhận ưu đãi giảm giá 50% chi phí khám bác sĩ.",
     },
   ];
 
@@ -164,7 +135,6 @@ const NewsEvent = () => {
     <div className="container mx-auto py-8">
       <HeaderComponent />
 
-      {/* First full-width card */}
       <Row
         style={{
           display: "flex",
@@ -188,19 +158,11 @@ const NewsEvent = () => {
               style={{
                 width: "50px",
                 height: "1px",
-                backgroundColor: "#a3d1ef" /* Màu xanh nhạt */,
+                backgroundColor: "#a3d1ef",
                 margin: "0 10px",
               }}
             ></span>
-            <span
-              style={{
-                fontSize: "1.5rem",
-                color: "#73c2ec" /* Màu xanh của biểu tượng */,
-              }}
-            >
-              ✦
-            </span>{" "}
-            {/* Bạn có thể thay thế icon này */}
+            <span style={{ fontSize: "1.5rem", color: "#73c2ec" }}>✦</span>
             <span
               style={{
                 width: "50px",
@@ -213,45 +175,46 @@ const NewsEvent = () => {
         </h2>
       </Row>
 
-      {/* Full-width first card */}
       <Row
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          flexDirection: "row",
+          justifyContent: "space-around",
           alignItems: "center",
-          padding: "20px 100px",
+          padding: "20px 10%",
           flexWrap: "wrap",
+          gap: "1rem",
         }}
       >
-        {/* Image on the left */}
-        <Col
-          xs={24}
-          sm={24}
-          md={10} // Takes 10/24 columns on medium screens and larger
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingRight: "20px",
-          }}
-        >
-          <img
-            src={checkupCardsData[0].imgSrc}
-            alt={checkupCardsData[0].title}
+        <Col>
+          <Link
+            to={`/tin-tuc-su-kien/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
             style={{
-              width: "100%",
-              height: "240px",
-              objectFit: "cover",
-              borderRadius: "10px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              cursor: "pointer",
             }}
-          />
+          >
+            <img
+              src={checkupCardsData[0].imgSrc}
+              alt={checkupCardsData[0].title}
+              style={{
+                width: "100%",
+                height: "240px",
+                objectFit: "cover",
+                borderRadius: "10px",
+              }}
+            />
+          </Link>
         </Col>
 
-        {/* Content (Title, Description, Button) on the right */}
         <Col
           xs={24}
           sm={24}
-          md={14} // Takes 14/24 columns on medium screens and larger
+          md={14}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -260,14 +223,20 @@ const NewsEvent = () => {
             paddingLeft: "20px",
           }}
         >
-          <h4
-            className="text-xl font-bold text-blue-900"
-            style={{
-              marginBottom: "15px",
-            }}
+          <Link
+            to={`/tin-tuc-su-kien/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
           >
-            {checkupCardsData[0].title}
-          </h4>
+            <h4
+              className="text-xl font-bold text-blue-900"
+              style={{
+                marginBottom: "15px",
+              }}
+            >
+              {checkupCardsData[0].title}
+            </h4>
+          </Link>
           <p
             style={{
               textAlign: "justify",
@@ -276,11 +245,16 @@ const NewsEvent = () => {
           >
             {checkupCardsData[0].description}
           </p>
-          <button className="btn btn-outline-primary">Xem chi tiết</button>
+          <Link
+            to={`/tin-tuc-su-kien/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
+          >
+            <button className="btn btn-outline-primary">Xem chi tiết</button>
+          </Link>
         </Col>
       </Row>
 
-      {/* Remaining items in rows of 3 */}
       <Row
         style={{
           display: "flex",
@@ -298,7 +272,6 @@ const NewsEvent = () => {
         ))}
       </Row>
 
-      {/* Pagination Component */}
       <Row justify="center" style={{ marginTop: "20px" }}>
         <Pagination
           current={currentPage}

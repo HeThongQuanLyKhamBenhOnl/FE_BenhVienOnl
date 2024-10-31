@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Row, Col, Pagination } from "antd";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../component/Footer";
-
 import "bootstrap/dist/css/bootstrap.css";
+
+// Helper function to format title for URL
+const formatTitleForURL = (title) =>
+  title
+    .normalize("NFD") // Normalize to split characters and their diacritics
+    .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+    .replace(/[^a-zA-Z0-9\s]/g, "") // Remove any special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .toLowerCase();
 
 const CheckupCard = ({ imgSrc, title, description }) => (
   <Col
@@ -24,23 +33,33 @@ const CheckupCard = ({ imgSrc, title, description }) => (
     lg={7}
     xl={6}
   >
-    <img
-      src={imgSrc}
-      alt="img"
-      style={{
-        width: "100%",
-        height: "160px",
-        objectFit: "cover",
-        objectPosition: "bottom",
-        borderRadius: "10px",
-      }}
-    />
-    <h4
-      className="text-lg font-bold text-blue-900"
-      style={{ padding: "25px 0px" }}
+    <Link
+      to={`/y-hoc-thuong-thuc/${formatTitleForURL(title)}`}
+      style={{ cursor: "pointer" }}
     >
-      {title}
-    </h4>
+      <img
+        src={imgSrc}
+        alt="img"
+        style={{
+          width: "100%",
+          height: "160px",
+          objectFit: "cover",
+          objectPosition: "bottom",
+          borderRadius: "10px",
+        }}
+      />
+    </Link>
+    <Link
+      to={`/y-hoc-thuong-thuc/${formatTitleForURL(title)}`}
+      style={{ cursor: "pointer" }}
+    >
+      <h4
+        className="text-lg font-bold text-blue-900"
+        style={{ padding: "25px 0px" }}
+      >
+        {title}
+      </h4>
+    </Link>
     <p style={{ textAlign: "justify" }}>{description}</p>
   </Col>
 );
@@ -51,8 +70,7 @@ const CommonMedicine = () => {
 
   const checkupCardsData = [
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/440/390x246.jpg",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/440/390x246.jpg",
       title: "Những ưu điểm vượt trội của đo loãng xương bằng phương pháp DEXA",
       description:
         "Biến chứng nặng nề nhất của Loãng xương là làm gia tăng nguy cơ gãy xương và các hệ quả nghiêm trọng của gãy xương như đau đớn, giảm chất lượng cuộc sống, tàn phế, thậm chí là tử vong. Tuy nhiên loãng xương lại là bệnh âm thầm, không có triệu chứng khi mới mắc bệnh, vì vậy việc chẩn đoán sẽ chậm trễ nếu chỉ dựa vào triệu chứng lâm sàng. Để chẩn đoán loãng xương, hiện nay phải dựa vào việc đánh giá mật độ khoáng của xương (còn gọi là mật độ xương hay khối lượng xương). Có nhiều phương pháp đo mật độ xương, nhưng DEXA là phương pháp chính xác nhất và được ứng dụng rộng rãi trên toàn thế giới với nhiều ưu điểm vượt trội.",
@@ -65,8 +83,7 @@ const CommonMedicine = () => {
         "Nhiều chị nữ phụ nữ gặp phải tình trạng đau bụng kinh trước và trong kỳ kinh nguyệt. Đau bụng kinh có thể không quá nghiêm trọng, nhưng có thể gây khó khăn trong cuộc sống sinh hoạt hàng ngày. Để làm giảm cơn đau và cảm thấy dễ chịu hơn, chị em có thể tham khảo một số biện pháp đơn giản giúp giảm đau bụng kinh hiệu quả.  ",
     },
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/893/soi-mat.jpg",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/893/soi-mat.jpg",
       title: "SỎI MẬT: NGUYÊN NHÂN, TRIỆU CHỨNG, CÁCH CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
       description:
         "Sỏi mật là các viên sỏi có kích thước từ hạt cát đến quả bóng bàn, hình thành trong ống mật hoặc túi mật.",
@@ -94,10 +111,10 @@ const CommonMedicine = () => {
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/888/trieu-chung-cua-gan-nhiem-mo-la-gi.jpg",
-      title: "TRIỆU CHỨNG CỦA GAN NHIỄM MỠ LÀ GÌ?",
+        "https://umcclinic.com.vn/Data/Sites/1/News/889/xo-gan.jpg",
+      title: "XƠ GAN: NGUYÊN NHÂN TRIỆU CHỨNG VÀ PHÒNG NGỪA",
       description:
-        "Người bị gan nhiễm mỡ khi có dấu hiệu rối loạn chức năng gan hay không có triệu chứng cũng nên chủ động thăm khám, xét nghiệm chức năng gan để kiểm tra và điều trị kịp thời, hạn chế biến chứng.",
+        "Giai đoạn muộn của quá trình tạo sẹo (xơ hóa) ở gan được gọi là xơ gan. Xơ gan do nhiều nguyên nhân khác nhau gây ra như viêm gan do virus hay nghiện rượu mãn tính.",
     },
     {
       imgSrc:
@@ -128,8 +145,7 @@ const CommonMedicine = () => {
         "Chụp cộng hưởng từ (MRI) mạch máu não giúp tạo ra hình ảnh 3 chiều của mạch máu não với độ phóng đại lớn giúp bác sĩ xác định tình trạng bất thường bên trong mạch máu não.",
     },
     {
-      imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/882/ung-thu-vu.jpg",
+      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/882/ung-thu-vu.jpg",
       title: "UNG THƯ VÚ: NGUYÊN NHÂN, TRIỆU CHỨNG, CHẨN ĐOÁN VÀ ĐIỀU TRỊ",
       description:
         "Ung thư vú xảy ra khi các tế bào ác tính hình thành từ trong mô tuyến vú. Đây là căn bệnh có tỷ lệ tử vong hàng đầu trong số các loại ung thư ở phụ nữ.",
@@ -150,18 +166,14 @@ const CommonMedicine = () => {
     },
   ];
 
-  // Calculate the start and end indices for slicing the array
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-
-  // Slice the data array to display only the current page items
   const currentData = checkupCardsData.slice(startIndex, endIndex);
 
   return (
     <div className="container mx-auto py-8">
       <HeaderComponent />
 
-      {/* First full-width card */}
       <Row
         style={{
           display: "flex",
@@ -185,19 +197,11 @@ const CommonMedicine = () => {
               style={{
                 width: "50px",
                 height: "1px",
-                backgroundColor: "#a3d1ef" /* Màu xanh nhạt */,
+                backgroundColor: "#a3d1ef",
                 margin: "0 10px",
               }}
             ></span>
-            <span
-              style={{
-                fontSize: "1.5rem",
-                color: "#73c2ec" /* Màu xanh của biểu tượng */,
-              }}
-            >
-              ✦
-            </span>{" "}
-            {/* Bạn có thể thay thế icon này */}
+            <span style={{ fontSize: "1.5rem", color: "#73c2ec" }}>✦</span>
             <span
               style={{
                 width: "50px",
@@ -210,7 +214,6 @@ const CommonMedicine = () => {
         </h2>
       </Row>
 
-      {/* Full-width first card */}
       <Row
         style={{
           display: "flex",
@@ -220,64 +223,48 @@ const CommonMedicine = () => {
           flexWrap: "wrap",
         }}
       >
-        {/* Image on the left */}
-        <Col
-          xs={24}
-          sm={24}
-          md={10} // Takes 10/24 columns on medium screens and larger
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingRight: "20px",
-          }}
-        >
-          <img
-            src={checkupCardsData[0].imgSrc}
-            alt={checkupCardsData[0].title}
-            style={{
-              width: "100%",
-              height: "240px",
-              objectFit: "cover",
-              borderRadius: "10px",
-            }}
-          />
+        <Col xs={24} sm={24} md={10} style={{ paddingRight: "20px" }}>
+          <Link
+            to={`/y-hoc-thuong-thuc/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
+          >
+            <img
+              src={checkupCardsData[0].imgSrc}
+              alt={checkupCardsData[0].title}
+              style={{
+                width: "100%",
+                height: "240px",
+                objectFit: "cover",
+                borderRadius: "10px",
+              }}
+            />
+          </Link>
         </Col>
 
-        {/* Content (Title, Description, Button) on the right */}
-        <Col
-          xs={24}
-          sm={24}
-          md={14} // Takes 14/24 columns on medium screens and larger
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingLeft: "20px",
-          }}
-        >
-          <h4
-            className="text-xl font-bold text-blue-900"
-            style={{
-              marginBottom: "15px",
-            }}
+        <Col xs={24} sm={24} md={14} style={{ paddingLeft: "20px" }}>
+          <Link
+            to={`/y-hoc-thuong-thuc/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
           >
-            {checkupCardsData[0].title}
-          </h4>
-          <p
-            style={{
-              textAlign: "justify",
-              marginBottom: "20px",
-            }}
-          >
+            <h4 className="text-xl font-bold text-blue-900">
+              {checkupCardsData[0].title}
+            </h4>
+          </Link>
+          <p style={{ textAlign: "justify" }}>
             {checkupCardsData[0].description}
           </p>
-          <button className="btn btn-outline-primary">Xem chi tiết</button>
+          <Link
+            to={`/y-hoc-thuong-thuc/${formatTitleForURL(
+              checkupCardsData[0].title
+            )}`}
+          >
+            <button className="btn btn-outline-primary">Xem chi tiết</button>
+          </Link>
         </Col>
       </Row>
 
-      {/* Remaining items in rows of 3 */}
       <Row
         style={{
           display: "flex",
@@ -295,7 +282,6 @@ const CommonMedicine = () => {
         ))}
       </Row>
 
-      {/* Pagination Component */}
       <Row justify="center" style={{ marginTop: "20px" }}>
         <Pagination
           current={currentPage}
