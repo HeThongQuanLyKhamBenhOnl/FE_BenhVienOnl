@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Input, Button, Form, notification } from "antd";
+import { Input, Button, Form, notification, DatePicker, Select } from "antd";
 import { useDispatch } from "react-redux";
-import { register } from "../../Redux/User/userSlice"; // Import action register từ slice
+import { registerUser } from "../../Redux/User/userSlice";
+
+const { Option } = Select;
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,19 +15,24 @@ const SignUp = () => {
 
   // Xử lý khi form được submit
   const onFinish = async (values) => {
-    // Dispatch action register và truyền dữ liệu form
-    const resultAction = await dispatch(register(values));
+    const formattedValues = {
+      ...values,
+      dateOfBirth: values.dateOfBirth.format("YYYY-MM-DD"),
+    };
 
-    // Kiểm tra kết quả
-    if (register.fulfilled.match(resultAction)) {
+    const resultAction = await dispatch(registerUser(formattedValues));
+
+    if (registerUser.fulfilled.match(resultAction)) {
       notification.success({
         message: "Đăng ký thành công",
         description: "Tài khoản của bạn đã được tạo thành công!",
       });
     } else {
+      const errorMessage =
+        resultAction.payload?.message || "Có lỗi xảy ra khi đăng ký.";
       notification.error({
         message: "Đăng ký thất bại",
-        description: resultAction.payload || "Có lỗi xảy ra khi đăng ký.",
+        description: errorMessage,
       });
     }
   };
@@ -35,10 +42,21 @@ const SignUp = () => {
       <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg max-w-sm w-full">
         <h2 className="text-2xl font-semibold text-center mb-6">Sign Up</h2>
         <Form name="signup" onFinish={onFinish} layout="vertical">
-          {/* Họ và tên (cần thay đổi từ fullname sang name) */}
+          {/* Tên người dùng */}
+          <Form.Item
+            label="Username"
+            name="username"
+            rules={[
+              { required: true, message: "Vui lòng nhập tên người dùng!" },
+            ]}
+          >
+            <Input placeholder="Nhập tên người dùng" />
+          </Form.Item>
+
+          {/* Họ và tên */}
           <Form.Item
             label="Họ và tên"
-            name="name"
+            name="fullName"
             rules={[{ required: true, message: "Vui lòng nhập họ và tên!" }]}
           >
             <Input placeholder="Nhập họ và tên" />
@@ -48,35 +66,73 @@ const SignUp = () => {
           <Form.Item
             label="Email"
             name="email"
-            rules={[{ required: true, message: "Please enter your email!" }]}
+            rules={[
+              {
+                required: true,
+                type: "email",
+                message: "Vui lòng nhập email hợp lệ!",
+              },
+            ]}
           >
-            <Input placeholder="Enter your email" />
+            <Input placeholder="Nhập email" />
           </Form.Item>
 
           {/* Mật khẩu */}
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true, message: "Please enter your password!" }]}
+            rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
           >
             <Input.Password
-              placeholder="Enter your password"
+              placeholder="Nhập mật khẩu"
               type={showPassword ? "text" : "password"}
+              onClick={togglePasswordVisibility}
             />
           </Form.Item>
 
-          {/* Xác nhận mật khẩu */}
+          {/* Số điện thoại */}
           <Form.Item
-            label="Confirm Password"
-            name="confirmPassword"
+            label="Số điện thoại"
+            name="phone"
             rules={[
-              { required: true, message: "Please confirm your password!" },
+              { required: true, message: "Vui lòng nhập số điện thoại!" },
             ]}
           >
-            <Input.Password
-              placeholder="Confirm your password"
-              type={showPassword ? "text" : "password"}
+            <Input placeholder="Nhập số điện thoại" />
+          </Form.Item>
+
+          {/* Giới tính */}
+          <Form.Item
+            label="Giới tính"
+            name="gender"
+            rules={[{ required: true, message: "Vui lòng chọn giới tính!" }]}
+          >
+            <Select placeholder="Chọn giới tính">
+              <Option value="Male">Nam</Option>
+              <Option value="Female">Nữ</Option>
+              <Option value="Other">Khác</Option>
+            </Select>
+          </Form.Item>
+
+          {/* Ngày sinh */}
+          <Form.Item
+            label="Ngày sinh"
+            name="dateOfBirth"
+            rules={[{ required: true, message: "Vui lòng chọn ngày sinh!" }]}
+          >
+            <DatePicker
+              style={{ width: "100%" }}
+              placeholder="Chọn ngày sinh"
             />
+          </Form.Item>
+
+          {/* Địa chỉ */}
+          <Form.Item
+            label="Địa chỉ"
+            name="address"
+            rules={[{ required: true, message: "Vui lòng nhập địa chỉ!" }]}
+          >
+            <Input placeholder="Nhập địa chỉ" />
           </Form.Item>
 
           {/* Nút đăng ký */}
@@ -86,16 +142,16 @@ const SignUp = () => {
               htmlType="submit"
               className="w-full h-12 text-lg bg-teal-500 hover:bg-teal-600 text-white"
             >
-              Sign Up
+              Đăng ký
             </Button>
           </Form.Item>
         </Form>
 
         {/* Link tới trang đăng nhập */}
         <div className="text-center mt-4">
-          <span className="text-sm">Already have an account? </span>
+          <span className="text-sm">Đã có tài khoản? </span>
           <a href="/login" className="text-sm text-teal-600 hover:underline">
-            Sign in
+            Đăng nhập
           </a>
         </div>
       </div>

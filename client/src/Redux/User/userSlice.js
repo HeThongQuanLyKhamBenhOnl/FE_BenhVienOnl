@@ -119,6 +119,23 @@ export const createDoctor = createAsyncThunk(
     }
   }
 );
+
+export const getUpdatedMedicalRecords = createAsyncThunk(
+  "user/getUpdatedMedicalRecords",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await API.get("/api/medical-records/updated");
+      return response.data;
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      return rejectWithValue({ message });
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState: {
@@ -126,6 +143,7 @@ const userSlice = createSlice({
     token: null,
     loading: false,
     error: null,
+    updatedMedicalRecords: [],
   },
   reducers: {
     logout: (state) => {
@@ -240,6 +258,19 @@ const userSlice = createSlice({
         state.doctors = action.payload.doctors;
       })
       .addCase(getAllDoctors.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message;
+      })
+      // Xử lý lấy hồ sơ bệnh án đã cập nhật
+      .addCase(getUpdatedMedicalRecords.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getUpdatedMedicalRecords.fulfilled, (state, action) => {
+        state.loading = false;
+        state.updatedMedicalRecords = action.payload.medicalRecords;
+      })
+      .addCase(getUpdatedMedicalRecords.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload.message;
       });

@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Login from "../components/Login/Login";
 import Home from "../pages/Home";
 import Profile from "../components/Login/Profile";
-// import SignUp from "../components/Login/SignUp";
+import SignUp from "../components/Login/SignUp";
 import { setUser } from "../Redux/User/userSlice";
 import AdminDashboard from "../components/Admin/AdminDashboard";
 import Department from "../components/Admin/Department";
@@ -52,6 +52,8 @@ import DoctorDashboard from "../components/Doctor/DoctorDashboard";
 import ManageAppointment from "../components/Doctor/ManageAppointment";
 import MedicalRecordDoctor from "../components/Doctor/MedicalRecordDoctor";
 
+import MedicalPatient from "../components/User/MedicalPatient";
+
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
   return userInfo ? element : <Navigate to={redirectTo} />;
@@ -78,10 +80,10 @@ function AppRouter() {
           path="/login"
           element={!userInfo ? <Login /> : <Navigate to="/" />}
         />
-        {/* <Route
+        <Route
           path="/register"
           element={!userInfo ? <SignUp /> : <Navigate to="/" />}
-        /> */}
+        />
         <Route path="/user/*" element={<UserProfile />}>
           <Route
             path="profile"
@@ -90,6 +92,7 @@ function AppRouter() {
             }
           />
           <Route path="appointments" element={<Appointments />} />
+          <Route path="medical-record" element={<MedicalPatient />} />
         </Route>
 
         <Route path="/doctor/*" element={<DoctorDashboard />}>

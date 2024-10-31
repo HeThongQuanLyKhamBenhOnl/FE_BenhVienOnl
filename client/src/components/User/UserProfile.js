@@ -24,7 +24,7 @@ const UserProfile = () => {
     },
     {
       name: "Hồ sơ bệnh án",
-      path: "/profile/medical-record",
+      path: "/user/medical-record",
       icon: <FaFileMedical />,
     },
     { name: "Nhận xét", path: "/profile/reviews", icon: <FaComments /> },

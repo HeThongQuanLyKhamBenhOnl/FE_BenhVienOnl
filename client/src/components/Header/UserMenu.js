@@ -54,7 +54,7 @@ const UserMenu = () => {
       <Menu.Item key="1" onClick={() => navigate("/login")}>
         <span className="text-gray-700 hover:text-blue-500">Đăng Nhập</span>
       </Menu.Item>
-      <Menu.Item key="2" onClick={() => navigate("/signup")}>
+      <Menu.Item key="2" onClick={() => navigate("/register")}>
         <span className="text-gray-700 hover:text-blue-500">Đăng Ký</span>
       </Menu.Item>
     </Menu>
