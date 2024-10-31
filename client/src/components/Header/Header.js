@@ -12,8 +12,9 @@ const HeaderComponent = () => {
       <Row align="middle">
         <Col span={4}>
           <div className="logo">
-            <img src={logo1} className="h-12 mx-auto" />
-            <a href="/"> </a>
+            <a href="/">
+              <img src={logo1} className="h-12 mx-auto" />
+            </a>
           </div>
         </Col>
         <Col span={17}>

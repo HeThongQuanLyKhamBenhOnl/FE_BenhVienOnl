@@ -111,7 +111,7 @@ const Navigation = () => {
       </SubMenu>
 
       <Menu.Item key="7" icon={<FaEnvelope style={iconStyle} />}>
-        <a href="/contact">Liên Hệ</a>
+        <a href="/lien-he">Liên Hệ</a>
       </Menu.Item>
 
       {userInfo && userInfo.role === "admin" && (
