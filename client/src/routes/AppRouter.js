@@ -114,6 +114,16 @@ import LichNghiLe from "../components/News/NewEvents/LichNghiLe";
 import GioToHungVuong from "../components/News/NewEvents/GioToHungVuong";
 import MungSinhNhat from "../components/News/NewEvents/MungSinhNhat";
 import MungKhaiTruongGoiGoldVaPlatinum from "../components/News/NewEvents/MungKhaiTruongGoiGoldVaPlatinum";
+import DryCoughAfterCovid19 from "../components/News/QuestionAnswer/DryCoughAfterCovid19";
+import MISC from "../components/News/QuestionAnswer/MISC";
+import CovidRevinvation from "../components/News/QuestionAnswer/CovidRevinvation";
+import RiskOfSevereCovidIllness from "../components/News/QuestionAnswer/RiskOfSevereCovidIllness";
+import WhoNeedVaccineCovid4th from "../components/News/QuestionAnswer/WhoNeedVaccineCovid4th";
+import QuickTestOmicron from "../components/News/QuestionAnswer/QuickTestOmicron";
+import CovidSymptom from "../components/News/QuestionAnswer/CovidSymptom";
+import CovidSyndrome from "../components/News/QuestionAnswer/CovidSyndrome";
+import ReexaminationCovid from "../components/News/QuestionAnswer/ReexaminationCovid";
+import LienHe from "../components/Contact/LienHe";
 
 
 
@@ -255,15 +265,15 @@ function AppRouter() {
         </Route>
         <Route path="/hoi-dap-y-khoa/*" >
           <Route index element={<QuestionAnswer />} />
-          <Route path="tinh-trang-ho-khan-hau-covid19" element={<QuestionAnswer />} />
-          <Route path="hoi-chung-viem-a-he-thong-o-tre-em-misc-la-gi" element={<QuestionAnswer />} />
-          <Route path="ban-co-the-bi-tai-nhiem-covid19-bao-nhieu-lan" element={<QuestionAnswer />} />
-          <Route path="ai-co-nguy-co-mac-benh-covid19-nang" element={<QuestionAnswer />} />
-          <Route path="ai-can-tiem-vaccine-covid-19-mui-4" element={<QuestionAnswer />} />
-          <Route path="test-nhanh-co-phat-hien-uoc-omicron-tang-hinh-khong" element={<QuestionAnswer />} />
-          <Route path="trieu-chung-cua-hoi-chung-hau-covid19-la-gi" element={<QuestionAnswer />} />
-          <Route path="hoi-chung-hau-covid19-keo-dai-bao-lau" element={<QuestionAnswer />} />
-          <Route path="bao-lau-sau-khi-khoi-benh-co-the-i-kham-hau-covid19" element={<QuestionAnswer />} />
+          <Route path="tinh-trang-ho-khan-hau-covid19" element={<DryCoughAfterCovid19 />} />
+          <Route path="hoi-chung-viem-a-he-thong-o-tre-em-misc-la-gi" element={<MISC />} />
+          <Route path="ban-co-the-bi-tai-nhiem-covid19-bao-nhieu-lan" element={<CovidRevinvation />} />
+          <Route path="ai-co-nguy-co-mac-benh-covid19-nang" element={<RiskOfSevereCovidIllness />} />
+          <Route path="ai-can-tiem-vaccine-covid-19-mui-4" element={<WhoNeedVaccineCovid4th />} />
+          <Route path="test-nhanh-co-phat-hien-uoc-omicron-tang-hinh-khong" element={<QuickTestOmicron />} />
+          <Route path="trieu-chung-cua-hoi-chung-hau-covid19-la-gi" element={<CovidSymptom />} />
+          <Route path="hoi-chung-hau-covid19-keo-dai-bao-lau" element={<CovidSyndrome />} />
+          <Route path="bao-lau-sau-khi-khoi-benh-co-the-i-kham-hau-covid19" element={<ReexaminationCovid />} />
         </Route>
 
         {/* Huong-dan-khach-hang */}
@@ -277,6 +287,8 @@ function AppRouter() {
         <Route path="/huong-dan-tru-cap-he-thong-luu-tru-va-quan-ly-hinh-anh" element={<PACS />} />
 
         <Route path="/appointments" element={<Appointments />} />
+
+        <Route path="/lien-he" element={<LienHe />} />
 
         <Route path="/dang-ky" element={<SignupAppointMent />}/>
       </Routes>
