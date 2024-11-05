@@ -45,14 +45,14 @@ export const doctorApiSlice = createApi({
     // Tạo lịch hẹn
     createAppointment: builder.mutation({
       query: (newAppointment) => ({
-        url: "/appointments",
+        url: "/api/appointments",
         method: "POST",
         body: newAppointment,
       }),
     }),
     // Lấy danh sách lịch hẹn
     getAppointments: builder.query({
-      query: () => "/api/appointments",
+      query: () => "/api/appointments/me",
     }),
     // Cập nhật trạng thái lịch hẹn (chỉ bác sĩ)
     updateAppointmentStatus: builder.mutation({
@@ -62,12 +62,12 @@ export const doctorApiSlice = createApi({
         body: { status },
       }),
     }),
-    // Lấy danh sách lịch hẹn của bác sĩ (chỉ bác sĩ) 
+    // Lấy danh sách lịch hẹn của bác sĩ (chỉ bác sĩ)
     getDoctorAppointments: builder.query({
       query: () => "/api/appointments/doctor",
     }),
     getAllMedicalRecords: builder.query({
-      query: () => 'api/medical-records',
+      query: () => "api/medical-records",
     }),
     // Hủy lịch hẹn
     cancelAppointment: builder.mutation({
@@ -92,6 +92,26 @@ export const doctorApiSlice = createApi({
         body: updatedRecord,
       }),
     }),
+    // Tạo lịch làm việc của bác sĩ
+    createSchedule: builder.mutation({
+      query: (schedule) => ({
+        url: "/api/doctor/schedule",
+        method: "POST",
+        body: schedule,
+      }),
+    }),
+    // Lấy lịch làm việc của bác sĩ
+    getDoctorSchedule: builder.query({
+      query: () => "/api/doctor/schedule/me",
+    }),
+    // Cập nhật lịch làm việc của bác sĩ
+    updateDoctorSchedule: builder.mutation({
+      query: ({ scheduleId, updatedSchedule }) => ({
+        url: "/api/doctor/scheduleUpdate",
+        method: "PUT",
+        body: { scheduleId, ...updatedSchedule },
+      }),
+    }),
   }),
 });
 
@@ -109,6 +129,9 @@ export const {
   useRescheduleAppointmentMutation,
   useUpdateMedicalRecordMutation,
   useGetAllMedicalRecordsQuery,
+  useCreateScheduleMutation,
+  useGetDoctorScheduleQuery,
+  useUpdateDoctorScheduleMutation,
 } = doctorApiSlice;
 
 export default doctorApiSlice;

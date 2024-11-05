@@ -78,6 +78,7 @@ import Appointments from "../components/Login/Appointments";
 import UserProfile from "../components/User/UserProfile";
 import DoctorDashboard from "../components/Doctor/DoctorDashboard";
 import ManageAppointment from "../components/Doctor/ManageAppointment";
+import ManageSchedule from "../components/Doctor/ManageSchedule";
 import MedicalRecordDoctor from "../components/Doctor/MedicalRecordDoctor";
 import CancerScreeningOverall from "../components/Services/CancerScreening/CancerScreeningOverall";
 import ThroatCancerScreening from "../components/Services/CancerScreening/ThroatCancerScreening";
@@ -168,6 +169,7 @@ function AppRouter() {
           <Route path="infoDoctor" element={<DoctorProfile />} />
           <Route path="manage-patients" element={<ManageAppointment />} />
           <Route path="patient-records" element={<MedicalRecordDoctor />} />
+          <Route path="manage-schedule" element={<ManageSchedule />} />
         </Route>
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
