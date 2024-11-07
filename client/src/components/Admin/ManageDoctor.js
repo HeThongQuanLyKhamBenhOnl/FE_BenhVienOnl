@@ -208,9 +208,9 @@ const ManageDoctor = () => {
             rules={[{ required: true, message: "Hãy chọn giới tính!" }]}
           >
             <Select placeholder="Chọn giới tính">
-              <Select.Option value="Male">Nam</Select.Option>
-              <Select.Option value="Female">Nữ</Select.Option>
-              <Select.Option value="Other">Khác</Select.Option>
+              <Select.Option value="male">Nam</Select.Option>
+              <Select.Option value="female">Nữ</Select.Option>
+              <Select.Option value="other">Khác</Select.Option>
             </Select>
           </Form.Item>
 

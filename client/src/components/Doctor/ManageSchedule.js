@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Form,
   DatePicker,
-  TimePicker,
+  Select,
   Button,
   notification,
   Card,
@@ -18,6 +18,7 @@ import {
 import moment from "moment";
 
 const { Title, Text } = Typography;
+const { Option } = Select;
 
 const ManageSchedule = () => {
   const [form] = Form.useForm();
@@ -30,12 +31,11 @@ const ManageSchedule = () => {
   const [updateDoctorSchedule] = useUpdateDoctorScheduleMutation();
 
   const handleCreate = async (values) => {
-    const { date, startTime, endTime } = values;
+    const { date, shift } = values;
 
     const scheduleData = {
       date: date.format("YYYY-MM-DD"),
-      startTime: startTime.format("HH:mm"),
-      endTime: endTime.format("HH:mm"),
+      shift,
     };
 
     setLoading(true);
@@ -59,12 +59,11 @@ const ManageSchedule = () => {
   };
 
   const handleUpdate = async (values) => {
-    const { date, startTime, endTime } = values;
+    const { date, shift } = values;
     const updatedSchedule = {
       scheduleId: selectedSchedule._id,
       date: date.format("YYYY-MM-DD"),
-      startTime: startTime.format("HH:mm"),
-      endTime: endTime.format("HH:mm"),
+      shift,
     };
 
     try {
@@ -89,8 +88,7 @@ const ManageSchedule = () => {
     setSelectedSchedule(schedule);
     form.setFieldsValue({
       date: moment(schedule.date),
-      startTime: moment(schedule.startTime, "HH:mm"),
-      endTime: moment(schedule.endTime, "HH:mm"),
+      shift: schedule.shift,
     });
     setIsModalOpen(true);
   };
@@ -131,19 +129,15 @@ const ManageSchedule = () => {
           </Form.Item>
 
           <Form.Item
-            name="startTime"
-            label="Giờ bắt đầu"
-            rules={[{ required: true, message: "Vui lòng chọn giờ bắt đầu!" }]}
+            name="shift"
+            label="Chọn ca làm việc"
+            rules={[{ required: true, message: "Vui lòng chọn ca làm việc!" }]}
           >
-            <TimePicker style={styles.timePicker} format="HH:mm" />
-          </Form.Item>
-
-          <Form.Item
-            name="endTime"
-            label="Giờ kết thúc"
-            rules={[{ required: true, message: "Vui lòng chọn giờ kết thúc!" }]}
-          >
-            <TimePicker style={styles.timePicker} format="HH:mm" />
+            <Select placeholder="Chọn ca làm việc" style={styles.select}>
+              <Option value="morning">Buổi sáng</Option>
+              <Option value="afternoon">Buổi trưa</Option>
+              <Option value="evening">Buổi tối</Option>
+            </Select>
           </Form.Item>
 
           <Form.Item>
@@ -177,8 +171,12 @@ const ManageSchedule = () => {
               <List.Item.Meta
                 title={
                   <Text>
-                    Ngày: {moment(item.date).format("YYYY-MM-DD")} | Giờ:{" "}
-                    {item.startTime} - {item.endTime}
+                    Ngày: {moment(item.date).format("YYYY-MM-DD")} | Ca:{" "}
+                    {item.shift === "morning"
+                      ? "Buổi sáng"
+                      : item.shift === "afternoon"
+                      ? "Buổi trưa"
+                      : "Buổi tối"}
                   </Text>
                 }
               />
@@ -204,22 +202,17 @@ const ManageSchedule = () => {
               <DatePicker style={styles.datePicker} format="YYYY-MM-DD" />
             </Form.Item>
             <Form.Item
-              name="startTime"
-              label="Giờ bắt đầu"
+              name="shift"
+              label="Ca làm việc"
               rules={[
-                { required: true, message: "Vui lòng chọn giờ bắt đầu!" },
+                { required: true, message: "Vui lòng chọn ca làm việc!" },
               ]}
             >
-              <TimePicker style={styles.timePicker} format="HH:mm" />
-            </Form.Item>
-            <Form.Item
-              name="endTime"
-              label="Giờ kết thúc"
-              rules={[
-                { required: true, message: "Vui lòng chọn giờ kết thúc!" },
-              ]}
-            >
-              <TimePicker style={styles.timePicker} format="HH:mm" />
+              <Select placeholder="Chọn ca làm việc" style={styles.select}>
+                <Option value="morning">Buổi sáng</Option>
+                <Option value="afternoon">Buổi trưa</Option>
+                <Option value="evening">Buổi tối</Option>
+              </Select>
             </Form.Item>
           </Form>
         </Modal>
@@ -255,7 +248,7 @@ const styles = {
   datePicker: {
     width: "100%",
   },
-  timePicker: {
+  select: {
     width: "100%",
   },
   button: {

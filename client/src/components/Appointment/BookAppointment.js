@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { DatePicker, TimePicker, Input, Button, message } from "antd";
+import { DatePicker, Select, Input, Button, message } from "antd";
 import moment from "moment";
 import { useSelector } from "react-redux";
 import { useCreateAppointmentMutation } from "../../Redux/Appointment/api";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../component/Footer";
+
+const { Option } = Select;
 
 const BookAppointment = () => {
   const { doctorId } = useParams();
@@ -15,22 +17,20 @@ const BookAppointment = () => {
   const user = useSelector((state) => state.user.userInfo);
 
   const [date, setDate] = useState(null);
-  const [startTime, setStartTime] = useState(null);
-  const [endTime, setEndTime] = useState(null);
+  const [shift, setShift] = useState(null);
   const [reasonForVisit, setReasonForVisit] = useState("");
   const [notes, setNotes] = useState("");
 
   const handleSubmit = async () => {
-    if (!date || !startTime || !endTime || !reasonForVisit) {
+    if (!date || !shift || !reasonForVisit) {
       return message.error("Vui lòng nhập đầy đủ thông tin!");
     }
 
-    // Định dạng ngày và giờ đúng để gửi lên API
+    // Định dạng dữ liệu để gửi lên API
     const appointmentData = {
       doctorId,
       date: date.format("YYYY-MM-DD"), // Định dạng ngày thành YYYY-MM-DD
-      startTime: startTime.format("HH:mm"), // Định dạng giờ bắt đầu thành HH:mm
-      endTime: endTime.format("HH:mm"), // Định dạng giờ kết thúc thành HH:mm
+      shift, // Buổi khám
       reasonForVisit,
       notes,
     };
@@ -130,18 +130,15 @@ const BookAppointment = () => {
                 />
               </div>
               <div style={styles.formGroup}>
-                <TimePicker
-                  placeholder="Giờ Bắt Đầu Khám"
-                  onChange={(value) => setStartTime(value)}
-                  format="HH:mm"
+                <Select
+                  placeholder="Chọn Ca Khám"
+                  onChange={(value) => setShift(value)}
                   style={styles.input}
-                />
-                <TimePicker
-                  placeholder="Giờ Kết Thúc Khám"
-                  onChange={(value) => setEndTime(value)}
-                  format="HH:mm"
-                  style={styles.input}
-                />
+                >
+                  <Option value="morning">Buổi sáng</Option>
+                  <Option value="afternoon">Buổi trưa</Option>
+                  <Option value="evening">Buổi tối</Option>
+                </Select>
               </div>
               <div style={styles.formGroup}>
                 <Input.TextArea

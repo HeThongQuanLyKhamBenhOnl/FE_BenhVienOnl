@@ -67,7 +67,7 @@ export const doctorApiSlice = createApi({
       query: () => "/api/appointments/doctor",
     }),
     getAllMedicalRecords: builder.query({
-      query: () => "api/medical-records",
+      query: () => "api/medical-records/me",
     }),
     // Hủy lịch hẹn
     cancelAppointment: builder.mutation({
@@ -112,6 +112,9 @@ export const doctorApiSlice = createApi({
         body: { scheduleId, ...updatedSchedule },
       }),
     }),
+    getDoctorMedicalRecords: builder.query({
+      query: () => "/api/medical-records/doctor",
+    }),
   }),
 });
 
@@ -132,6 +135,7 @@ export const {
   useCreateScheduleMutation,
   useGetDoctorScheduleQuery,
   useUpdateDoctorScheduleMutation,
+  useGetDoctorMedicalRecordsQuery,
 } = doctorApiSlice;
 
 export default doctorApiSlice;

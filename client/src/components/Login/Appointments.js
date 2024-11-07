@@ -53,9 +53,13 @@ const Appointments = () => {
                   </span>
                 </p>
                 <p>
-                  <strong>Giờ:</strong>{" "}
+                  <strong>Ca khám:</strong>{" "}
                   <span style={styles.time}>
-                    {appointment.startTime} - {appointment.endTime}
+                    {appointment.shift === "morning"
+                      ? "Buổi sáng"
+                      : appointment.shift === "afternoon"
+                      ? "Buổi trưa"
+                      : "Buổi tối"}
                   </span>
                 </p>
                 <p>
@@ -129,10 +133,6 @@ const styles = {
     marginBottom: "20px",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.05)",
-  },
-  appointmentCardHover: {
-    transform: "translateY(-5px)",
-    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
   },
   doctorName: {
     color: "#007bff",
