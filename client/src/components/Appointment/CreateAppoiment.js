@@ -94,7 +94,7 @@ const CreateAppoiment = () => {
                   </div>
                   <div className="md:w-2/3 md:ml-6">
                     <h3 className="text-2xl font-bold text-blue-600">
-                      PGS.TS.BS {doctor?.user?.fullName}
+                      PGS.TS.BS {doctor?.fullName}
                     </h3>
                     <p className="text-lg">
                       <strong>Chuyên khoa:</strong> {doctor?.specialty}

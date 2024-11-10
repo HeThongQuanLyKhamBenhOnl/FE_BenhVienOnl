@@ -39,7 +39,7 @@ const AdminDashboard = () => {
     {
       key: "4",
       icon: <ProfileOutlined />,
-      label: "Quản Lý Ca Khám Bệnh",
+      label: <Link to="/adminDashboard/medicine">Quản Lý Kho Thuốc</Link>,
     },
     {
       key: "5",

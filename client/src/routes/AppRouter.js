@@ -123,6 +123,10 @@ import LienHe from "../components/Contact/LienHe";
 
 import MedicalPatient from "../components/User/MedicalPatient";
 
+import ManageMedicine from "../components/Admin/ManageMedicine";
+import PrescribeMedicine from "../components/Doctor/PrescribeMedicine";
+import MedicineUser from "../components/User/MedicineUser";
+
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
   return userInfo ? element : <Navigate to={redirectTo} />;
@@ -163,6 +167,7 @@ function AppRouter() {
           />
           <Route path="appointments" element={<Appointments />} />
           <Route path="medical-record" element={<MedicalPatient />} />
+          <Route path="medicine" element={<MedicineUser />} />
         </Route>
 
         <Route path="/doctor/*" element={<DoctorDashboard />}>
@@ -170,12 +175,14 @@ function AppRouter() {
           <Route path="manage-patients" element={<ManageAppointment />} />
           <Route path="patient-records" element={<MedicalRecordDoctor />} />
           <Route path="manage-schedule" element={<ManageSchedule />} />
+          <Route path="doctor-medicines" element={<PrescribeMedicine />} />
         </Route>
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
           <Route path="doctor" element={<ManageDoctor />} />
           <Route path="department" element={<Department />} />
           <Route path="control" element={<ControlPanel />} />
+          <Route path="medicine" element={<ManageMedicine />} />
         </Route>
 
         <Route path="/doctorDashboard/*" element={<DoctorProfile />}>

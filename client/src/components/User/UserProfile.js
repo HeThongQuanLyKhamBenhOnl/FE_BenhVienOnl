@@ -12,6 +12,7 @@ import {
   FaComments,
   FaCreditCard,
   FaSignOutAlt,
+  FaPrescriptionBottleAlt,
 } from "react-icons/fa";
 
 const UserProfile = () => {
@@ -26,6 +27,11 @@ const UserProfile = () => {
       name: "Hồ sơ bệnh án",
       path: "/user/medical-record",
       icon: <FaFileMedical />,
+    },
+    {
+      name: "Toa Thuốc Của tôi",
+      path: "/user/medicine",
+      icon: <FaPrescriptionBottleAlt />,
     },
     { name: "Nhận xét", path: "/profile/reviews", icon: <FaComments /> },
     {

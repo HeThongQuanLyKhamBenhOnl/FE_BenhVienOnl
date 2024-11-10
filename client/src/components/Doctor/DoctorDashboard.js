@@ -8,6 +8,7 @@ import {
   FaCalendarAlt,
   FaFileMedical,
   FaClock,
+  FaPrescriptionBottleAlt,
 } from "react-icons/fa";
 
 const DoctorDashboard = () => {
@@ -26,6 +27,11 @@ const DoctorDashboard = () => {
       name: "Hồ sơ bệnh nhân",
       path: "/doctor/patient-records",
       icon: <FaFileMedical />,
+    },
+    {
+      name: "Kê Toa Thuốc Onl",
+      path: "/doctor/doctor-medicines",
+      icon: <FaPrescriptionBottleAlt />,
     },
     {
       name: "Quản lý lịch làm việc",

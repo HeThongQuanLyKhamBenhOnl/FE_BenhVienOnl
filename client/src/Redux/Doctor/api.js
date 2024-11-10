@@ -86,10 +86,13 @@ export const doctorApiSlice = createApi({
     }),
     // Cập nhật hồ sơ y tế (chỉ bác sĩ)
     updateMedicalRecord: builder.mutation({
-      query: ({ recordId, updatedRecord }) => ({
-        url: `api/medical-records/${recordId}`,
+      query: ({ recordId, ...body }) => ({
+        url: `/api/medical-records/${recordId}`,
         method: "PUT",
-        body: updatedRecord,
+        body,
+        headers: {
+          "Content-Type": "application/json",
+        },
       }),
     }),
     // Tạo lịch làm việc của bác sĩ
