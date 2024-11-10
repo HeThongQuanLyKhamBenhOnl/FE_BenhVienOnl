@@ -32,12 +32,12 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-400 to-green-400">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6">Đăng Nhập</h2>
         <form onSubmit={handleLogin} className="space-y-6">
           <div>
             <input
               type="text"
-              placeholder="Username" // Thay đổi thành username
+              placeholder="Tên đăng nhập" // Thay đổi thành username
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -47,7 +47,7 @@ const Login = () => {
           <div>
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Password"
+              placeholder="Mật khẩu"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -62,14 +62,14 @@ const Login = () => {
               onChange={() => setShowPassword(!showPassword)}
               className="mr-2"
             />
-            <label htmlFor="showPassword">Show Password</label>
+            <label htmlFor="showPassword">Hiển thị mật khẩu</label>
           </div>
           <button
             type="submit"
             className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition duration-300"
             disabled={loading} // Vô hiệu hóa khi đang tải
           >
-            {loading ? "Logging in..." : "SIGN IN"} {/* Hiển thị trạng thái khi đang tải */}
+            {loading ? "Logging in..." : "ĐĂNG NHẬP"} {/* Hiển thị trạng thái khi đang tải */}
           </button>
         </form>
         <div className="text-center mt-4">
@@ -77,13 +77,13 @@ const Login = () => {
             href="/forgot-password"
             className="text-sm text-teal-600 hover:underline"
           >
-            Forgot Username / Password?
+            Quên Tài khoản / Mật khẩu?
           </a>
         </div>
         <div className="text-center mt-2">
-          <span className="text-sm">Don't have an account? </span>
+          <span className="text-sm">Không có tài khoản? </span>
           <a href="/signup" className="text-sm text-teal-600 hover:underline">
-            Sign up
+            Đăng ký
           </a>
         </div>
       </div>

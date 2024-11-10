@@ -9,6 +9,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import Login from "../components/Login/Login";
 import Home from "../pages/Home";
+import ForgotPassword from "../components/Login/forgotPassword";
+import ConfirmOTP from "../components/Login/ConfirmOTP";
 import Profile from "../components/Login/Profile";
 import SignUp from "../components/Login/SignUp";
 import { setUser } from "../Redux/User/userSlice";
@@ -149,6 +151,9 @@ function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/confirm-otp" element={<ConfirmOTP />} />
 
         <Route
           path="/login"
