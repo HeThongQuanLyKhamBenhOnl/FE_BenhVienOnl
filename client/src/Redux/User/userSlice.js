@@ -136,6 +136,40 @@ export const getUpdatedMedicalRecords = createAsyncThunk(
   }
 );
 
+// Password reset request
+export const requestPasswordReset = createAsyncThunk(
+  "user/requestPasswordReset",
+  async (email, { rejectWithValue }) => {
+    try {
+      const response = await API.post("/api/users/requestPasswordReset", { email });
+      return response.data;
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      return rejectWithValue({ message });
+    }
+  }
+);
+
+// Confirm OTP
+export const confirmOTP = createAsyncThunk(
+  "user/confirmOTP",
+  async (otpData, { rejectWithValue }) => {
+    try {
+      const response = await API.post("/api/users/confirm-otp", otpData); // Adjust endpoint if necessary
+      return response.data;
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      return rejectWithValue({ message });
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState: {
@@ -143,6 +177,7 @@ const userSlice = createSlice({
     token: null,
     loading: false,
     error: null,
+    successMessage: null,
     updatedMedicalRecords: [],
   },
   reducers: {
@@ -158,6 +193,9 @@ const userSlice = createSlice({
     },
     clearError: (state) => {
       state.error = null;
+    },
+    clearSuccessMessage: (state) => {
+      state.successMessage = null;
     },
   },
   extraReducers: (builder) => {
@@ -273,9 +311,39 @@ const userSlice = createSlice({
       .addCase(getUpdatedMedicalRecords.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload.message;
+      })
+
+      // Handle password reset request
+      .addCase(requestPasswordReset.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.successMessage = null;
+      })
+      .addCase(requestPasswordReset.fulfilled, (state, action) => {
+        state.loading = false;
+        state.successMessage = action.payload.message; // Set success message if provided by API
+      })
+      .addCase(requestPasswordReset.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message;
+      })
+
+      // Confirm OTP Cases
+      .addCase(confirmOTP.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.successMessage = null;
+      })
+      .addCase(confirmOTP.fulfilled, (state, action) => {
+        state.loading = false;
+        state.successMessage = action.payload.message; // Assuming API returns success message
+      })
+      .addCase(confirmOTP.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message;
       });
   },
 });
 
-export const { logout, setUser, clearError } = userSlice.actions;
+export const { logout, setUser, clearError, clearSuccessMessage } = userSlice.actions;
 export default userSlice.reducer;
