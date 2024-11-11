@@ -4,41 +4,41 @@ import dayjs from "dayjs"; // Import dayjs for date formatting
 import {
   useGetDoctorAppointmentsQuery,
   useCancelAppointmentMutation,
-  useRescheduleAppointmentMutation,
   useUpdateAppointmentStatusMutation,
 } from "../../Redux/Doctor/api";
 
 const ManageAppointment = () => {
   const { data, isLoading } = useGetDoctorAppointmentsQuery();
   const [cancelAppointment] = useCancelAppointmentMutation();
-  const [rescheduleAppointment] = useRescheduleAppointmentMutation();
   const [updateAppointmentStatus] = useUpdateAppointmentStatusMutation();
 
   const [appointmentsList, setAppointmentsList] = useState([]);
-  const [rescheduleModalVisible, setRescheduleModalVisible] = useState(false);
-  const [selectedAppointment, setSelectedAppointment] = useState(null);
-  const [newDate, setNewDate] = useState("");
 
   useEffect(() => {
     if (data?.appointments) setAppointmentsList(data.appointments);
   }, [data]);
 
-  const handleCancelAppointment = async (appointmentId) => {
+  const handleCancelAppointment = async (appointmentId, status) => {
+    if (status !== "pending") {
+      message.error("Chỉ có thể hủy các cuộc hẹn ở trạng thái đang chờ xử lý.");
+      return;
+    }
+
     try {
-      await cancelAppointment(appointmentId).unwrap();
-      message.success("Appointment cancelled successfully");
+      await cancelAppointment({ appointmentId }).unwrap();
+      message.success("Lịch hẹn đã bị hủy thành công");
       setAppointmentsList((prev) =>
         prev.filter((appointment) => appointment._id !== appointmentId)
       );
     } catch (error) {
-      message.error("Failed to cancel appointment");
+      message.error("Không thể hủy lịch hẹn");
     }
   };
 
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       await updateAppointmentStatus({ appointmentId, status }).unwrap();
-      message.success("Status updated successfully");
+      message.success("Trạng thái đã được cập nhật thành công");
       setAppointmentsList((prev) =>
         prev.map((appointment) =>
           appointment._id === appointmentId
@@ -47,32 +47,7 @@ const ManageAppointment = () => {
         )
       );
     } catch (error) {
-      message.error("Failed to update status");
-    }
-  };
-
-  const handleReschedule = async () => {
-    if (!newDate) {
-      message.warning("Please select a new date for rescheduling.");
-      return;
-    }
-    try {
-      await rescheduleAppointment({
-        appointmentId: selectedAppointment,
-        newDate,
-      }).unwrap();
-      message.success("Appointment rescheduled successfully");
-      setAppointmentsList((prev) =>
-        prev.map((appointment) =>
-          appointment._id === selectedAppointment
-            ? { ...appointment, date: newDate }
-            : appointment
-        )
-      );
-      setRescheduleModalVisible(false);
-      setNewDate("");
-    } catch (error) {
-      message.error("Failed to reschedule appointment");
+      message.error("Đã xảy ra lỗi khi cập nhật trạng thái");
     }
   };
 
@@ -98,37 +73,24 @@ const ManageAppointment = () => {
       key: "actions",
       render: (_, record) => (
         <Space size="middle">
+          {record.status !== "Completed" && (
+            <Button
+              type="primary"
+              onClick={() => handleUpdateStatus(record._id, "Completed")}
+            >
+              Xác nhận
+            </Button>
+          )}
           <Button
             type="primary"
-            onClick={() => handleUpdateStatus(record._id, "Completed")}
-          >
-            Xác nhận
-          </Button>
-          <Button
-            type="danger"
-            onClick={() => handleCancelAppointment(record._id)}
+            onClick={() => handleCancelAppointment(record._id, record.status)}
           >
             Hủy lịch
-          </Button>
-          <Button
-            type="default"
-            onClick={() => {
-              setSelectedAppointment(record._id);
-              setRescheduleModalVisible(true);
-            }}
-          >
-            Dời lịch hẹn
           </Button>
         </Space>
       ),
     },
   ];
-
-  useEffect(() => {
-    if (appointmentsList.length === 0 && !isLoading) {
-      // You can add any specific logic here when the appointments list is empty
-    }
-  }, [appointmentsList, isLoading]);
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -141,21 +103,6 @@ const ManageAppointment = () => {
         pagination={{ pageSize: 5 }}
         className="bg-white shadow-lg rounded-lg"
       />
-
-      {/* Modal for Rescheduling */}
-      <Modal
-        title="Reschedule Appointment"
-        visible={rescheduleModalVisible}
-        onOk={handleReschedule}
-        onCancel={() => setRescheduleModalVisible(false)}
-      >
-        <input
-          type="date"
-          value={newDate}
-          onChange={(e) => setNewDate(e.target.value)}
-          className="w-full border border-gray-300 rounded p-2"
-        />
-      </Modal>
     </div>
   );
 };

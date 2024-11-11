@@ -19,6 +19,11 @@ const DoctorDashboard = () => {
       icon: <FaUserMd />,
     },
     {
+      name: "Quản lý lịch làm việc",
+      path: "/doctor/manage-schedule",
+      icon: <FaClock />,
+    },
+    {
       name: "Quản lý lịch hẹn",
       path: "/doctor/manage-patients",
       icon: <FaCalendarAlt />,
@@ -32,11 +37,6 @@ const DoctorDashboard = () => {
       name: "Kê Toa Thuốc Onl",
       path: "/doctor/doctor-medicines",
       icon: <FaPrescriptionBottleAlt />,
-    },
-    {
-      name: "Quản lý lịch làm việc",
-      path: "/doctor/manage-schedule",
-      icon: <FaClock />,
     },
   ];
 

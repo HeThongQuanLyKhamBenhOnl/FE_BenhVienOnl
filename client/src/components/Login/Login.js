@@ -69,7 +69,8 @@ const Login = () => {
             className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition duration-300"
             disabled={loading} // Vô hiệu hóa khi đang tải
           >
-            {loading ? "Logging in..." : "ĐĂNG NHẬP"} {/* Hiển thị trạng thái khi đang tải */}
+            {loading ? "Logging in..." : "ĐĂNG NHẬP"}{" "}
+            {/* Hiển thị trạng thái khi đang tải */}
           </button>
         </form>
         <div className="text-center mt-4">
@@ -82,7 +83,7 @@ const Login = () => {
         </div>
         <div className="text-center mt-2">
           <span className="text-sm">Không có tài khoản? </span>
-          <a href="/signup" className="text-sm text-teal-600 hover:underline">
+          <a href="/register" className="text-sm text-teal-600 hover:underline">
             Đăng ký
           </a>
         </div>

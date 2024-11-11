@@ -52,7 +52,7 @@ const MedicalRecordDoctor = () => {
   // Gọi API để cập nhật hồ sơ bệnh án
   const handleUpdate = async () => {
     if (!formValues.diagnosis && !formValues.treatment && !formValues.notes) {
-      message.error("Please fill at least one field.");
+      message.error("Vui lòng điền ít nhất một trường.");
       return;
     }
 
@@ -60,7 +60,7 @@ const MedicalRecordDoctor = () => {
       // Truyền đúng dữ liệu cập nhật vào API
       const response = await updateMedicalRecord({
         recordId: selectedRecord,
-        updatedRecord: formValues,
+        ...formValues, // Truyền toàn bộ `formValues` vào `body`
       }).unwrap();
 
       console.log("Updated medical record:", response); // Kiểm tra dữ liệu trả về từ API
@@ -74,10 +74,10 @@ const MedicalRecordDoctor = () => {
         )
       );
 
-      message.success("Medical record updated successfully");
+      message.success("Cập nhật hồ sơ bệnh án thành công");
       setEditModalVisible(false); // Đóng modal
     } catch (error) {
-      message.error("Failed to update medical record");
+      message.error("Cập nhật hồ sơ bệnh án thất bại");
     }
   };
 

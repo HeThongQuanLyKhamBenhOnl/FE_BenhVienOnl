@@ -141,7 +141,9 @@ export const requestPasswordReset = createAsyncThunk(
   "user/requestPasswordReset",
   async (email, { rejectWithValue }) => {
     try {
-      const response = await API.post("/api/users/requestPasswordReset", { email });
+      const response = await API.post("/api/users/requestPasswordReset", {
+        email,
+      });
       return response.data;
     } catch (error) {
       const message =
@@ -160,6 +162,22 @@ export const confirmOTP = createAsyncThunk(
     try {
       const response = await API.post("/api/users/confirm-otp", otpData); // Adjust endpoint if necessary
       return response.data;
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      return rejectWithValue({ message });
+    }
+  }
+);
+// Yêu cầu đặt lại mật khẩu
+export const forgotPassword = createAsyncThunk(
+  "user/forgotPassword",
+  async (email, { rejectWithValue }) => {
+    try {
+      const response = await API.post("/api/users/forgot-password", { email });
+      return response.data; // API trả về message thành công nếu email hợp lệ
     } catch (error) {
       const message =
         error.response && error.response.data.message
@@ -341,9 +359,24 @@ const userSlice = createSlice({
       .addCase(confirmOTP.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload.message;
+      })
+      // Xử lý yêu cầu quên mật khẩu
+      .addCase(forgotPassword.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.successMessage = null;
+      })
+      .addCase(forgotPassword.fulfilled, (state, action) => {
+        state.loading = false;
+        state.successMessage = action.payload.message; // Đặt thông báo thành công từ API
+      })
+      .addCase(forgotPassword.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message; // Đặt thông báo lỗi nếu có
       });
   },
 });
 
-export const { logout, setUser, clearError, clearSuccessMessage } = userSlice.actions;
+export const { logout, setUser, clearError, clearSuccessMessage } =
+  userSlice.actions;
 export default userSlice.reducer;

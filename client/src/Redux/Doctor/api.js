@@ -71,9 +71,12 @@ export const doctorApiSlice = createApi({
     }),
     // Hủy lịch hẹn
     cancelAppointment: builder.mutation({
-      query: (appointmentId) => ({
-        url: `api/appointments/${appointmentId}/cancel`,
-        method: "PUT",
+      query: ({ appointmentId }) => ({
+        url: `/api/appointments/${appointmentId}/cancel`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
       }),
     }),
 
