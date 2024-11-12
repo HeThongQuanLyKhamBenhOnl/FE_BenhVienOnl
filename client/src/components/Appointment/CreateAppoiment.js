@@ -5,11 +5,10 @@ import {
   useGetAllDoctorsQuery,
   useGetDoctorByIdQuery,
 } from "../../Redux/Doctor/api"; // Import cả API slice và API chi tiết
-import doctor1 from "../../img/doctor1.png";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateAppoiment = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const { data: doctors, isLoading, error } = useGetAllDoctorsQuery(); // Gọi API để lấy danh sách bác sĩ
   const [selectedSpecialty, setSelectedSpecialty] = useState(null); // State để lưu chuyên khoa được chọn
   const [selectedDoctorId, setSelectedDoctorId] = useState(null); // State để lưu doctorId được chọn
@@ -44,7 +43,7 @@ const CreateAppoiment = () => {
     setSelectedDoctorId(null); // Reset lại doctorId khi đóng modal
   };
   const handleBookAppointment = (doctorId) => {
-    Navigate(`/bookingAppointment/${doctorId}`); // Điều hướng sang trang đặt lịch với doctorId
+    navigate(`/bookingAppointment/${doctorId}`); // Điều hướng sang trang đặt lịch với doctorId
   };
 
   return (
@@ -87,7 +86,7 @@ const CreateAppoiment = () => {
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/3 mb-4 md:mb-0">
                     <img
-                      src={doctor1}
+                      src={doctor?.doctor?.images || "default-image-url"} // Sử dụng ảnh của bác sĩ từ database, hoặc ảnh mặc định nếu không có
                       alt="Doctor"
                       className="w-full rounded-md"
                     />
@@ -151,6 +150,11 @@ const CreateAppoiment = () => {
               <h3 className="text-xl font-bold text-blue-600">
                 PGS.TS.BS {selectedDoctor.doctor?.user?.fullName}
               </h3>
+              <img
+                src={selectedDoctor.doctor.image || "default-image-url"} // Sử dụng ảnh từ database hoặc ảnh mặc định
+                alt="Doctor"
+                className="w-full rounded-md mb-4"
+              />
               <p>
                 <strong>Chuyên khoa:</strong> {selectedDoctor.doctor?.specialty}
               </p>

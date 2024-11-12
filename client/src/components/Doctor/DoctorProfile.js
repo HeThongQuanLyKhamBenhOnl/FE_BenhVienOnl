@@ -12,8 +12,9 @@ import {
   message,
   Row,
   Col,
+  Tabs,
+  Upload,
 } from "antd";
-
 import { useDispatch, useSelector } from "react-redux";
 import {
   getProfile,
@@ -21,18 +22,16 @@ import {
   clearError,
 } from "../../Redux/User/userSlice";
 import moment from "moment";
+import { UploadOutlined } from "@ant-design/icons";
 
 const DoctorProfile = () => {
   const dispatch = useDispatch();
-
-  // Lấy thông tin từ store
   const {
     userInfo,
     loading: profileLoading,
     error: profileError,
   } = useSelector((state) => state.user);
 
-  // Lấy thông tin chuyên môn từ API của bác sĩ
   const {
     data: profile,
     error: profileErrorApi,
@@ -40,7 +39,6 @@ const DoctorProfile = () => {
   } = useGetDoctorProfileQuery();
   const [updateDoctorProfile] = useUpdateDoctorProfileMutation();
 
-  // Tạo state cho thông tin chuyên môn và cá nhân
   const [formData, setFormData] = useState({
     specialty: "",
     experience: "",
@@ -54,12 +52,12 @@ const DoctorProfile = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [address, setAddress] = useState("");
   const [updateError, setUpdateError] = useState(null);
+  const [images, setImages] = useState([]); // State để lưu danh sách hình ảnh
 
   useEffect(() => {
-    dispatch(getProfile()); // Lấy thông tin cá nhân từ API
+    dispatch(getProfile());
   }, [dispatch]);
 
-  // Cập nhật state với thông tin cá nhân từ store
   useEffect(() => {
     if (userInfo) {
       setName(userInfo.fullName || "");
@@ -71,7 +69,6 @@ const DoctorProfile = () => {
     }
   }, [userInfo]);
 
-  // Cập nhật state với thông tin chuyên môn từ API
   useEffect(() => {
     if (profile && profile.data) {
       setFormData({
@@ -79,10 +76,10 @@ const DoctorProfile = () => {
         experience: profile.data.experience || "",
         qualifications: profile.data.qualifications || [],
       });
+      setImages(profile.data.images || []); // Cập nhật danh sách hình ảnh nếu có
     }
   }, [profile]);
 
-  // Xử lý cập nhật thông tin chuyên môn
   const handleSpecialtySubmit = async () => {
     try {
       await updateDoctorProfile(formData).unwrap();
@@ -92,10 +89,8 @@ const DoctorProfile = () => {
     }
   };
 
-  // Xử lý cập nhật thông tin cá nhân
-  const handleProfileSubmit = async (values) => {
+  const handleProfileSubmit = async () => {
     setUpdateError(null);
-
     const updatedData = {
       fullName: name,
       email,
@@ -107,7 +102,6 @@ const DoctorProfile = () => {
 
     try {
       const response = await dispatch(updateProfile(updatedData));
-
       if (response.meta.requestStatus === "fulfilled") {
         message.success("Thông tin cá nhân đã được cập nhật thành công!");
       } else {
@@ -120,7 +114,19 @@ const DoctorProfile = () => {
     }
   };
 
-  // Xử lý lỗi từ API
+  const handleAvatarUpload = async ({ file }) => {
+    const formData = new FormData();
+    formData.append("images", file);
+
+    try {
+      await updateDoctorProfile(formData).unwrap();
+      message.success("Hình đại diện đã được cập nhật thành công!");
+      setImages([URL.createObjectURL(file)]); // Thay thế ảnh mới
+    } catch (error) {
+      message.error("Cập nhật hình đại diện thất bại.");
+    }
+  };
+
   useEffect(() => {
     if (profileError || profileErrorApi) {
       message.error(profileError || profileErrorApi);
@@ -128,17 +134,42 @@ const DoctorProfile = () => {
     }
   }, [profileError, profileErrorApi, dispatch]);
 
-  // Xử lý khi đang tải
   if (isLoading || profileLoading) {
     return <div>Đang tải...</div>;
   }
 
   return (
     <div className="max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <Row gutter={24}>
-        {/* Form thông tin cá nhân */}
-        <Col xs={24} md={12}>
-          <h2 className="text-2xl font-semibold mb-6">Thông tin cá nhân</h2>
+      {/* Hình đại diện */}
+      <div
+        style={{
+          textAlign: "center",
+          marginBottom: "24px",
+          justifyItems: "center",
+        }}
+      >
+        {images.length > 0 ? (
+          <img
+            src={images[0]}
+            alt="Hình đại diện"
+            style={{
+              width: 200,
+              height: 200,
+              borderRadius: "50%",
+              marginBottom: 16,
+            }}
+          />
+        ) : (
+          <div>Chưa có hình đại diện</div>
+        )}
+        <Upload customRequest={handleAvatarUpload} showUploadList={false}>
+          <Button icon={<UploadOutlined />}>Tải lên hình đại diện</Button>
+        </Upload>
+      </div>
+
+      <Tabs defaultActiveKey="1">
+        {/* Tab Thông tin cá nhân */}
+        <Tabs.TabPane tab="Thông tin cá nhân" key="1">
           <Form layout="vertical" onFinish={handleProfileSubmit}>
             <Form.Item label="Họ và Tên">
               <Input
@@ -147,7 +178,6 @@ const DoctorProfile = () => {
                 placeholder="Họ và Tên"
               />
             </Form.Item>
-
             <Form.Item label="Số điện thoại">
               <Input
                 value={phone}
@@ -155,11 +185,9 @@ const DoctorProfile = () => {
                 placeholder="Số điện thoại"
               />
             </Form.Item>
-
             <Form.Item label="Email">
               <Input value={email} disabled placeholder="Email" />
             </Form.Item>
-
             <Form.Item label="Giới tính">
               <Select
                 value={gender}
@@ -170,7 +198,6 @@ const DoctorProfile = () => {
                 <Select.Option value="Female">Nữ</Select.Option>
               </Select>
             </Form.Item>
-
             <Form.Item label="Ngày sinh">
               <DatePicker
                 value={moment(dateOfBirth)}
@@ -179,7 +206,6 @@ const DoctorProfile = () => {
                 placeholder="Chọn ngày sinh"
               />
             </Form.Item>
-
             <Form.Item label="Địa chỉ">
               <Input
                 value={address}
@@ -187,16 +213,14 @@ const DoctorProfile = () => {
                 placeholder="Địa chỉ"
               />
             </Form.Item>
-
             <Button type="primary" htmlType="submit">
               Cập nhật thông tin cá nhân
             </Button>
           </Form>
-        </Col>
+        </Tabs.TabPane>
 
-        {/* Form thông tin chuyên môn */}
-        <Col xs={24} md={12}>
-          <h2 className="text-2xl font-semibold mb-6">Thông tin chuyên môn</h2>
+        {/* Tab Thông tin chuyên môn */}
+        <Tabs.TabPane tab="Thông tin chuyên môn" key="2">
           <Form layout="vertical" onFinish={handleSpecialtySubmit}>
             <Form.Item label="Chuyên môn">
               <Input
@@ -207,7 +231,6 @@ const DoctorProfile = () => {
                 placeholder="Chuyên môn"
               />
             </Form.Item>
-
             <Form.Item label="Kinh nghiệm (năm)">
               <Input
                 type="number"
@@ -218,7 +241,6 @@ const DoctorProfile = () => {
                 placeholder="Số năm kinh nghiệm"
               />
             </Form.Item>
-
             <Form.Item label="Trình độ chuyên môn">
               <Input
                 value={formData.qualifications.join(", ")}
@@ -231,13 +253,12 @@ const DoctorProfile = () => {
                 placeholder="Trình độ chuyên môn (cách nhau bằng dấu phẩy)"
               />
             </Form.Item>
-
             <Button type="primary" htmlType="submit">
               Cập nhật thông tin chuyên môn
             </Button>
           </Form>
-        </Col>
-      </Row>
+        </Tabs.TabPane>
+      </Tabs>
     </div>
   );
 };
