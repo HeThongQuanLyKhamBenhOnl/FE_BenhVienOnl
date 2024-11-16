@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Table, Button, Modal, message, Space } from "antd";
 import dayjs from "dayjs";
@@ -25,7 +26,6 @@ const ManageAppointment = () => {
     setSelectedAppointment(appointment); // Lưu cuộc hẹn đã chọn
     setIsChatVisible(true); // Hiển thị hộp thoại chat
   };
-
   const handleCancelAppointment = async (appointmentId, status) => {
     if (status !== "pending") {
       message.error("Chỉ có thể hủy các cuộc hẹn ở trạng thái đang chờ xử lý.");
@@ -115,7 +115,6 @@ const ManageAppointment = () => {
         pagination={{ pageSize: 5 }}
         className="bg-white shadow-lg rounded-lg"
       />
-
       {/* Hộp thoại chat */}
       <Modal
         title="Hộp Thoại Chat"

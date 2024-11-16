@@ -3,7 +3,7 @@ import { Layout } from "antd";
 import HeaderComponent from "../components/Header/Header";
 import SectionComponent from "../components/Section/Section";
 import FooterComponent from "../components/component/Footer";
-
+import { useNavigate, Link } from "react-router-dom";
 const { Content } = Layout;
 
 export const Home = () => {

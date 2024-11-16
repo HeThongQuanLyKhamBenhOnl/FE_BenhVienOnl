@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -151,7 +152,6 @@ function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/confirm-otp" element={<ConfirmOTP />} />
 
