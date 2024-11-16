@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -102,7 +102,7 @@ const AccessSectionHeader = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://png.pngtree.com/thumb_back/fh260/background/20231001/pngtree-joyful-6th-birthday-gilded-surprise-balloon-and-box-image_13513311.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743656/pngtree-joyful-6th-birthday-gilded-surprise-balloon-and-box-image_13513311_bs0bfd.png" />
         </div>
     `
     )}
@@ -174,7 +174,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/ph%C3%B2ng-ng%E1%BB%ABa-b%E1%BB%87nh-gan-nhi%E1%BB%85m-m%E1%BB%A1/ng%C6%B0%E1%BB%9Di-b%E1%BB%8B-gan-nhi%E1%BB%85m-m%E1%BB%A1-c%C3%B3-th%E1%BB%83-b%E1%BB%8B-v%C3%A0ng-da.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742526/ng%C6%B0%E1%BB%9Di-b%E1%BB%8B-gan-nhi%E1%BB%85m-m%E1%BB%A1-c%C3%B3-th%E1%BB%83-b%E1%BB%8B-v%C3%A0ng-da_vndyep.png" />
             <p style="font-size: 13px">Người bị gan nhiễm mỡ có thể bị vàng da</p>
         </div>
         <br />
@@ -202,8 +202,6 @@ const AccessSection = () => (
       <br />====================
       <br />🏥 PHÒNG KHÁM BỆNH VIỆN ĐẠI HỌC Y DƯỢC 1
       <br />20-22 Dương Quang Trung, Phường 12, Quận 10
-      <br />📮Email: contact.us@umcclinic.com.vn
-      <br />🌎 Website: https://umcclinic.com.vn/
       <br />☎️ Hotline: 1900 6923
     `
     )}

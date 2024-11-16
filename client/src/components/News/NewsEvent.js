@@ -70,46 +70,46 @@ const NewsEvent = () => {
 
   const checkupCardsData = [
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/702/website.jpg",
+      imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744883/website_werpfk.jpg",
       title: "5 NĂM VÌ SỨC KHOẺ NGÀN QUÀ TẶNG TRI ÂN",
       description:
         "Nhân kỷ niệm 5 năm thành lập Phòng khám Bệnh viện Đại học Y Dược 1, ưu đãi và tặng nhiều phần quà xinh xắn cho tất cả các khách hàng đăng ký gói khám sức khỏe bất kỳ.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/883/thong-bao-nghi-le-quoc-khanh-02.09_600-x-380-px.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744902/thong-bao-nghi-le-quoc-khanh-02.09_600-x-380-px_qabi0s.jpg",
       title: "THÔNG BÁO NGHỈ LỄ QUỐC KHÁNH 02 THÁNG 09",
       description:
         "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ Quốc khánh ngày 02/09/2024 của Phòng khám như sau: ...",
     },
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/876/1.jpg",
+      imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744907/1_dpfpbw.jpg",
       title: "NGÀY DÂN SỐ THẾ GIỚI 11 THÁNG 7",
       description:
         "Ngày Dân số Thế giới 11.07 hàng năm là lời nhắc nhở mỗi quốc gia và mỗi người trên trái đất về nguy cơ bùng nổ dân số.Bùng nổ dân số quá nhanh khiến đời sống con người gặp nhiều khó khăn - là căn nguyên khởi sinh của nhiều vấn đề trong xã hội, kìm hãm sự phát triển kinh tế. ",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/865/thong-bao-nghi-le-30-4_002.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744891/thong-bao-nghi-le-30-4_002_hcqn1u.jpg",
       title: "THÔNG BÁO LỊCH NGHỈ LỄ 30/04 VÀ 01/05",
       description:
         "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ 30.04 và 01.05 như sau:...",
     },
     {
       imgSrc:
-        "	https://umcclinic.com.vn/Data/Sites/1/News/863/thong-bao-gio-to-hung-vuong_000.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744912/thong-bao-gio-to-hung-vuong_000_qtm3ev.jpg",
       title: "THÔNG BÁO LỊCH NGHỈ LỄ GIỖ TỔ HÙNG VƯƠNG NĂM 2024",
       description:
         "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ Giỗ tổ Hùng Vương như sau:...",
     },
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/852/600x380.png",
+      imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744916/600x380_kdbsza.png",
       title: "MỪNG SINH NHẬT 6th - TƯNG BỪNG ƯU ĐÃI",
       description:
         "Từ ngày 04/03 - 15/04/2024, Phòng khám Bệnh viện Đại học Y Dược 1 tri ân khách hàng đăng ký sử dụng gói khám sức khỏe bất kỳ sẽ nhận được nhiều quà tặng...",
     },
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/673/600x380px.jpg",
+      imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744897/600x380px_qqd5dr.jpg",
       title:
         "MỪNG KHAI TRƯƠNG KHU KHÁM VIP ƯU ĐÃI 10% GÓI KHÁM GOLD VÀ PLATINUM",
       description:
@@ -117,7 +117,7 @@ const NewsEvent = () => {
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/672/mung-khai-truong-khu-kham-vip.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744951/mung-khai-truong-khu-kham-vip_jvsa1l.jpg",
       title: "RA MẮT KHU KHÁM VIP ƯU ĐÃI 50% PHÍ KHÁM BÁC SĨ",
       description:
         "Trong thời gian từ 21/9 - 28/9/2022, Quý khách hàng có thể liên hệ đặt lịch khám VIP để nhận ưu đãi giảm giá 50% chi phí khám bác sĩ.",

@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -112,7 +112,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/d%E1%BB%8Bch-v%E1%BB%A5-c%E1%BA%ADn-l%C3%A2m-s%C3%A0ng/ch%E1%BB%A5p-mri/mri-n%C3%A3o/-khi-n%C3%A0o-c%E1%BA%A7n-ch%E1%BB%A5p-c%E1%BB%99ng-h%C6%B0%E1%BB%9Fng-t%E1%BB%AB-(mri)-m%E1%BA%A1ch-n%C3%A1u-n%C3%A3o/ch%E1%BB%A5p-c%E1%BB%99ng-h%C6%B0%E1%BB%9Fng-t%E1%BB%AB-(mri)-m%E1%BA%A1ch-m%C3%A1u-n%C3%A3o-c%C3%B3-%C4%91%E1%BB%99-an-to%C3%A0n-cao-v%C3%A0-kh%C3%B4ng-x%C3%A2m-l%E1%BA%A5n.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743306/ch%E1%BB%A5p-c%E1%BB%99ng-h%C6%B0%E1%BB%9Fng-t%E1%BB%AB-_mri_-m%E1%BA%A1ch-m%C3%A1u-n%C3%A3o-c%C3%B3-%C4%91%E1%BB%99-an-to%C3%A0n-cao-v%C3%A0-kh%C3%B4ng-x%C3%A2m-l%E1%BA%A5n_fsy3nm.png" />
             <p style="font-size: 13px">Chụp cộng hưởng từ (MRI) mạch máu não có độ an toàn cao và không xâm lấn</p>
         </div>
       <br />
@@ -144,7 +144,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/d%E1%BB%8Bch-v%E1%BB%A5-c%E1%BA%ADn-l%C3%A2m-s%C3%A0ng/ch%E1%BB%A5p-mri/mri-n%C3%A3o/-khi-n%C3%A0o-c%E1%BA%A7n-ch%E1%BB%A5p-c%E1%BB%99ng-h%C6%B0%E1%BB%9Fng-t%E1%BB%AB-(mri)-m%E1%BA%A1ch-n%C3%A1u-n%C3%A3o/ng%C6%B0%E1%BB%9Di-b%E1%BB%87nh-c%E1%BA%A7n-th%C3%B4ng-tin-%C4%91%E1%BA%A7y-%C4%91%E1%BB%A7-%C4%91%E1%BA%BFn-b%C3%A1c-s%C4%A9-tr%C6%B0%E1%BB%9Bc-khi-ch%E1%BB%A5p-mri-m%E1%BA%A1ch-m%C3%A1u-n%C3%A3o.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743387/ng%C6%B0%E1%BB%9Di-b%E1%BB%87nh-c%C3%B3-th%E1%BB%83-%C4%91eo-tai-nghe-chuy%C3%AAn-d%E1%BB%A5ng-khi-ch%E1%BB%A5p-mri-m%E1%BA%A1ch-m%C3%A1u-n%C3%A3o_g5b8mj.png" />
             <p style="font-size: 13px">Người bệnh cần thông tin đầy đủ đến bác sĩ trước khi chụp MRI mạch máu não</p>
         </div>
         <br />
@@ -177,7 +177,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/d%E1%BB%8Bch-v%E1%BB%A5-c%E1%BA%ADn-l%C3%A2m-s%C3%A0ng/ch%E1%BB%A5p-mri/mri-n%C3%A3o/-khi-n%C3%A0o-c%E1%BA%A7n-ch%E1%BB%A5p-c%E1%BB%99ng-h%C6%B0%E1%BB%9Fng-t%E1%BB%AB-(mri)-m%E1%BA%A1ch-n%C3%A1u-n%C3%A3o/ng%C6%B0%E1%BB%9Di-b%E1%BB%87nh-c%C3%B3-th%E1%BB%83-%C4%91eo-tai-nghe-chuy%C3%AAn-d%E1%BB%A5ng-khi-ch%E1%BB%A5p-mri-m%E1%BA%A1ch-m%C3%A1u-n%C3%A3o.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743409/ng%C6%B0%E1%BB%9Di-b%E1%BB%87nh-c%E1%BA%A7n-th%C3%B4ng-tin-%C4%91%E1%BA%A7y-%C4%91%E1%BB%A7-%C4%91%E1%BA%BFn-b%C3%A1c-s%C4%A9-tr%C6%B0%E1%BB%9Bc-khi-ch%E1%BB%A5p-mri-m%E1%BA%A1ch-m%C3%A1u-n%C3%A3o_m1ldcr.png" />
             <p style="font-size: 13px">Người bệnh có thể đeo tai nghe chuyên dụng khi chụp MRI mạch máu não</p>
         </div>
       <br />

@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -100,7 +100,7 @@ const AccessSection = () => (
                         width: 100%;
                         align-items: center;
                         flex-direction: column;">
-                <img alt="img" style="width: 500px" src="https://cdn.tgdd.vn/Files/2022/02/12/1415152/lich-nghi-le-30-4-1-5-nam-2023-nghi-5-ngay-lien-tiep-202304180830209689.jpg" />
+                <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743597/lich-nghi-le-30-4-1-5-nam-2023-nghi-5-ngay-lien-tiep-202304180830209689_dnofsh.jpg" />
             </div>
         <br />
         <br />Phòng khám Bệnh viện xin thông báo lịch nghỉ lễ Giỗ tổ Hùng Vương  như sau: 

@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -111,7 +111,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/khoa-s%E1%BA%A3n-ph%E1%BB%A5-khoa/%C4%91au-b%E1%BB%A5ng-kinh/8-c%C3%A1ch-%C4%91%C6%A1n-gi%E1%BA%A3n-gi%C3%BAp-gi%E1%BA%A3m-%C4%91au-b%E1%BB%A5ng-kinh-hi%E1%BB%87u-qu%E1%BA%A3/%C4%91au-b%E1%BB%A5ng-kinh-c%C3%B3-th%E1%BB%83-%E1%BA%A3nh-h%C6%B0%E1%BB%9Fng-%C4%91%E1%BA%BFn-sinh-ho%E1%BA%A1t-v%C3%A0-c%C3%B4ng-vi%E1%BB%87c-h%C3%A0ng-ng%C3%A0y-c%E1%BB%A7a-ch%E1%BB%8B-em.jpg" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742241/%C4%91au-b%E1%BB%A5ng-kinh-c%C3%B3-th%E1%BB%83-%E1%BA%A3nh-h%C6%B0%E1%BB%9Fng-%C4%91%E1%BA%BFn-sinh-ho%E1%BA%A1t-v%C3%A0-c%C3%B4ng-vi%E1%BB%87c-h%C3%A0ng-ng%C3%A0y-c%E1%BB%A7a-ch%E1%BB%8B-em_c4ilnf.jpg" />
             <p>Đau bụng kinh có thể ảnh hưởng đến sinh hoạt và công việc hàng ngày của chị em</p>
         </div>
         <br />
@@ -154,7 +154,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/khoa-s%E1%BA%A3n-ph%E1%BB%A5-khoa/%C4%91au-b%E1%BB%A5ng-kinh/8-c%C3%A1ch-%C4%91%C6%A1n-gi%E1%BA%A3n-gi%C3%BAp-gi%E1%BA%A3m-%C4%91au-b%E1%BB%A5ng-kinh-hi%E1%BB%87u-qu%E1%BA%A3/t%E1%BA%ADp-luy%E1%BB%87n-nh%E1%BA%B9-nh%C3%A0ng-c%C3%B3-th%E1%BB%83-xoa-d%E1%BB%8Bu-c%C6%A1n-%C4%91au-b%E1%BB%A5ng-kinh-hi%E1%BB%87u-qu%E1%BA%A3.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742264/t%E1%BA%ADp-luy%E1%BB%87n-nh%E1%BA%B9-nh%C3%A0ng-c%C3%B3-th%E1%BB%83-xoa-d%E1%BB%8Bu-c%C6%A1n-%C4%91au-b%E1%BB%A5ng-kinh-hi%E1%BB%87u-qu%E1%BA%A3_c7abkz.png" />
             <p>Đau bụng kinh có thể ảnh hưởng đến sinh hoạt và công việc hàng ngày của chị em</p>
         </div>
         <br />Nếu đau bụng kinh đi kèm triệu chứng nôn, buồn nôn hay ra lượng máu kinh nguyệt nhiều, chị em chỉ nên tập các bài tập thể dục với cường độ thấp. 
@@ -188,7 +188,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/khoa-s%E1%BA%A3n-ph%E1%BB%A5-khoa/%C4%91au-b%E1%BB%A5ng-kinh/8-c%C3%A1ch-%C4%91%C6%A1n-gi%E1%BA%A3n-gi%C3%BAp-gi%E1%BA%A3m-%C4%91au-b%E1%BB%A5ng-kinh-hi%E1%BB%87u-qu%E1%BA%A3/kh%C3%A1m-ph%E1%BB%A5-khoa-khi-c%C6%A1n-%C4%91au-b%E1%BB%A5ng-kinh-k%C3%A9o-d%C3%A0i-dai-d%E1%BA%B3ng,-kh%C3%B4ng-thuy%C3%AAn-gi%E1%BA%A3m.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742286/kh%C3%A1m-ph%E1%BB%A5-khoa-khi-c%C6%A1n-%C4%91au-b%E1%BB%A5ng-kinh-k%C3%A9o-d%C3%A0i-dai-d%E1%BA%B3ng_-kh%C3%B4ng-thuy%C3%AAn-gi%E1%BA%A3m_sryojv.png" />
             <p>Khám phụ khoa khi cơn đau bụng kinh kéo dài dai dẳng, không thuyên giảm</p>
         </div>
         <br />Lựa chọn thăm khám phụ khoa an toàn tại Phòng khám Bệnh viện Đại học Y Dược 1 bạn sẽ được:

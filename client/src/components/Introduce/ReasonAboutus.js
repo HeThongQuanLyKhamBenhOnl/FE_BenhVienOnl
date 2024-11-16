@@ -58,20 +58,20 @@ const ReasonAboutus = () => {
   const reasonsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/118/layer-511-(2).jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741706/layer-511-_2_wwx6ui.jpg",
       title: "Trang thiết bị hiện đại",
       description:
         "Với quy mô gồm 30 phòng khám và các phòng chức năng được đầu tư thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như GE, Fuji, Olympus, Kart Stoz, Phillip, Sysmex...",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/119/layer-5111-(2).jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741722/layer-5111-_2_kbmcq4.jpg",
       title: "Bác sĩ chuyên môn cao",
       description:
         "Phòng khám Bệnh viện quy tụ đội ngũ chuyên gia, bác sĩ, dược sĩ và điều dưỡng có trình độ chuyên môn cao, tay nghề giỏi, luôn tận tâm và chu đáo với người bệnh...",
     },
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/117/layer-6041.jpg",
+      imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741736/layer-6041_plxflh.jpg",
       title: "Dịch vụ chuẩn quốc tế",
       description:
         "Phòng khám Bệnh viện được quản lý và vận hành theo tiêu chuẩn quốc tế, cơ sở vật chất hiện đại, tiện nghi, không gian khám chữa bệnh rộng rãi, sạch sẽ...",

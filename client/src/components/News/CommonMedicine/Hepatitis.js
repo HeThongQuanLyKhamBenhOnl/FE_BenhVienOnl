@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -111,7 +111,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/vi%C3%AAm-gan-a/vi%C3%AAm-gan-a-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/b%E1%BB%87nh-vi%C3%AAm-gan-a-l%C3%A0-g%C3%AC.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743020/b%E1%BB%87nh-vi%C3%AAm-gan-a-l%C3%A0-g%C3%AC_l684aq.png" />
             <p style="font-size: 13px">Bệnh viêm gan A là gì?</p>
         </div>
         <br />
@@ -159,7 +159,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/vi%C3%AAm-gan-a/vi%C3%AAm-gan-a-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/s%E1%BB%AD-d%E1%BB%A5ng-ngu%E1%BB%93n-n%C6%B0%E1%BB%9Bc-nhi%E1%BB%85m-virus-vi%C3%AAm-gan-a-c%C3%B3-th%E1%BB%83-g%C3%A2y-b%E1%BB%87nh-%E1%BB%9F-ng%C6%B0%E1%BB%9Di.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743024/s%E1%BB%AD-d%E1%BB%A5ng-ngu%E1%BB%93n-n%C6%B0%E1%BB%9Bc-nhi%E1%BB%85m-virus-vi%C3%AAm-gan-a-c%C3%B3-th%E1%BB%83-g%C3%A2y-b%E1%BB%87nh-%E1%BB%9F-ng%C6%B0%E1%BB%9Di_gimjzb.png" />
             <p style="font-size: 13px">Sử dụng nguồn nước nhiễm virus viêm gan A có thể gây bệnh ở người</p>
         </div>
       <br />
@@ -186,7 +186,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/vi%C3%AAm-gan-a/vi%C3%AAm-gan-a-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/b%E1%BB%87nh-vi%C3%AAm-gan-a-c%C3%B3-th%E1%BB%83-bi%E1%BA%BFn-ch%E1%BB%A9ng-suy-gan-c%E1%BA%A5p-t%C3%ADnh.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743030/b%E1%BB%87nh-vi%C3%AAm-gan-a-c%C3%B3-th%E1%BB%83-bi%E1%BA%BFn-ch%E1%BB%A9ng-suy-gan-c%E1%BA%A5p-t%C3%ADnh_qirrem.png" />
             <p style="font-size: 13px">Bệnh viêm gan A có thể biến chứng suy gan cấp tính</p>
         </div>
       <br />
@@ -213,7 +213,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/vi%C3%AAm-gan-a/vi%C3%AAm-gan-a-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/tr%C3%A1nh-s%E1%BB%AD-d%E1%BB%A5ng-r%C6%B0%E1%BB%A3u-bia-h%E1%BB%97-tr%E1%BB%A3-c%E1%BA%A3i-thi%E1%BB%87n-t%C3%ACnh-tr%E1%BA%A1ng-b%E1%BB%87nh-vi%C3%AAm-gan-a.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743080/r%E1%BB%ADa-tay-s%E1%BA%A1ch-s%E1%BA%BD-ng%C4%83n-ng%E1%BB%ABa-l%C3%A2y-nhi%E1%BB%85m-virus-vi%C3%AAm-gan-a_od6kvm.png" />
             <p style="font-size: 13px">Tránh sử dụng rượu bia hỗ trợ cải thiện tình trạng bệnh viêm gan A</p>
         </div>
       <br />
@@ -228,7 +228,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/vi%C3%AAm-gan-a/vi%C3%AAm-gan-a-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/r%E1%BB%ADa-tay-s%E1%BA%A1ch-s%E1%BA%BD-ng%C4%83n-ng%E1%BB%ABa-l%C3%A2y-nhi%E1%BB%85m-virus-vi%C3%AAm-gan-a.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743080/r%E1%BB%ADa-tay-s%E1%BA%A1ch-s%E1%BA%BD-ng%C4%83n-ng%E1%BB%ABa-l%C3%A2y-nhi%E1%BB%85m-virus-vi%C3%AAm-gan-a_od6kvm.png" />
             <p style="font-size: 13px">Rửa tay sạch sẽ ngăn ngừa lây nhiễm virus viêm gan A</p>
         </div>
       <br />

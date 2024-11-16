@@ -70,35 +70,35 @@ const HepatobiliaryDigestiveScreening = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/830/goi-kham-tam-soat-ung-thu-thuc-quan-da-day.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746634/goi-kham-tam-soat-ung-thu-thuc-quan-da-day_veq18o.jpg",
       title: "GÓI TẦM SOÁT UNG THƯ DẠ DÀY",
       description:
         "Ung thư dạ dày và thực quản là ung thư về đường tiêu hóa rất phổ biến. Ung thư thực quản dạ dày hoàn toàn có thể chữa khỏi nếu người bệnh được tầm soát ung thư sớm.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/829/goi-kham-tam-soat-ung-thu-dai-truc-trang-(1).jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746690/goi-kham-tam-soat-ung-thu-dai-truc-trang-_1_s1dnvv.jpg",
       title: "GÓI TẦM SOÁT UNG THƯ ĐẠI TRỰC TRÀNG",
       description:
         "Tầm soát ung thư đại trực tràng là phương pháp phát hiện tế bào ung thư hoặc các tế bào bất thường có thể phát triển thành ung thư. Tầm soát ung thư đại trực tràng để phát hiện bệnh sớm có ý nghĩa rất quan trọng trong việc nâng cao hiệu quả điều trị, giảm đau đớn và tăng tuổi thọ cho người bệnh.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/218/noi-soi-tieu-hoa.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746696/noi-soi-tieu-hoa_dimpnf.jpg",
       title: "NỘI SOI HỆ TIÊU HÓA THỰC QUẢN, DẠ DÀY, TÁ TRÀNG, ĐẠI TRÀNG",
       description:
         "Nội soi tiêu hóa là việc thực hiện thăm khám trực tiếp Thực quản - Dạ Dày - Tá tràng hoặc Đại tràng bằng một ống mềm có Camera gắn ở đầu ống. Điều khiển đa hướng, nhìn thấy, nhận định, phân loại, cảm giác được mật độ tổn thương và có thể trực tiếp can thiệp vào tổn thương đó là Nội soi tiêu hoá.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/217/tam-soat-ung-thu-he-tieu-hoa-2.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746642/tam-soat-ung-thu-he-tieu-hoa-2_sbxvcd.jpg",
       title: "GÓI TẦM SOÁT UNG THƯ HỆ TIÊU HÓA",
       description:
         "Tầm soát ung thư hệ tiêu hóa là một tầm soát rất quan trọng.Việc tầm soát ung thư hệ tiêu nên được thực hiện định kỳ hàng năm nhằm phát hiện sớm những dấu hiệu bất thường của hệ tiêu hóa.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/216/goi-tam-soat-viem-gan-1.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746704/goi-tam-soat-viem-gan-1_sazjfx.jpg",
       title: "GÓI TẦM SOÁT UNG THƯ GAN",
       description:
         "Hiện Việt Nam là nước có tỷ lệ nhiễm virus viêm gan B và C cao nhất trong khu vực. Theo báo cáo của Cục Y tế Dự phòng (BYT), Việt Nam có 10 triệu trường hợp nhiễm viêm gan B và gần 1 triệu người nhiễm virus viêm gan C. Điều cần quan tâm là bệnh viêm gan B, C có thể dẫn đến xơ gan, ung thư gan. Do vậy, bạn nên thực hiện tầm soát viêm gan để có thể phát hiện sớm các yếu tố nguy cơ giúp điều trị hiệu quả các bệnh lý về gan.",

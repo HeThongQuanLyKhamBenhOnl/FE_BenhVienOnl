@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -111,7 +111,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/ph%C3%B2ng-ng%E1%BB%ABa-b%E1%BB%87nh-gan-nhi%E1%BB%85m-m%E1%BB%A1/v%C3%AC-sao-gan-b%E1%BB%8B-nhi%E1%BB%85m-m%E1%BB%A1.jpg" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742517/v%C3%AC-sao-gan-b%E1%BB%8B-nhi%E1%BB%85m-m%E1%BB%A1_qyaojk.jpg" />
             <p style="font-size: 13px">Vì sao gan bị nhiễm mỡ?</p>
         </div>
       <br />
@@ -137,7 +137,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/ph%C3%B2ng-ng%E1%BB%ABa-b%E1%BB%87nh-gan-nhi%E1%BB%85m-m%E1%BB%A1/ng%C6%B0%E1%BB%9Di-b%E1%BB%8B-gan-nhi%E1%BB%85m-m%E1%BB%A1-c%C3%B3-th%E1%BB%83-b%E1%BB%8B-v%C3%A0ng-da.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742523/ki%E1%BB%83m-so%C3%A1t-t%E1%BB%91t-b%E1%BB%87nh-ti%E1%BB%83u-%C4%91%C6%B0%E1%BB%9Dng-%C4%91%E1%BB%83-ng%C4%83n-ng%E1%BB%ABa-t%C3%ACnh-tr%E1%BA%A1ng-gan-nhi%E1%BB%85m-m%E1%BB%A1_srb9sa.png" />
             <p style="font-size: 13px">Người bị gan nhiễm mỡ có thể bị vàng da</p>
         </div>
         <br />
@@ -163,7 +163,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/ph%C3%B2ng-ng%E1%BB%ABa-b%E1%BB%87nh-gan-nhi%E1%BB%85m-m%E1%BB%A1/ki%E1%BB%83m-so%C3%A1t-t%E1%BB%91t-b%E1%BB%87nh-ti%E1%BB%83u-%C4%91%C6%B0%E1%BB%9Dng-%C4%91%E1%BB%83-ng%C4%83n-ng%E1%BB%ABa-t%C3%ACnh-tr%E1%BA%A1ng-gan-nhi%E1%BB%85m-m%E1%BB%A1.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742526/ng%C6%B0%E1%BB%9Di-b%E1%BB%8B-gan-nhi%E1%BB%85m-m%E1%BB%A1-c%C3%B3-th%E1%BB%83-b%E1%BB%8B-v%C3%A0ng-da_vndyep.png" />
             <p style="font-size: 13px">Kiểm soát tốt bệnh tiểu đường để ngăn ngừa tình trạng gan nhiễm mỡ</p>
         </div>
         <br />

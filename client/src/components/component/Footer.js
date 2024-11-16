@@ -28,7 +28,7 @@ const FooterComponent = () => {
             >
               <h3 className="text-white font-bold text-lg uppercase mb-4 flex items-center">
                 <img
-                  src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-hospital-icon-design-illustration-png-image_5345011.jpg"
+                  src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740578/pngtree-hospital-icon-design-illustration-png-image_5345011_tniymf.jpg"
                   alt="Hospital"
                   className="w-8 h-8 mr-2"
                   style={{ width: "50px", height: "50px" }}
@@ -137,7 +137,7 @@ const FooterComponent = () => {
               >
                 {/* Facebook Page Placeholder */}
                 <img
-                  src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/t%E1%BA%A7m-quan-tr%E1%BB%8Dng-c%E1%BB%A7a-ki%E1%BB%83m-tra-sk-h%E1%BA%ADu-covid/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19.jpg"
+                  src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740637/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19_ppgpro.jpg"
                   alt="footer-banner"
                   style={{
                     width: "90%",

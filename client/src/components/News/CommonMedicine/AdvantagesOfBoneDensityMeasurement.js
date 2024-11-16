@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -103,7 +103,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;" >
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-h%E1%BB%8Dc-th%C6%B0%E1%BB%9Dng-th%E1%BB%A9c/%C6%B0u-%C4%91i%E1%BB%83m-v%C6%B0%E1%BB%A3t-tr%E1%BB%99i-c%E1%BB%A7a-%C4%91o-lo%C3%A3ng-x%C6%B0%C6%A1ng/chan-doan-loang-xuong-bang-phuong-phap-do-mat-do-xuong.jpg" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741866/chan-doan-loang-xuong-bang-phuong-phap-do-mat-do-xuong_xkd4gh.jpg" />
             <p style="font-size: 10px">Chẩn đoán loãng xương bằng phương pháp đo mật độ xương</p>
         </div>
     `
@@ -136,7 +136,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-h%E1%BB%8Dc-th%C6%B0%E1%BB%9Dng-th%E1%BB%A9c/%C6%B0u-%C4%91i%E1%BB%83m-v%C6%B0%E1%BB%A3t-tr%E1%BB%99i-c%E1%BB%A7a-%C4%91o-lo%C3%A3ng-x%C6%B0%C6%A1ng/may-do-loang-xuong-bang-phuong-phap-dexa.jpg" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741899/may-do-loang-xuong-bang-phuong-phap-dexa_nebgww.jpg" />
             <p>Máy đo loãng xương bằng phương pháp DEXA</p>
         </div>
         <br />Phương pháp DEXA được sử dụng để:
@@ -170,7 +170,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-                <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-h%E1%BB%8Dc-th%C6%B0%E1%BB%9Dng-th%E1%BB%A9c/%C6%B0u-%C4%91i%E1%BB%83m-v%C6%B0%E1%BB%A3t-tr%E1%BB%99i-c%E1%BB%A7a-%C4%91o-lo%C3%A3ng-x%C6%B0%C6%A1ng/nguoi-co-tien-su-gay-xuong-nen-do-loang-xuong.jpg" />
+                <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741947/nguoi-co-tien-su-gay-xuong-nen-do-loang-xuong_qeb9sh.jpg" />
                 <p>Người có tiền sử gãy xương nên đo loãng xương</p>
         </div>
         <br />Những đối tượng sau được khuyến cáo nên đi đo loãng xương định kỳ ít nhất 2 năm/lần hoặc theo sự chỉ định của bác sĩ:
