@@ -3,23 +3,11 @@ import { Layout } from "antd";
 import HeaderComponent from "../components/Header/Header";
 import SectionComponent from "../components/Section/Section";
 import FooterComponent from "../components/component/Footer";
-import { useNavigate, Link } from "react-router-dom";
 
 const { Content } = Layout;
 
-const Home = () => {
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src =
-  //     "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-
-  //   // Cleanup script when component unmounts
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
+export const Home = () => {
+  const navigate = useNavigate();
 
   return (
     <div>

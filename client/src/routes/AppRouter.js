@@ -151,7 +151,7 @@ function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        
+
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/confirm-otp" element={<ConfirmOTP />} />
 
