@@ -143,7 +143,7 @@ function AppRouter() {
     const token = localStorage.getItem("token");
 
     if (userInfo && token) {
-      dispatch(setUser({ user: JSON.parse(userInfo), token })); // Phục hồi user và token từ localStorage
+      dispatch(setUser({ user: JSON.parse(userInfo), token }));
     }
   }, [dispatch]);
 
@@ -151,7 +151,7 @@ function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        
+
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/confirm-otp" element={<ConfirmOTP />} />
 
