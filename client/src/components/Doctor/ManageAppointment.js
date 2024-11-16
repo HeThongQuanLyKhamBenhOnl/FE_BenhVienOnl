@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Modal, message, Space } from "antd";
-import dayjs from "dayjs"; // Import dayjs for date formatting
+import dayjs from "dayjs";
 import {
   useGetDoctorAppointmentsQuery,
   useCancelAppointmentMutation,
   useUpdateAppointmentStatusMutation,
 } from "../../Redux/Doctor/api";
+import ChatBox from "../Chat/ChatBox"; // Đường dẫn đến ChatBox
 
 const ManageAppointment = () => {
   const { data, isLoading } = useGetDoctorAppointmentsQuery();
@@ -13,10 +14,17 @@ const ManageAppointment = () => {
   const [updateAppointmentStatus] = useUpdateAppointmentStatusMutation();
 
   const [appointmentsList, setAppointmentsList] = useState([]);
+  const [isChatVisible, setIsChatVisible] = useState(false); // Trạng thái hiển thị hộp thoại chat
+  const [selectedAppointment, setSelectedAppointment] = useState(null); // Cuộc hẹn đã chọn để mở chat
 
   useEffect(() => {
     if (data?.appointments) setAppointmentsList(data.appointments);
   }, [data]);
+
+  const handleOpenChat = (appointment) => {
+    setSelectedAppointment(appointment); // Lưu cuộc hẹn đã chọn
+    setIsChatVisible(true); // Hiển thị hộp thoại chat
+  };
 
   const handleCancelAppointment = async (appointmentId, status) => {
     if (status !== "pending") {
@@ -61,7 +69,7 @@ const ManageAppointment = () => {
       title: "Ngày hẹn",
       dataIndex: "date",
       key: "date",
-      render: (date) => dayjs(date).format("DD/MM/YYYY"), // Format date as DD/MM/YYYY
+      render: (date) => dayjs(date).format("DD/MM/YYYY"),
     },
     {
       title: "Trạng thái",
@@ -73,19 +81,23 @@ const ManageAppointment = () => {
       key: "actions",
       render: (_, record) => (
         <Space size="middle">
-          {record.status !== "Completed" && (
-            <Button
-              type="primary"
-              onClick={() => handleUpdateStatus(record._id, "Completed")}
-            >
-              Xác nhận
-            </Button>
-          )}
+          <Button
+            type="primary"
+            onClick={() => handleUpdateStatus(record._id, "Completed")}
+          >
+            Xác nhận
+          </Button>
           <Button
             type="primary"
             onClick={() => handleCancelAppointment(record._id, record.status)}
           >
             Hủy lịch
+          </Button>
+          <Button
+            type="default"
+            onClick={() => handleOpenChat(record)} // Mở hộp thoại chat
+          >
+            Mở Chat
           </Button>
         </Space>
       ),
@@ -103,6 +115,23 @@ const ManageAppointment = () => {
         pagination={{ pageSize: 5 }}
         className="bg-white shadow-lg rounded-lg"
       />
+
+      {/* Hộp thoại chat */}
+      <Modal
+        title="Hộp Thoại Chat"
+        visible={isChatVisible}
+        onCancel={() => setIsChatVisible(false)}
+        footer={null}
+        width={700}
+      >
+        {selectedAppointment && (
+          <ChatBox
+            chatId={selectedAppointment._id}
+            doctorId={selectedAppointment.doctor}
+            patientId={selectedAppointment.patient}
+          />
+        )}
+      </Modal>
     </div>
   );
 };

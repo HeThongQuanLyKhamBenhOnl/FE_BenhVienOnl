@@ -86,7 +86,7 @@ const CreateAppoiment = () => {
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/3 mb-4 md:mb-0">
                     <img
-                      src={doctor?.doctor?.images || "default-image-url"} // Sử dụng ảnh của bác sĩ từ database, hoặc ảnh mặc định nếu không có
+                      src={doctor?.images || "default-image-url"} // Sử dụng ảnh của bác sĩ từ database, hoặc ảnh mặc định nếu không có
                       alt="Doctor"
                       className="w-full rounded-md"
                     />
