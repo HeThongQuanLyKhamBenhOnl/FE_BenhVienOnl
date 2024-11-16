@@ -71,49 +71,49 @@ const CheckupPersonal = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/g%C3%B3i-covid/chuy%C3%AAn-s%C3%A2u/goi-kham-suc-khoe-hau-covid-19-chuyen-sau.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746264/98940dfe-e799-4fcd-a8ff-c1aa4c0f8511.png",
       title: "GÓI KHÁM SỨC KHỎE HẬU COVID-19 CHUYÊN SÂU",
       description:
         "Gói kiểm tra sức khỏe hậu Covid-19 nâng cao giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Sau khi nhiễm bệnh và đã khỏi, nhiều bệnh nhân Covid-19 lại gặp phải hội chứng hậu Covid-19 với các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới trong nhiều tuần hoặc nhiều tháng sau đó. ",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/462/goi-kiem-tra-suc-khoa-hau-covid-19-co-ban.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746290/0413ab49-bf8a-49aa-8570-d2f014546b5e.png",
       title: "GÓI KIỂM TRA HẬU SỨC KHỎE COVID-19 NÂNG CAO",
       description:
         "Kiểm tra sức khỏe hậu Covid-19 giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Hầu hết những người bị Covid-19 có thể hoàn toàn khỏi bệnh trong vài tuần kể từ khi mắc bệnh. Nhưng một số người khác gặp các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới ngay cả khi đã khỏi bệnh. Tình trạng này gọi là hội chứng hậu Covid-19.",
     },
     {
       imgSrc:
-        "	https://umcclinic.com.vn/Data/Sites/1/News/212/goi-kham-suc-khoe-tong-quat-platinum-6.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746390/goi-kham-suc-khoe-tong-quat-platinum-6_umkm1l.jpg",
       title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT PLATINUM",
       description:
         "Một sức khỏe tốt giúp chúng ta yên tâm học tập, làm việc, theo đuổi hạnh phúc và sống với đam mê. Để bảo vệ sức khỏe chúng ta cần thường xuyên khám sức khỏe tổng quát định kỳ. Đây là phương pháp hiệu quả nhất để kịp thời phát hiện ra những bất thường trong cơ thể, tăng hiệu quả điều trị, hạn chế nguy cơ biến chứng, tiết kiệm thời gian và chi phí điều trị.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/211/goi-kham-suc-khoe-tong-quat-gold-6.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746406/goi-kham-suc-khoe-tong-quat-gold-6_wvuyfn.jpg",
       title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT VIP GOLD",
       description:
         "Gói khám sức khỏe tổng quát Gold là gói khám sức khoẻ VIP được đội ngũ chuyên môn của Phòng khám xây dựng giúp khách hàng có thể tầm soát toàn diện các bộ phận của cơ thể gồm xét nghiệm và các dịch vụ cận lâm sàng từ cơ bản đến chuyên sâu.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/g%C3%B3i-covid/goi-kiem-tra-suc-khoe-hau-covid-19-nang-cao.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746400/goi-kiem-tra-suc-khoe-hau-covid-19-nang-cao_c9oipm.jpg",
       title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT CHUYÊN SÂU",
       description:
         "Khi lựa chọn một gói khám sức khoẻ tổng quát chuyên sâu, bạn luôn mong muốn gói khám có thể kiểm tra được bao quát tình hình sức khoẻ với chi phí hợp lý.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/209/1goi-kham-suc-khoe-tong-quat-nang-cao.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746418/1goi-kham-suc-khoe-tong-quat-nang-cao_qxpaqs.jpg",
       title: "GÓI KHÁM SỨC KHOẺ TỔNG QUÁT NÂNG CAO",
       description:
         "Kiểm tra sức khỏe hậu Covid-19 giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19. Hầu hết những người bị Covid-19 có thể hoàn toàn khỏi bệnh trong vài tuần kể từ khi mắc bệnh. Nhưng một số người khác gặp các triệu chứng tái phát, kéo dài hoặc xuất hiện các vấn đề sức khỏe mới ngay cả khi đã khỏi bệnh. Tình trạng này gọi là hội chứng hậu Covid-19. ",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/206/goi-kham-suc-khoe-tong-quat-va-tam-soat-ung-thu-1.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746423/goi-kham-suc-khoe-tong-quat-va-tam-soat-ung-thu-1_dq81wb.jpg",
       title: "KHÁM SỨC KHỎE TỔNG QUÁT VÀ TẦM SOÁT UNG THƯ",
       description:
         "Khám sức khỏe tổng quát và tầm soát ung thư định kỳ đóng vai trò quan trọng trong việc phát hiện sớm các vấn đề bất thường về sức khỏe (nếu có) trước khi chuyển thành bệnh hoặc phát hiện bệnh ở giai đoạn sớm khi chưa có biểu hiện ra bên ngoài để điều trị hiệu quả hơn, khả năng lành bệnh cao hơn, tiết kiệm được thời gian, tiền bạc và tránh được các biến chứng do bệnh gây ra.",

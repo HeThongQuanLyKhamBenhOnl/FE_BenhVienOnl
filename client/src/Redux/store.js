@@ -1,4 +1,3 @@
-import { configureStore } from "@reduxjs/toolkit";
 import { doctorApiSlice } from "./Doctor/api";
 import { appointmentApiSlice } from "./Appointment/api";
 import { medicineApiSlice } from "./Medicine/api";
@@ -21,5 +20,3 @@ const store = configureStore({
       .concat(chatApiSlice.middleware),
   devTools: process.env.NODE_ENV !== "production",
 });
-
-export default store;

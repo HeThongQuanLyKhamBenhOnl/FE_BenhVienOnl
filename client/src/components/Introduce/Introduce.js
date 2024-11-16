@@ -70,7 +70,7 @@ const Introduce = () => {
         <Row gutter={[32, 32]}>
           <Col xs={24} md={12} style={{display: "flex", alignItems: "center"}}>
             <img
-              src="https://umcclinic.com.vn/Data/Sites/1/News/82/layer-597.png"
+              src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741061/1_m0sefa.png"
               alt="Team"
               className="w-full rounded-lg"
             />
@@ -148,7 +148,7 @@ const Introduce = () => {
               <div
                 className="relative bg-cover bg-center rounded-lg h-64"
                 style={{
-                  backgroundImage: `url('https://umcclinic.com.vn/Data/Sites/1/News/83/layer-620.jpg')`,
+                  backgroundImage: `url('https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741321/layer-620_sj1cu0.jpg')`,
                 }}
               >
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -166,7 +166,7 @@ const Introduce = () => {
               <div
                 className="relative bg-cover bg-center rounded-lg h-64"
                 style={{
-                  backgroundImage: `url('https://umcclinic.com.vn/Data/Sites/1/News/84/layer-621.png')`,
+                  backgroundImage: `url('https://res.cloudinary.com/db4ji9y1x/image/upload/v1731741365/layer-621_mxwk2e.png')`,
                 }}
               >
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -245,7 +245,7 @@ const Introduce = () => {
                 }}
               >
                 <img
-                  src="https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png"
+                  src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png"
                   alt="Tiên phong"
                   style={{ width: "50px", height: "50px" }}
                 />
@@ -265,7 +265,7 @@ const Introduce = () => {
                 }}
               >
                 <img
-                  src="https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png"
+                  src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png"
                   alt="Thấu hiểu"
                   style={{ width: "50px", height: "50px" }}
                 />
@@ -285,7 +285,7 @@ const Introduce = () => {
                 }}
               >
                 <img
-                  src="https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png"
+                  src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png"
                   alt="Chuẩn mực"
                   style={{ width: "50px", height: "50px" }}
                 />
@@ -305,7 +305,7 @@ const Introduce = () => {
                 }}
               >
                 <img
-                  src="https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png"
+                  src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png"
                   alt="An toàn"
                   style={{ width: "50px", height: "50px" }}
                 />

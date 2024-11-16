@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -120,7 +120,7 @@ const AccessSection = () => (
         <br />- Gói khám Tầm soát viêm gan tại Phòng khám Bệnh viện Đại học Y Dược 1 được xây dựng dựa trên nhu cầu thực tế của khách hàng.
         <br />- Khi thực hiện tầm soát viêm gan, khách hàng sẽ được thực hiện các xét nghiệm từ cơ bản đến nâng cao để đánh giá tình trạng hoạt động hiện tại của gan, phát hiện sớm các bệnh lý của gan như: Viêm gan siêu vi B, C, xơ gan, ung thư gan và có những hướng dẫn điều trị kịp thời.
         <br />
-        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/gan-mat/t%E1%BA%A7m-so%C3%A1t-ung-th%C6%B0-gan/goi-tam-soat-ung-thu-gan.jpg" /></div>
+        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745959/goi-tam-soat-ung-thu-gan_ya6eli.jpg" /></div>
     `
     )}
     {renderAccessContent(

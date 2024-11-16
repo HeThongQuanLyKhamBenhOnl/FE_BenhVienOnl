@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -111,7 +111,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/d%E1%BA%A1-d%C3%A0y/xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y/xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y-c%C3%B3-nguy-hi%E1%BB%83m-kh%C3%B4ng/b%E1%BB%87nh-xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y-l%C3%A0-tri%E1%BB%87u-ch%E1%BB%A9ng-r%E1%BB%91i-lo%E1%BA%A1n-%C4%91%C6%B0%E1%BB%9Dng-ti%C3%AAu-h%C3%B3a-th%C6%B0%E1%BB%9Dng-g%E1%BA%B7p.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742904/b%E1%BB%87nh-xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y-l%C3%A0-tri%E1%BB%87u-ch%E1%BB%A9ng-r%E1%BB%91i-lo%E1%BA%A1n-%C4%91%C6%B0%E1%BB%9Dng-ti%C3%AAu-h%C3%B3a-th%C6%B0%E1%BB%9Dng-g%E1%BA%B7p_eaw1dk.png" />
             <p style="font-size: 13px">Bệnh xuất huyết dạ dày là triệu chứng rối loạn đường tiêu hóa thường gặp</p>
         </div>
       <br />
@@ -138,7 +138,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/d%E1%BA%A1-d%C3%A0y/xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y/xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y-c%C3%B3-nguy-hi%E1%BB%83m-kh%C3%B4ng/u%E1%BB%91ng-qu%C3%A1-nhi%E1%BB%81u-bia-r%C6%B0%E1%BB%A3u-c%C3%B3-th%E1%BB%83-g%C3%A2y-xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742910/%C4%91au-v%C3%B9ng-th%C6%B0%E1%BB%A3ng-v%E1%BB%8B-c%C3%B3-th%E1%BB%83-l%C3%A0-tri%E1%BB%87u-ch%E1%BB%A9ng-c%E1%BB%A7a-xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y_vrrkvu.png" />
             <p style="font-size: 13px">Uống quá nhiều bia rượu có thể gây xuất huyết dạ dày</p>
         </div>
         <br />
@@ -179,7 +179,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/d%E1%BA%A1-d%C3%A0y/xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y/xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y-c%C3%B3-nguy-hi%E1%BB%83m-kh%C3%B4ng/%C4%91au-v%C3%B9ng-th%C6%B0%E1%BB%A3ng-v%E1%BB%8B-c%C3%B3-th%E1%BB%83-l%C3%A0-tri%E1%BB%87u-ch%E1%BB%A9ng-c%E1%BB%A7a-xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742916/u%E1%BB%91ng-qu%C3%A1-nhi%E1%BB%81u-bia-r%C6%B0%E1%BB%A3u-c%C3%B3-th%E1%BB%83-g%C3%A2y-xu%E1%BA%A5t-huy%E1%BA%BFt-d%E1%BA%A1-d%C3%A0y_rzktwp.png" />
             <p style="font-size: 13px">Đau vùng thượng vị có thể là triệu chứng của xuất huyết dạ dày</p>
         </div>
       `

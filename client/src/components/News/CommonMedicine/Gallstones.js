@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -111,7 +111,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/s%E1%BB%8Fi-m%E1%BA%ADt/s%E1%BB%8Fi-m%E1%BA%ADt-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-bi%E1%BA%BFn-ch%E1%BB%A9ng-c%C3%A1ch-ch%E1%BA%A9n-%C4%91o%C3%A1n-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/b%E1%BB%87nh-s%E1%BB%8Fi-m%E1%BA%ADt-c%C3%B3-nguy-hi%E1%BB%83m-kh%C3%B4ng.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742823/b%E1%BB%87nh-s%E1%BB%8Fi-m%E1%BA%ADt-c%C3%B3-nguy-hi%E1%BB%83m-kh%C3%B4ng_mnyagv.png" />
             <p style="font-size: 13px">Bệnh sỏi mật có nguy hiểm không?</p>
         </div>
         <br />
@@ -141,7 +141,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/s%E1%BB%8Fi-m%E1%BA%ADt/s%E1%BB%8Fi-m%E1%BA%ADt-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-bi%E1%BA%BFn-ch%E1%BB%A9ng-c%C3%A1ch-ch%E1%BA%A9n-%C4%91o%C3%A1n-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/b%C3%A9o-ph%C3%AC-c%C3%B3-th%E1%BB%83-t%C4%83ng-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-s%E1%BB%8Fi-m%E1%BA%ADt.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742839/b%C3%A9o-ph%C3%AC-c%C3%B3-th%E1%BB%83-t%C4%83ng-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-s%E1%BB%8Fi-m%E1%BA%ADt_fyvftn.png" />
             <p style="font-size: 13px">Béo phì có thể tăng nguy cơ mắc bệnh sỏi mật</p>
         </div>
         <br />Hiện nguyên nhân gây bệnh sỏi mật vẫn chưa được xác định rõ nhưng các yếu tố có thể thuận lợi tạo sỏi ở ống mật hoặc túi mật như:
@@ -175,7 +175,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px"src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/s%E1%BB%8Fi-m%E1%BA%ADt/s%E1%BB%8Fi-m%E1%BA%ADt-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-bi%E1%BA%BFn-ch%E1%BB%A9ng-c%C3%A1ch-ch%E1%BA%A9n-%C4%91o%C3%A1n-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/ch%E1%BB%A7-%C4%91%E1%BB%99ng-th%C4%83m-kh%C3%A1m-s%E1%BB%A9c-kh%E1%BB%8Fe-%C4%91%E1%BB%8Bnh-k%E1%BB%B3-%C4%91%E1%BB%83-t%E1%BA%A7m-so%C3%A1t-b%E1%BB%87nh-s%E1%BB%8Fi-m%E1%BA%ADt-hi%E1%BB%87u-qu%E1%BA%A3.png" />
+            <img alt="img" style="width: 500px"src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742843/ch%E1%BB%A7-%C4%91%E1%BB%99ng-th%C4%83m-kh%C3%A1m-s%E1%BB%A9c-kh%E1%BB%8Fe-%C4%91%E1%BB%8Bnh-k%E1%BB%B3-%C4%91%E1%BB%83-t%E1%BA%A7m-so%C3%A1t-b%E1%BB%87nh-s%E1%BB%8Fi-m%E1%BA%ADt-hi%E1%BB%87u-qu%E1%BA%A3_bbfjnm.png" />
             <p style="font-size: 13px">Chủ động thăm khám sức khỏe định kỳ để tầm soát bệnh sỏi mật hiệu quả</p>
         </div>
         <br />- Không nên nhịn ăn hay áp dụng các biện pháp giảm cân nhanh.

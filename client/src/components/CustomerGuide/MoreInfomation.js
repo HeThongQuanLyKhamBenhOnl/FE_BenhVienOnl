@@ -70,28 +70,28 @@ const MoreInformation = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/821/danh-sach-van-bang-chuyen-mon-ph%E1%BA%A1m-vi-hoat-dong.png",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740826/danh-sach-van-bang-chuyen-mon-ph%E1%BA%A1m-vi-hoat-dong_evwcnq.png",
       title: "DANH SÁCH VĂN BẰNG CHUYÊN MÔN VÀ PHẠM VI HOẠT ĐỘNG",
       description:
         "Danh sách văn bằng chuyên môn và phạm vi hoạt động của đội ngũ Bác sĩ của Phòng khám Bệnh viện Đại học Y Dược 1",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/820/danh-muc-ky-thuat.png",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740844/danh-muc-ky-thuat_bpwnwy.png",
       title: "DANH MỤC KỸ THUẬT",
       description:
         "Phòng khám Bệnh viện Đại học Y Dược 1 được phê duyệt danh mục kỹ thuật trong khám chữa bệnh theo quyết định số 467/QĐ-SYT ngày 26 tháng 5 năm 2020 của Sở Y tế. Phòng khám đa khoa Bệnh viện Đại học Y Dược 1 do TS,BS, Nguyễn Thị Thanh Thủy chịu trách nhiệm chuyên môn tại địa chỉ 20-22 Dương Quang Trung, Phường 12, Quận 10",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/819/gia-dich-vu-kham-chua-benh.png",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740860/gia-dich-vu-kham-chua-benh_ysw2du.png",
       title: "BẢNG GIÁ DỊCH VỤ KHÁM CHỮA BỆNH VÀ VẬT TƯ Y TẾ",
       description:
         "Phòng khám Bệnh viện Đại Học Y Dược 1 trân trọng kính gửi đến Quý khách hàng bảng giá một số dịch vụ y tế ",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/786/luat-kham-benh-chua-benh.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740902/luat-kham-benh-chua-benh_tj19l9.jpg",
       title: "LUẬT KHÁM CHỮA BỆNH 2023 (15.2023.QH15)",
       description:
         "Ngày 09/01/2023, Quốc Hội Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XV, trong kỳ họp bất thường lần thứ 2 đã thông qua Luật Khám bệnh, chữa bệnh.",

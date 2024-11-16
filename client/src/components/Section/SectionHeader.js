@@ -39,6 +39,11 @@ const SectionHeader = () => {
         type="primary"
         // className="mt-6 bg-blue-600 text-white"
         className="btn btn-outline-primary mt-3"
+        style={{
+          padding: "0px 30px",
+          paddingTop: "10px",
+          paddingBottom: "35px",
+        }}
         onClick={handleCreateAppoiment}
       >
         Tư vấn miễn phí

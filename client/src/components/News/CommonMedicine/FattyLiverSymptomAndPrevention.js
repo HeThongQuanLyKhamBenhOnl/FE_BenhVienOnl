@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -112,7 +112,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/s%C6%A1-gan/ai-c%C3%B3-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-x%C6%A1-gan.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742726/ai-c%C3%B3-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-x%C6%A1-gan_dem38b.png" />
             <p style="font-size: 13px">Ai có nguy cơ mắc bệnh xơ gan?</p>
         </div>
       <br />
@@ -143,7 +143,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/s%C6%A1-gan/x%C6%A1-gan-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-ph%C3%B2ng-ng%E1%BB%ABa/l%E1%BA%A1m-d%E1%BB%A5ng-r%C6%B0%E1%BB%A3u-c%C3%B3-th%E1%BB%83-g%C3%A2y-b%E1%BB%87nh-x%C6%A1-gan.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742731/l%E1%BA%A1m-d%E1%BB%A5ng-r%C6%B0%E1%BB%A3u-c%C3%B3-th%E1%BB%83-g%C3%A2y-b%E1%BB%87nh-x%C6%A1-gan_yqm9kx.png" />
             <p style="font-size: 13px">Lạm dụng rượu có thể gây bệnh xơ gan</p>
         </div>
         <br />
@@ -192,7 +192,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/s%C6%A1-gan/x%C6%A1-gan-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-ph%C3%B2ng-ng%E1%BB%ABa/ti%C3%AAm-ng%E1%BB%ABa-vaccine-ph%C3%B2ng-b%E1%BB%87nh-vi%C3%AAm-gan-%C4%91%E1%BB%83-h%E1%BA%A1n-ch%E1%BA%BF-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-x%C6%A1-gan.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742200/ti%C3%AAm-ng%E1%BB%ABa-vaccine-ph%C3%B2ng-b%E1%BB%87nh-vi%C3%AAm-gan-%C4%91%E1%BB%83-h%E1%BA%A1n-ch%E1%BA%BF-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-x%C6%A1-gan_uy6x1x.png" />
             <p style="font-size: 13px">Tiêm ngừa vaccine phòng bệnh viêm gan để hạn chế nguy cơ mắc bệnh xơ gan</p>
         </div>
         <br />
