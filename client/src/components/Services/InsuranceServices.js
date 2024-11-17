@@ -71,7 +71,7 @@ const InsuranceServices = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/444/bao-lanh-vien-phi.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731748977/bao-lanh-vien-phi_nwko6z.jpg",
       title: "DỊCH VỤ BẢO LÃNH VIỆN PHÍ",
       description:
         "Nhằm đáp ứng nhu cầu cho khách hàng sử dụng dịch vụ bảo lãnh viện phí, Phòng khám Bệnh viện đại học Y Dược 1 đã không ngừng mở rộng hệ thống liên kết với các công ty, đối tác bảo hiểm lớn nhằm tạo sự thuận tiện cho khách hàng khi sử dụng dịch vụ tại Phòng khám.",

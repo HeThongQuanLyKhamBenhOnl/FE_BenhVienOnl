@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
 // Định nghĩa URL cơ bản của API
 const BASE_URL = "http://localhost:5000/api";
-
 // Tạo API slice cho các chức năng liên quan đến chat
 export const chatApiSlice = createApi({
   reducerPath: "chatApi",
@@ -28,7 +26,6 @@ export const chatApiSlice = createApi({
       }),
       invalidatesTags: ["Chat"], // Invalidate cache khi tạo cuộc trò chuyện mới
     }),
-
     // API gửi tin nhắn
     sendMessage: builder.mutation({
       query: ({ chatId, content }) => ({
@@ -38,7 +35,6 @@ export const chatApiSlice = createApi({
       }),
       invalidatesTags: ["Chat"], // Invalidate cache khi gửi tin nhắn
     }),
-
     // API lấy danh sách tin nhắn của cuộc trò chuyện
     getMessages: builder.query({
       query: (chatId) => ({
@@ -56,7 +52,6 @@ export const chatApiSlice = createApi({
     }),
   }),
 });
-
 // Export các hooks để sử dụng trong component
 export const {
   useCreateChatMutation,
@@ -64,5 +59,4 @@ export const {
   useGetMessagesQuery,
   useGetChatListQuery,
 } = chatApiSlice;
-
 export default chatApiSlice;

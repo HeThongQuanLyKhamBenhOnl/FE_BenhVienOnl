@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -125,7 +125,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/tri%E1%BB%87u-ch%E1%BB%A9ng-c%E1%BB%A7a-gan-nhi%E1%BB%85m-m%E1%BB%A1-l%C3%A0-g%C3%AC/r%C6%B0%E1%BB%A3u-g%C3%A2y-t%E1%BB%95n-th%C6%B0%C6%A1ng-nhi%E1%BB%81u-nh%E1%BA%A5t-t%E1%BA%A1i-gan-%C4%91%E1%BA%B7c-bi%E1%BB%87t-l%C3%A0-gan-nhi%E1%BB%85m-m%E1%BB%A1.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742588/r%C6%B0%E1%BB%A3u-g%C3%A2y-t%E1%BB%95n-th%C6%B0%C6%A1ng-nhi%E1%BB%81u-nh%E1%BA%A5t-t%E1%BA%A1i-gan-%C4%91%E1%BA%B7c-bi%E1%BB%87t-l%C3%A0-gan-nhi%E1%BB%85m-m%E1%BB%A1_j4yden.png" />
             <p style="font-size: 13px">Rượu gây tổn thương nhiều nhất tại gan đặc biệt là gan nhiễm mỡ</p>
         </div>
         <br />
@@ -165,7 +165,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/tri%E1%BB%87u-ch%E1%BB%A9ng-c%E1%BB%A7a-gan-nhi%E1%BB%85m-m%E1%BB%A1-l%C3%A0-g%C3%AC/vitamin-e-c%C3%B3-th%E1%BB%83-c%E1%BA%A3i-thi%E1%BB%87n-vi%C3%AAm-gan-nhi%E1%BB%85m-m%E1%BB%A1-%E1%BB%9F-ng%C6%B0%E1%BB%9Di-kh%C3%B4ng-b%E1%BB%8B-b%E1%BB%87nh-ti%E1%BB%83u-%C4%91%C6%B0%E1%BB%9Dng.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742593/vitamin-e-c%C3%B3-th%E1%BB%83-c%E1%BA%A3i-thi%E1%BB%87n-vi%C3%AAm-gan-nhi%E1%BB%85m-m%E1%BB%A1-%E1%BB%9F-ng%C6%B0%E1%BB%9Di-kh%C3%B4ng-b%E1%BB%8B-b%E1%BB%87nh-ti%E1%BB%83u-%C4%91%C6%B0%E1%BB%9Dng_otry89.png" />
             <p style="font-size: 13px">Vitamin E có thể cải thiện viêm gan nhiễm mỡ ở người không bị bệnh tiểu đường</p>
         </div>
       <br />
@@ -195,7 +195,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/s%C6%A1-gan/x%C6%A1-gan-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-v%C3%A0-ph%C3%B2ng-ng%E1%BB%ABa/ti%C3%AAm-ng%E1%BB%ABa-vaccine-ph%C3%B2ng-b%E1%BB%87nh-vi%C3%AAm-gan-%C4%91%E1%BB%83-h%E1%BA%A1n-ch%E1%BA%BF-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-x%C6%A1-gan.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742597/ti%C3%AAm-ng%E1%BB%ABa-vaccine-ph%C3%B2ng-b%E1%BB%87nh-vi%C3%AAm-gan-%C4%91%E1%BB%83-h%E1%BA%A1n-ch%E1%BA%BF-nguy-c%C6%A1-m%E1%BA%AFc-b%E1%BB%87nh-x%C6%A1-gan_fqgs1z.png" />
             <p style="font-size: 13px">Tiêm ngừa vaccine phòng bệnh viêm gan để hạn chế nguy cơ mắc bệnh xơ gan</p>
         </div>
         <br />

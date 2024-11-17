@@ -71,14 +71,14 @@ const RespiratoryFunctionScreening = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/214/do-gang-suc-tim-mach-ho-hap.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731749931/do-gang-suc-tim-mach-ho-hap_uxgpk3.jpg",
       title: "ĐO GẮNG SỨC TIM MẠCH - HÔ HẤP (CPET)",
       description:
         "Đo gắng sức tim mạch hô hấp (CPET: Cardiopulmonary Exercise Testing) là một xét nghiệm đánh giá đồng thời hệ thống tim mạch và hô hấp trong suốt thời gian bạn vận động gắng sức.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/215/do-da-ky-giac-ngu.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731749937/do-da-ky-giac-ngu_qw3ber.jpg",
       title: "ĐO ĐA KÝ GIẤC NGỦ (Polysomnography - PSG)",
       description:
         "Đo đa ký giấc ngủ là một thuật ngữ y khoa chỉ một phương pháp đo đạc các hoạt động của cơ thể khi ngủ.",

@@ -65,7 +65,7 @@ const OtherServicePackages = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/445/goi-kham-suc-khoe-tien-hon-nhan.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731749026/goi-kham-suc-khoe-tien-hon-nhan_dn9fwp.jpg",
       title: "GÓI KHÁM SỨC KHOẺ TIỀN HÔN NHÂN",
       description:
         "Việc khám sức khỏe tiền hôn nhân không chỉ là quan tâm sức khỏe của bản thân mà còn thể hiện trách nhiệm với bạn đời, vì cuộc sống gia đình hạnh phúc và sức khỏe của con cái trong tương lai.",

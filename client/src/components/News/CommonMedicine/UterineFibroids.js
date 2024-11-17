@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -112,7 +112,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/khoa-s%E1%BA%A3n-ph%E1%BB%A5-khoa/u-x%C6%A1-t%E1%BB%AD-cung/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-bi%E1%BA%BFn-ch%E1%BB%A9ng-th%C3%A0nh-ung-th%C6%B0-kh%C3%B4ng/u-x%C6%A1-t%E1%BB%AD-cung-l%C3%A0-b%E1%BB%87nh-g%C3%AC.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743479/u-x%C6%A1-t%E1%BB%AD-cung-l%C3%A0-b%E1%BB%87nh-g%C3%AC_s3jajx.png" />
             <p style="font-size: 13px">U xơ tử cung là bệnh gì?</p>
         </div>
       <br />
@@ -138,7 +138,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/khoa-s%E1%BA%A3n-ph%E1%BB%A5-khoa/u-x%C6%A1-t%E1%BB%AD-cung/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-bi%E1%BA%BFn-ch%E1%BB%A9ng-th%C3%A0nh-ung-th%C6%B0-kh%C3%B4ng/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-bi%E1%BA%BFn-ch%E1%BB%A9ng-th%C3%A0nh-ung-th%C6%B0-kh%C3%B4ng.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743490/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-bi%E1%BA%BFn-ch%E1%BB%A9ng-th%C3%A0nh-ung-th%C6%B0-kh%C3%B4ng_iybb53.png" />
             <p style="font-size: 13px">U xơ tử cung có biến chứng thành ung thư không?</p>
         </div>
     `
@@ -155,7 +155,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/khoa-s%E1%BA%A3n-ph%E1%BB%A5-khoa/u-x%C6%A1-t%E1%BB%AD-cung/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-bi%E1%BA%BFn-ch%E1%BB%A9ng-th%C3%A0nh-ung-th%C6%B0-kh%C3%B4ng/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-th%E1%BB%83-khi%E1%BA%BFn-ph%E1%BB%A5-n%E1%BB%AF-kh%C3%B3-mang-thai.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743486/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-th%E1%BB%83-khi%E1%BA%BFn-ph%E1%BB%A5-n%E1%BB%AF-kh%C3%B3-mang-thai_dldhna.png" />
             <p style="font-size: 13px">U xơ tử cung có thể khiến phụ nữ khó mang thai</p>
         </div>
         <br />Tuy nhiên, ở một số trường hợp, các khối u xơ lớn sẽ được bác sĩ chỉ định phải phẫu thuật để cắt bỏ do các nguyên nhân sau:
@@ -187,7 +187,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px"src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/khoa-s%E1%BA%A3n-ph%E1%BB%A5-khoa/u-x%C6%A1-t%E1%BB%AD-cung/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-bi%E1%BA%BFn-ch%E1%BB%A9ng-th%C3%A0nh-ung-th%C6%B0-kh%C3%B4ng/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-th%E1%BB%83-khi%E1%BA%BFn-ph%E1%BB%A5-n%E1%BB%AF-kh%C3%B3-mang-thai.png" />
+            <img alt="img" style="width: 500px"src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731743486/u-x%C6%A1-t%E1%BB%AD-cung-c%C3%B3-th%E1%BB%83-khi%E1%BA%BFn-ph%E1%BB%A5-n%E1%BB%AF-kh%C3%B3-mang-thai_dldhna.png" />
             <p style="font-size: 13px">Phương pháp điều trị u xơ tử cung</p>
         </div>
         <br />- Đối với người mắc khối u cơ trơn ở tử cung, khi người bệnh có các triệu chứng, bác sĩ có thể chỉ định điều trị bằng phẫu thuật bóc tách khối u hoặc điều trị bằng thuốc, cắt bán tử cung hay cắt tử cung. 

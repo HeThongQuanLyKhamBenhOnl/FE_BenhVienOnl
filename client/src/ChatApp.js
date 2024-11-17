@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { io } from "socket.io-client";
 import { useSelector } from "react-redux";
 import axios from "axios";
-
 const ChatApp = () => {
   const [socket, setSocket] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -11,13 +10,10 @@ const ChatApp = () => {
   const [activeChatId, setActiveChatId] = useState(null);
   const [activeChatName, setActiveChatName] = useState("");
   const userId = useSelector((state) => state.user?.userInfo?.id);
-
   // Tạo tham chiếu đến container của danh sách tin nhắn
   const messagesEndRef = useRef(null);
-
   useEffect(() => {
     if (!userId) return;
-
     const fetchChatRooms = async () => {
       try {
         const token = localStorage.getItem("token");
@@ -31,40 +27,31 @@ const ChatApp = () => {
         console.error("Lỗi khi lấy danh sách phòng chat:", error);
       }
     };
-
     fetchChatRooms();
   }, [userId]);
-
   useEffect(() => {
     if (!activeChatId) return;
-
     const newSocket = io("http://localhost:5000");
     setSocket(newSocket);
-
     // Tham gia phòng chat
     newSocket.emit("joinChat", activeChatId);
-
     // Nhận tin nhắn mới
     newSocket.on("newMessage", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });
-
     // Lấy tin nhắn từ phòng chat
     newSocket.emit("getMessages", activeChatId);
     newSocket.on("messages", (fetchedMessages) => {
       setMessages(fetchedMessages);
     });
-
     return () => {
       newSocket.disconnect();
     };
   }, [activeChatId]);
-
   useEffect(() => {
     // Cuộn xuống cuối danh sách tin nhắn khi tin nhắn mới được thêm
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
   const sendMessage = (e) => {
     e.preventDefault();
     if (input.trim() && userId && activeChatId) {
@@ -76,12 +63,10 @@ const ChatApp = () => {
       setInput("");
     }
   };
-
   const toggleChatRoom = (roomId, roomName) => {
     setActiveChatId(roomId);
     setActiveChatName(roomName);
   };
-
   if (!userId) {
     return (
       <div className="flex items-center justify-center h-full bg-gray-50">
@@ -91,7 +76,6 @@ const ChatApp = () => {
       </div>
     );
   }
-
   return (
     <div className="flex h-[580px]">
       {/* Danh sách phòng chat (bên trái) */}
@@ -122,7 +106,6 @@ const ChatApp = () => {
           <p className="text-gray-500">Không có phòng chat nào.</p>
         )}
       </div>
-
       {/* Phòng chat (bên phải) */}
       <div className="flex-1 flex flex-col">
         {!activeChatId && (
@@ -130,14 +113,12 @@ const ChatApp = () => {
             <p className="text-gray-500">Chọn một phòng chat để bắt đầu.</p>
           </div>
         )}
-
         {activeChatId && (
           <div className="flex flex-col flex-1 h-[300px]">
             {/* Tiêu đề phòng chat */}
             <div className="p-4 bg-blue-500 text-white font-bold">
               {activeChatName}
             </div>
-
             {/* Danh sách tin nhắn */}
             <div
               className="flex-1 p-4 bg-gray-100"
@@ -175,7 +156,6 @@ const ChatApp = () => {
               )}
               <div ref={messagesEndRef} /> {/* Tham chiếu đến cuối danh sách */}
             </div>
-
             {/* Ô nhập tin nhắn */}
             <form
               className="p-4 border-t bg-white flex gap-2"
@@ -201,5 +181,4 @@ const ChatApp = () => {
     </div>
   );
 };
-
 export default ChatApp;

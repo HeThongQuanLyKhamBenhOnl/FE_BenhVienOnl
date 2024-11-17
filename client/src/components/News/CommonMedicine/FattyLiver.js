@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -112,7 +112,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/nguy%C3%AAn-nh%C3%A2n-g%C3%A2y-b%E1%BB%87nh-gan-nhi%E1%BB%85m-m%E1%BB%A1/gan-nhi%E1%BB%85m-m%E1%BB%A1-c%C3%B3-th%E1%BB%83-ph%C3%A1t-hi%E1%BB%87n-khi-ng%C6%B0%E1%BB%9Di-b%E1%BB%87nh-kh%C3%A1m-s%E1%BB%A9c-kh%E1%BB%8Fe-t%E1%BB%95ng-qu%C3%A1t-%C4%91%E1%BB%8Bnh-k%E1%BB%B3.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742335/gan-nhi%E1%BB%85m-m%E1%BB%A1-c%C3%B3-th%E1%BB%83-ph%C3%A1t-hi%E1%BB%87n-khi-ng%C6%B0%E1%BB%9Di-b%E1%BB%87nh-kh%C3%A1m-s%E1%BB%A9c-kh%E1%BB%8Fe-t%E1%BB%95ng-qu%C3%A1t-%C4%91%E1%BB%8Bnh-k%E1%BB%B3_f0x8b4.png" />
             <p style="font-size: 13px">Gan nhiễm mỡ có thể phát hiện khi người bệnh khám sức khỏe tổng quát định kỳ</p>
         </div>
       <br />
@@ -143,7 +143,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/nguy%C3%AAn-nh%C3%A2n-g%C3%A2y-b%E1%BB%87nh-gan-nhi%E1%BB%85m-m%E1%BB%A1/nghi%E1%BB%87n-r%C6%B0%E1%BB%A3u-l%C3%A0-m%E1%BB%99t-trong-nh%E1%BB%AFng-nguy%C3%AAn-nh%C3%A2n-ch%C3%ADnh-khi%E1%BA%BFn-gan-nhi%E1%BB%85m-m%E1%BB%A1.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742345/nghi%E1%BB%87n-r%C6%B0%E1%BB%A3u-l%C3%A0-m%E1%BB%99t-trong-nh%E1%BB%AFng-nguy%C3%AAn-nh%C3%A2n-ch%C3%ADnh-khi%E1%BA%BFn-gan-nhi%E1%BB%85m-m%E1%BB%A1_frapjg.png" />
             <p style="font-size: 13px">Nghiện rượu là một trong những nguyên nhân chính khiến gan nhiễm mỡ</p>
         </div>
         <br />
@@ -175,7 +175,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/ti%C3%AAu-ho%C3%A1/gan-m%E1%BA%ADt/gan-nhi%E1%BB%85m-m%E1%BB%A1/nguy%C3%AAn-nh%C3%A2n-g%C3%A2y-b%E1%BB%87nh-gan-nhi%E1%BB%85m-m%E1%BB%A1/ng%C6%B0%E1%BB%9Di-b%E1%BB%8B-th%E1%BB%ABa-c%C3%A2n,-b%C3%A9o-ph%C3%AC-n%C3%AAn-gi%E1%BA%A3m-c%C3%A2n-%C4%91%E1%BB%83-ng%C4%83n-ng%E1%BB%ABa-t%C3%ACnh-tr%E1%BA%A1ng-gan-nhi%E1%BB%85m-m%E1%BB%A1.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742354/ng%C6%B0%E1%BB%9Di-b%E1%BB%8B-th%E1%BB%ABa-c%C3%A2n_-b%C3%A9o-ph%C3%AC-n%C3%AAn-gi%E1%BA%A3m-c%C3%A2n-%C4%91%E1%BB%83-ng%C4%83n-ng%E1%BB%ABa-t%C3%ACnh-tr%E1%BA%A1ng-gan-nhi%E1%BB%85m-m%E1%BB%A1_jvqyqe.png" />
             <p style="font-size: 13px">Người bị thừa cân, béo phì nên giảm cân để ngăn ngừa tình trạng gan nhiễm mỡ</p>
         </div>
         <br />

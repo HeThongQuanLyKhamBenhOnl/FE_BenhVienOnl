@@ -4,16 +4,13 @@ import ChatApp from "./ChatApp";
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
-
   // Đóng/mở modal
   const toggleChatModal = () => {
     setIsChatOpen(!isChatOpen);
   };
-
   return (
     <div style={{ fontFamily: "Arial, sans-serif" }}>
       <AppRouter />
-
       {/* Icon mở modal */}
       <div
         style={{
@@ -46,7 +43,6 @@ function App() {
           />
         </svg>
       </div>
-
       {/* Modal chat */}
       {isChatOpen && (
         <div

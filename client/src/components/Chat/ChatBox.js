@@ -6,10 +6,8 @@ import {
 } from "../../Redux/Chat/api";
 import { useSelector } from "react-redux";
 import io from "socket.io-client";
-
 // Kết nối tới server Socket.IO
 const socket = io("http://localhost:5000");
-
 const ChatBox = ({ chatId, doctorId, patientId }) => {
   const [messageContent, setMessageContent] = useState("");
   const { role, _id: userId } = useSelector(
@@ -21,7 +19,6 @@ const ChatBox = ({ chatId, doctorId, patientId }) => {
   const [createChat] = useCreateChatMutation();
   const [sendMessage] = useSendMessageMutation(); // Hook API để gửi tin nhắn
   const [messages, setMessages] = useState([]); // Trạng thái lưu trữ tin nhắn
-
   useEffect(() => {
     // Tham gia phòng chat nếu đã có chatId
     if (chatId) {
@@ -36,18 +33,15 @@ const ChatBox = ({ chatId, doctorId, patientId }) => {
         }
       });
     }
-
     // Nhận tin nhắn mới từ Socket.IO
     socket.on("newMessage", (newMessage) => {
       setMessages((prevMessages) => [...prevMessages, newMessage]);
     });
-
     // Dọn dẹp khi component bị huỷ
     return () => {
       socket.off("newMessage");
     };
   }, [chatId, createChat, doctorId, patientId, initialMessages, refetch]);
-
   // Hàm gửi tin nhắn
   const handleSendMessage = async () => {
     if (messageContent.trim()) {
@@ -55,18 +49,15 @@ const ChatBox = ({ chatId, doctorId, patientId }) => {
         chatId,
         content: messageContent,
       };
-
       try {
         // Gửi tin nhắn qua API
         const { data: newMessage } = await sendMessage(messageData).unwrap();
-
         // Phát tin nhắn qua Socket.IO sau khi gửi thành công qua API
         socket.emit("sendMessage", {
           chatId,
           senderId: userId,
           content: messageContent,
         });
-
         // Cập nhật giao diện sau khi gửi tin nhắn
         setMessages((prevMessages) => [...prevMessages, newMessage]);
         setMessageContent(""); // Xóa nội dung ô nhập sau khi gửi
@@ -75,7 +66,6 @@ const ChatBox = ({ chatId, doctorId, patientId }) => {
       }
     }
   };
-
   return (
     <div style={styles.chatBox}>
       <div style={styles.header}>
@@ -101,7 +91,6 @@ const ChatBox = ({ chatId, doctorId, patientId }) => {
     </div>
   );
 };
-
 // Component MessageBubble để hiển thị tin nhắn
 const MessageBubble = ({ message, role }) => {
   const isSender = message.sender === role; // Kiểm tra nếu tin nhắn được gửi bởi người dùng hiện tại
@@ -119,7 +108,6 @@ const MessageBubble = ({ message, role }) => {
     </div>
   );
 };
-
 // CSS Inline cho các thành phần giao diện
 const styles = {
   chatBox: {
@@ -196,5 +184,4 @@ const styles = {
     marginTop: "5px",
   },
 };
-
 export default ChatBox;

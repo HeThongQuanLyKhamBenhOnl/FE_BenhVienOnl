@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -124,7 +124,7 @@ const AccessSection = () => (
       "Thông tin về gói khám sức khỏe tiền hôn nhân tại Phòng khám Bệnh viện",
       `
         <br />Khám sức khỏe tiền hôn nhân có thể được thực hiện tại Phòng khám Bệnh viện Đại học Y Dược 1 với đội ngũ bác sĩ chuyên nghiệp và trang thiết bị hiện đại, giúp các cặp đôi có kết quả toàn diện về tình hình sức khỏe tổng quát và sức khỏe sinh sản, tiết kiệm thời gian và chuẩn bị tâm lý vững vàng để bước vào ngưỡng cửa quan trọng của cuộc đời. Chi tiết gói khám gồm:
-        <br /><div style="display: flex; justify-content: center; width: 100%"><img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/c%C3%A1c-g%C3%B3i-d%E1%BB%8Bch-v%E1%BB%A5-kh%C3%A1c/g%C3%B3i-kh%C3%A1m-s%E1%BB%A9c-kho%E1%BA%BB-ti%E1%BB%81n-h%C3%B4n-nh%C3%A2n/noi-dung-goi-kham-suc-khoe-tien-hon-nhan-1.jpg" /></div>
+        <br /><div style="display: flex; justify-content: center; width: 100%"><img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746105/noi-dung-goi-kham-suc-khoe-tien-hon-nhan-1_qeh5rt.jpg" /></div>
     `
     )}
     {renderAccessContent(

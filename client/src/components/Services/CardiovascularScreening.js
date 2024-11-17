@@ -71,14 +71,14 @@ const CardiovascularScreening = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/220/tam-soat-nguy-co-dot-quy.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746195/tam-soat-nguy-co-dot-quy_pmv1lv.jpg",
       title: "GÓI TẦM SOÁT NGUY CƠ ĐỘT QUỴ",
       description:
         "Đột quỵ có thể tấn công sức khỏe của bạn một cách ngẫu nhiên và đôi khi không có dấu hiệu báo trước nào. Có một số đối tượng đã được nghiên cứu chứng minh là sẽ có nguy cơ cao hơn người hình thường như: người bị cao huyết áp, đái tháo đường, Cholesterol cao, người có bệnh lý về tim mạch, hút thuốc lá, tiền sử gia đình có nguy cơ đột quỵ…",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/219/goi-tam-soat-dai-thao-duong-roi-loan-mo-mau-va-gut-3.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746201/goi-tam-soat-dai-thao-duong-roi-loan-mo-mau-va-gut-3_oa6whm.jpg",
       title: "GÓI TẦM SOÁT ĐÁI THÁO ĐƯỜNG, RỐI LOẠN MỠ MÁU VÀ GÚT",
       description:
         "Tăng cholesterol, triglycerid, đường trong máu là các yếu tố nguy cơ gây ra các bệnh lý tim mạch, đái tháo đường và một số biến chứng nguy hiểm như đột quỵ, nhồi máu cơ tim…Tăng acid uric máu dễ dẫn đến bệnh gút, lâu dài có thể ảnh hưởng đến thận và các cơ quan khác.",

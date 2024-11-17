@@ -71,7 +71,7 @@ const CheckupCooperate = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/213/goi-kham-suc-khoe-tong-quat-doanh-nghiep.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746225/goi-kham-suc-khoe-tong-quat-doanh-nghiep_fgobgf.jpg",
       title: "GÓI KHÁM SỨC KHỎE TỔNG QUÁT DOANH NGHIỆP",
       description:
         "Nguồn nhân lực được xem là nguồn tài sản vô giá đối với mỗi Doanh nghiệp, một doanh nghiệp có nguồn nhân lực chất lượng, và được vận hành hiệu quả sẽ tác động rất nhiều đến sự thành bại của Doanh nghiệp đó.",

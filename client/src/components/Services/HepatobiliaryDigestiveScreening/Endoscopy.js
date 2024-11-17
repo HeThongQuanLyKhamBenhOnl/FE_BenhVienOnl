@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -96,7 +96,7 @@ const AccessSection = () => (
       1,
       "Nội soi hệ tiêu hóa ( Nội soi Thực quản, Dạ dày, Tá tràng, Đại tràng) là gì?",
       `
-        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/tieu-hoa/noi-soi-he-tieu-hoa-768x768.jpg" /></div>
+        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745896/noi-soi-he-tieu-hoa-768x768_hxodxi.jpg" /></div>
         <br />- Nội soi tiêu hóa là việc thực hiện thăm khám trực tiếp Thực quản - Dạ Dày - Tá tràng hoặc Đại tràng bằng một ống mềm có Camera gắn ở đầu ống. Điều khiển đa hướng, nhìn thấy, nhận định, phân loại, cảm giác được mật độ tổn thương và có thể trực tiếp can thiệp vào tổn thương đó là Nội soi tiêu hoá.
         <br />- Riêng đối với Nội soi Đại tràng để đưa ống nội soi vào và có thể quan sát kỹ đại tràng các Bác sĩ phải bơm vào một ít hơi vì ruột vốn xẹp.
         <br />- Chính vì vậy có thể cảm thấy căng chướng, tức bụng, mót đại tiện, một số bệnh nhân có thể thấy đau nhẹ chịu đựng được nhưng có một số nhạy cảm quá mức thường cần thêm thủ thuật vô cảm tiền mê hoặc gây mê tĩnh mạch nhẹ nhàng.
@@ -124,7 +124,7 @@ const AccessSection = () => (
         <br />+ Thắt tĩnh mạch thực quản trong bệnh lý xuất huyết tiêu hóa;
         <br />+ Sinh thiết làm giải phẫu bệnh chẩn đoán ung thư tiêu hóa sớm và làm mô bệnh chẩn đoán vi khuẩn Helicobacter Pylori (HP)…
         <br />
-        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/tieu-hoa/cat-polyp-trong-qua-trinh-noi-soi.jpg" /></div>
+        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745901/cat-polyp-trong-qua-trinh-noi-soi_x7btjg.jpg" /></div>
     `
     )}
     {renderAccessContent(
@@ -193,7 +193,7 @@ const AccessSection = () => (
         <br />+ Ghi nhận một số vấn đề thường gặp sau khi soi trực tràng như: Cảm giác đau bụng ít hay cảm giác mót rặn, bụng có cảm giác chướng hơi nhẹ đây là triệu chứng bình thường và biến mất nhanh.
         <br />Trong trường hợp bệnh nhân thấy đau nhiều hay rất khó chịu, cần báo ngay cho điều dưỡng hay bác sĩ biết để xử lý kịp thời.
         <br />
-        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/dich-vu/tieu-hoa/noi-soi-dai-trang-768x768.jpg" /></div>
+        <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745908/noi-soi-dai-trang-768x768_du4o6g.jpg" /></div>
     `
     )}
     {renderAccessContent(

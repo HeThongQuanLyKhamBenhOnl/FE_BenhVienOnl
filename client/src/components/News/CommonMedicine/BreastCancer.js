@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.css";
 // Define news items array for the NewsSection
 const newsItems = [
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/86/vector-smart-object-1.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740676/vector-smart-object-1_dlrqa1.png",
     alt: "Tiên phong",
     title: "TIÊN PHONG",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/87/layer-600juykyfu.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740700/layer-600juykyfu_gybtcl.png",
     alt: "Thấu hiểu",
     title: "THẤU HIỂU",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/88/layer-601.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740719/layer-601_sb3r6p.png",
     alt: "Chuẩn mực",
     title: "CHUẨN MỰC",
   },
   {
-    src: "https://umcclinic.com.vn/Data/Sites/1/News/89/layer-602.png",
+    src: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740741/layer-602_t2eqrw.png",
     alt: "An toàn",
     title: "AN TOÀN",
   },
@@ -110,7 +110,7 @@ const AccessSection = () => (
                     width: 100%;
                     align-items: center;
                     flex-direction: column;">
-            <img alt="img" style="width: 500px" src="https://umcclinic.com.vn/Data/Sites/1/media/y-hoc-thuong-thuc/tuy%E1%BA%BFn-v%C3%BA/ung-th%C6%B0-v%C3%BA/ung-th%C6%B0-v%C3%BA-nguy%C3%AAn-nh%C3%A2n-tri%E1%BB%87u-ch%E1%BB%A9ng-ch%E1%BA%A9n-%C4%91o%C3%A1n-v%C3%A0-%C4%91i%E1%BB%81u-tr%E1%BB%8B/b%E1%BA%A5t-k%E1%BB%B3-ai-c%C5%A9ng-c%C3%B3-nguy-c%C6%A1-ti%E1%BB%81m-t%C3%A0ng-m%E1%BA%AFc-b%E1%BB%87nh-ung-th%C6%B0-v%C3%BA.png" />
+            <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742075/b%E1%BA%A5t-k%E1%BB%B3-ai-c%C5%A9ng-c%C3%B3-nguy-c%C6%A1-ti%E1%BB%81m-t%C3%A0ng-m%E1%BA%AFc-b%E1%BB%87nh-ung-th%C6%B0-v%C3%BA_j1908l.png" />
             <p style="font-size: 13px">Bất kỳ ai cũng có nguy cơ tiềm tàng mắc bệnh ung thư vú</p>
         </div>
       <br />

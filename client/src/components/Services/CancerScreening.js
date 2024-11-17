@@ -71,27 +71,27 @@ const CancerScreening = () => {
   const checkupCardsData = [
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/221/goi-tam-soat-ung-thu-tong-quat.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746140/goi-tam-soat-ung-thu-tong-quat_efs4vr.jpg",
       title: "GÓI KHÁM TẦM SOÁT UNG THƯ TỔNG QUÁT",
       description:
         "Gói khám tầm soát ung thư tổng quát của Phòng khám Bệnh viện Đại học Y Dược 1 được đội ngũ chuyên môn xây dựng theo nguyên tắc: Khoa học, hiệu quả, có tính thực tiễn cao, tiết kiệm chi phí cho khách hàng. Khi thực hiện gói khám này khách hàng có thể linh hoạt lựa chọn thêm các dịch vụ khác tại Phòng khám",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/547/goi-kham-tam-soat-ung-thu-vom-hong.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746152/goi-kham-tam-soat-ung-thu-vom-hong_cwvdj6.jpg",
       title: "GÓI TẦM SOÁT UNG THƯ VÒM HỌNG",
       description:
         "Tầm soát ung thư vòm họng (vòm hầu) cần được thực hiện định kỳ ngay cả khi chưa có triệu chứng nào để kiểm soát các nguy cơ có thể xảy ra, vì đây là một căn bệnh có triệu chứng âm thầm và khả năng di căn xa.",
     },
     {
       imgSrc:
-        "https://umcclinic.com.vn/Data/Sites/1/News/446/goi-tam-soat-ung-thu-co-tu-cung.jpg",
+        "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746158/goi-tam-soat-ung-thu-co-tu-cung_botxnp.jpg",
       title: "GÓI TẦM SOÁT UNG THƯ CỔ TỬ CUNG",
       description:
         "Tầm soát ung thư cổ tử cung là cách hiệu quả nhất để phát hiện và ngăn chặn ung thư cổ tử cung, căn bệnh gây tử vong hàng đầu trong các loại ung thư ở phụ nữ. ",
     },
     {
-      imgSrc: "https://umcclinic.com.vn/Data/Sites/1/News/222/p_400x600.jpg",
+      imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746147/p_400x600_ysqhpo.jpg",
       title: "GÓI KHÁM TẦM SOÁT UNG THƯ PHỔI",
       description:
         "Tầm soát ung thư phổi là phương pháp phát hiện dấu hiệu ung thư ngay cả khi chưa có các triệu chứng rõ ràng giúp người bệnh phát hiện bệnh sớm, điều trị và chăm sóc sức khỏe kịp thời, giảm đau đớn, tăng khả năng khỏi bệnh, ngăn chặn di căn và các biến chứng nguy hiểm khác.",
