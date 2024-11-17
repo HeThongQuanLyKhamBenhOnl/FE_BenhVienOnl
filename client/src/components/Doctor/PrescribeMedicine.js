@@ -36,6 +36,7 @@ const PrescribeMedicine = () => {
   const [formValues, setFormValues] = useState({
     prescribedMedicines: [],
   });
+  const [paymentLink, setPaymentLink] = useState("");
 
   useEffect(() => {
     if (error) {
@@ -54,12 +55,13 @@ const PrescribeMedicine = () => {
     setFormValues({
       prescribedMedicines: record.prescribedMedicines
         ? record.prescribedMedicines.map((item) => ({
-            medicine: item.medicine._id, // Lấy ID của thuốc
+            medicine: item.medicine._id,
             quantity: item.quantity,
             total: item.total,
           }))
         : [],
     });
+    setPaymentLink(""); // Reset the payment link on new edit
     setEditModalVisible(true);
   };
 
@@ -135,7 +137,16 @@ const PrescribeMedicine = () => {
             : item
         )
       );
-      message.success("Cập nhật hồ sơ bệnh án thành công");
+
+      if (response.medicalRecord.paymentLink) {
+        setPaymentLink(response.medicalRecord.paymentLink);
+        message.success(
+          "Cập nhật hồ sơ bệnh án thành công. Đã tạo liên kết thanh toán."
+        );
+      } else {
+        message.success("Cập nhật hồ sơ bệnh án thành công.");
+      }
+
       setEditModalVisible(false);
       refetch();
     } catch (error) {
@@ -236,69 +247,87 @@ const PrescribeMedicine = () => {
         {loadingMedicines ? (
           <Spin size="large" />
         ) : (
-          <Form layout="vertical">
-            {formValues.prescribedMedicines.map((medicine, index) => (
-              <Row gutter={16} key={index}>
-                <Col span={10}>
-                  <Form.Item label="Thuốc" required>
-                    <Select
-                      placeholder="Chọn thuốc"
-                      value={medicine.medicine}
-                      onChange={(value) =>
-                        handleMedicineChange(index, "medicine", value)
-                      }
-                    >
-                      {medicinesData?.data.map((med) => (
-                        <Option key={med._id} value={med._id}>
-                          {med.name}
-                        </Option>
-                      ))}
-                    </Select>
-                  </Form.Item>
-                </Col>
-                <Col span={6}>
-                  <Form.Item label="Số lượng" required>
-                    <Input
-                      placeholder="Số lượng"
-                      type="number"
-                      min={1}
-                      value={medicine.quantity}
-                      onChange={(e) =>
-                        handleMedicineChange(index, "quantity", e.target.value)
-                      }
+          <>
+            <Form layout="vertical">
+              {formValues.prescribedMedicines.map((medicine, index) => (
+                <Row gutter={16} key={index}>
+                  <Col span={10}>
+                    <Form.Item label="Thuốc" required>
+                      <Select
+                        placeholder="Chọn thuốc"
+                        value={medicine.medicine}
+                        onChange={(value) =>
+                          handleMedicineChange(index, "medicine", value)
+                        }
+                      >
+                        {medicinesData?.data.map((med) => (
+                          <Option key={med._id} value={med._id}>
+                            {med.name}
+                          </Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+                  </Col>
+                  <Col span={6}>
+                    <Form.Item label="Số lượng" required>
+                      <Input
+                        placeholder="Số lượng"
+                        type="number"
+                        min={1}
+                        value={medicine.quantity}
+                        onChange={(e) =>
+                          handleMedicineChange(
+                            index,
+                            "quantity",
+                            e.target.value
+                          )
+                        }
+                      />
+                    </Form.Item>
+                  </Col>
+                  <Col span={6}>
+                    <Form.Item label="Tổng tiền">
+                      <Input
+                        placeholder="Tổng tiền"
+                        type="number"
+                        value={medicine.total}
+                        readOnly
+                      />
+                    </Form.Item>
+                  </Col>
+                  <Col span={2}>
+                    <Button
+                      type="danger"
+                      icon="delete"
+                      onClick={() => handleRemoveMedicine(index)}
+                      style={{ marginTop: "40px" }}
                     />
-                  </Form.Item>
-                </Col>
-                <Col span={6}>
-                  <Form.Item label="Tổng tiền">
-                    <Input
-                      placeholder="Tổng tiền"
-                      type="number"
-                      value={medicine.total}
-                      readOnly
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={2}>
-                  <Button
-                    type="danger"
-                    icon="delete"
-                    onClick={() => handleRemoveMedicine(index)}
-                    style={{ marginTop: "40px" }}
-                  />
-                </Col>
-              </Row>
-            ))}
-            <Form.Item>
-              <Button
-                type="dashed"
-                onClick={handleAddMedicine}
-                style={{ width: "100%" }}
-              >
-                Thêm thuốc
-              </Button>
-            </Form.Item>
-          </Form>
+                  </Col>
+                </Row>
+              ))}
+              <Form.Item>
+                <Button
+                  type="dashed"
+                  onClick={handleAddMedicine}
+                  style={{ width: "100%" }}
+                >
+                  Thêm thuốc
+                </Button>
+              </Form.Item>
+            </Form>
+            {paymentLink && (
+              <div style={{ marginTop: "20px" }}>
+                <a
+                  href={paymentLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "blue" }}
+                >
+                  Mở liên kết thanh toán
+                </a>
+              </div>
+            )}
+          </>
         )}
       </Modal>
     </div>
