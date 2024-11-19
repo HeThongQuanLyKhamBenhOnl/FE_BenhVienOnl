@@ -44,16 +44,16 @@ const ManageUser = () => {
       dataIndex: 'address',
       key: 'address',
     },
-    {
-      title: 'Hành Động',
-      key: 'action',
-      render: (text, record) => (
-        <Space size="middle">
-          <Button type="primary">Sửa</Button>
-          <Button type="danger">Xóa</Button>
-        </Space>
-      ),
-    },
+    // {
+    //   title: 'Hành Động',
+    //   key: 'action',
+    //   render: (text, record) => (
+    //     <Space size="middle">
+    //       <Button type="primary">Sửa</Button>
+    //       <Button type="danger">Xóa</Button>
+    //     </Space>
+    //   ),
+    // },
   ];
 
   if (loading) return <p>Đang tải dữ liệu...</p>;
@@ -61,10 +61,20 @@ const ManageUser = () => {
 
   return (
     <div>
-      <h1>Quản Lý Người Dùng</h1>
+      <h1 style={style.header}>Quản Lý Người Dùng</h1>
       <Table columns={columns} dataSource={patients} rowKey="id" />
     </div>
   );
 };
 
 export default ManageUser;
+
+const style = {
+  header: {
+    textAlign: "center",
+    fontSize: "2rem",
+    marginBottom: "40px",
+    fontWeight: "bold",
+    color: "#009eff",
+  },
+}

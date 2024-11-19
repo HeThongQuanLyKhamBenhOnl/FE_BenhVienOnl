@@ -105,25 +105,25 @@ const ManageDoctor = () => {
       render: (text) =>
         Array.isArray(text) ? text.join(", ") : "Không có bằng cấp", // Kiểm tra nếu là mảng, nếu không thì hiển thị giá trị mặc định    },
     },
-    {
-      title: "Hành Động",
-      key: "action",
-      width: 150,
-      render: (text, record) => (
-        <Space size="middle">
-          <Button type="primary">Sửa</Button>
-          <Button type="primary" danger>
-            Xóa
-          </Button>
-        </Space>
-      ),
-    },
+    // {
+    //   title: "Hành Động",
+    //   key: "action",
+    //   width: 150,
+    //   render: (text, record) => (
+    //     <Space size="middle">
+    //       <Button type="primary">Sửa</Button>
+    //       <Button type="primary" danger>
+    //         Xóa
+    //       </Button>
+    //     </Space>
+    //   ),
+    // },
   ];
 
   return (
     <div>
-      <h1>Quản Lý Bác Sĩ</h1>
-      <Button type="primary" onClick={() => setIsDrawerVisible(true)}>
+      <h1 style={style.header}>Quản Lý Bác Sĩ</h1>
+      <Button type="primary" onClick={() => setIsDrawerVisible(true)} style={{margin: "30px 0px",}}>
         Tạo Bác Sĩ
       </Button>
 
@@ -258,3 +258,13 @@ const ManageDoctor = () => {
 };
 
 export default ManageDoctor;
+
+const style = {
+  header: {
+    textAlign: "center",
+    fontSize: "2rem",
+    marginBottom: "10px",
+    fontWeight: "bold",
+    color: "#009eff",
+  },
+}

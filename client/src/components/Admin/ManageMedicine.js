@@ -55,10 +55,13 @@ const ManageMedicine = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>Quản lý thuốc</h1>
+      <h1 style={styles.heading}>DANH SÁCH QUẢN LÝ THUỐC</h1>
 
       {/* Form tạo hoặc cập nhật thuốc */}
       <form style={styles.form} onSubmit={handleSubmit}>
+        <button type="submit" style={styles.submitButton}>
+          {editingMedicine ? "Cập nhật thuốc" : "Tạo thuốc mới"}
+        </button>
         <input
           type="text"
           name="name"
@@ -86,9 +89,6 @@ const ManageMedicine = () => {
           required
           style={styles.input}
         />
-        <button type="submit" style={styles.submitButton}>
-          {editingMedicine ? "Cập nhật thuốc" : "Tạo thuốc mới"}
-        </button>
       </form>
 
       {/* Bảng danh sách thuốc */}
@@ -98,7 +98,7 @@ const ManageMedicine = () => {
             <th style={styles.tableHeader}>Tên thuốc</th>
             <th style={styles.tableHeader}>Giá</th>
             <th style={styles.tableHeader}>Số lượng tồn kho</th>
-            <th style={styles.tableHeader}>Hành động</th>
+            {/* <th style={styles.tableHeader}>Hành động</th> */}
           </tr>
         </thead>
         <tbody>
@@ -107,7 +107,7 @@ const ManageMedicine = () => {
               <td style={styles.tableCell}>{medicine.name}</td>
               <td style={styles.tableCell}>{medicine.price}</td>
               <td style={styles.tableCell}>{medicine.stock}</td>
-              <td style={styles.tableCell}>
+              {/* <td style={styles.tableCell}>
                 <button
                   onClick={() => handleEdit(medicine)}
                   style={styles.editButton}
@@ -120,7 +120,7 @@ const ManageMedicine = () => {
                 >
                   Xóa
                 </button>
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>
@@ -146,6 +146,8 @@ const styles = {
     textAlign: "center",
     color: "#333",
     marginBottom: "20px",
+    fontSize: "2rem",
+    fontWeight: "bold",
   },
   form: {
     display: "flex",
