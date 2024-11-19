@@ -19,7 +19,7 @@ const Navigation = () => {
 
   return (
     <Menu
-      theme="dark"
+      theme="dark" 
       mode="horizontal"
       defaultSelectedKeys={["1"]}
       className="navigation-menu"
@@ -37,7 +37,7 @@ const Navigation = () => {
           <a href="/gioi-thieu">Giới Thiệu</a>
         </Menu.Item>
         <Menu.Item key="2-2">
-          <a href="/tai-sao-chon-chung-toi">Tại sao chọn chúng tôi</a>
+           <a href="/tai-sao-chon-chung-toi">Tại sao chọn chúng tôi</a>
         </Menu.Item>
         <Menu.Item key="2-3">
           <a href="/co-so-vat-chat">Cơ sở vật chất</a>

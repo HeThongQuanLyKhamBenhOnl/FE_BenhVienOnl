@@ -8,12 +8,12 @@ const { Header } = Layout;
 
 const HeaderComponent = () => {
   return (
-    <Header className="header">
+    <Header className="header" style={style.container}>
       <Row align="middle">
         <Col span={4}>
           <div className="logo">
             <a href="/">
-              <img src={logo1} className="h-12 mx-auto" />
+              <img src={logo1} className="h-12 mx-auto" style={{cursor: "pointer",}}/>
             </a>
           </div>
         </Col>
@@ -29,3 +29,12 @@ const HeaderComponent = () => {
 };
 
 export default HeaderComponent;
+
+const style = {
+  container: {
+    width: "100%",
+    position: "fixed",
+    top: "0",
+    zIndex: "99",
+  },
+}
