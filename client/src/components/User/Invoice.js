@@ -1,50 +1,50 @@
-import React from "react";
-import { useGetDoctorMedicalRecordsQuery } from "../../Redux/Doctor/api";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUpdatedMedicalRecords } from "../../Redux/User/userSlice";
 
-const PatientInvoice = () => {
-  // Gọi API để lấy danh sách hồ sơ bệnh án của bác sĩ
-  const { data, error, isLoading } = useGetDoctorMedicalRecordsQuery();
+const Invoice = () => {
+  const dispatch = useDispatch();
 
-  if (isLoading) return <p style={styles.loading}>Đang tải dữ liệu...</p>;
-  if (error) {
-    console.error("Error fetching medical records:", error);
-    return (
-      <p style={styles.error}>Đã xảy ra lỗi khi tải thông tin hồ sơ bệnh án</p>
-    );
-  }
+  // Lấy trạng thái từ Redux store
+  const { updatedMedicalRecords, loading, error } = useSelector((state) => ({
+    updatedMedicalRecords: state.user.updatedMedicalRecords,
+    loading: state.user.loading,
+    error: state.user.error,
+  }));
 
-  const medicalRecords = data?.medicalRecords || [];
+  // Gọi API khi component được render
+  useEffect(() => {
+    dispatch(getUpdatedMedicalRecords());
+  }, [dispatch]);
+
+  if (loading) return <p>Đang tải dữ liệu...</p>;
+  if (error) return <p>Đã xảy ra lỗi: {error}</p>;
 
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Hóa Đơn Bệnh Nhân</h1>
-      {medicalRecords.length === 0 ? (
-        <p style={styles.noRecords}>Không có hồ sơ bệnh án nào.</p>
+      {updatedMedicalRecords.length === 0 ? (
+        <p style={styles.noRecords}>Không có hóa đơn nào.</p>
       ) : (
-        medicalRecords.map((record, index) => (
-          <div style={styles.recordCard} key={index}>
-            <div style={styles.recordHeader}>
-              <h2 style={styles.patientName}>
-                Tên bệnh nhân: {record.patient.fullName}
-              </h2>
-              <h3>
-                Trạng thái thanh toán:
-                <span
-                  style={{
-                    ...styles.paymentStatus,
-                    ...styles[record.paymentStatus.toLowerCase()],
-                  }}
-                >
-                  {record.paymentStatus}
-                </span>
-              </h3>
-            </div>
+        updatedMedicalRecords.map((record, index) => (
+          <div key={index} style={styles.recordCard}>
+            <h3 style={styles.paymentStatus}>
+              Trạng thái thanh toán:
+              <span
+                style={{
+                  ...styles.statusBadge,
+                  ...styles[record.paymentStatus?.toLowerCase()],
+                }}
+              >
+                {record.paymentStatus}
+              </span>
+            </h3>
             <table style={styles.table}>
               <thead>
                 <tr>
                   <th style={styles.tableHeader}>Tên thuốc</th>
                   <th style={styles.tableHeader}>Số lượng</th>
-                  <th style={styles.tableHeader}>Thành tiền</th>
+                  <th style={styles.tableHeader}>Đơn giá</th>
                 </tr>
               </thead>
               <tbody>
@@ -55,12 +55,20 @@ const PatientInvoice = () => {
                     </td>
                     <td style={styles.tableCell}>{medicine.quantity}</td>
                     <td style={styles.tableCell}>
-                      {medicine.total.toLocaleString()} VNĐ
+                      {medicine.price?.toLocaleString()} VNĐ
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            {record.paymentLink && (
+              <button
+                style={styles.paymentButton}
+                onClick={() => window.open(record.paymentLink, "_blank")}
+              >
+                Thanh Toán
+              </button>
+            )}
           </div>
         ))
       )}
@@ -84,16 +92,6 @@ const styles = {
     textAlign: "center",
     marginBottom: "20px",
   },
-  loading: {
-    textAlign: "center",
-    fontSize: "16px",
-    color: "#555",
-  },
-  error: {
-    textAlign: "center",
-    fontSize: "16px",
-    color: "#e53935",
-  },
   noRecords: {
     textAlign: "center",
     fontSize: "16px",
@@ -106,15 +104,15 @@ const styles = {
     marginBottom: "20px",
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
   },
-  recordHeader: {
-    marginBottom: "15px",
-  },
   patientName: {
-    margin: "0 0 10px",
     fontSize: "20px",
     color: "#333",
   },
   paymentStatus: {
+    fontSize: "16px",
+    color: "#555",
+  },
+  statusBadge: {
     fontWeight: "bold",
     padding: "2px 8px",
     borderRadius: "4px",
@@ -150,6 +148,16 @@ const styles = {
     border: "1px solid #ddd",
     color: "#555",
   },
+  paymentButton: {
+    marginTop: "15px",
+    padding: "10px 20px",
+    backgroundColor: "#e53935",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "16px",
+  },
 };
 
-export default PatientInvoice;
+export default Invoice;

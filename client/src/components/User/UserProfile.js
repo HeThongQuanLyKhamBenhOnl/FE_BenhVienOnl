@@ -33,7 +33,7 @@ const UserProfile = () => {
       path: "/user/medicine",
       icon: <FaPrescriptionBottleAlt />,
     },
-    { name: "Nhận xét", path: "/profile/reviews", icon: <FaComments /> },
+    { name: "Hóa Đơn Toa Thuốc", path: "/user/invoice", icon: <FaComments /> },
     {
       name: "Quản lý thẻ",
       path: "/profile/manage-card",

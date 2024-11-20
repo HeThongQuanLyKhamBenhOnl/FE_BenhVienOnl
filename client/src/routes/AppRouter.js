@@ -129,6 +129,7 @@ import ManageMedicine from "../components/Admin/ManageMedicine";
 import PrescribeMedicine from "../components/Doctor/PrescribeMedicine";
 import MedicineUser from "../components/User/MedicineUser";
 import PatientInvoice from "../components/Doctor/PatientInvoice";
+import Invoice from "../components/User/Invoice";
 
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
@@ -173,6 +174,7 @@ function AppRouter() {
           <Route path="appointments" element={<Appointments />} />
           <Route path="medical-record" element={<MedicalPatient />} />
           <Route path="medicine" element={<MedicineUser />} />
+          <Route path="invoice" element={<Invoice />} />
         </Route>
 
         <Route path="/doctor/*" element={<DoctorDashboard />}>
@@ -183,7 +185,7 @@ function AppRouter() {
           <Route path="doctor-medicines" element={<PrescribeMedicine />} />
           <Route path="invoice-Patient" element={<PatientInvoice />} />
         </Route>
-        
+
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
           <Route path="doctor" element={<ManageDoctor />} />
