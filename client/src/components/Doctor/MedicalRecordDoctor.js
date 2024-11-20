@@ -85,29 +85,29 @@ const MedicalRecordDoctor = () => {
   // Cấu trúc bảng
   const columns = [
     {
-      title: "Patient Name",
+      title: "Tên bệnh nhân",
       dataIndex: ["patient", "fullName"],
       key: "patientName",
     },
     {
-      title: "Date of Birth",
+      title: "Ngày sinh",
       dataIndex: ["patient", "dateOfBirth"],
       key: "dateOfBirth",
       render: (date) => dayjs(date).format("DD/MM/YYYY"), // Format date of birth as DD/MM/YYYY
     },
     {
-      title: "Gender",
+      title: "Giới tính",
       dataIndex: ["patient", "gender"],
       key: "gender",
     },
     {
-      title: "Appointment Date",
+      title: "Ngày đặt lịch hẹn",
       dataIndex: ["appointment", "date"],
       key: "appointmentDate",
       render: (date) => dayjs(date).format("DD/MM/YYYY"), // Format appointment date as DD/MM/YYYY
     },
     {
-      title: "Shift",
+      title: "Ca làm việc",
       dataIndex: ["appointment", "shift"],
       key: "shift",
       render: (shift) => {
@@ -118,27 +118,27 @@ const MedicalRecordDoctor = () => {
       },
     },
     {
-      title: "Diagnosis",
+      title: "Chẩn đoán",
       dataIndex: "diagnosis",
       key: "diagnosis",
     },
     {
-      title: "Treatment",
+      title: "Toa thuốc",
       dataIndex: "treatment",
       key: "treatment",
     },
     {
-      title: "Notes",
+      title: "Chú thích",
       dataIndex: "notes",
       key: "notes",
     },
     {
-      title: "Actions",
+      title: "Hành động",
       key: "actions",
       render: (_, record) => (
         <Space size="middle">
           <Button type="primary" onClick={() => handleEditClick(record)}>
-            Edit
+            Chỉnh sửa
           </Button>
         </Space>
       ),
@@ -147,7 +147,7 @@ const MedicalRecordDoctor = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h2 className="text-2xl font-semibold mb-4">Medical Records</h2>
+      <h2 className="text-2xl font-semibold mb-4">HỒ SƠ BỆNH NHÂN</h2>
       {isLoading ? (
         <div className="flex justify-center items-center">
           <Spin size="large" />
@@ -171,19 +171,19 @@ const MedicalRecordDoctor = () => {
       >
         <div className="space-y-4">
           <Input
-            placeholder="Diagnosis"
+            placeholder="Chẩn đoán"
             name="diagnosis"
             value={formValues.diagnosis}
             onChange={handleInputChange}
           />
           <Input
-            placeholder="Treatment"
+            placeholder="Toa thuốc"
             name="treatment"
             value={formValues.treatment}
             onChange={handleInputChange}
           />
           <Input.TextArea
-            placeholder="Notes"
+            placeholder="Chú thích"
             name="notes"
             value={formValues.notes}
             onChange={handleInputChange}

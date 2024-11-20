@@ -183,6 +183,7 @@ function AppRouter() {
           <Route path="doctor-medicines" element={<PrescribeMedicine />} />
           <Route path="invoice-Patient" element={<PatientInvoice />} />
         </Route>
+        
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
           <Route path="doctor" element={<ManageDoctor />} />

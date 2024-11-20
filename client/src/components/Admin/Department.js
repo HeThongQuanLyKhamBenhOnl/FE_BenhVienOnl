@@ -62,12 +62,19 @@ const Department = () => {
 
   return (
     <div className="p-8">
-      <h2 className="text-2xl font-semibold mb-6 text-center">
+      <h2 style={style.header}>
         QUẢN LÝ CHUYÊN KHOA
       </h2>
 
+      {/* Nút thêm chuyên khoa */}
+      <div className="flex justify-start mt-4" style={{ marginBottom: "20px",}}>
+        <Button type="primary">
+          <p style={{fontWeight: "600", fontSize: "1rem", margin: "10px",}}>Thêm</p>
+        </Button>
+      </div>
+
       {/* Bộ lọc */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      {/* <div className="grid grid-cols-3 gap-4 mb-6">
         <Input placeholder="Tên chuyên khoa" />
         <div className="col-span-3 flex justify-start">
           <Button type="primary" className="mr-2">
@@ -75,19 +82,22 @@ const Department = () => {
           </Button>
           <Button> Cài lại </Button>
         </div>
-      </div>
+      </div> */}
 
       {/* Bảng dữ liệu */}
       <Table columns={columns} dataSource={data} pagination={false} />
-
-      {/* Nút thêm chuyên khoa */}
-      <div className="flex justify-end mt-4">
-        <Button type="primary" icon={<i className="fas fa-plus"></i>}>
-          Thêm
-        </Button>
-      </div>
     </div>
   );
 };
 
 export default Department;
+
+const style = {
+  header: {
+    textAlign: "center",
+    fontSize: "2rem",
+    marginBottom: "10px",
+    fontWeight: "bold",
+    color: "#009eff",
+  },
+}
