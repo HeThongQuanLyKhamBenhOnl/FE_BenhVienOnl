@@ -38,6 +38,11 @@ const DoctorDashboard = () => {
       path: "/doctor/doctor-medicines",
       icon: <FaPrescriptionBottleAlt />,
     },
+    {
+      name: "Hóa Đơn Của Bệnh Nhân",
+      path: "/doctor/invoice-Patient",
+      icon: <FaPrescriptionBottleAlt />,
+    },
   ];
 
   return (

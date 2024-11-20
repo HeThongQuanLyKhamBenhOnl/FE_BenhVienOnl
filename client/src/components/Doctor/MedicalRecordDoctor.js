@@ -7,7 +7,7 @@ import {
 } from "../../Redux/Doctor/api";
 
 const MedicalRecordDoctor = () => {
-  const { data, isLoading, error } = useGetDoctorMedicalRecordsQuery();
+  const { data, isLoading, error, refetch } = useGetDoctorMedicalRecordsQuery();
   const [updateMedicalRecord] = useUpdateMedicalRecordMutation();
   const [appointmentsList, setAppointmentsList] = useState([]); // Quản lý danh sách hồ sơ bệnh án
   const [editModalVisible, setEditModalVisible] = useState(false);
@@ -76,6 +76,7 @@ const MedicalRecordDoctor = () => {
 
       message.success("Cập nhật hồ sơ bệnh án thành công");
       setEditModalVisible(false); // Đóng modal
+      refetch();
     } catch (error) {
       message.error("Cập nhật hồ sơ bệnh án thất bại");
     }

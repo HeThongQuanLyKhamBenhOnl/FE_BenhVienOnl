@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -129,6 +128,7 @@ import MedicalPatient from "../components/User/MedicalPatient";
 import ManageMedicine from "../components/Admin/ManageMedicine";
 import PrescribeMedicine from "../components/Doctor/PrescribeMedicine";
 import MedicineUser from "../components/User/MedicineUser";
+import PatientInvoice from "../components/Doctor/PatientInvoice";
 
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
@@ -181,6 +181,7 @@ function AppRouter() {
           <Route path="patient-records" element={<MedicalRecordDoctor />} />
           <Route path="manage-schedule" element={<ManageSchedule />} />
           <Route path="doctor-medicines" element={<PrescribeMedicine />} />
+          <Route path="invoice-Patient" element={<PatientInvoice />} />
         </Route>
         <Route path="/adminDashboard/*" element={<AdminDashboard />}>
           <Route path="user" element={<ManageUser />} />
