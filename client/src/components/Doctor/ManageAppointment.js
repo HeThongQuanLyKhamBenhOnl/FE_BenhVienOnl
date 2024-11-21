@@ -112,7 +112,7 @@ const ManageAppointment = () => {
         columns={columns}
         loading={isLoading}
         rowKey={(record) => record._id}
-        pagination={{ pageSize: 5 }}
+        pagination={{ pageSize: 10 }}
         className="bg-white shadow-lg rounded-lg"
       />
       {/* Hộp thoại chat */}

@@ -31,7 +31,7 @@ const newsItems = [
 
 const HealthCareVIPGOLD = () => {
   return (
-    <div className="container mx-auto py-8">
+    <div>
       <HeaderComponent />
       <HeaderSection />
       <AccessSection />

@@ -10,7 +10,7 @@ const Introduce = () => {
       <HeaderComponent />
 
       {/* Phần giới thiệu */}
-      <div className="container mx-auto py-8">
+      <div style={{margin: "100px 0px"}}>
         {/* Tiêu đề */}
         <h2
           style={{
@@ -75,7 +75,7 @@ const Introduce = () => {
               className="w-full rounded-lg"
             />
           </Col>
-          <Col xs={24} md={12}>
+          <Col xs={24} md={12} style={{display: "flex", alignItems: "center", textAlign: "center"}}>
             <div className="bg-blue-50 p-6 rounded-lg shadow-md">
               <p className="text-lg leading-relaxed text-gray-700">
                 Phòng Khám Bệnh viện là Phòng Khám đầu tiên
@@ -242,6 +242,7 @@ const Introduce = () => {
                   borderRadius: "50%",
                   backgroundColor: "#3e73d4",
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                  cursor: "pointer",
                 }}
               >
                 <img
@@ -250,7 +251,7 @@ const Introduce = () => {
                   style={{ width: "50px", height: "50px" }}
                 />
               </div>
-              <h3 className="text-blue-700 font-bold text-lg">TIÊN PHONG</h3>
+              <h3 className="text-blue-700 font-bold text-lg" style={{cursor: "pointer"}}>TIÊN PHONG</h3>
             </Col>
 
             <Col xs={24} md={6} className="text-center">
@@ -262,6 +263,7 @@ const Introduce = () => {
                   borderRadius: "50%",
                   backgroundColor: "#3e73d4",
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                  cursor: "pointer",
                 }}
               >
                 <img
@@ -270,7 +272,7 @@ const Introduce = () => {
                   style={{ width: "50px", height: "50px" }}
                 />
               </div>
-              <h3 className="text-blue-700 font-bold text-lg">THẤU HIỂU</h3>
+              <h3 className="text-blue-700 font-bold text-lg" style={{cursor: "pointer"}}>THẤU HIỂU</h3>
             </Col>
 
             <Col xs={24} md={6} className="text-center">
@@ -282,6 +284,7 @@ const Introduce = () => {
                   borderRadius: "50%",
                   backgroundColor: "#3e73d4",
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                  cursor: "pointer",
                 }}
               >
                 <img
@@ -290,7 +293,7 @@ const Introduce = () => {
                   style={{ width: "50px", height: "50px" }}
                 />
               </div>
-              <h3 className="text-blue-700 font-bold text-lg">CHUẨN MỰC</h3>
+              <h3 className="text-blue-700 font-bold text-lg" style={{cursor: "pointer"}}>CHUẨN MỰC</h3>
             </Col>
 
             <Col xs={24} md={6} className="text-center">
@@ -302,6 +305,7 @@ const Introduce = () => {
                   borderRadius: "50%",
                   backgroundColor: "#3e73d4",
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                  cursor: "pointer",
                 }}
               >
                 <img
@@ -310,7 +314,7 @@ const Introduce = () => {
                   style={{ width: "50px", height: "50px" }}
                 />
               </div>
-              <h3 className="text-blue-700 font-bold text-lg">AN TOÀN</h3>
+              <h3 className="text-blue-700 font-bold text-lg" style={{cursor: "pointer"}}>AN TOÀN</h3>
             </Col>
           </Row>
         </div>

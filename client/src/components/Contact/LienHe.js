@@ -32,11 +32,12 @@ const newsItems = [
 
 const LienHe = () => {
   return (
-    <div className="container mx-auto py-8">
+    <div>
       <HeaderComponent />
-      <HeaderSection />
-      <AccessSectionHeader />
-      {/* <AccessSection /> */}
+      <Col style={{ margin: "50px 0px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%" }}>
+        <HeaderSection />
+        <AccessSectionHeader />
+      </Col>
       <NewsSection />
       <FooterComponent />
     </div>

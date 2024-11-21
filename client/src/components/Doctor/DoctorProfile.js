@@ -139,7 +139,7 @@ const DoctorProfile = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg" style={{margin: "65px 0px"}}>
       {/* Hình đại diện */}
       <div
         style={{

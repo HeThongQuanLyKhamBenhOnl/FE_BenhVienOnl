@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { Menu } from "antd";
 import {
   FaHome,
@@ -10,28 +11,37 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
+import './CSS/Navigation.css';
+
 const { SubMenu } = Menu;
 
-const iconStyle = { fontSize: "18px" }; // You can increase this value to make icons larger
+const iconStyle = { fontSize: "2rem", paddingLeft: "10px", };
+const flexCenter = { display: "flex", alignItems: "center", };
 
 const Navigation = () => {
+  const location = useLocation();
   const { userInfo } = useSelector((state) => state.user);
 
   return (
     <Menu
       theme="dark" 
       mode="horizontal"
-      defaultSelectedKeys={["1"]}
+      selectedKeys={[location.pathname]}
       className="navigation-menu"
     >
-      <Menu.Item key="1" icon={<FaHome style={iconStyle} />}>
+      <Menu.Item className="padR10" style={{...flexCenter}} key="1" icon={<FaHome style={iconStyle} />}>
         <a href="/">Trang Chủ</a>
       </Menu.Item>
 
       <SubMenu
         key="gioi-thieu"
         icon={<FaInfoCircle style={iconStyle} />}
-        title="Giới Thiệu"
+        title={
+          <span style={{paddingRight: "10px"}}>
+            Giới Thiệu
+          </span>
+        }
+        className="ant-menu-submenu-title padR10"
       >
         <Menu.Item key="2-1">
           <a href="/gioi-thieu">Giới Thiệu</a>
@@ -47,7 +57,12 @@ const Navigation = () => {
       <SubMenu
         key="dich-vu"
         icon={<FaStethoscope style={iconStyle} />}
-        title="Dịch Vụ"
+        title={
+          <span style={{paddingRight: "10px"}}>
+            Dịch Vụ
+          </span>
+        }
+        className="ant-menu-submenu-title padR10"
       >
         <Menu.Item key="3-1">
           <a href="/kham-suc-khoe-tong-quat-ca-nhan">
@@ -82,7 +97,12 @@ const Navigation = () => {
       <SubMenu
         key="tin-tuc"
         icon={<FaNewspaper style={iconStyle} />}
-        title="Tin Tức"
+        title={
+          <span style={{paddingRight: "10px"}}>
+            Tin Tức
+          </span>
+        }
+        className="ant-menu-submenu-title padR10"
       >
         <Menu.Item key="5-1">
           <a href="/y-hoc-thuong-thuc">Y học thường thức</a>
@@ -98,7 +118,12 @@ const Navigation = () => {
       <SubMenu
         key="huong-dan-khach-hang"
         icon={<FaInfoCircle style={iconStyle} />}
-        title="Hướng dẫn khách hàng"
+        title={
+          <span style={{paddingRight: "10px"}}>
+            Hướng Dẫn Khách Hàng
+          </span>
+        }
+        className="ant-menu-submenu-title padR10"
       >
         <Menu.Item key="6-1">
           <a href="/thong-tin-tham-khao">Thông tin tham khảo</a>
@@ -110,18 +135,18 @@ const Navigation = () => {
         </Menu.Item>
       </SubMenu>
 
-      <Menu.Item key="7" icon={<FaEnvelope style={iconStyle} />}>
+      <Menu.Item className="padR10" style={{...flexCenter}} key="7" icon={<FaEnvelope style={iconStyle} />}>
         <a href="/lien-he">Liên Hệ</a>
       </Menu.Item>
 
       {userInfo && userInfo.role === "admin" && (
-        <Menu.Item key="8" icon={<FaUserShield style={iconStyle} />}>
+        <Menu.Item className="padR10" style={{...flexCenter}} key="8" icon={<FaUserShield style={iconStyle} />}>
           <a href="/adminDashboard">Quản lý Hệ thống</a>
         </Menu.Item>
       )}
 
       {userInfo && userInfo.role === "doctor" && (
-        <Menu.Item key="8" icon={<FaUserShield style={iconStyle} />}>
+        <Menu.Item className="padR10" style={{...flexCenter}} key="8" icon={<FaUserShield style={iconStyle} />}>
           <a href="/doctor/infoDoctor">Dành Cho Bác Sĩ</a>
         </Menu.Item>
       )}

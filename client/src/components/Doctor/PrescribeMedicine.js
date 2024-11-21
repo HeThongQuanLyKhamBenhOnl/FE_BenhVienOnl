@@ -232,7 +232,7 @@ const PrescribeMedicine = () => {
             dataSource={recordsList}
             columns={columns}
             rowKey={(record) => record._id}
-            pagination={{ pageSize: 5 }}
+            pagination={{ pageSize: 10 }}
           />
         )}
       </Card>

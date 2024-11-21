@@ -80,6 +80,7 @@ const styles = {
     display: "flex",
     minHeight: "100vh",
     backgroundColor: "#f9f9f9",
+    margin: "65px 0px",
   },
   sidebar: {
     width: "250px",

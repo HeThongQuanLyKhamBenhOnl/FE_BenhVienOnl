@@ -15,9 +15,10 @@ const SignupAppointMent = () => {
   };
 
   return (
-    <div className="container mx-auto py-8">
+    <div>
       <HeaderComponent />
 
+      <Col style={{ margin: "40px 0px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%"}}></Col>
       <Row
         style={{
           display: "flex",

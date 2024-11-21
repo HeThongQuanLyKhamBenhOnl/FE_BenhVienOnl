@@ -157,7 +157,7 @@ const MedicalRecordDoctor = () => {
           dataSource={appointmentsList} // Dùng dữ liệu từ state
           columns={columns}
           rowKey={(record) => record._id}
-          pagination={{ pageSize: 5 }}
+          pagination={{ pageSize: 10 }}
           className="bg-white shadow-lg rounded-lg"
         />
       )}

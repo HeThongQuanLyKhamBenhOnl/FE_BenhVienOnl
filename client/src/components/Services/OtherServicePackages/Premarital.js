@@ -31,7 +31,7 @@ const newsItems = [
 
 const Premarital = () => {
   return (
-    <div className="container mx-auto py-8">
+    <div>
       <HeaderComponent />
       <HeaderSection />
       <AccessSection />
