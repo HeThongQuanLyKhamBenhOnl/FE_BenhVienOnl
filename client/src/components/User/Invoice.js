@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUpdatedMedicalRecords } from "../../Redux/User/userSlice";
 
 const Invoice = () => {
   const dispatch = useDispatch();
+  const [isPaymentComplete, setIsPaymentComplete] = useState(false);
 
   // Lấy trạng thái từ Redux store
   const { updatedMedicalRecords, loading, error } = useSelector((state) => ({
@@ -12,10 +13,31 @@ const Invoice = () => {
     error: state.user.error,
   }));
 
-  // Gọi API khi component được render
+  // Gọi API khi component được render hoặc sau khi thanh toán thành công
   useEffect(() => {
     dispatch(getUpdatedMedicalRecords());
-  }, [dispatch]);
+  }, [dispatch, isPaymentComplete]);
+
+  // Kiểm tra trạng thái thanh toán sau khi người dùng trở lại từ cổng thanh toán
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const orderCode = params.get("orderCode");
+    const status = params.get("status");
+
+    if (status === "PAID" && orderCode) {
+      // Thanh toán thành công, cập nhật trạng thái
+      fetch(
+        `/api/medical-records/payment-success?orderCode=${orderCode}&status=${status}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            setIsPaymentComplete(true);
+          }
+        })
+        .catch((err) => console.error("Error verifying payment:", err));
+    }
+  }, []);
 
   if (loading) return <p>Đang tải dữ liệu...</p>;
   if (error) return <p>Đã xảy ra lỗi: {error}</p>;
@@ -61,7 +83,7 @@ const Invoice = () => {
                 ))}
               </tbody>
             </table>
-            {record.paymentLink && (
+            {record.paymentStatus !== "Paid" && record.paymentLink && (
               <button
                 style={styles.paymentButton}
                 onClick={() => window.open(record.paymentLink, "_blank")}
@@ -103,10 +125,6 @@ const styles = {
     padding: "20px",
     marginBottom: "20px",
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-  },
-  patientName: {
-    fontSize: "20px",
-    color: "#333",
   },
   paymentStatus: {
     fontSize: "16px",

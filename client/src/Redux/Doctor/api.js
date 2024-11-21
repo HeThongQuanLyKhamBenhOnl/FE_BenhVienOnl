@@ -121,6 +121,10 @@ export const doctorApiSlice = createApi({
     getDoctorMedicalRecords: builder.query({
       query: () => "/api/medical-records/doctor",
     }),
+    handlePaymentSuccess: builder.query({
+      query: ({ orderCode, status }) =>
+        `/api/medical-records/payment-success?orderCode=${orderCode}&status=${status}`,
+    }),
   }),
 });
 
@@ -142,6 +146,7 @@ export const {
   useGetDoctorScheduleQuery,
   useUpdateDoctorScheduleMutation,
   useGetDoctorMedicalRecordsQuery,
+  useHandlePaymentSuccessQuery,
 } = doctorApiSlice;
 
 export default doctorApiSlice;
