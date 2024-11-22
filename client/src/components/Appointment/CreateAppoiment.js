@@ -50,7 +50,7 @@ const CreateAppoiment = () => {
   return (
     <div>
       <HeaderComponent />
-      <div className="container mx-auto py-6">
+      <div className="container mx-auto py-6" style={{margin: "50px 0px",}}>
         <div className="flex flex-col md:flex-row">
           {/* Cột trái: Chuyên khoa */}
           <div className="w-full md:w-1/4 bg-blue-100 p-4">

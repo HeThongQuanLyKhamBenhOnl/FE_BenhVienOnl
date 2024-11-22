@@ -1,0 +1,15 @@
+/* For larger screens (1025px and above) */
+.user-fullname {
+    white-space: nowrap;
+}
+
+/* For smaller screens up to 1024px */
+@media (max-width: 1024px) {
+    .user-fullname {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 70px;  /* Adjust this value as needed */
+        width: 100%;
+        display: inline-block;
+    }
+}
