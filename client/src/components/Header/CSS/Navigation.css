@@ -1,28 +1,115 @@
-.navigation-menu .ant-menu-item:hover {
-  background-color: #1890ff;
-  color: #fff;
+/* Nav */
+.ant-menu-overflow-item {
+  display: flex !important;
+  transition: all 0.8s ease-in-out;
+  /* Smooth hover transitions */
 }
 
-.navigation-menu .ant-menu-item-selected {
-  background-color: #0050b3;
+.navigation-menu .ant-menu-submenu-title {
+  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.navigation-menu .ant-menu-submenu-title:hover {
+  background-color: #6bcbd0;
   color: #fff;
   font-weight: bold;
+  cursor: pointer;
+  transform: translateY(-3px); /* Optional, for slight movement on hover */
+  /* Smooth transition */
 }
 
-.navigation-menu .ant-menu-submenu:hover {
-  background-color: #40a9ff;
-}
-
-.navigation-menu .ant-menu-submenu-open .ant-menu-submenu-title {
-  background-color: #1890ff;
-  color: #fff;
-}
-
+/* SubMenu */
 .ant-menu-submenu-title {
   display: flex !important;
   align-items: center !important;
+  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out, transform 0.8s ease-in-out;
+  /* Smooth transition for submenu titles */
 }
 
-.padR10 {
-  padding-right: 10px;
+.navigation-menu .ant-menu-submenu-open .ant-menu-submenu-title {
+  background-color: #6bcbd0;
+  color: #fff;
+  font-weight: bold;
+  transform: translateY(-5px);
+  /* Slight lift effect for open submenu */
+  transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+  /* Smooth transition */
+}
+
+/* Nav Items */
+.ant-menu-overflow-item.ant-menu-submenu.ant-menu-submenu-horizontal.ant-menu-submenu-title:hover {
+  background-color: #6bcbd0;
+  border-radius: 50px;
+  transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out, border-radius 0.8s ease-in-out;
+  /* Smooth transitions */
+}
+
+.ant-menu-overflow-item.ant-menu-overflow-item-rest.ant-menu-submenu.ant-menu-submenu-horizontal:hover {
+  background-color: #6bcbd0;
+  border-radius: 50px;
+  transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out, border-radius 0.8s ease-in-out;
+}
+
+.ant-menu-overflow-item:hover {
+  background-color: #6bcbd0;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+  transform: translateY(-3px);
+  /* Slight lift effect */
+  transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+  /* Smooth transitions */
+}
+
+/* Nav-TrangChu */
+li.ant-menu-overflow-item.ant-menu-item.padR10:hover {
+  background-color: #6bcbd0;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+  /* Smooth transition */
+}
+
+/* SubMenu Dropdown Item Hover */
+.navigation-menu .ant-menu-submenu:hover {
+  background-color: #6bcbd0;
+  transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out;
+  /* Smooth transition */
+}
+
+/* Ensure smooth transition back when hover ends */
+.navigation-menu .ant-menu-submenu:hover {
+  background-color: transparent;
+  transition: background-color 0.8s ease-in-out; /* Smooth transition back */
+}
+
+/* Rotate Arrow for Open SubMenus */
+.navigation-menu .ant-menu-submenu-title:after {
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Change the background color and text color for the selected menu item */
+.ant-menu-item-selected,
+.ant-menu-submenu-selected {
+  background-color: #6bcbd0 !important;
+  color: #fff !important;
+  font-weight: bold;
+  border-top-right-radius: 35px !important;
+}
+
+/* Add smooth transition for hover and non-hover states */
+.ant-menu-item, .ant-menu-submenu-title, .ant-menu-overflow-item {
+  transition: all 0.8s ease-in-out; /* Smooth transition for all states */
+}
+
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover,
+.ant-menu-overflow-item:hover {
+  background-color: #6bcbd0;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+  transform: translateY(-3px); /* Slight lift effect */
+  /* Smooth transition for hover states */
 }

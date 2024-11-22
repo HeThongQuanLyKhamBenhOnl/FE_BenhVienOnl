@@ -17,10 +17,10 @@ const HeaderComponent = () => {
             </a>
           </div>
         </Col>
-        <Col span={17}>
+        <Col span={16}>
           <Navigation />
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <UserMenu />
         </Col>
       </Row>

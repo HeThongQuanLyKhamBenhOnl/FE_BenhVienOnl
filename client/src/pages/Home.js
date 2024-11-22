@@ -13,11 +13,15 @@ export const Home = () => {
     <div>
       <Layout className="layout">
         <HeaderComponent />
+
         <Content style={{ margin: "20px 0px" }}>
           <div className="site-layout-content" style={{ padding: "50px 0" }}>
             <SectionComponent />
           </div>
         </Content>
+
+        {/* a */}
+
         <FooterComponent />
       </Layout>
     </div>
