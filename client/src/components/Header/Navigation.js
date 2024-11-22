@@ -21,21 +21,6 @@ const flexCenter = { display: "flex", alignItems: "center", };
 const Navigation = () => {
   const location = useLocation();
   const { userInfo } = useSelector((state) => state.user);
-  const doctorPaths = [
-    "/doctor",
-    "/doctor/infoDoctor",
-    "/doctor/manage-schedule",
-    "/doctor/manage-patients",
-    "/doctor/patient-records",
-    "/doctor/doctor-medicines",
-    "/doctor/invoice-Patient",
-  ];
-
-  // Get the current path
-  const currentPath = window.location.pathname;
-
-  // Check if the current path belongs to the doctor routes
-  const isDoctorPath = doctorPaths.some(path => currentPath.startsWith(path));
 
   return (
     <Menu
