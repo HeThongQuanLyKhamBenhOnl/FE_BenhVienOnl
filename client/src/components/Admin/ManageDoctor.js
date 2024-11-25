@@ -123,7 +123,11 @@ const ManageDoctor = () => {
   return (
     <div>
       <h1 style={style.header}>Quản Lý Bác Sĩ</h1>
-      <Button type="primary" onClick={() => setIsDrawerVisible(true)} style={{margin: "30px 0px",}}>
+      <Button
+        type="primary"
+        onClick={() => setIsDrawerVisible(true)}
+        style={{ margin: "30px 0px" }}
+      >
         Tạo Bác Sĩ
       </Button>
 
@@ -267,4 +271,4 @@ const style = {
     fontWeight: "bold",
     color: "#009eff",
   },
-}
+};

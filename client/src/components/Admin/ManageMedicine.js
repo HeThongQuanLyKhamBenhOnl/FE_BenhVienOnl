@@ -98,7 +98,7 @@ const ManageMedicine = () => {
             <th style={styles.tableHeader}>Tên thuốc</th>
             <th style={styles.tableHeader}>Giá</th>
             <th style={styles.tableHeader}>Số lượng tồn kho</th>
-            {/* <th style={styles.tableHeader}>Hành động</th> */}
+            <th style={styles.tableHeader}>Hành động</th>
           </tr>
         </thead>
         <tbody>
@@ -107,7 +107,7 @@ const ManageMedicine = () => {
               <td style={styles.tableCell}>{medicine.name}</td>
               <td style={styles.tableCell}>{medicine.price}</td>
               <td style={styles.tableCell}>{medicine.stock}</td>
-              {/* <td style={styles.tableCell}>
+              <td style={styles.tableCell}>
                 <button
                   onClick={() => handleEdit(medicine)}
                   style={styles.editButton}
@@ -120,7 +120,7 @@ const ManageMedicine = () => {
                 >
                   Xóa
                 </button>
-              </td> */}
+              </td>
             </tr>
           ))}
         </tbody>

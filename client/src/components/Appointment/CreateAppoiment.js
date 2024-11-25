@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Spin, Card, Button, Modal } from "antd";
 import HeaderComponent from "../Header/Header";
@@ -50,7 +49,7 @@ const CreateAppoiment = () => {
   return (
     <div>
       <HeaderComponent />
-      <div className="container mx-auto py-6" style={{margin: "50px 0px",}}>
+      <div className="container mx-auto py-6" style={{ margin: "50px 0px" }}>
         <div className="flex flex-col md:flex-row">
           {/* Cột trái: Chuyên khoa */}
           <div className="w-full md:w-1/4 bg-blue-100 p-4">
@@ -90,6 +89,11 @@ const CreateAppoiment = () => {
                       src={doctor?.images || "default-image-url"} // Sử dụng ảnh của bác sĩ từ database, hoặc ảnh mặc định nếu không có
                       alt="Doctor"
                       className="w-full rounded-md"
+                      style={{
+                        width: "300px", // Chiều rộng nhỏ lại
+                        height: "300px", // Chiều cao nhỏ lại
+                        objectFit: "cover", // Đảm bảo ảnh không bị méo
+                      }}
                     />
                   </div>
                   <div className="md:w-2/3 md:ml-6">
@@ -152,9 +156,14 @@ const CreateAppoiment = () => {
                 PGS.TS.BS {selectedDoctor.doctor?.user?.fullName}
               </h3>
               <img
-                src={selectedDoctor.doctor.image || "default-image-url"} // Sử dụng ảnh từ database hoặc ảnh mặc định
+                src={selectedDoctor.doctor.images || "default-image-url"} // Sử dụng ảnh từ database hoặc ảnh mặc định
                 alt="Doctor"
                 className="w-full rounded-md mb-4"
+                style={{
+                  width: "150px", // Chiều rộng nhỏ lại
+                  height: "150px", // Chiều cao nhỏ lại
+                  objectFit: "cover", // Đảm bảo ảnh không bị méo
+                }}
               />
               <p>
                 <strong>Chuyên khoa:</strong> {selectedDoctor.doctor?.specialty}

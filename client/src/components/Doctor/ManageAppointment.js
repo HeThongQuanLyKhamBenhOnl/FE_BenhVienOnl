@@ -1,13 +1,13 @@
-
 import React, { useEffect, useState } from "react";
-import { Table, Button, Modal, message, Space } from "antd";
+import { Table, Button, message, Tabs, Space } from "antd";
 import dayjs from "dayjs";
 import {
   useGetDoctorAppointmentsQuery,
   useCancelAppointmentMutation,
   useUpdateAppointmentStatusMutation,
 } from "../../Redux/Doctor/api";
-import ChatBox from "../Chat/ChatBox"; // Đường dẫn đến ChatBox
+
+const { TabPane } = Tabs;
 
 const ManageAppointment = () => {
   const { data, isLoading } = useGetDoctorAppointmentsQuery();
@@ -15,17 +15,11 @@ const ManageAppointment = () => {
   const [updateAppointmentStatus] = useUpdateAppointmentStatusMutation();
 
   const [appointmentsList, setAppointmentsList] = useState([]);
-  const [isChatVisible, setIsChatVisible] = useState(false); // Trạng thái hiển thị hộp thoại chat
-  const [selectedAppointment, setSelectedAppointment] = useState(null); // Cuộc hẹn đã chọn để mở chat
 
   useEffect(() => {
     if (data?.appointments) setAppointmentsList(data.appointments);
   }, [data]);
 
-  const handleOpenChat = (appointment) => {
-    setSelectedAppointment(appointment); // Lưu cuộc hẹn đã chọn
-    setIsChatVisible(true); // Hiển thị hộp thoại chat
-  };
   const handleCancelAppointment = async (appointmentId, status) => {
     if (status !== "pending") {
       message.error("Chỉ có thể hủy các cuộc hẹn ở trạng thái đang chờ xử lý.");
@@ -59,7 +53,20 @@ const ManageAppointment = () => {
     }
   };
 
-  const columns = [
+  // Hàm chuyển đổi trạng thái thành tiếng Việt
+  const renderStatus = (status) => {
+    switch (status) {
+      case "pending":
+        return "Đang chờ xác nhận";
+      case "Completed":
+        return "Đã xác nhận";
+      default:
+        return status;
+    }
+  };
+
+  // Cấu hình cột có cột "Hành động"
+  const columnsWithActions = [
     {
       title: "Họ và tên",
       dataIndex: ["patient", "fullName"],
@@ -75,6 +82,7 @@ const ManageAppointment = () => {
       title: "Trạng thái",
       dataIndex: "status",
       key: "status",
+      render: (status) => renderStatus(status), // Chuyển đổi trạng thái
     },
     {
       title: "Hành động",
@@ -93,44 +101,65 @@ const ManageAppointment = () => {
           >
             Hủy lịch
           </Button>
-          <Button
-            type="default"
-            onClick={() => handleOpenChat(record)} // Mở hộp thoại chat
-          >
-            Mở Chat
-          </Button>
         </Space>
       ),
     },
   ];
 
+  // Cấu hình cột không có cột "Hành động"
+  const columnsWithoutActions = [
+    {
+      title: "Họ và tên",
+      dataIndex: ["patient", "fullName"],
+      key: "patientName",
+    },
+    {
+      title: "Ngày hẹn",
+      dataIndex: "date",
+      key: "date",
+      render: (date) => dayjs(date).format("DD/MM/YYYY"),
+    },
+    {
+      title: "Trạng thái",
+      dataIndex: "status",
+      key: "status",
+      render: (status) => renderStatus(status), // Chuyển đổi trạng thái
+    },
+  ];
+
+  const pendingAppointments = appointmentsList.filter(
+    (appointment) => appointment.status === "pending"
+  );
+
+  const completedAppointments = appointmentsList.filter(
+    (appointment) => appointment.status === "Completed"
+  );
+
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h2 className="text-2xl font-semibold mb-4">Lịch Hẹn Với Bệnh Nhân</h2>
-      <Table
-        dataSource={appointmentsList}
-        columns={columns}
-        loading={isLoading}
-        rowKey={(record) => record._id}
-        pagination={{ pageSize: 10 }}
-        className="bg-white shadow-lg rounded-lg"
-      />
-      {/* Hộp thoại chat */}
-      <Modal
-        title="Hộp Thoại Chat"
-        visible={isChatVisible}
-        onCancel={() => setIsChatVisible(false)}
-        footer={null}
-        width={700}
-      >
-        {selectedAppointment && (
-          <ChatBox
-            chatId={selectedAppointment._id}
-            doctorId={selectedAppointment.doctor}
-            patientId={selectedAppointment.patient}
+      <h2 className="text-2xl font-semibold mb-4">Quản Lý Lịch Hẹn</h2>
+      <Tabs defaultActiveKey="1" type="card">
+        <TabPane tab="Cuộc hẹn đang chờ xử lý" key="1">
+          <Table
+            dataSource={pendingAppointments}
+            columns={columnsWithActions}
+            loading={isLoading}
+            rowKey={(record) => record._id}
+            pagination={{ pageSize: 10 }}
+            className="bg-white shadow-lg rounded-lg"
           />
-        )}
-      </Modal>
+        </TabPane>
+        <TabPane tab="Cuộc hẹn đã hoàn thành" key="2">
+          <Table
+            dataSource={completedAppointments}
+            columns={columnsWithoutActions}
+            loading={isLoading}
+            rowKey={(record) => record._id}
+            pagination={{ pageSize: 10 }}
+            className="bg-white shadow-lg rounded-lg"
+          />
+        </TabPane>
+      </Tabs>
     </div>
   );
 };

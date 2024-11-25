@@ -1,91 +1,86 @@
-import React from "react";
-import { Input, Button, Table, Space } from "antd";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllDoctors } from "../../Redux/User/userSlice";
+import { Button, Table, message } from "antd";
 
 const Department = () => {
+  const dispatch = useDispatch();
+  const { doctors, loading, error } = useSelector((state) => state.user);
+
+  const [specialties, setSpecialties] = useState([]);
+
+  useEffect(() => {
+    dispatch(getAllDoctors())
+      .unwrap()
+      .then((data) => {
+        console.log("Danh sách bác sĩ trả về:", data); // Kiểm tra dữ liệu API
+        const uniqueSpecialties = Array.from(
+          new Set(
+            data
+              .filter((doctor) => doctor.specialty)
+              .map((doctor) => doctor.specialty)
+          )
+        ).map((specialty, index) => ({
+          id: index + 1,
+          name: specialty,
+        }));
+
+        setSpecialties(uniqueSpecialties);
+      })
+      .catch(() => {
+        message.error("Không thể tải danh sách chuyên khoa.");
+      });
+  }, [dispatch]);
+
   const columns = [
     {
-      title: "#",
+      title: "STT",
       dataIndex: "id",
       key: "id",
-      render: (text) => <div>{text}</div>,
+      width: 50,
     },
     {
-      title: "Hình ảnh",
-      dataIndex: "image",
-      key: "image",
-      render: (text) => (
-        <img src={text} alt="department" className="h-12 w-12" />
-      ),
-    },
-    {
-      title: "Tên chuyên khoa",
-      dataIndex: "name",
+      title: "Chuyên Khoa",
+      dataIndex: "name", // Sử dụng trường "name"
       key: "name",
-      render: (text) => <a>{text}</a>,
-    },
-    {
-      title: "Hành động",
-      key: "action",
-      render: () => (
-        <Space size="middle">
-          <Button type="link" icon={<i className="fas fa-edit"></i>} />
-          <Button
-            type="link"
-            danger
-            icon={<i className="fas fa-trash-alt"></i>}
-          />
-        </Space>
-      ),
-    },
-  ];
-
-  const data = [
-    {
-      key: "1",
-      id: "1",
-      image: "/images/acupuncture.png",
-      name: "Châm cứu",
-    },
-    {
-      key: "2",
-      id: "2",
-      image: "/images/traditional.png",
-      name: "Y học Cổ truyền",
-    },
-    {
-      key: "3",
-      id: "3",
-      image: "/images/spine.png",
-      name: "Cột sống",
+      width: 150,
     },
   ];
 
   return (
     <div className="p-8">
-      <h2 style={style.header}>
-        QUẢN LÝ CHUYÊN KHOA
-      </h2>
+      <h2 style={style.header}>QUẢN LÝ CHUYÊN KHOA</h2>
 
       {/* Nút thêm chuyên khoa */}
-      <div className="flex justify-start mt-4" style={{ marginBottom: "20px",}}>
+      <div className="flex justify-start mt-4" style={{ marginBottom: "20px" }}>
         <Button type="primary">
-          <p style={{fontWeight: "600", fontSize: "1rem", margin: "10px",}}>Thêm</p>
+          <p
+            style={{
+              fontWeight: "600",
+              fontSize: "1rem",
+              margin: "10px",
+            }}
+          >
+            Thêm
+          </p>
         </Button>
       </div>
 
-      {/* Bộ lọc */}
-      {/* <div className="grid grid-cols-3 gap-4 mb-6">
-        <Input placeholder="Tên chuyên khoa" />
-        <div className="col-span-3 flex justify-start">
-          <Button type="primary" className="mr-2">
-            Ứng dụng
-          </Button>
-          <Button> Cài lại </Button>
-        </div>
-      </div> */}
-
       {/* Bảng dữ liệu */}
-      <Table columns={columns} dataSource={data} pagination={false} />
+      {loading ? (
+        <p>Đang tải dữ liệu...</p>
+      ) : error ? (
+        <p>Có lỗi xảy ra: {error}</p>
+      ) : specialties.length === 0 ? (
+        <p>Hiện tại không có chuyên khoa nào.</p>
+      ) : (
+        <Table
+          columns={columns}
+          dataSource={specialties}
+          rowKey="id"
+          pagination={false}
+        />
+      )}
     </div>
   );
 };
@@ -100,4 +95,4 @@ const style = {
     fontWeight: "bold",
     color: "#009eff",
   },
-}
+};

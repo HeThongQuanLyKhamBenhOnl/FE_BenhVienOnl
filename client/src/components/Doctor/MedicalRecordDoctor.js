@@ -138,7 +138,7 @@ const MedicalRecordDoctor = () => {
       render: (_, record) => (
         <Space size="middle">
           <Button type="primary" onClick={() => handleEditClick(record)}>
-            Chỉnh sửa
+            Cập nhật
           </Button>
         </Space>
       ),

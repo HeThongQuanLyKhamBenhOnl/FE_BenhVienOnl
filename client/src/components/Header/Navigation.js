@@ -11,12 +11,12 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
-import './CSS/Navigation.css';
+import "./CSS/Navigation.css";
 
 const { SubMenu } = Menu;
 
-const iconStyle = { fontSize: "2rem", paddingLeft: "10px", };
-const flexCenter = { display: "flex", alignItems: "center", };
+const iconStyle = { fontSize: "2rem", paddingLeft: "10px" };
+const flexCenter = { display: "flex", alignItems: "center" };
 
 const Navigation = () => {
   const location = useLocation();
@@ -35,7 +35,7 @@ const Navigation = () => {
   const currentPath = window.location.pathname;
 
   // Check if the current path belongs to the doctor routes
-  const isDoctorPath = doctorPaths.some(path => currentPath.startsWith(path));
+  const isDoctorPath = doctorPaths.some((path) => currentPath.startsWith(path));
 
   return (
     <Menu
@@ -44,18 +44,19 @@ const Navigation = () => {
       selectedKeys={[location.pathname]}
       className="navigation-menu"
     >
-      <Menu.Item className="padR10" style={{ ...flexCenter }} key="/" icon={<FaHome style={iconStyle} />}>
+      <Menu.Item
+        className="padR10"
+        style={{ ...flexCenter }}
+        key="/"
+        icon={<FaHome style={iconStyle} />}
+      >
         <a href="/">Trang Chủ</a>
       </Menu.Item>
 
       <SubMenu
         key="gioi-thieu"
         icon={<FaInfoCircle style={iconStyle} />}
-        title={
-          <span style={{ paddingRight: "10px" }}>
-            Giới Thiệu
-          </span>
-        }
+        title={<span style={{ paddingRight: "10px" }}>Giới Thiệu</span>}
         className="ant-menu-submenu-title padR10"
       >
         <Menu.Item key="/gioi-thieu">
@@ -72,11 +73,7 @@ const Navigation = () => {
       <SubMenu
         key="dich-vu"
         icon={<FaStethoscope style={iconStyle} />}
-        title={
-          <span style={{ paddingRight: "10px" }}>
-            Dịch Vụ
-          </span>
-        }
+        title={<span style={{ paddingRight: "10px" }}>Dịch Vụ</span>}
         className="ant-menu-submenu-title padR10"
       >
         <Menu.Item key="/kham-suc-khoe-tong-quat-ca-nhan">
@@ -112,11 +109,7 @@ const Navigation = () => {
       <SubMenu
         key="tin-tuc"
         icon={<FaNewspaper style={iconStyle} />}
-        title={
-          <span style={{ paddingRight: "10px" }}>
-            Tin Tức
-          </span>
-        }
+        title={<span style={{ paddingRight: "10px" }}>Tin Tức</span>}
         className="ant-menu-submenu-title padR10"
       >
         <Menu.Item key="/y-hoc-thuong-thuc">
@@ -134,9 +127,7 @@ const Navigation = () => {
         key="huong-dan-khach-hang"
         icon={<FaInfoCircle style={iconStyle} />}
         title={
-          <span style={{ paddingRight: "10px" }}>
-            Hướng Dẫn Khách Hàng
-          </span>
+          <span style={{ paddingRight: "10px" }}>Hướng Dẫn Khách Hàng</span>
         }
         className="ant-menu-submenu-title padR10"
       >
@@ -150,42 +141,60 @@ const Navigation = () => {
         </Menu.Item>
       </SubMenu>
 
-      <Menu.Item className="padR10" style={{ ...flexCenter }} key="/lien-he" icon={<FaEnvelope style={iconStyle} />}>
+      <Menu.Item
+        className="padR10"
+        style={{ ...flexCenter }}
+        key="/lien-he"
+        icon={<FaEnvelope style={iconStyle} />}
+      >
         <a href="/lien-he">Liên Hệ</a>
       </Menu.Item>
 
       {userInfo && userInfo.role === "admin" && (
-        <Menu.Item className="padR10" style={{ ...flexCenter }} key="/adminDashboard" icon={<FaUserShield style={iconStyle} />}>
+        <Menu.Item
+          className="padR10"
+          style={{ ...flexCenter }}
+          key="/adminDashboard"
+          icon={<FaUserShield style={iconStyle} />}
+        >
           <a href="/adminDashboard">Quản lý Hệ thống</a>
         </Menu.Item>
       )}
 
       {userInfo && userInfo.role === "doctor" && (
-        <SubMenu
-          key="danh-cho-bac-si"
+        // <SubMenu
+        //   key="danh-cho-bac-si"
+        //   icon={<FaUserShield style={iconStyle} />}
+        //   title={<span style={{ paddingRight: "10px" }}>Dành Cho Bác Sĩ</span>}
+        //   className="ant-menu-submenu-title padR10"
+        // >
+        //   <Menu.Item style={{display: "none"}} key="/doctor/infoDoctor">
+        //     <a href="/doctor/infoDoctor">Thông Tin Bác Sĩ</a>
+        //   </Menu.Item>
+        //   <Menu.Item style={{display: "none"}} key="/doctor/manage-schedule">
+        //     <a href="/doctor/manage-schedule">Quản Lý Lịch</a>
+        //   </Menu.Item>
+        //   <Menu.Item style={{display: "none"}} key="/doctor/manage-patients">
+        //     <a href="/doctor/manage-patients">Quản Lý Bệnh Nhân</a>
+        //   </Menu.Item>
+        //   <Menu.Item style={{display: "none"}} key="/doctor/patient-records">
+        //     <a href="/doctor/patient-records">Hồ Sơ Bệnh Nhân</a>
+        //   </Menu.Item>
+        //   <Menu.Item style={{display: "none"}} key="/doctor/doctor-medicines">
+        //     <a href="/doctor/doctor-medicines">Thuốc Của Bác Sĩ</a>
+        //   </Menu.Item>
+        //   <Menu.Item style={{display: "none"}} key="/doctor/invoice-Patient">
+        //     <a href="/doctor/invoice-Patient">Hóa Đơn Bệnh Nhân</a>
+        //   </Menu.Item>
+        // </SubMenu>
+        <Menu.Item
+          className="padR10"
+          style={{ ...flexCenter }}
+          key="/doctor"
           icon={<FaUserShield style={iconStyle} />}
-          title={<span style={{ paddingRight: "10px" }}>Dành Cho Bác Sĩ</span>}
-          className="ant-menu-submenu-title padR10"
         >
-          <Menu.Item style={{display: "none"}} key="/doctor/infoDoctor">
-            <a href="/doctor/infoDoctor">Thông Tin Bác Sĩ</a>
-          </Menu.Item>
-          <Menu.Item style={{display: "none"}} key="/doctor/manage-schedule">
-            <a href="/doctor/manage-schedule">Quản Lý Lịch</a>
-          </Menu.Item>
-          <Menu.Item style={{display: "none"}} key="/doctor/manage-patients">
-            <a href="/doctor/manage-patients">Quản Lý Bệnh Nhân</a>
-          </Menu.Item>
-          <Menu.Item style={{display: "none"}} key="/doctor/patient-records">
-            <a href="/doctor/patient-records">Hồ Sơ Bệnh Nhân</a>
-          </Menu.Item>
-          <Menu.Item style={{display: "none"}} key="/doctor/doctor-medicines">
-            <a href="/doctor/doctor-medicines">Thuốc Của Bác Sĩ</a>
-          </Menu.Item>
-          <Menu.Item style={{display: "none"}} key="/doctor/invoice-Patient">
-            <a href="/doctor/invoice-Patient">Hóa Đơn Bệnh Nhân</a>
-          </Menu.Item>
-        </SubMenu>
+          <a href="/doctor/infoDoctor">Dành cho Bác Sĩ</a>
+        </Menu.Item>
       )}
     </Menu>
   );
