@@ -99,7 +99,7 @@ const AccessSectionHeader = () => (
       `
         <br />Liên hệ hotline 1900 6923 để đăng ký và được tư vấn chi tiết về chương trình.
         <br />====================
-        <br />🏥 PHÒNG KHÁM BỆNH VIỆN ĐẠI HỌC Y DƯỢC 1
+        <br />🏥 PHÒNG KHÁM BỆNH VIỆN 
         <br />🌎20-22 Dương Quang Trung, Phường 12, Quận 10
 
         <br />☎️ Hotline: 1900 6923

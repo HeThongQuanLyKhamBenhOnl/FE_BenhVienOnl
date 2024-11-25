@@ -114,7 +114,7 @@ const AccessSection = () => (
       3,
       "Thông tin chi tiết gói Tầm soát ung thư tổng quát tại Phòng khám Bệnh viện",
       `
-      Gói khám tầm soát ung thư tổng quát của Phòng khám Bệnh viện Đại học Y Dược 1 được đội ngũ chuyên môn xây dựng theo nguyên tắc: Khoa học, hiệu quả, có tính thực tiễn cao, tiết kiệm chi phí cho khách hàng. Khi thực hiện gói khám này khách hàng có thể linh hoạt lựa chọn thêm các dịch vụ khác tại Phòng khám.
+      Gói khám tầm soát ung thư tổng quát của Phòng khám Bệnh viện  được đội ngũ chuyên môn xây dựng theo nguyên tắc: Khoa học, hiệu quả, có tính thực tiễn cao, tiết kiệm chi phí cho khách hàng. Khi thực hiện gói khám này khách hàng có thể linh hoạt lựa chọn thêm các dịch vụ khác tại Phòng khám.
       <br />
       <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745529/1_jzbhyz.jpg" /></div>
       <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745540/2_fsjfxq.jpg" /></div>

@@ -121,7 +121,7 @@ const AccessSection = () => (
       3,
       "Chi tiết tầm soát đái tháo đường, rỗi loại mỡ máu và Gút",
       `
-      - Khi thực hiện tầm soát đái tháo đường, rối loạn mỡ máu và gút tại Phòng khám Bệnh viện Đại học Y dược 1 khách hàng sẽ được các bác sĩ là những chuyên gia đầu ngành khám, tư vấn và thực hiện các xét nghiệm sau:
+      - Khi thực hiện tầm soát đái tháo đường, rối loạn mỡ máu và gút tại Phòng khám Bệnh viện  khách hàng sẽ được các bác sĩ là những chuyên gia đầu ngành khám, tư vấn và thực hiện các xét nghiệm sau:
       <br />
       <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745713/goi-tam-soat-dai-thao-duong-roi-loan-mo-mau-va-gut-2-768x848_pfigb8.jpg"/></div>
       <br />- Chi phí gói tầm soát nguy cơ đột quỵ: 6.000.000đ
@@ -159,7 +159,7 @@ const AccessSection = () => (
         <br />- Đội ngũ chăm sóc khách hàng tận tình, chu đáo, chuyên nghiệp;
         <br />- Thủ tục đặt hẹn thuận tiện qua tổng đài 1900 6923.
         <br /><b>Lưu ý: Gói khám chỉ mang tính tham khảo. Khách hàng vui lòng đăng ký gặp Bác sĩ để được tư vấn chi tiết.</b>
-        <br /><b style="color: red">GỌI 1900 6923 ĐỂ ĐĂNG KÝ TẦM SOÁT ĐÁI THÁO ĐƯỜNG, RỐI LOẠN MỠ MÁU VÀ GÚT TẠI PHÒNG KHÁM BỆNH VIỆN ĐẠI HỌC Y DƯỢC 1</b>
+        <br /><b style="color: red">GỌI 1900 6923 ĐỂ ĐĂNG KÝ TẦM SOÁT ĐÁI THÁO ĐƯỜNG, RỐI LOẠN MỠ MÁU VÀ GÚT TẠI PHÒNG KHÁM BỆNH VIỆN </b>
     `
     )}
   </div>

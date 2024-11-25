@@ -97,7 +97,7 @@ const AccessSection = () => (
       1,
       "Trang thiết bị hiện đại",
       `
-        Phòng khám Bệnh viện Đại học Y Dược 1 được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
+        Phòng khám Bệnh viện  được đầu tư cơ sở vật chất khang trang và trang thiết bị máy móc hiện đại của các thương hiệu hàng đầu thế giới như:
         <br />+ Máy chụp cộng hưởng từ MRI 1.5 (GE)
         <br />+ Máy chụp cắt lớp CT scanner 128 (GE);
         <br />+ Máy X-Quang Kỹ thuật số (Drgem);
@@ -107,7 +107,7 @@ const AccessSection = () => (
         <br />+ Máy  nội soi Tai-Mũi-Họng
         <br />+ Máy đo gắng sức Tim mạch - Hô hấp (Ergocard)
         <br />+ Máy siêu âm Sản - Phụ khoa (GE)
-        Phòng khám Bệnh viện Đại học Y Dược 1 đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
+        Phòng khám Bệnh viện  đáp ứng nhu cầu khám sức khoẻ toàn diện cho khách hàng ở mọi lứa tuổi, cho các cá nhân và công ty, cũng như chẩn đoán và điều trị ngoại trú các chuyên khoa nêu trên với mức chi phí hợp lý.
       `
     )}
   </div>

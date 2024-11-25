@@ -94,9 +94,9 @@ const AccessSection = () => (
   <div>
     {renderAccessContent(
       `
-        <br />Tại Phòng khám Bệnh viện Đại học Y Dược 1, chúng tôi cung cấp dịch vụ y tế không chỉ là “chữa bệnh” mà là “chăm sóc sức khỏe”. Bởi vì có rất nhiều bệnh lý có thể ngăn ngừa được nếu phát hiện kịp thời. Với các gói khám sức khỏe tổng quát toàn diện như Gold và Platinum, chúng tôi nỗ lực giúp bạn khỏe mạnh và giữ cho bạn luôn khỏe mạnh.
+        <br />Tại Phòng khám Bệnh viện , chúng tôi cung cấp dịch vụ y tế không chỉ là “chữa bệnh” mà là “chăm sóc sức khỏe”. Bởi vì có rất nhiều bệnh lý có thể ngăn ngừa được nếu phát hiện kịp thời. Với các gói khám sức khỏe tổng quát toàn diện như Gold và Platinum, chúng tôi nỗ lực giúp bạn khỏe mạnh và giữ cho bạn luôn khỏe mạnh.
         <br />Khu khám VIP được thành lập trên mong muốn đó. Và hơn thế nữa, chúng tôi muốn cung cấp cho khách hàng những trải nghiệm khám bệnh tốt nhất, để việc đi khám bệnh không chỉ là để chữa bệnh, mà còn là một cách để chủ động quan tâm đến sức khỏe của chính bản thân và gia đình. 
-        <br />Nhân dịp khai trương khu khám VIP, Phòng khám Bệnh viện Đại học Y Dược 1 gửi đến khách hàng chương trình ưu đãi giảm giá 10% gói khám Gold và Platinum. Cụ thể:
+        <br />Nhân dịp khai trương khu khám VIP, Phòng khám Bệnh viện  gửi đến khách hàng chương trình ưu đãi giảm giá 10% gói khám Gold và Platinum. Cụ thể:
         <br />
         <br />Gói khám sức khỏe tổng quát Gold:
         <br />

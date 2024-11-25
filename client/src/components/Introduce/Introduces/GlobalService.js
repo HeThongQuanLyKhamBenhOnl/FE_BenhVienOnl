@@ -97,7 +97,7 @@ const AccessSection = () => (
       1,
       "Dịch vụ chuẩn quốc tế",
       `
-        <br />- Phòng khám Bệnh viện Đại học Y Dược 1 được quản lý và vận hành theo tiêu chuẩn quốc tế, cơ sở vật chất hiện đại, tiện nghi, không gian khám chữa bệnh rộng rãi, sạch sẽ.
+        <br />- Phòng khám Bệnh viện  được quản lý và vận hành theo tiêu chuẩn quốc tế, cơ sở vật chất hiện đại, tiện nghi, không gian khám chữa bệnh rộng rãi, sạch sẽ.
         <br />- Thủ tục đặt hẹn tiện lợi qua tổng đài 1800 6023 (Miễn phí cuộc gọi) mà không cần phải xếp hàng lấy số.
       `
     )}

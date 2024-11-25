@@ -127,7 +127,7 @@ const AccessSection = () => (
       4,
       "Thông tin chi tiết gói tầm soát ung thư đại trực tràng tại Phòng khám Bệnh viện",
       `
-        <br />Gói tầm soát ung thư đại trực tràng được đội ngũ chuyên môn của Phòng khám Bệnh viện Đại học Y Dược 1 xây dựng dựa trên nguyên tắc: khoa học, hiệu quả và chính xác. Chi tiết gói khám gồm:
+        <br />Gói tầm soát ung thư đại trực tràng được đội ngũ chuyên môn của Phòng khám Bệnh viện  xây dựng dựa trên nguyên tắc: khoa học, hiệu quả và chính xác. Chi tiết gói khám gồm:
 
         <br /><div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745857/noi-dung-cac-goi-kham-27_umyuwe.jpg" /></div>
     `

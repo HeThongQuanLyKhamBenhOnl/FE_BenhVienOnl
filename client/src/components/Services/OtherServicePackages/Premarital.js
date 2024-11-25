@@ -123,7 +123,7 @@ const AccessSection = () => (
       4,
       "Thông tin về gói khám sức khỏe tiền hôn nhân tại Phòng khám Bệnh viện",
       `
-        <br />Khám sức khỏe tiền hôn nhân có thể được thực hiện tại Phòng khám Bệnh viện Đại học Y Dược 1 với đội ngũ bác sĩ chuyên nghiệp và trang thiết bị hiện đại, giúp các cặp đôi có kết quả toàn diện về tình hình sức khỏe tổng quát và sức khỏe sinh sản, tiết kiệm thời gian và chuẩn bị tâm lý vững vàng để bước vào ngưỡng cửa quan trọng của cuộc đời. Chi tiết gói khám gồm:
+        <br />Khám sức khỏe tiền hôn nhân có thể được thực hiện tại Phòng khám Bệnh viện  với đội ngũ bác sĩ chuyên nghiệp và trang thiết bị hiện đại, giúp các cặp đôi có kết quả toàn diện về tình hình sức khỏe tổng quát và sức khỏe sinh sản, tiết kiệm thời gian và chuẩn bị tâm lý vững vàng để bước vào ngưỡng cửa quan trọng của cuộc đời. Chi tiết gói khám gồm:
         <br /><div style="display: flex; justify-content: center; width: 100%"><img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746105/noi-dung-goi-kham-suc-khoe-tien-hon-nhan-1_qeh5rt.jpg" /></div>
     `
     )}
@@ -144,7 +144,7 @@ const AccessSection = () => (
         <br />- Nhịn ăn sáng và chỉ uống nước lọc để thực hiện các xét nghiệm máu;
         <br />- Không nên hút thuốc và uống bia rượu trong vòng 24 tiếng trước khi đến khám;
         <br />- Đối với phụ nữ, chỉ nên đến khám sau chu kỳ kinh nguyệt 5 đến 7 ngày;
-        <br />- Khi khám sức khoẻ tiền hôn nhân tại Phòng khám Bệnh viện Đại học Y Dược 1, quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát nếu thấy thực sự cần thiết như: tầm soát ung thư tổng quát, tầm soát ung thư hệ tiêu hoá xét nghiệm huyết thanh chỉ dấu ung thư, chẩn đoán giun sán, đo gắng sức tim mạch – hô hấp.
+        <br />- Khi khám sức khoẻ tiền hôn nhân tại Phòng khám Bệnh viện , quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát nếu thấy thực sự cần thiết như: tầm soát ung thư tổng quát, tầm soát ung thư hệ tiêu hoá xét nghiệm huyết thanh chỉ dấu ung thư, chẩn đoán giun sán, đo gắng sức tim mạch – hô hấp.
     `
     )}
     {renderAccessContent(

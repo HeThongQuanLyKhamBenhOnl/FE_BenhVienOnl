@@ -114,7 +114,7 @@ const AccessSection = () => (
       "Thông tin chi tiết gói tầm soát ung thư phổi tại Phòng khám Bệnh viện",
       `
       <br /> - Ngày nay y học đã có nhiều tiến bộ trong việc chẩn đoán và điều trị ung thư nhưng tỷ lệ tử vong vì ung thư phổi trên thế giới nói chung, ở Việt Nam nói riêng vẫn rất cao. Nguyên nhân chủ yếu là do ung thư phổi có rất ít triệu chứng ở giai đoạn đầu, thậm chí là không có, vì vậy nhiều người thường chủ quan và chỉ đến khám khi bệnh đã diễn tiến nặng.
-      <br /> - Gói khám tầm soát ung thư phổi của Phòng khám Bệnh viện Đại học Y Dược 1 được đội ngũ chuyên môn xây dựng theo nguyên tắc: khoa học, hiệu quả, có tính thực tiễn cao và tiết kiệm chi phí cho khách hàng.
+      <br /> - Gói khám tầm soát ung thư phổi của Phòng khám Bệnh viện  được đội ngũ chuyên môn xây dựng theo nguyên tắc: khoa học, hiệu quả, có tính thực tiễn cao và tiết kiệm chi phí cho khách hàng.
     `
     )}
     {renderAccessContent(

@@ -21,21 +21,6 @@ const flexCenter = { display: "flex", alignItems: "center", };
 const Navigation = () => {
   const location = useLocation();
   const { userInfo } = useSelector((state) => state.user);
-  const doctorPaths = [
-    "/doctor",
-    "/doctor/infoDoctor",
-    "/doctor/manage-schedule",
-    "/doctor/manage-patients",
-    "/doctor/patient-records",
-    "/doctor/doctor-medicines",
-    "/doctor/invoice-Patient",
-  ];
-
-  // Get the current path
-  const currentPath = window.location.pathname;
-
-  // Check if the current path belongs to the doctor routes
-  const isDoctorPath = doctorPaths.some(path => currentPath.startsWith(path));
 
   return (
     <Menu
@@ -167,7 +152,7 @@ const Navigation = () => {
           title={<span style={{ paddingRight: "10px" }}>Dành Cho Bác Sĩ</span>}
           className="ant-menu-submenu-title padR10"
         >
-          <Menu.Item style={{display: "none"}} key="/doctor/infoDoctor">
+          <Menu.Item key="/doctor/infoDoctor">
             <a href="/doctor/infoDoctor">Thông Tin Bác Sĩ</a>
           </Menu.Item>
           <Menu.Item style={{display: "none"}} key="/doctor/manage-schedule">

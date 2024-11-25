@@ -97,8 +97,8 @@ const AccessSection = () => (
       1,
       "Bác sĩ chuyên môn cao",
       `
-        <br />- Phòng khám Bệnh viện Đại học Y Dược 1 quy tụ đội ngũ chuyên gia, bác sĩ, dược sĩ và điều dưỡng có trình độ chuyên môn cao, tay nghề giỏi, luôn tận tâm và chu đáo với người bệnh.
-        <br />- Phòng khám Bệnh viện Đại học Y Dược 1 luôn đặt người bệnh là trọng tâm, và cam kết mang đến dịch vụ chăm sóc sức khỏe tốt nhất cho quý khách hàng.
+        <br />- Phòng khám Bệnh viện  quy tụ đội ngũ chuyên gia, bác sĩ, dược sĩ và điều dưỡng có trình độ chuyên môn cao, tay nghề giỏi, luôn tận tâm và chu đáo với người bệnh.
+        <br />- Phòng khám Bệnh viện  luôn đặt người bệnh là trọng tâm, và cam kết mang đến dịch vụ chăm sóc sức khỏe tốt nhất cho quý khách hàng.
       `
     )}
   </div>

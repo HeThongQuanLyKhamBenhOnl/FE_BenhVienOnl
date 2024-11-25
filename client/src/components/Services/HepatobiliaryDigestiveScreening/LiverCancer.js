@@ -117,7 +117,7 @@ const AccessSection = () => (
       3,
       "Thông tin chi tiết Gói khám Tầm soát ung thư gan",
       `
-        <br />- Gói khám Tầm soát viêm gan tại Phòng khám Bệnh viện Đại học Y Dược 1 được xây dựng dựa trên nhu cầu thực tế của khách hàng.
+        <br />- Gói khám Tầm soát viêm gan tại Phòng khám Bệnh viện  được xây dựng dựa trên nhu cầu thực tế của khách hàng.
         <br />- Khi thực hiện tầm soát viêm gan, khách hàng sẽ được thực hiện các xét nghiệm từ cơ bản đến nâng cao để đánh giá tình trạng hoạt động hiện tại của gan, phát hiện sớm các bệnh lý của gan như: Viêm gan siêu vi B, C, xơ gan, ung thư gan và có những hướng dẫn điều trị kịp thời.
         <br />
         <div style="display: flex; justify-content: center;"><img style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745959/goi-tam-soat-ung-thu-gan_ya6eli.jpg" /></div>

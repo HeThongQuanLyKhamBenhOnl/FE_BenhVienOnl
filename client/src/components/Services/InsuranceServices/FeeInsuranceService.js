@@ -96,7 +96,7 @@ const AccessSection = () => (
       1,
       "DỊCH VỤ BẢO LÃNH VIỆN PHÍ",
       `
-      Nhằm đáp ứng nhu cầu cho khách hàng sử dụng dịch vụ bảo lãnh viện phí, Phòng khám Bệnh viện đại học Y Dược 1 đã không ngừng mở rộng hệ thống liên kết với các công ty, đối tác bảo hiểm lớn nhằm tạo sự thuận tiện cho khách hàng khi sử dụng dịch vụ tại Phòng khám. 
+      Nhằm đáp ứng nhu cầu cho khách hàng sử dụng dịch vụ bảo lãnh viện phí, Phòng khám Bệnh viện  đã không ngừng mở rộng hệ thống liên kết với các công ty, đối tác bảo hiểm lớn nhằm tạo sự thuận tiện cho khách hàng khi sử dụng dịch vụ tại Phòng khám. 
     `
     )}
     {renderAccessContent(
@@ -114,7 +114,7 @@ const AccessSection = () => (
         <br />Bước 2: Xuất trình thẻ bảo hiểm, CMND, Căn cước công dân, Passport hoặc Giấy khai sinh (đối với trẻ nhỏ)
         <br />Bước 3: Đăng ký sử dụng các dịch vụ khám chữa bệnh tại Phòng khám 
         <br />Bước 4: Thanh toán tạm ứng tất cả các dịch vụ đã đăng ký 
-        <br />Bước 5: Bộ phận Bảo hiểm bảo lãnh của Phòng khám Bệnh viện Đại học Y Dược 1 sẽ tiền hành làm thủ tục xác nhận bảo lãnh với công ty bảo hiểm sau khi khách hàng có đầy đủ các kết quả xét nghiệm và chẩn đoán của Bác sĩ. Khách hàng sẽ ký xác nhận chi phí điều trị đồng thời thanh toán các khoản chi phí mà công ty Bảo hiểm từ chối bồi thường (nếu có).
+        <br />Bước 5: Bộ phận Bảo hiểm bảo lãnh của Phòng khám Bệnh viện  sẽ tiền hành làm thủ tục xác nhận bảo lãnh với công ty bảo hiểm sau khi khách hàng có đầy đủ các kết quả xét nghiệm và chẩn đoán của Bác sĩ. Khách hàng sẽ ký xác nhận chi phí điều trị đồng thời thanh toán các khoản chi phí mà công ty Bảo hiểm từ chối bồi thường (nếu có).
     `
     )}
     {renderAccessContent(
@@ -124,7 +124,7 @@ const AccessSection = () => (
         <br />- Quý khách vui lòng cung cấp đầy đủ giấy tờ và thanh toán tạm ứng tất cả các dịch vụ khám chữa bệnh cho nhân viên phòng khám theo quy định;
         <br />- Chi phí tạm ứng sẽ được hoàn lại một phần hoặc toàn bộ cho khách hàng tuỳ thuộc vào quyền lợi của khách hàng và chính sách của công ty bảo hiểm;
         <br />- Trường hợp công ty bảo hiểm từ chối bảo lãnh trực tiếp quý khách hàng có thể xuất hoá đơn và lấy giấy tờ liên quan để thực hiện thanh toán với công ty bảo hiểm;
-        <br />- Đối với các công ty bảo hiểm chưa liên kết dịch vụ bảo lãnh viện phí với phòng khám bệnh viện Đại học Y Dược 1 quý khách vui lòng yêu cầu nhân viên của Phòng khám cung cấp đầy đủ hoá đơn và các giấy tờ cần thiết để quý khách hàng tự tiến hành thanh toán với công ty Bảo hiểm.
+        <br />- Đối với các công ty bảo hiểm chưa liên kết dịch vụ bảo lãnh viện phí với phòng khám bệnh viện  quý khách vui lòng yêu cầu nhân viên của Phòng khám cung cấp đầy đủ hoá đơn và các giấy tờ cần thiết để quý khách hàng tự tiến hành thanh toán với công ty Bảo hiểm.
         <br />- Thủ tục giải quyết 01 bộ hồ sơ Bảo lãnh viện phí sẽ mất nhiều thời gian hơn so với bình thường (từ 45 phút đến 60 phút) vì vậy quý khách hàng vui lòng sắp xếp thời gian phù hợp để tránh ảnh hưởng đến công việc.
         <br />
         <br /><h5 style="color: blue"><b>PHÒNG KHÁM BỆNH VIỆN</b></h5>

@@ -97,8 +97,8 @@ const AccessSection = () => (
       "Thông tin về gói khám sức khoẻ tổng quát chuyên sâu",
       `
         <br />- Khi lựa chọn một gói khám sức khoẻ tổng quát chuyên sâu, bạn luôn mong muốn gói khám có thể kiểm tra được bao quát tình hình sức khoẻ với chi phí hợp lý.
-        <br />- Thấu hiểu được mối quan tâm của bạn, đội ngũ chuyên môn của Phòng khám Bệnh viện Đại học Y Dược 1 khi xây dựng gói khám luôn dựa trên nguyên tắc: khoa học, hiệu quả, có tính thực tiễn cao, tiết kiệm chi phí cho khách hàng.
-        <br />- Gói khám sức khoẻ tổng quát chuyên sâu tại Phòng khám bệnh viện Đại học Y Dược 1 được xây dựng với hơn 50 hạng mục, đáp ứng được nhu cầu thực tiễn của khách hàng và giúp Bác sĩ đánh giá được bao quát về tình hình sức khoẻ của bạn. Gói khám gồm:
+        <br />- Thấu hiểu được mối quan tâm của bạn, đội ngũ chuyên môn của Phòng khám Bệnh viện  khi xây dựng gói khám luôn dựa trên nguyên tắc: khoa học, hiệu quả, có tính thực tiễn cao, tiết kiệm chi phí cho khách hàng.
+        <br />- Gói khám sức khoẻ tổng quát chuyên sâu tại Phòng khám bệnh viện  được xây dựng với hơn 50 hạng mục, đáp ứng được nhu cầu thực tiễn của khách hàng và giúp Bác sĩ đánh giá được bao quát về tình hình sức khoẻ của bạn. Gói khám gồm:
 
         <br /><b><i>a. Khám và nhận tư vấn của Bác sĩ chuyên khoa:</i></b>
         <br />- Nội tổng quát, răng-hàm-mặt, mắt, tai-mũi-họng, khám phụ khoa và tuyến vú
@@ -134,7 +134,7 @@ const AccessSection = () => (
         <br />- Khách hàng là nữ nếu đang mang thai hoặc nghi ngờ có thai vui lòng thông báo ngay cho nhân viên y tế để không chụp X-quang;
         <br />- Quý khách hàng nên thực hiện khám sức khoẻ tổng quát vào buổi sáng để kết quả xét nghiệm máu được chính xác nhất;
         <br />- Khi đi khám nếu cơ thể có bất kỳ dấu hiệu bất thường bạn vui lòng thông báo với nhân viên y tế để được tư vấn và khám ngay với chuyên khoa phù hợp;
-        <br />- Khi thực hiện khám sức khoẻ tổng quát tại Phòng khám Bệnh viện Đại học Y Dược 1, bạn có thể lựa chọn thêm các gói tầm soát bổ trợ để thực hiện như: xét nghiệm dấu ấn ung thư, huyết thanh chẩn đoán giun sán, nội soi tiêu hoá không đau, MRI, CT Scanner…
+        <br />- Khi thực hiện khám sức khoẻ tổng quát tại Phòng khám Bệnh viện , bạn có thể lựa chọn thêm các gói tầm soát bổ trợ để thực hiện như: xét nghiệm dấu ấn ung thư, huyết thanh chẩn đoán giun sán, nội soi tiêu hoá không đau, MRI, CT Scanner…
       `
     )}
     {renderAccessContent(
