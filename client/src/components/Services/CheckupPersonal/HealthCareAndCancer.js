@@ -123,7 +123,7 @@ const AccessSection = () => (
       4,
       "Tại sao nên chọn Phòng khám Bệnh viện để khám sức khoẻ tổng quát định kỳ?",
       `
-        <br />- Gói bổ sung tâm soát ung thư bằng huyết thành và chẩn đoán giun sán của Phòng khám Bệnh viện Đại học Y Dược 1 có thể linh hoạt kết hợp với các gói khám sức khoẻ tổng quát từ cơ bản đến nâng cao. 
+        <br />- Gói bổ sung tâm soát ung thư bằng huyết thành và chẩn đoán giun sán của Phòng khám Bệnh viện  có thể linh hoạt kết hợp với các gói khám sức khoẻ tổng quát từ cơ bản đến nâng cao. 
 
         <br />a. Gói xét nghiệm dấu ấn ung thư bằng huyết thanh
         <br />{1}
@@ -187,7 +187,7 @@ const AccessSection = () => (
       5,
       "Cách kết hợp gói khám sức khoẻ tổng quát và tầm soát ung thư",
       `
-        <br />- Khi thực hiện gói khám sức khoẻ tổng quát và tầm soát ung thư tại Phòng khám Bệnh viện Đại học Y Dược 1 bạn có thể dễ dàng kết hợp giữa gói khám tổng quát cơ bản, nâng cao, chuyên sâu và  gói xét nghiệm dấu ấn ung thư bằng huyết thanh hoặc cộng thêm gói huyết thanh chẩn đoán giun sán.
+        <br />- Khi thực hiện gói khám sức khoẻ tổng quát và tầm soát ung thư tại Phòng khám Bệnh viện  bạn có thể dễ dàng kết hợp giữa gói khám tổng quát cơ bản, nâng cao, chuyên sâu và  gói xét nghiệm dấu ấn ung thư bằng huyết thanh hoặc cộng thêm gói huyết thanh chẩn đoán giun sán.
         
         <br />a. Kết hợp gói khám sức khoẻ tổng quát nâng cao và tầm soát ung thư Phòng khám Bệnh viện
         <br /><p style="text-align: center; display: flex; justify-content: center;"><a href="/kham-suc-khoe-tong-quat-ca-nhan/goi-kham-suc-khoe-tong-quat-nang-cao"><img alt="img" src="https://i.postimg.cc/7hbjtczn/goi-kham-suc-khoe-tong-quat-nang-cao.jpg" style="width: 500px;"></a></p>

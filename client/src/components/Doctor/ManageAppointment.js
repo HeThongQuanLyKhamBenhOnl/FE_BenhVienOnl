@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Table, Button, Modal, message, Space } from "antd";
+import { Table, Button, Modal, message, Space, Input } from "antd";
 import dayjs from "dayjs";
 import {
   useGetDoctorAppointmentsQuery,
@@ -8,6 +8,8 @@ import {
   useUpdateAppointmentStatusMutation,
 } from "../../Redux/Doctor/api";
 import ChatBox from "../Chat/ChatBox"; // Đường dẫn đến ChatBox
+
+const { Search } = Input;
 
 const ManageAppointment = () => {
   const { data, isLoading } = useGetDoctorAppointmentsQuery();
@@ -18,14 +20,21 @@ const ManageAppointment = () => {
   const [isChatVisible, setIsChatVisible] = useState(false); // Trạng thái hiển thị hộp thoại chat
   const [selectedAppointment, setSelectedAppointment] = useState(null); // Cuộc hẹn đã chọn để mở chat
 
+  const [filteredAppointments, setFilteredAppointments] = useState([]); // Filtered list
+
   useEffect(() => {
-    if (data?.appointments) setAppointmentsList(data.appointments);
+    if (data?.appointments) {
+      const reversedAppointments = [...data.appointments].reverse();
+      setAppointmentsList(reversedAppointments);
+      setFilteredAppointments(reversedAppointments); // Initialize filtered list
+    }
   }, [data]);
 
   const handleOpenChat = (appointment) => {
     setSelectedAppointment(appointment); // Lưu cuộc hẹn đã chọn
     setIsChatVisible(true); // Hiển thị hộp thoại chat
   };
+
   const handleCancelAppointment = async (appointmentId, status) => {
     if (status !== "pending") {
       message.error("Chỉ có thể hủy các cuộc hẹn ở trạng thái đang chờ xử lý.");
@@ -36,6 +45,9 @@ const ManageAppointment = () => {
       await cancelAppointment({ appointmentId }).unwrap();
       message.success("Lịch hẹn đã bị hủy thành công");
       setAppointmentsList((prev) =>
+        prev.filter((appointment) => appointment._id !== appointmentId)
+      );
+      setFilteredAppointments((prev) =>
         prev.filter((appointment) => appointment._id !== appointmentId)
       );
     } catch (error) {
@@ -54,9 +66,30 @@ const ManageAppointment = () => {
             : appointment
         )
       );
+      setFilteredAppointments((prev) =>
+        prev.map((appointment) =>
+          appointment._id === appointmentId
+            ? { ...appointment, status }
+            : appointment
+        )
+      );
     } catch (error) {
       message.error("Đã xảy ra lỗi khi cập nhật trạng thái");
     }
+  };
+
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    if (!value) {
+      setFilteredAppointments(appointmentsList); // Reset to full list when input is cleared
+      return;
+    }
+    const filtered = appointmentsList.filter((appointment) => {
+      const name = appointment.patient.fullName.toLowerCase();
+      const date = dayjs(appointment.date).format("DD/MM/YYYY");
+      return name.includes(value) || date.includes(value);
+    });
+    setFilteredAppointments(filtered);
   };
 
   const columns = [
@@ -64,6 +97,11 @@ const ManageAppointment = () => {
       title: "Họ và tên",
       dataIndex: ["patient", "fullName"],
       key: "patientName",
+    },
+    {
+      title: "Giới tính",
+      dataIndex: ["patient", "gender"],
+      key: "gender",
     },
     {
       title: "Ngày hẹn",
@@ -107,14 +145,27 @@ const ManageAppointment = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <h2 className="text-2xl font-semibold mb-4">Lịch Hẹn Với Bệnh Nhân</h2>
+
+      {/*Tìm kiếm*/}
+      <div className="mb-4">
+        <Search
+          placeholder="Tìm kiếm theo tên hoặc ngày (DD/MM/YYYY)"
+          onChange={handleSearch}
+          enterButton
+          style={{ width: "400px", }}
+        />
+      </div>
+
+
       <Table
-        dataSource={appointmentsList}
+        dataSource={filteredAppointments}
         columns={columns}
         loading={isLoading}
         rowKey={(record) => record._id}
         pagination={{ pageSize: 10 }}
         className="bg-white shadow-lg rounded-lg"
       />
+
       {/* Hộp thoại chat */}
       <Modal
         title="Hộp Thoại Chat"

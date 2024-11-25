@@ -131,7 +131,7 @@ const AccessSection = () => (
       4,
       "Tại sao lại cần thiết để đo các hoạt động cơ thể khi ngủ?",
       `
-        <br />- Trong khi bạn ngủ, các hoạt động của cơ thể khác khi bạn thức. Rối loạn giấc ngủ như ngáy và ngưng thở lúc ngủ, mất ngủ có thể ảnh hưởng hoạt động ban ngày, gây buồn ngủ quá mức vào ban ngày và có thể dẫn đến vấn đề sức khỏe nghiêm trọng. Vì phải theo dõi các hoạt động khi ngủ nên khi đo đa ký giấc ngủ, bạn sẽ ngủ qua đêm tại Phòng khám Bệnh viện Đại học Y Dược 1.
+        <br />- Trong khi bạn ngủ, các hoạt động của cơ thể khác khi bạn thức. Rối loạn giấc ngủ như ngáy và ngưng thở lúc ngủ, mất ngủ có thể ảnh hưởng hoạt động ban ngày, gây buồn ngủ quá mức vào ban ngày và có thể dẫn đến vấn đề sức khỏe nghiêm trọng. Vì phải theo dõi các hoạt động khi ngủ nên khi đo đa ký giấc ngủ, bạn sẽ ngủ qua đêm tại Phòng khám Bệnh viện .
         <br />- Qua việc đo các hoạt động của cơ thể khi ngủ, bác sĩ sẽ nhận biết được bạn đang mắc dạng rối loạn giấc ngủ nào, từ đó có kế hoạch điều trị phù hợp cho bạn.
     `
     )}
@@ -143,7 +143,7 @@ const AccessSection = () => (
         <br />- Câu trả lời là: Không. Đa ký giấc ngủ là một phương pháp kiểm tra không xâm lấn, không gây đau đớn. Các điện cực được dán vào da đầu bạn và không gây đau hay giựt điện. Sau khi đo đa ký giấc ngủ xong, các điện cực có thể được lấy ra một cách nhẹ nhàng.
 
         <br /><b><i>b. Các điện cực đo đa ký giấc ngủ có cản trở tôi ngủ không?</i></b>
-        <br />- Thiết bị được thiết kế để đo các hoạt động cơ thể khi ngủ nên nó sẽ giúp bạn thư giãn và sẵn sàng cho giấc ngủ. Phòng đo đa ký giấc ngủ của Phòng khám Bệnh viện Đại học Y Dược 1 được thiết kế giúp bạn cảm thấy thân thiện, dễ dàng ngủ hơn. Trong phòng cũng có đầy đủ các tiện ích như máy điều hòa, tivi… nhằm giúp bạn cảm thấy như ở nhà…
+        <br />- Thiết bị được thiết kế để đo các hoạt động cơ thể khi ngủ nên nó sẽ giúp bạn thư giãn và sẵn sàng cho giấc ngủ. Phòng đo đa ký giấc ngủ của Phòng khám Bệnh viện  được thiết kế giúp bạn cảm thấy thân thiện, dễ dàng ngủ hơn. Trong phòng cũng có đầy đủ các tiện ích như máy điều hòa, tivi… nhằm giúp bạn cảm thấy như ở nhà…
 
         <br /><b><i>c. Sau khi mắc các điện cực, liệu tôi có thể di chuyển, chẳng hạn như đi vệ sinh?</i></b>
         <br />- Các điện cực và dây đeo không cản trở bạn đi lại nhưng bạn nên hạn chế di chuyển. Bạn sẽ được mang 1 bộ phát tín hiệu, các tín hiệu thu được sẽ được bộ phát tín hiệu này truyền đến máy tính. Nếu bạn muốn đi vệ sinh thì điều dưỡng trực sẽ gỡ dây nối giữa bộ truyền tín hiệu và máy tính để bạn có thể di chuyển.

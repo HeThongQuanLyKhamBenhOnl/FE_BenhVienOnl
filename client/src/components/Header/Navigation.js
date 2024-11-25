@@ -152,7 +152,7 @@ const Navigation = () => {
           title={<span style={{ paddingRight: "10px" }}>Dành Cho Bác Sĩ</span>}
           className="ant-menu-submenu-title padR10"
         >
-          <Menu.Item style={{display: "none"}} key="/doctor/infoDoctor">
+          <Menu.Item key="/doctor/infoDoctor">
             <a href="/doctor/infoDoctor">Thông Tin Bác Sĩ</a>
           </Menu.Item>
           <Menu.Item style={{display: "none"}} key="/doctor/manage-schedule">

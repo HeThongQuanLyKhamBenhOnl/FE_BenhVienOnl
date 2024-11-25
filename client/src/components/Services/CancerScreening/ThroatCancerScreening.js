@@ -117,7 +117,7 @@ const AccessSection = () => (
       3,
       "Thông tin chi tiết gói tầm soát ung thư vòm họng tại Phòng khám Bệnh viện",
       `
-      Gói khám tầm soát ung thư vòm họng của Phòng khám Bệnh viện Đại học Y Dược 1 được đội ngũ chuyên môn xây dựng theo nguyên tắc: khoa học, hiệu quả và chính xác. Xem chi tiết gói:
+      Gói khám tầm soát ung thư vòm họng của Phòng khám Bệnh viện  được đội ngũ chuyên môn xây dựng theo nguyên tắc: khoa học, hiệu quả và chính xác. Xem chi tiết gói:
       <br />
       <div style="display: flex; justify-content: center; width: 100%"><img alt="img" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745686/tam-soat-ung-thu-vom-hong_j9dn0v.jpg" /></div>
     `

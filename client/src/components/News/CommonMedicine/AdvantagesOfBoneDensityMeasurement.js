@@ -129,7 +129,7 @@ const AccessSection = () => (
       4,
       "Những ưu điểm vượt trội khi đo loãng xương bằng phương pháp DEXA",
       `
-        <br />Khám sức khỏe tiền hôn nhân có thể được thực hiện tại Phòng khám Bệnh viện Đại học Y Dược 1 với đội ngũ bác sĩ chuyên nghiệp và trang thiết bị hiện đại, giúp các cặp đôi có kết quả toàn diện về tình hình sức khỏe tổng quát và sức khỏe sinh sản, tiết kiệm thời gian và chuẩn bị tâm lý vững vàng để bước vào ngưỡng cửa quan trọng của cuộc đời. Chi tiết gói khám gồm:
+        <br />Khám sức khỏe tiền hôn nhân có thể được thực hiện tại Phòng khám Bệnh viện  với đội ngũ bác sĩ chuyên nghiệp và trang thiết bị hiện đại, giúp các cặp đôi có kết quả toàn diện về tình hình sức khỏe tổng quát và sức khỏe sinh sản, tiết kiệm thời gian và chuẩn bị tâm lý vững vàng để bước vào ngưỡng cửa quan trọng của cuộc đời. Chi tiết gói khám gồm:
         <br />
         <div style="display: flex;
                     justify-content: center;

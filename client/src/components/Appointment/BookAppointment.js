@@ -54,7 +54,7 @@ const BookAppointment = () => {
             <h3 style={styles.notesTitle}>Lưu ý :</h3>
             <p style={styles.noteText}>
               Lịch hẹn có hiệu lực sau khi có xác nhận chính thức từ Phòng khám
-              Bệnh viện Đại học Y Dược 1.
+              Bệnh viện .
             </p>
             <p style={styles.noteText}>
               Quý khách hàng vui lòng cung cấp thông tin chính xác để được phục

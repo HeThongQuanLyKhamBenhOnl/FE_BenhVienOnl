@@ -73,21 +73,21 @@ const MoreInformation = () => {
         "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740826/danh-sach-van-bang-chuyen-mon-ph%E1%BA%A1m-vi-hoat-dong_evwcnq.png",
       title: "DANH SÁCH VĂN BẰNG CHUYÊN MÔN VÀ PHẠM VI HOẠT ĐỘNG",
       description:
-        "Danh sách văn bằng chuyên môn và phạm vi hoạt động của đội ngũ Bác sĩ của Phòng khám Bệnh viện Đại học Y Dược 1",
+        "Danh sách văn bằng chuyên môn và phạm vi hoạt động của đội ngũ Bác sĩ của Phòng khám Bệnh viện ",
     },
     {
       imgSrc:
         "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740844/danh-muc-ky-thuat_bpwnwy.png",
       title: "DANH MỤC KỸ THUẬT",
       description:
-        "Phòng khám Bệnh viện Đại học Y Dược 1 được phê duyệt danh mục kỹ thuật trong khám chữa bệnh theo quyết định số 467/QĐ-SYT ngày 26 tháng 5 năm 2020 của Sở Y tế. Phòng khám đa khoa Bệnh viện Đại học Y Dược 1 do TS,BS, Nguyễn Thị Thanh Thủy chịu trách nhiệm chuyên môn tại địa chỉ 20-22 Dương Quang Trung, Phường 12, Quận 10",
+        "Phòng khám Bệnh viện  được phê duyệt danh mục kỹ thuật trong khám chữa bệnh theo quyết định số 467/QĐ-SYT ngày 26 tháng 5 năm 2020 của Sở Y tế. Phòng khám đa khoa Bệnh viện  do TS,BS, Nguyễn Thị Thanh Thủy chịu trách nhiệm chuyên môn tại địa chỉ 20-22 Dương Quang Trung, Phường 12, Quận 10",
     },
     {
       imgSrc:
         "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740860/gia-dich-vu-kham-chua-benh_ysw2du.png",
       title: "BẢNG GIÁ DỊCH VỤ KHÁM CHỮA BỆNH VÀ VẬT TƯ Y TẾ",
       description:
-        "Phòng khám Bệnh viện Đại Học Y Dược 1 trân trọng kính gửi đến Quý khách hàng bảng giá một số dịch vụ y tế ",
+        "Phòng khám Bệnh viện  trân trọng kính gửi đến Quý khách hàng bảng giá một số dịch vụ y tế ",
     },
     {
       imgSrc:

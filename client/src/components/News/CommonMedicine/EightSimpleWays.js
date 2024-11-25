@@ -191,9 +191,9 @@ const AccessSection = () => (
             <img alt="img" style="width: 500px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731742286/kh%C3%A1m-ph%E1%BB%A5-khoa-khi-c%C6%A1n-%C4%91au-b%E1%BB%A5ng-kinh-k%C3%A9o-d%C3%A0i-dai-d%E1%BA%B3ng_-kh%C3%B4ng-thuy%C3%AAn-gi%E1%BA%A3m_sryojv.png" />
             <p>Khám phụ khoa khi cơn đau bụng kinh kéo dài dai dẳng, không thuyên giảm</p>
         </div>
-        <br />Lựa chọn thăm khám phụ khoa an toàn tại Phòng khám Bệnh viện Đại học Y Dược 1 bạn sẽ được:
+        <br />Lựa chọn thăm khám phụ khoa an toàn tại Phòng khám Bệnh viện  bạn sẽ được:
         <br />- Đội ngũ chuyên gia khám bệnh tận tâm, chuyên nghiệp
-        <br />- Phòng khám Bệnh viện Đại học Y Dược 1 đầu tư trang thiết bị y tế cao cấp theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ chẩn đoán chính xác và điều trị hiệu quả.
+        <br />- Phòng khám Bệnh viện  đầu tư trang thiết bị y tế cao cấp theo chuẩn quốc tế và tương đương với các bệnh viện lớn, giúp bác sĩ chẩn đoán chính xác và điều trị hiệu quả.
         <br />- Đặt hẹn lịch khám nhanh chóng qua tổng đài 1900 6923.
     `
     )}

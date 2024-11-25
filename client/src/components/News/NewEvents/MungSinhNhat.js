@@ -95,7 +95,7 @@ const AccessSectionHeader = () => (
   <div>
     {renderAccessContentHeader(
       `
-        Nhân dịp kỷ niệm 6 năm thành lập. Từ ngày 04/03 - 15/04/2024, Phòng khám Bệnh viện Đại học Y Dược 1 tri ân khách hàng đăng ký sử dụng gói khám sức khỏe tổng quát bất kỳ sẽ nhận được nhiều ưu đãi và nhiều phần quà xinh xắn.
+        Nhân dịp kỷ niệm 6 năm thành lập. Từ ngày 04/03 - 15/04/2024, Phòng khám Bệnh viện  tri ân khách hàng đăng ký sử dụng gói khám sức khỏe tổng quát bất kỳ sẽ nhận được nhiều ưu đãi và nhiều phần quà xinh xắn.
         <br />
         <div style="display: flex;
                     justify-content: center;
@@ -200,7 +200,7 @@ const AccessSection = () => (
       <br />
       <br />Liên hệ hotline 1900 6923 để đăng ký và được tư vấn chi tiết về chương trình.
       <br />====================
-      <br />🏥 PHÒNG KHÁM BỆNH VIỆN ĐẠI HỌC Y DƯỢC 1
+      <br />🏥 PHÒNG KHÁM BỆNH VIỆN 
       <br />20-22 Dương Quang Trung, Phường 12, Quận 10
       <br />☎️ Hotline: 1900 6923
     `
