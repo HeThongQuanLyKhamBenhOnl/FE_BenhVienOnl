@@ -97,7 +97,7 @@ const AccessSection = () => (
       "Thông tin về gói khám sức khoẻ tổng quát Gold tại Phòng khám Bệnh viện",
       `
         <br />- Gói khám sức khỏe tổng quát Gold là gói khám sức khoẻ VIP được đội ngũ chuyên môn của Phòng khám xây dựng giúp khách hàng có thể tầm soát toàn diện các bộ phận của cơ thể gồm xét nghiệm và các dịch vụ cận lâm sàng từ cơ bản đến chuyên sâu.
-        <br />- Gói khám sức khoẻ tổng quát Gold với 63 hạng mục khám được Phòng khám Bệnh viện Đại học Y Dược 1 thiết kế nhằm đáp ứng nhu cầu kiểm tra toàn diện tình hình sức khỏe của bạn và gia đình. Gói khám tổng quát Gold bao gồm:
+        <br />- Gói khám sức khoẻ tổng quát Gold với 63 hạng mục khám được Phòng khám Bệnh viện  thiết kế nhằm đáp ứng nhu cầu kiểm tra toàn diện tình hình sức khỏe của bạn và gia đình. Gói khám tổng quát Gold bao gồm:
         
         <br /><b><i>a. Khám lâm sàng và nhận tư vấn của Bác sĩ chuyên khoa</i></b>
         <br />- Kiểm tra mạch, huyết áp, chiều cao, cân nặng, chỉ số BMI… Sau đó, bác sĩ sẽ khám, kiểm tra và tư vấn các vấn đề về: Nội tổng quát, mắt, tai mũi họng, răng, phụ khoa, tuyến vú, trao đổi bệnh sử và đánh giá các yếu tố, nguy cơ.
@@ -132,7 +132,7 @@ const AccessSection = () => (
         <br />- Khách hàng là nữ nếu đang có thai hoặc nghi ngờ có thai vui lòng thông báo ngay cho nhân viên y tế để không chụp X-quang;
         <br />- Khi đi khám nếu cơ thể có bất kỳ dấu hiệu bất thường, bạn vui lòng thông báo ngay với nhân viên y tế để nhận tư vấn và được khám với chuyên khoa phù hợp;
         <br />- Gói khám sức khoẻ tổng quát Gold thường sẽ được thực hiện trong vòng 02 ngày, do vậy quý khách hàng vui lòng sắp xếp thời gian phù hợp để thuận tiện cho việc thăm khám;
-        <br />- Khi khám sức khoẻ tổng quát tại Phòng khám Bệnh viện Đại học Y Dược 1, quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát bổ trợ nếu thấy thực sự cần thiết như: xét nghiệm huyết thanh chẩn đoán giun sán, đo gắng sức tim mạch - hô hấp.
+        <br />- Khi khám sức khoẻ tổng quát tại Phòng khám Bệnh viện , quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát bổ trợ nếu thấy thực sự cần thiết như: xét nghiệm huyết thanh chẩn đoán giun sán, đo gắng sức tim mạch - hô hấp.
         <br />- Để thực hiện khám gói Gold quý khách hàng vui lòng đăng ký trước qua hotline 1900 6923 để được phục vụ tốt nhất.
     `
     )}

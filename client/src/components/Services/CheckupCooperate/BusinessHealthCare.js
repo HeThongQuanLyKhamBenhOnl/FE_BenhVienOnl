@@ -99,7 +99,7 @@ const AccessSection = () => (
         <br />- Nguồn nhân lực được xem là nguồn tài sản vô giá đối với mỗi Doanh nghiệp, một doanh nghiệp có nguồn nhân lực chất lượng, và được vận hành hiệu quả sẽ tác động rất nhiều đến sự thành bại của Doanh nghiệp đó.
         <br />- Theo khảo sát của Metlife ngoài mức lương hấp dần thì hiện nay còn rất nhiều vấn đề mà người lao động quan tâm để quyết định gắn bó lâu dài với Doanh nghiệp đó là chế độ chăm sóc sức khỏe, chế độ bảo hiểm, cơ hội thăng tiến, văn hóa công ty…
         <br />- Do vậy, cho dù trong thời kỳ khó khăn, các doanh nghiệp thắt lưng buộc bung, và cắt giảm hàng loạt các chi phí để giảm được phần nào gánh nặng cho doanh nghiệp thì chi phí dành cho việc chăm sóc sức khỏe định kỳ cho nhân viên vẫn cần phải được duy trì và đảm bảo đúng theo quy định hiện hành.
-        <br />- Hiểu được những điều doanh nghiệp cần Phòng khám Bệnh viện Đại học Y Dược 1 luôn dựa theo những yêu cầu riêng cũng như tùy vào đặc điểm của từng ngành nghề để xây dựng những gói khám sức khỏe tổng quát phù hợp nhất cho doanh nghiệp trên nguyên tắc tuân thủ theo quy định hiện hành, tiết kiệm chi phí cho doanh nghiệp, đảm bảo quyền lợi cho người lao động.
+        <br />- Hiểu được những điều doanh nghiệp cần Phòng khám Bệnh viện  luôn dựa theo những yêu cầu riêng cũng như tùy vào đặc điểm của từng ngành nghề để xây dựng những gói khám sức khỏe tổng quát phù hợp nhất cho doanh nghiệp trên nguyên tắc tuân thủ theo quy định hiện hành, tiết kiệm chi phí cho doanh nghiệp, đảm bảo quyền lợi cho người lao động.
     `
     )}
     {renderAccessContent(
@@ -190,7 +190,7 @@ const AccessSection = () => (
       6,
       "KHÁCH HÀNG DOANH NGHIỆP TIÊU BIỂU CỦA PHÒNG KHÁM BỆNH VIỆN",
       `
-        <br />- Phòng khám Bệnh viện Đại học y Dược 1 hoạt động với phương trâm “ĐIỀU TRỊ CHUYÊN NGHIỆP - NÂNG TẦM Y VIỆT” với mong muốn mang đến dịch vụ y tế hiện đại, chất lượng, chuyên nghiệp đến khách hàng. Trong thời gian qua phòng khám đã được rất nhiều Doanh nghiệp tin tưởng và chọn là nơi chăm sóc sức khỏe cho cán bộ nhân viên.Trong thời gian tới phòng khám sẽ không ngừng nỗ lực để ngày càng nâng cao hơn nữa chất lượng dịch vụ để xứng đáng với sự tin tưởng của quý doanh nghiệp. Quý doanh nghiệp đã chọn Phòng khám Bệnh viện Đại học Y Dược là nơi khám sức khỏe tổng quát định kỳ cho nhân viên:
+        <br />- Phòng khám Bệnh viện  hoạt động với phương trâm “ĐIỀU TRỊ CHUYÊN NGHIỆP - NÂNG TẦM Y VIỆT” với mong muốn mang đến dịch vụ y tế hiện đại, chất lượng, chuyên nghiệp đến khách hàng. Trong thời gian qua phòng khám đã được rất nhiều Doanh nghiệp tin tưởng và chọn là nơi chăm sóc sức khỏe cho cán bộ nhân viên.Trong thời gian tới phòng khám sẽ không ngừng nỗ lực để ngày càng nâng cao hơn nữa chất lượng dịch vụ để xứng đáng với sự tin tưởng của quý doanh nghiệp. Quý doanh nghiệp đã chọn Phòng khám Bệnh viện Đại học Y Dược là nơi khám sức khỏe tổng quát định kỳ cho nhân viên:
         <br /><div style="display: flex; justify-content: center;"><img style="width: 1000px" src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731745771/doanh-nghi%E1%BB%87p_bkoznf.jpg" /></div>
     `
     )}

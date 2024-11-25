@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button, message, Tabs, Space } from "antd";
+import { Table, Button, Modal, message, Space, Input } from "antd";
 import dayjs from "dayjs";
 import {
   useGetDoctorAppointmentsQuery,
@@ -9,6 +9,8 @@ import {
 
 const { TabPane } = Tabs;
 
+const { Search } = Input;
+
 const ManageAppointment = () => {
   const { data, isLoading } = useGetDoctorAppointmentsQuery();
   const [cancelAppointment] = useCancelAppointmentMutation();
@@ -16,9 +18,20 @@ const ManageAppointment = () => {
 
   const [appointmentsList, setAppointmentsList] = useState([]);
 
+  const [filteredAppointments, setFilteredAppointments] = useState([]); // Filtered list
+
   useEffect(() => {
-    if (data?.appointments) setAppointmentsList(data.appointments);
+    if (data?.appointments) {
+      const reversedAppointments = [...data.appointments].reverse();
+      setAppointmentsList(reversedAppointments);
+      setFilteredAppointments(reversedAppointments); // Initialize filtered list
+    }
   }, [data]);
+
+  const handleOpenChat = (appointment) => {
+    setSelectedAppointment(appointment); // Lưu cuộc hẹn đã chọn
+    setIsChatVisible(true); // Hiển thị hộp thoại chat
+  };
 
   const handleCancelAppointment = async (appointmentId, status) => {
     if (status !== "pending") {
@@ -30,6 +43,9 @@ const ManageAppointment = () => {
       await cancelAppointment({ appointmentId }).unwrap();
       message.success("Lịch hẹn đã bị hủy thành công");
       setAppointmentsList((prev) =>
+        prev.filter((appointment) => appointment._id !== appointmentId)
+      );
+      setFilteredAppointments((prev) =>
         prev.filter((appointment) => appointment._id !== appointmentId)
       );
     } catch (error) {
@@ -48,29 +64,42 @@ const ManageAppointment = () => {
             : appointment
         )
       );
+      setFilteredAppointments((prev) =>
+        prev.map((appointment) =>
+          appointment._id === appointmentId
+            ? { ...appointment, status }
+            : appointment
+        )
+      );
     } catch (error) {
       message.error("Đã xảy ra lỗi khi cập nhật trạng thái");
     }
   };
 
-  // Hàm chuyển đổi trạng thái thành tiếng Việt
-  const renderStatus = (status) => {
-    switch (status) {
-      case "pending":
-        return "Đang chờ xác nhận";
-      case "Completed":
-        return "Đã xác nhận";
-      default:
-        return status;
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    if (!value) {
+      setFilteredAppointments(appointmentsList); // Reset to full list when input is cleared
+      return;
     }
+    const filtered = appointmentsList.filter((appointment) => {
+      const name = appointment.patient.fullName.toLowerCase();
+      const date = dayjs(appointment.date).format("DD/MM/YYYY");
+      return name.includes(value) || date.includes(value);
+    });
+    setFilteredAppointments(filtered);
   };
 
-  // Cấu hình cột có cột "Hành động"
-  const columnsWithActions = [
+  const columns = [
     {
       title: "Họ và tên",
       dataIndex: ["patient", "fullName"],
       key: "patientName",
+    },
+    {
+      title: "Giới tính",
+      dataIndex: ["patient", "gender"],
+      key: "gender",
     },
     {
       title: "Ngày hẹn",
@@ -137,29 +166,43 @@ const ManageAppointment = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h2 className="text-2xl font-semibold mb-4">Quản Lý Lịch Hẹn</h2>
-      <Tabs defaultActiveKey="1" type="card">
-        <TabPane tab="Cuộc hẹn đang chờ xử lý" key="1">
-          <Table
-            dataSource={pendingAppointments}
-            columns={columnsWithActions}
-            loading={isLoading}
-            rowKey={(record) => record._id}
-            pagination={{ pageSize: 10 }}
-            className="bg-white shadow-lg rounded-lg"
+      <h2 className="text-2xl font-semibold mb-4">Lịch Hẹn Với Bệnh Nhân</h2>
+
+      {/*Tìm kiếm*/}
+      <div className="mb-4">
+        <Search
+          placeholder="Tìm kiếm theo tên hoặc ngày (DD/MM/YYYY)"
+          onChange={handleSearch}
+          enterButton
+          style={{ width: "400px" }}
+        />
+      </div>
+
+      <Table
+        dataSource={filteredAppointments}
+        columns={columns}
+        loading={isLoading}
+        rowKey={(record) => record._id}
+        pagination={{ pageSize: 10 }}
+        className="bg-white shadow-lg rounded-lg"
+      />
+
+      {/* Hộp thoại chat */}
+      <Modal
+        title="Hộp Thoại Chat"
+        visible={isChatVisible}
+        onCancel={() => setIsChatVisible(false)}
+        footer={null}
+        width={700}
+      >
+        {selectedAppointment && (
+          <ChatBox
+            chatId={selectedAppointment._id}
+            doctorId={selectedAppointment.doctor}
+            patientId={selectedAppointment.patient}
           />
-        </TabPane>
-        <TabPane tab="Cuộc hẹn đã hoàn thành" key="2">
-          <Table
-            dataSource={completedAppointments}
-            columns={columnsWithoutActions}
-            loading={isLoading}
-            rowKey={(record) => record._id}
-            pagination={{ pageSize: 10 }}
-            className="bg-white shadow-lg rounded-lg"
-          />
-        </TabPane>
-      </Tabs>
+        )}
+      </Modal>
     </div>
   );
 };

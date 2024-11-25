@@ -73,14 +73,14 @@ const NewsEvent = () => {
       imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744883/website_werpfk.jpg",
       title: "5 NĂM VÌ SỨC KHOẺ NGÀN QUÀ TẶNG TRI ÂN",
       description:
-        "Nhân kỷ niệm 5 năm thành lập Phòng khám Bệnh viện Đại học Y Dược 1, ưu đãi và tặng nhiều phần quà xinh xắn cho tất cả các khách hàng đăng ký gói khám sức khỏe bất kỳ.",
+        "Nhân kỷ niệm 5 năm thành lập Phòng khám Bệnh viện , ưu đãi và tặng nhiều phần quà xinh xắn cho tất cả các khách hàng đăng ký gói khám sức khỏe bất kỳ.",
     },
     {
       imgSrc:
         "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744902/thong-bao-nghi-le-quoc-khanh-02.09_600-x-380-px_qabi0s.jpg",
       title: "THÔNG BÁO NGHỈ LỄ QUỐC KHÁNH 02 THÁNG 09",
       description:
-        "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ Quốc khánh ngày 02/09/2024 của Phòng khám như sau: ...",
+        "Phòng khám Bệnh viện  xin thông báo lịch nghỉ lễ Quốc khánh ngày 02/09/2024 của Phòng khám như sau: ...",
     },
     {
       imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744907/1_dpfpbw.jpg",
@@ -93,27 +93,27 @@ const NewsEvent = () => {
         "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744891/thong-bao-nghi-le-30-4_002_hcqn1u.jpg",
       title: "THÔNG BÁO LỊCH NGHỈ LỄ 30/04 VÀ 01/05",
       description:
-        "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ 30.04 và 01.05 như sau:...",
+        "Phòng khám Bệnh viện  xin thông báo lịch nghỉ lễ 30.04 và 01.05 như sau:...",
     },
     {
       imgSrc:
         "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744912/thong-bao-gio-to-hung-vuong_000_qtm3ev.jpg",
       title: "THÔNG BÁO LỊCH NGHỈ LỄ GIỖ TỔ HÙNG VƯƠNG NĂM 2024",
       description:
-        "Phòng khám Bệnh viện Đại học Y Dược 1 xin thông báo lịch nghỉ lễ Giỗ tổ Hùng Vương như sau:...",
+        "Phòng khám Bệnh viện  xin thông báo lịch nghỉ lễ Giỗ tổ Hùng Vương như sau:...",
     },
     {
       imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744916/600x380_kdbsza.png",
       title: "MỪNG SINH NHẬT 6th - TƯNG BỪNG ƯU ĐÃI",
       description:
-        "Từ ngày 04/03 - 15/04/2024, Phòng khám Bệnh viện Đại học Y Dược 1 tri ân khách hàng đăng ký sử dụng gói khám sức khỏe bất kỳ sẽ nhận được nhiều quà tặng...",
+        "Từ ngày 04/03 - 15/04/2024, Phòng khám Bệnh viện  tri ân khách hàng đăng ký sử dụng gói khám sức khỏe bất kỳ sẽ nhận được nhiều quà tặng...",
     },
     {
       imgSrc: "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731744897/600x380px_qqd5dr.jpg",
       title:
         "MỪNG KHAI TRƯƠNG KHU KHÁM VIP ƯU ĐÃI 10% GÓI KHÁM GOLD VÀ PLATINUM",
       description:
-        "Tại Phòng khám Bệnh viện Đại học Y Dược 1, chúng tôi cung cấp dịch vụ y tế không chỉ là “chữa bệnh” mà là “chăm sóc sức khỏe”. Bởi vì có rất nhiều bệnh lý có thể ngăn ngừa được nếu phát hiện kịp thời. Với các gói khám sức khỏe tổng quát toàn diện như Gold và Platinum, chúng tôi nỗ lực giúp bạn khỏe mạnh và giữ cho bạn luôn khỏe mạnh.",
+        "Tại Phòng khám Bệnh viện , chúng tôi cung cấp dịch vụ y tế không chỉ là “chữa bệnh” mà là “chăm sóc sức khỏe”. Bởi vì có rất nhiều bệnh lý có thể ngăn ngừa được nếu phát hiện kịp thời. Với các gói khám sức khỏe tổng quát toàn diện như Gold và Platinum, chúng tôi nỗ lực giúp bạn khỏe mạnh và giữ cho bạn luôn khỏe mạnh.",
     },
     {
       imgSrc:

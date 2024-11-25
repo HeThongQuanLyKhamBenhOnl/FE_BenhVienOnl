@@ -14,7 +14,8 @@
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  transform: translateY(-3px); /* Optional, for slight movement on hover */
+  transform: translateY(-3px);
+  /* Optional, for slight movement on hover */
   /* Smooth transition */
 }
 
@@ -81,7 +82,8 @@ li.ant-menu-overflow-item.ant-menu-item.padR10:hover {
 /* Ensure smooth transition back when hover ends */
 .navigation-menu .ant-menu-submenu:hover {
   background-color: transparent;
-  transition: background-color 0.8s ease-in-out; /* Smooth transition back */
+  transition: background-color 0.8s ease-in-out;
+  /* Smooth transition back */
 }
 
 /* Rotate Arrow for Open SubMenus */
@@ -99,8 +101,11 @@ li.ant-menu-overflow-item.ant-menu-item.padR10:hover {
 }
 
 /* Add smooth transition for hover and non-hover states */
-.ant-menu-item, .ant-menu-submenu-title, .ant-menu-overflow-item {
-  transition: all 0.8s ease-in-out; /* Smooth transition for all states */
+.ant-menu-item,
+.ant-menu-submenu-title,
+.ant-menu-overflow-item {
+  transition: all 0.8s ease-in-out;
+  /* Smooth transition for all states */
 }
 
 .ant-menu-item:hover,
@@ -110,6 +115,7 @@ li.ant-menu-overflow-item.ant-menu-item.padR10:hover {
   border-radius: 50px;
   color: #fff;
   font-weight: bold;
-  transform: translateY(-3px); /* Slight lift effect */
+  transform: translateY(-3px);
+  /* Slight lift effect */
   /* Smooth transition for hover states */
 }

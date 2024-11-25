@@ -96,9 +96,9 @@ const AccessSection = () => (
       1,
       "Thông tin về gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện",
       `
-        <br />- Gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện Đại học Y Dược 1 với 37 hạng mục từ cơ bản đến nâng cao được đội ngũ chuyên môn của Phòng khám thiết kế khoa học.
+        <br />- Gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện  với 37 hạng mục từ cơ bản đến nâng cao được đội ngũ chuyên môn của Phòng khám thiết kế khoa học.
         <br />- Gói khám này có thể bao quát được tình trạng sức khoẻ của bạn giúp phát hiện sớm các bệnh lý để có thể điều trị hiệu quả hơn, giảm thiểu những biến chứng nguy hiểm của bệnh, tiết kiệm chi phí điều trị.
-        <br />- Khi sử dụng gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện Đại học Y Dược 1, khách hàng sẽ được:
+        <br />- Khi sử dụng gói khám sức khoẻ tổng quát nâng cao tại Phòng khám Bệnh viện , khách hàng sẽ được:
         <br />+ Làm các xét nghiệm máu, xét nghiệm nước tiểu, nội soi tai-mũi-họng, điện tim thường (ECG), chụp X-quang, siêu âm bụng tổng quát, siêu âm tuyến giáp, siêu âm tuyến vú 2 bên (đối với nữ), siêu âm doppler màu động mạch cảnh.
         <br />+ Được khám các chuyên khoa: răng-hàm-mặt, mắt, tai-mũi-họng, sản phụ khoa và khám tuyến vú (đối với khách nữ).
         <br />+ Khám và nhận tư vấn với Bác sĩ Nội tổng quát.
@@ -112,7 +112,7 @@ const AccessSection = () => (
         <br />- Khách hàng là nữ nếu đang có thai hoặc nghi ngờ có thai vui lòng thông báo ngay cho nhân viên y tế để không chụp X-quang;
         <br />- Khi đi khám nếu cơ thể có bất kỳ dấu hiệu bất thường, bạn vui lòng thông báo ngay với nhân viên y tế để nhận tư vấn và được khám với chuyên khoa phù hợp;
         <br />- Gói khám sức khoẻ tổng quát nâng cao thường sẽ được thực hiện trong vòng 01 buổi, do vậy quý khách hàng vui lòng sắp xếp thời gian phù hợp để thuận tiện cho việc thăm khám;
-        <br />- Khi khám sức khoẻ tổng quát tại Phòng khám Bệnh viện Đại học Y Dược 1, quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát bổ trợ nếu thấy thực sự cần thiết như: Xét nghiệm dấu ấn ung thư bằng huyết thanh, huyết thanh chuẩn đoán giun sán, nội soi tiêu hoá không đau, đo gắng sức tim mạch-hô hấp (CPET), MRI, CT Scanner…
+        <br />- Khi khám sức khoẻ tổng quát tại Phòng khám Bệnh viện , quý khách hàng có thể dễ dàng lựa chọn thêm các dịch vụ tầm soát bổ trợ nếu thấy thực sự cần thiết như: Xét nghiệm dấu ấn ung thư bằng huyết thanh, huyết thanh chuẩn đoán giun sán, nội soi tiêu hoá không đau, đo gắng sức tim mạch-hô hấp (CPET), MRI, CT Scanner…
     `
     )}
     {renderAccessContent(

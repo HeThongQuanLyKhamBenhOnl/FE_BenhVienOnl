@@ -74,7 +74,7 @@ const CancerScreening = () => {
         "https://res.cloudinary.com/db4ji9y1x/image/upload/v1731746140/goi-tam-soat-ung-thu-tong-quat_efs4vr.jpg",
       title: "GÓI KHÁM TẦM SOÁT UNG THƯ TỔNG QUÁT",
       description:
-        "Gói khám tầm soát ung thư tổng quát của Phòng khám Bệnh viện Đại học Y Dược 1 được đội ngũ chuyên môn xây dựng theo nguyên tắc: Khoa học, hiệu quả, có tính thực tiễn cao, tiết kiệm chi phí cho khách hàng. Khi thực hiện gói khám này khách hàng có thể linh hoạt lựa chọn thêm các dịch vụ khác tại Phòng khám",
+        "Gói khám tầm soát ung thư tổng quát của Phòng khám Bệnh viện  được đội ngũ chuyên môn xây dựng theo nguyên tắc: Khoa học, hiệu quả, có tính thực tiễn cao, tiết kiệm chi phí cho khách hàng. Khi thực hiện gói khám này khách hàng có thể linh hoạt lựa chọn thêm các dịch vụ khác tại Phòng khám",
     },
     {
       imgSrc:
