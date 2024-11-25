@@ -6,8 +6,7 @@ import {
   useCancelAppointmentMutation,
   useUpdateAppointmentStatusMutation,
 } from "../../Redux/Doctor/api";
-
-const { TabPane } = Tabs;
+import ChatBox from "../Chat/ChatBox"; // Đường dẫn đến ChatBox
 
 const { Search } = Input;
 
@@ -17,6 +16,8 @@ const ManageAppointment = () => {
   const [updateAppointmentStatus] = useUpdateAppointmentStatusMutation();
 
   const [appointmentsList, setAppointmentsList] = useState([]);
+  const [isChatVisible, setIsChatVisible] = useState(false); // Trạng thái hiển thị hộp thoại chat
+  const [selectedAppointment, setSelectedAppointment] = useState(null); // Cuộc hẹn đã chọn để mở chat
 
   const [filteredAppointments, setFilteredAppointments] = useState([]); // Filtered list
 
@@ -111,7 +112,6 @@ const ManageAppointment = () => {
       title: "Trạng thái",
       dataIndex: "status",
       key: "status",
-      render: (status) => renderStatus(status), // Chuyển đổi trạng thái
     },
     {
       title: "Hành động",
@@ -130,39 +130,16 @@ const ManageAppointment = () => {
           >
             Hủy lịch
           </Button>
+          <Button
+            type="default"
+            onClick={() => handleOpenChat(record)} // Mở hộp thoại chat
+          >
+            Mở Chat
+          </Button>
         </Space>
       ),
     },
   ];
-
-  // Cấu hình cột không có cột "Hành động"
-  const columnsWithoutActions = [
-    {
-      title: "Họ và tên",
-      dataIndex: ["patient", "fullName"],
-      key: "patientName",
-    },
-    {
-      title: "Ngày hẹn",
-      dataIndex: "date",
-      key: "date",
-      render: (date) => dayjs(date).format("DD/MM/YYYY"),
-    },
-    {
-      title: "Trạng thái",
-      dataIndex: "status",
-      key: "status",
-      render: (status) => renderStatus(status), // Chuyển đổi trạng thái
-    },
-  ];
-
-  const pendingAppointments = appointmentsList.filter(
-    (appointment) => appointment.status === "pending"
-  );
-
-  const completedAppointments = appointmentsList.filter(
-    (appointment) => appointment.status === "Completed"
-  );
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
