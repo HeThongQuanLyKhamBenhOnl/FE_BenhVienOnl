@@ -140,10 +140,10 @@ const FooterComponent = () => {
                   src="https://res.cloudinary.com/db4ji9y1x/image/upload/v1731740637/tam-quan-trong-cua-kiem-tra-suc-khoe-hau-covid-19_ppgpro.jpg"
                   alt="footer-banner"
                   style={{
-                    width: "90%",
+                    width: "100%",
                     height: "140px",
                     objectFit: "cover",
-                    objectPosition: "bottom",
+                    objectPosition: "center center",
                     borderRadius: "10px",
                   }}
                 />

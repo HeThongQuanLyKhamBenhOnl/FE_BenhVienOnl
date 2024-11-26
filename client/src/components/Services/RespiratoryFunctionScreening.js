@@ -44,7 +44,7 @@ const CheckupCard = ({ imgSrc, title, description }) => (
           width: "100%",
           height: "160px",
           objectFit: "cover",
-          objectPosition: "bottom",
+          objectPosition: "center center",
           borderRadius: "10px",
         }}
       />
