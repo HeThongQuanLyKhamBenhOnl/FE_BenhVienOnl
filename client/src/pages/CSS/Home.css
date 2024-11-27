@@ -105,12 +105,3 @@
     flex: 0 0 264px;
     margin-right: 16px;
 }
-
-.css-175oi2r.r-18u37iz {
-    display: flex;
-    justify-content: center;
-}
-
-.css-175oi2r.r-18u37iz:nth-child(n+5) {
-    display: none;
-}
