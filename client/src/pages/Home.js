@@ -87,7 +87,7 @@ export const Home = () => {
       className="flex flex-col items-center text-center mx-4 my-2"
       style={{ width: "264px" }}
     >
-      <div className="w-[80%] h-[80%] overflow-hidden rounded-full">
+      <div className="overflow-hidden rounded-full">
         <img
           src={doctor.image}
           alt={doctor.name}
@@ -160,7 +160,7 @@ export const Home = () => {
           </div>
 
           <div class="media-content">
-            <h2 class="media-title">Truyền thông nói về BookingCare</h2>
+            <h2 class="media-title">Truyền thông</h2>
 
             <div class="media-wrapper">
               <div class="video-wrapper">
@@ -169,8 +169,8 @@ export const Home = () => {
                   allowfullscreen=""
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
-                  title="CÀ PHÊ KHỞI NGHIỆP VTV1 - BOOKINGCARE - HỆ THỐNG ĐẶT LỊCH KHÁM TRỰC TUYẾN"
-                  src="https://www.youtube.com/embed/FyDQljKtWnI?autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fbookingcare.vn&widgetid=5"
+                  title="VIDEO"
+                  src="https://www.youtube.com/embed/gIp08Ybmamk"
                   class="video-frame"
                 ></iframe>
               </div>
