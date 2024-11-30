@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // Định nghĩa URL cơ bản của API
+// const BASE_URL = process.env.BASE_URL;
 const BASE_URL = "http://localhost:5000/api";
 // Tạo API slice cho các chức năng liên quan đến chat
 export const chatApiSlice = createApi({

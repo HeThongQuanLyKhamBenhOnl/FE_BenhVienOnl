@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Base URL của API, bạn có thể cấu hình lại cho phù hợp với URL server của mình
+// const BASE_URL = process.env.BASE_URL;
 const BASE_URL = "http://localhost:5000/api";
 
 // Tạo API slice cho các chức năng liên quan đến Medicine

@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "http://localhost:5000"; // Địa chỉ cơ sở của API
+// const BASE_URL = process.env.REACT_APP_API_URL;
 
+const BASE_URL = "http://localhost:5000";
 // Base query có hỗ trợ token để tự động thêm vào header khi có token
 const baseQueryWithAuth = fetchBaseQuery({
   baseUrl: BASE_URL,

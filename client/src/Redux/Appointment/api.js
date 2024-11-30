@@ -1,70 +1,71 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Base URL của API, bạn có thể cấu hình lại cho phù hợp với URL server của mình
-const BASE_URL = 'http://localhost:5000/api';
+// const BASE_URL = process.env.BASE_URL;
+const BASE_URL = "http://localhost:5000/api";
 
 // Tạo API slice cho các chức năng liên quan đến Appointment
 export const appointmentApiSlice = createApi({
-    reducerPath: 'appointmentApi', // Đường dẫn trong store Redux
-    baseQuery: fetchBaseQuery({
-      baseUrl: BASE_URL, // Địa chỉ API
-      prepareHeaders: (headers) => {
-        // Lấy token từ localStorage
-        const token = localStorage.getItem('token'); // Giả sử bạn lưu token với key là 'token'
-        
-        if (token) {
-          headers.set('Authorization', `Bearer ${token}`);
-        }
-  
-        return headers;
-      },
-    }),
-  tagTypes: ['Appointment'], // Đánh dấu để quản lý cache và refetch
+  reducerPath: "appointmentApi", // Đường dẫn trong store Redux
+  baseQuery: fetchBaseQuery({
+    baseUrl: BASE_URL, // Địa chỉ API
+    prepareHeaders: (headers) => {
+      // Lấy token từ localStorage
+      const token = localStorage.getItem("token"); // Giả sử bạn lưu token với key là 'token'
+
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
+      }
+
+      return headers;
+    },
+  }),
+  tagTypes: ["Appointment"], // Đánh dấu để quản lý cache và refetch
   endpoints: (builder) => ({
     // API tạo lịch hẹn
     createAppointment: builder.mutation({
       query: (appointmentData) => ({
-        url: '/appointments',
-        method: 'POST',
+        url: "/appointments",
+        method: "POST",
         body: appointmentData,
       }),
-      invalidatesTags: ['Appointment'], // Invalidate cache để refetch khi tạo mới
+      invalidatesTags: ["Appointment"], // Invalidate cache để refetch khi tạo mới
     }),
 
     // API lấy danh sách lịch hẹn
     getAppointments: builder.query({
-      query: () => '/appointments',
-      method: 'GET',
-      providesTags: ['Appointment'], // Cache kết quả
+      query: () => "/appointments",
+      method: "GET",
+      providesTags: ["Appointment"], // Cache kết quả
     }),
 
     // API cập nhật trạng thái lịch hẹn
     updateAppointmentStatus: builder.mutation({
       query: ({ appointmentId, status }) => ({
         url: `/appointments/${appointmentId}/status`,
-        method: 'PUT',
+        method: "PUT",
         body: { status },
       }),
-      invalidatesTags: ['Appointment'], // Invalidate cache khi cập nhật
+      invalidatesTags: ["Appointment"], // Invalidate cache khi cập nhật
     }),
 
     // API hủy lịch hẹn
     cancelAppointment: builder.mutation({
       query: (appointmentId) => ({
         url: `/appointments/${appointmentId}/cancel`,
-        method: 'PUT',
+        method: "PUT",
       }),
-      invalidatesTags: ['Appointment'], // Invalidate cache khi hủy lịch hẹn
+      invalidatesTags: ["Appointment"], // Invalidate cache khi hủy lịch hẹn
     }),
 
     // API dời lịch hẹn
     rescheduleAppointment: builder.mutation({
       query: ({ appointmentId, date, startTime, endTime }) => ({
         url: `/appointments/${appointmentId}/reschedule`,
-        method: 'PUT',
+        method: "PUT",
         body: { date, startTime, endTime },
       }),
-      invalidatesTags: ['Appointment'], // Invalidate cache khi dời lịch
+      invalidatesTags: ["Appointment"], // Invalidate cache khi dời lịch
     }),
   }),
 });
