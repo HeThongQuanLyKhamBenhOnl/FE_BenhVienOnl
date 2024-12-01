@@ -111,6 +111,12 @@ export const doctorApiSlice = createApi({
     getDoctorSchedule: builder.query({
       query: () => "/api/doctor/schedule/me",
     }),
+    getSchedule: builder.query({
+      query: (doctorId) => ({
+        url: `/api/schedule/${doctorId}`,
+        method: "GET",
+      }),
+    }),
     // Cập nhật lịch làm việc của bác sĩ
     updateDoctorSchedule: builder.mutation({
       query: ({ scheduleId, updatedSchedule }) => ({
@@ -148,6 +154,7 @@ export const {
   useUpdateDoctorScheduleMutation,
   useGetDoctorMedicalRecordsQuery,
   useHandlePaymentSuccessQuery,
+  useGetScheduleQuery,
 } = doctorApiSlice;
 
 export default doctorApiSlice;

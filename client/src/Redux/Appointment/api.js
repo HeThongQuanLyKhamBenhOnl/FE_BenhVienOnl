@@ -67,6 +67,30 @@ export const appointmentApiSlice = createApi({
       }),
       invalidatesTags: ["Appointment"], // Invalidate cache khi dời lịch
     }),
+
+    // API thống kê lịch hẹn
+    getAppointmentStats: builder.query({
+      query: () => ({
+        url: "/appointment-stats",
+        method: "GET",
+      }),
+    }),
+
+    // API lấy bác sĩ có số lượng đặt lịch nhiều nhất
+    getTopDoctor: builder.query({
+      query: () => ({
+        url: "/top-doctor",
+        method: "GET",
+      }),
+    }),
+
+    // API lấy danh sách bác sĩ có số lượng đặt lịch nhiều nhất trong tháng
+    getTopDoctorsInMonth: builder.query({
+      query: () => ({
+        url: "/top-doctors-month",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -77,6 +101,9 @@ export const {
   useUpdateAppointmentStatusMutation,
   useCancelAppointmentMutation,
   useRescheduleAppointmentMutation,
+  useGetAppointmentStatsQuery,
+  useGetTopDoctorQuery,
+  useGetTopDoctorsInMonthQuery,
 } = appointmentApiSlice;
 
 export default appointmentApiSlice;

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { DatePicker, Select, Input, Button, message } from "antd";
+import { Select, Input, Button, message } from "antd";
 import moment from "moment";
 import { useSelector } from "react-redux";
 import { useCreateAppointmentMutation } from "../../Redux/Appointment/api";
+import { useGetScheduleQuery } from "../../Redux/Doctor/api";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../component/Footer";
 
-const { Option } = Select;
+const { Option, OptGroup } = Select;
 
 const BookAppointment = () => {
   const { doctorId } = useParams();
@@ -16,23 +17,34 @@ const BookAppointment = () => {
 
   const user = useSelector((state) => state.user.userInfo);
 
-  const [date, setDate] = useState(null);
-  const [shift, setShift] = useState(null);
+  const {
+    data: scheduleData,
+    isLoading: isScheduleLoading,
+    error,
+  } = useGetScheduleQuery(doctorId);
+
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedShift, setSelectedShift] = useState(null);
   const [reasonForVisit, setReasonForVisit] = useState("");
   const [notes, setNotes] = useState("");
+  const [status, setStatus] = useState("pending");
+
+  if (error) {
+    message.error("Không thể tải lịch làm việc của bác sĩ.");
+  }
 
   const handleSubmit = async () => {
-    if (!date || !shift || !reasonForVisit) {
-      return message.error("Vui lòng nhập đầy đủ thông tin!");
+    if (!selectedDate || !selectedShift || !reasonForVisit) {
+      return message.error("Vui lòng điền đầy đủ thông tin!");
     }
 
-    // Định dạng dữ liệu để gửi lên API
     const appointmentData = {
       doctorId,
-      date: date.format("YYYY-MM-DD"), // Định dạng ngày thành YYYY-MM-DD
-      shift, // Buổi khám
+      date: selectedDate,
+      shift: selectedShift,
       reasonForVisit,
       notes,
+      status,
     };
 
     try {
@@ -49,36 +61,18 @@ const BookAppointment = () => {
       <HeaderComponent />
       <div style={styles.container}>
         <div style={styles.wrapper}>
-          {/* Lưu ý */}
           <div style={styles.notesContainer}>
             <h3 style={styles.notesTitle}>Lưu ý :</h3>
             <p style={styles.noteText}>
-              Lịch hẹn có hiệu lực sau khi có xác nhận chính thức từ Phòng khám
-              Bệnh viện .
+              Lịch hẹn có hiệu lực sau khi có xác nhận chính thức từ phòng khám.
             </p>
             <p style={styles.noteText}>
-              Quý khách hàng vui lòng cung cấp thông tin chính xác để được phục
-              vụ tốt nhất. Trong trường hợp cung cấp sai thông tin email & điện
-              thoại, việc xác nhận cuộc hẹn sẽ không hiệu lực.
-            </p>
-            <p style={styles.noteText}>
-              Quý khách sử dụng dịch vụ đặt hẹn trực tuyến, xin vui lòng đặt
-              trước ít nhất là 24 giờ trước khi đến khám.
-            </p>
-            <p style={styles.noteText}>
-              Trong trường hợp khẩn cấp hoặc nghi ngờ có các triệu chứng nguy
-              hiểm, quý khách vui lòng đến trực tiếp Phòng khám hoặc các trung
-              tâm y tế gần nhất để kịp thời xử lý.
+              Vui lòng cung cấp thông tin chính xác để được phục vụ tốt nhất.
             </p>
           </div>
 
-          {/* Form đăng ký */}
           <div style={styles.formContainer}>
             <h2 style={styles.title}>Đăng Ký Khám</h2>
-            <p style={styles.subtitle}>
-              Vui lòng điền thông tin vào form bên dưới để đăng ký khám bệnh
-              theo yêu cầu
-            </p>
             <form style={styles.form}>
               <div style={styles.formGroup}>
                 <Input
@@ -102,44 +96,79 @@ const BookAppointment = () => {
                   style={styles.inputBold}
                 />
                 <Input
-                  placeholder="Số Điện Thoại"
-                  value={user?.phone || ""}
-                  disabled
-                  style={styles.inputBold}
-                />
-              </div>
-              <div style={styles.formGroup}>
-                <Input
                   placeholder="Giới Tính"
                   value={user?.gender || ""}
                   disabled
                   style={styles.inputBold}
                 />
+              </div>
+              <div style={styles.formGroup}>
                 <Input
                   placeholder="Địa Chỉ"
                   value={user?.address || ""}
                   disabled
                   style={styles.inputBold}
                 />
-              </div>
-              <div style={styles.formGroup}>
-                <DatePicker
-                  placeholder="Ngày Khám"
-                  onChange={(value) => setDate(value)}
-                  style={styles.input}
+                <Input
+                  placeholder="Số điện thoại"
+                  value={user?.phone || ""}
+                  disabled
+                  style={styles.inputBold}
                 />
               </div>
+
               <div style={styles.formGroup}>
                 <Select
-                  placeholder="Chọn Ca Khám"
-                  onChange={(value) => setShift(value)}
-                  style={styles.input}
+                  placeholder="Chọn Lịch Khám"
+                  onChange={(value) => {
+                    const [selectedDate, selectedShift] = value.split("|"); // Sử dụng '|' làm phân tách
+                    setSelectedDate(selectedDate);
+                    setSelectedShift(selectedShift);
+                  }}
+                  loading={isScheduleLoading}
+                  style={styles.selectStyled}
+                  optionLabelProp="label"
                 >
-                  <Option value="morning">Buổi sáng</Option>
-                  <Option value="afternoon">Buổi trưa</Option>
-                  <Option value="evening">Buổi tối</Option>
+                  {scheduleData?.schedule &&
+                    Object.entries(
+                      scheduleData.schedule
+                        .flatMap((item) => item.schedule)
+                        .reduce((acc, slot) => {
+                          if (!acc[slot.date]) acc[slot.date] = [];
+                          acc[slot.date].push(slot);
+                          return acc;
+                        }, {})
+                    ).map(([date, slots]) => (
+                      <OptGroup
+                        key={date}
+                        label={new Date(date).toLocaleDateString("vi-VN")}
+                      >
+                        {slots.map((slot) => (
+                          <Option
+                            key={`${date}|${slot.shift}`} // Sử dụng '|' làm ký tự phân tách
+                            value={`${date}|${slot.shift}`} // Giá trị chứa cả ngày và ca
+                            label={`${new Date(date).toLocaleDateString(
+                              "vi-VN"
+                            )} - ${
+                              slot.shift === "morning"
+                                ? "Buổi sáng"
+                                : slot.shift === "afternoon"
+                                ? "Buổi chiều"
+                                : "Buổi tối"
+                            }`}
+                          >
+                            {slot.shift === "morning"
+                              ? "Buổi sáng"
+                              : slot.shift === "afternoon"
+                              ? "Buổi chiều"
+                              : "Buổi tối"}
+                          </Option>
+                        ))}
+                      </OptGroup>
+                    ))}
                 </Select>
               </div>
+
               <div style={styles.formGroup}>
                 <Input.TextArea
                   rows={4}
@@ -212,27 +241,14 @@ const styles = {
     marginBottom: "20px",
     color: "#333",
   },
-  subtitle: {
-    textAlign: "center",
-    color: "#666",
-    fontSize: "16px",
-    marginBottom: "20px",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px",
-  },
   formGroup: {
     display: "flex",
     justifyContent: "space-between",
     gap: "20px",
   },
-  input: {
+  selectStyled: {
     width: "100%",
-    padding: "10px",
     borderRadius: "8px",
-    border: "1px solid #e0e0e0",
   },
   inputBold: {
     width: "100%",
@@ -240,6 +256,9 @@ const styles = {
     borderRadius: "8px",
     border: "1px solid #e0e0e0",
     fontWeight: "bold",
+    color: "#333",
+    backgroundColor: "#f9f9f9",
+    fontSize: "16px",
   },
   textArea: {
     width: "100%",
