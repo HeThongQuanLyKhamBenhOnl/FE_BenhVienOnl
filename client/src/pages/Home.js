@@ -92,6 +92,7 @@ export const Home = () => {
           src={doctor.image}
           alt={doctor.name}
           className="w-full h-full object-cover"
+          style={{ maxWidth: "200px" }}
         />
       </div>
       <h3 className="mt-4 text-sm font-medium text-[#113135] sm:text-base md:font-semibold">
