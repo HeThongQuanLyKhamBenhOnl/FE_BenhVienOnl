@@ -75,6 +75,7 @@ const styles = {
     alignItems: "flex-start", // Điều chỉnh vị trí của cả sidebar và content để chúng nằm trên cùng một trục dọc
     minHeight: "100vh",
     backgroundColor: "#f9f9f9",
+    marginTop: "70px",
   },
   sidebar: {
     width: "250px",
