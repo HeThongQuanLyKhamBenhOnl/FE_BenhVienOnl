@@ -164,7 +164,7 @@ const MedicalRecordDoctor = () => {
 
       {/* Modal for Editing Medical Record */}
       <Modal
-        title="Edit Medical Record"
+        title="Cập nhật thông tin bệnh nhân"
         visible={editModalVisible}
         onOk={handleUpdate}
         onCancel={() => setEditModalVisible(false)}
