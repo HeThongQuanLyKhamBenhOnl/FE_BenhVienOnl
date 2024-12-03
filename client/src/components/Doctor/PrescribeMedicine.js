@@ -20,6 +20,8 @@ import {
   useUpdateMedicalRecordMutation,
 } from "../../Redux/Doctor/api";
 import { useGetMedicinesQuery } from "../../Redux/Medicine/api";
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -55,10 +57,10 @@ const PrescribeMedicine = () => {
     setFormValues({
       prescribedMedicines: record.prescribedMedicines
         ? record.prescribedMedicines.map((item) => ({
-            medicine: item.medicine._id,
-            quantity: item.quantity,
-            total: item.total,
-          }))
+          medicine: item.medicine._id,
+          quantity: item.quantity,
+          total: item.total,
+        }))
         : [],
     });
     setPaymentLink(""); // Reset the payment link on new edit
@@ -242,7 +244,7 @@ const PrescribeMedicine = () => {
         visible={editModalVisible}
         onOk={handleUpdate}
         onCancel={() => setEditModalVisible(false)}
-        width={700}
+        width={800}
       >
         {loadingMedicines ? (
           <Spin size="large" />
@@ -250,7 +252,10 @@ const PrescribeMedicine = () => {
           <>
             <Form layout="vertical">
               {formValues.prescribedMedicines.map((medicine, index) => (
-                <Row gutter={16} key={index}>
+                <Row
+                  gutter={16}
+                  key={index}
+                >
                   <Col span={10}>
                     <Form.Item label="Thuốc" required>
                       <Select
@@ -261,7 +266,10 @@ const PrescribeMedicine = () => {
                         }
                       >
                         {medicinesData?.data.map((med) => (
-                          <Option key={med._id} value={med._id}>
+                          <Option
+                            key={med._id}
+                            value={med._id}
+                          >
                             {med.name}
                           </Option>
                         ))}
@@ -297,10 +305,15 @@ const PrescribeMedicine = () => {
                   </Col>
                   <Col span={2}>
                     <Button
+                      className="btn btn-outline-danger"
                       type="danger"
-                      icon="delete"
+                      icon="Xóa"
                       onClick={() => handleRemoveMedicine(index)}
-                      style={{ marginTop: "40px" }}
+                      style={{ 
+                        marginTop: "30px", 
+                        width: "100%", 
+                        paddingTop: "3px",
+                      }}
                     />
                   </Col>
                 </Row>
