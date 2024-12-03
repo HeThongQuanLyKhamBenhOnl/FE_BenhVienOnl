@@ -40,11 +40,11 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-400 to-green-400">
       <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg max-w-sm w-full">
-        <h2 className="text-2xl font-semibold text-center mb-6">Sign Up</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6">Đăng Ký</h2>
         <Form name="signup" onFinish={onFinish} layout="vertical">
           {/* Tên người dùng */}
           <Form.Item
-            label="Username"
+            label="Tên đăng nhập"
             name="username"
             rules={[
               { required: true, message: "Vui lòng nhập tên người dùng!" },
@@ -64,7 +64,7 @@ const SignUp = () => {
 
           {/* Email */}
           <Form.Item
-            label="Email"
+            label="Địa chỉ Email"
             name="email"
             rules={[
               {
@@ -79,7 +79,7 @@ const SignUp = () => {
 
           {/* Mật khẩu */}
           <Form.Item
-            label="Password"
+            label="Mật khẩu"
             name="password"
             rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
           >
