@@ -20,6 +20,7 @@ import ManageUser from "../components/Admin/ManageUser";
 import ManageDoctor from "../components/Admin/ManageDoctor";
 import DoctorProfile from "../components/Doctor/DoctorProfile";
 import ControlPanel from "../components/Admin/ControlPanel";
+import ManageAllRecord from "../components/Admin/ManageAllRecord";
 import CreateAppoiment from "../components/Appointment/CreateAppoiment";
 
 import Introduce from "../components/Introduce/Introduce";
@@ -192,6 +193,7 @@ function AppRouter() {
           <Route path="department" element={<Department />} />
           <Route path="control" element={<ControlPanel />} />
           <Route path="medicine" element={<ManageMedicine />} />
+          <Route path="allRecord" element={<ManageAllRecord />} />
         </Route>
 
         <Route path="/doctorDashboard/*" element={<DoctorProfile />}>

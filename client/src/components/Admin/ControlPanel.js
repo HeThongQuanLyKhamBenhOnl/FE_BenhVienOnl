@@ -1,11 +1,37 @@
 import React from "react";
 import { Row, Col, Card, Spin, Alert } from "antd";
-import { Line, Pie, Bar } from "@ant-design/charts";
+import { Line } from "react-chartjs-2";
+import { Pie, Bar } from "react-chartjs-2";
 import {
   useGetAppointmentStatsQuery,
   useGetTopDoctorQuery,
   useGetTopDoctorsInMonthQuery,
 } from "../../Redux/Appointment/api";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  PointElement,
+  LineElement,
+} from "chart.js";
+
+// Đăng ký các component của Chart.js
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  PointElement,
+  LineElement
+);
 
 const ControlPanel = () => {
   // Gọi các API
@@ -25,57 +51,61 @@ const ControlPanel = () => {
     error: topDoctorsMonthError,
   } = useGetTopDoctorsInMonthQuery();
 
-  // Biểu đồ Lịch Hẹn Theo Thời Gian
-  const configLine = {
-    data: appointmentStats?.stats || [],
-    xField: "date",
-    yField: "appointmentCount",
-    label: {},
-    point: {
-      size: 5,
-      shape: "diamond",
-    },
-    smooth: true,
+  // Dữ liệu Biểu đồ Line: Lịch Hẹn Theo Tháng
+  const lineData = {
+    labels: appointmentStats?.stats.map((item) => item.date) || [],
+    datasets: [
+      {
+        label: "Số lượng lịch hẹn",
+        data:
+          appointmentStats?.stats.map((item) =>
+            Math.round(item.appointmentCount)
+          ) || [], // Làm tròn số
+        borderColor: "#009eff",
+        backgroundColor: "rgba(0, 158, 255, 0.5)",
+        tension: 0.4,
+      },
+    ],
   };
 
-  // Biểu đồ Top Bác Sĩ Trong Tháng
-  const configBar = {
-    data: topDoctorsInMonth?.topDoctors || [],
-    xField: "fullName",
-    yField: "appointmentCount",
-    seriesField: "fullName",
-    colorField: "fullName",
-    label: {
-      position: "top",
-      style: {
-        fill: "#595959",
-        opacity: 0.8,
+  // Dữ liệu Biểu đồ Bar: Top Bác Sĩ Trong Tháng
+  const barData = {
+    labels: topDoctorsInMonth?.topDoctors.map((item) => item.fullName) || [],
+    datasets: [
+      {
+        label: "Số lượng lịch hẹn",
+        data:
+          topDoctorsInMonth?.topDoctors.map((item) => item.appointmentCount) ||
+          [],
+        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
       },
-    },
+    ],
   };
 
-  // Biểu đồ Pie Phân Bố Bệnh Nhân (Giả định dữ liệu từ API)
-  const configPie = {
-    data: topDoctors?.topDoctors || [],
-    angleField: "appointmentCount",
-    colorField: "fullName",
-    radius: 1,
-    label: {
-      content: (data) => {
-        const total =
-          topDoctors?.topDoctors.reduce(
-            (sum, item) => sum + item.appointmentCount,
-            0
-          ) || 1;
-        const percentage = ((data.appointmentCount / total) * 100).toFixed(1);
-        return `${percentage}%`;
+  // Dữ liệu Biểu đồ Pie: Phân Bố Bác Sĩ Theo Lịch Hẹn
+  const pieData = {
+    labels: topDoctors?.topDoctors.map((item) => item.fullName) || [],
+    datasets: [
+      {
+        label: "Số lượng lịch hẹn",
+        data: topDoctors?.topDoctors.map((item) => item.appointmentCount) || [],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.6)",
+          "rgba(54, 162, 235, 0.6)",
+          "rgba(255, 206, 86, 0.6)",
+          "rgba(75, 192, 192, 0.6)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+        ],
+        borderWidth: 1,
       },
-      style: {
-        fontSize: "1rem",
-        fill: "#000",
-      },
-    },
-    interactions: [{ type: "element-active" }],
+    ],
   };
 
   if (isStatsLoading || isTopDoctorsLoading || isTopDoctorsMonthLoading) {
@@ -101,19 +131,19 @@ const ControlPanel = () => {
       <Row gutter={16}>
         <Col span={12}>
           <Card title="Lịch Hẹn Theo Tháng">
-            <Line {...configLine} />
+            <Line data={lineData} />
           </Card>
         </Col>
         <Col span={12}>
           <Card title="Phân Bố Bác Sĩ Theo Lịch Hẹn">
-            <Pie {...configPie} />
+            <Pie data={pieData} />
           </Card>
         </Col>
       </Row>
       <Row gutter={16} style={{ marginTop: 16 }}>
         <Col span={24}>
           <Card title="Top Bác Sĩ Trong Tháng">
-            <Bar {...configBar} />
+            <Bar data={barData} />
           </Card>
         </Col>
       </Row>

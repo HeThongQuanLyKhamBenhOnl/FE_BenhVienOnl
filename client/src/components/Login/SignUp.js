@@ -48,6 +48,15 @@ const SignUp = () => {
             name="username"
             rules={[
               { required: true, message: "Vui lòng nhập tên người dùng!" },
+              {
+                pattern: /^(?!.*[!@#$%^&*()_+=[\]{};':"\\|,.<>/?]).{4,}$/,
+                message:
+                  "Tên người dùng phải lớn hơn 4 ký tự và không chứa ký tự đặc biệt!",
+              },
+              {
+                pattern: /^[^\d].*$/,
+                message: "Tên người dùng không được bắt đầu bằng số!",
+              },
             ]}
           >
             <Input placeholder="Nhập tên người dùng" />
@@ -57,7 +66,14 @@ const SignUp = () => {
           <Form.Item
             label="Họ và tên"
             name="fullName"
-            rules={[{ required: true, message: "Vui lòng nhập họ và tên!" }]}
+            rules={[
+              { required: true, message: "Vui lòng nhập họ và tên!" },
+              {
+                pattern: /^[^\d!@#$%^&*()_+=[\]{};':"\\|,.<>/?]{5,}$/,
+                message:
+                  "Họ và tên phải lớn hơn 5 ký tự, không chứa ký tự đặc biệt hoặc số!",
+              },
+            ]}
           >
             <Input placeholder="Nhập họ và tên" />
           </Form.Item>
@@ -81,7 +97,13 @@ const SignUp = () => {
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
+            rules={[
+              { required: true, message: "Vui lòng nhập mật khẩu!" },
+              {
+                min: 6,
+                message: "Mật khẩu phải lớn hơn 6 ký tự!",
+              },
+            ]}
           >
             <Input.Password
               placeholder="Nhập mật khẩu"

@@ -139,10 +139,10 @@ const Navigation = () => {
         <Menu.Item
           className="padR10"
           style={{ ...flexCenter }}
-          key="/adminDashboard"
+          key="/adminDashboard/control"
           icon={<FaUserShield style={iconStyle} />}
         >
-          <a href="/adminDashboard">Quản lý Hệ thống</a>
+          <a href="/adminDashboard/control">Quản lý Hệ thống</a>
         </Menu.Item>
       )}
 

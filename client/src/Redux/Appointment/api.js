@@ -70,8 +70,8 @@ export const appointmentApiSlice = createApi({
 
     // API thống kê lịch hẹn
     getAppointmentStats: builder.query({
-      query: () => ({
-        url: "/appointment-stats",
+      query: (period) => ({
+        url: `/appointment-stats?period=month`,
         method: "GET",
       }),
     }),

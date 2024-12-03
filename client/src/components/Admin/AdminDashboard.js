@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  DashboardOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  IdcardOutlined,
-  ProfileOutlined,
-} from "@ant-design/icons";
+  FaUser,
+  FaChartBar,
+  FaUserMd,
+  FaWarehouse,
+  FaBookMedical,
+  FaFileAlt,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../img/logo.jfif";
 import UserMenu from "../Header/UserMenu";
@@ -17,34 +17,39 @@ import UserMenu from "../Header/UserMenu";
 const { Sider, Content, Header } = Layout;
 
 const AdminDashboard = () => {
-  const [collapsed, setCollapsed] = useState(false); // Quản lý trạng thái mở/đóng của Sider
+  const [collapsed, setCollapsed] = useState(false);
 
-  // Cấu hình các items cho Menu theo format mới của Ant Design
+  // Cấu hình các items cho Menu
   const menuItems = [
     {
       key: "1",
-      icon: <DashboardOutlined />,
+      icon: <FaChartBar />,
       label: <Link to="/adminDashboard/control">Bảng Điều Khiển</Link>,
     },
     {
       key: "2",
-      icon: <UserOutlined />,
+      icon: <FaUser />,
       label: <Link to="/adminDashboard/user">Quản Lý Người Dùng</Link>,
     },
     {
       key: "3",
-      icon: <IdcardOutlined />,
+      icon: <FaUserMd />,
       label: <Link to="/adminDashboard/doctor">Quản Lý Bác Sĩ</Link>,
     },
     {
       key: "4",
-      icon: <ProfileOutlined />,
+      icon: <FaWarehouse />,
       label: <Link to="/adminDashboard/medicine">Quản Lý Kho Thuốc</Link>,
     },
     {
       key: "5",
-      icon: <UploadOutlined />,
+      icon: <FaBookMedical />,
       label: <Link to="/adminDashboard/department">Quản Lý Chuyên Khoa</Link>,
+    },
+    {
+      key: "6",
+      icon: <FaFileAlt />,
+      label: <Link to="/adminDashboard/allRecord">Quản Lý Hồ Sơ Bệnh Án</Link>,
     },
   ];
 
@@ -52,15 +57,14 @@ const AdminDashboard = () => {
     <Layout className="min-h-screen">
       {/* Sidebar */}
       <Sider
-        trigger={null} // Tắt trigger mặc định của Ant Design
+        trigger={null}
         collapsible
-        collapsed={collapsed} // Điều khiển trạng thái thu gọn/mở rộng
+        collapsed={collapsed}
         width={250}
         style={{ backgroundColor: "#808080" }}
       >
         <div className="logo p-4 text-center">
           <a href="/">
-            {" "}
             <img src={logo} alt="logo" className="h-12 mx-auto" />
           </a>
         </div>
@@ -81,13 +85,13 @@ const AdminDashboard = () => {
           className="p-4 flex justify-between items-center"
         >
           {collapsed ? (
-            <MenuUnfoldOutlined
+            <FaBars
               className="trigger"
               onClick={() => setCollapsed(!collapsed)}
               style={{ fontSize: "20px", color: "#fff", cursor: "pointer" }}
             />
           ) : (
-            <MenuFoldOutlined
+            <FaTimes
               className="trigger"
               onClick={() => setCollapsed(!collapsed)}
               style={{ fontSize: "20px", color: "#fff", cursor: "pointer" }}
@@ -95,11 +99,10 @@ const AdminDashboard = () => {
           )}
 
           <div className="ml-auto">
-            <UserMenu /> {/* Đưa UserMenu sang phải */}
+            <UserMenu />
           </div>
         </Header>
         <Content className="p-8 bg-gray-100">
-          {/* Phần nội dung sẽ thay đổi tại đây dựa vào các Route con */}
           <Outlet />
         </Content>
       </Layout>
