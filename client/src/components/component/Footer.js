@@ -46,7 +46,7 @@ const FooterComponent = () => {
                 </p>
                 <p className="flex items-center">
                   <MailOutlined className="mr-2 text-lg" />{" "}
-                  contact.us@umcclinic.com.vn
+                  contact.us@benhvienonl.com
                 </p>
                 <p className="flex items-center">
                   <ClockCircleOutlined className="mr-2 text-lg" /> Lịch làm

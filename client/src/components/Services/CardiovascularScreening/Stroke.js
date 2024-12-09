@@ -42,52 +42,62 @@ const Stroke = () => {
 };
 
 const HeaderSection = () => (
-  <Row
+  <Col
     style={{
+      margin: "40px 0px",
       display: "flex",
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      flexDirection: "column",
-      padding: "50px",
-    }}
-  >
-    <h2 className="text-2xl font-bold text-blue-900">
-      GÓI TẦM SOÁT NGUY CƠ ĐỘT QUỴ
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: "0.5rem",
-        }}
-      >
-        <span
+      width: "100%"
+    }}>
+    <Row
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: "50px",
+      }}
+    >
+      <h2 className="text-2xl font-bold text-blue-900">
+        GÓI TẦM SOÁT NGUY CƠ ĐỘT QUỴ
+        <div
           style={{
-            width: "50px",
-            height: "1px",
-            backgroundColor: "#a3d1ef",
-            margin: "0 10px",
-          }}
-        ></span>
-        <span
-          style={{
-            fontSize: "1.5rem",
-            color: "#73c2ec",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "0.5rem",
           }}
         >
-          ✦
-        </span>
-        <span
-          style={{
-            width: "50px",
-            height: "1px",
-            backgroundColor: "#a3d1ef",
-            margin: "0 10px",
-          }}
-        ></span>
-      </div>
-    </h2>
-  </Row>
+          <span
+            style={{
+              width: "50px",
+              height: "1px",
+              backgroundColor: "#a3d1ef",
+              margin: "0 10px",
+            }}
+          ></span>
+          <span
+            style={{
+              fontSize: "1.5rem",
+              color: "#73c2ec",
+            }}
+          >
+            ✦
+          </span>
+          <span
+            style={{
+              width: "50px",
+              height: "1px",
+              backgroundColor: "#a3d1ef",
+              margin: "0 10px",
+            }}
+          ></span>
+        </div>
+      </h2>
+    </Row>
+  </Col>
 );
 
 const AccessSection = () => (
@@ -149,7 +159,7 @@ const renderAccessContent = (index, title, content) => (
     </Row>
     <Row>
       <p
-        style={{width: "100%"}}
+        style={{ width: "100%" }}
         className="text-justify text-lg"
         dangerouslySetInnerHTML={{ __html: content }}
       />
