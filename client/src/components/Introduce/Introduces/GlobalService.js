@@ -43,52 +43,54 @@ const HighTechDevice = () => {
 };
 
 const HeaderSection = () => (
-  <Row
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-      padding: "50px",
-    }}
-  >
-    <h2 className="text-2xl font-bold text-blue-900">
-      DỊCH VỤ CHUẨN QUỐC TẾ
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: "0.5rem",
-        }}
-      >
-        <span
+  <Col style={{ margin: "40px 0px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%" }}>
+    <Row
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: "50px",
+      }}
+    >
+      <h2 className="text-2xl font-bold text-blue-900">
+        DỊCH VỤ CHUẨN QUỐC TẾ
+        <div
           style={{
-            width: "50px",
-            height: "1px",
-            backgroundColor: "#a3d1ef",
-            margin: "0 10px",
-          }}
-        ></span>
-        <span
-          style={{
-            fontSize: "1.5rem",
-            color: "#73c2ec",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "0.5rem",
           }}
         >
-          ✦
-        </span>
-        <span
-          style={{
-            width: "50px",
-            height: "1px",
-            backgroundColor: "#a3d1ef",
-            margin: "0 10px",
-          }}
-        ></span>
-      </div>
-    </h2>
-  </Row>
+          <span
+            style={{
+              width: "50px",
+              height: "1px",
+              backgroundColor: "#a3d1ef",
+              margin: "0 10px",
+            }}
+          ></span>
+          <span
+            style={{
+              fontSize: "1.5rem",
+              color: "#73c2ec",
+            }}
+          >
+            ✦
+          </span>
+          <span
+            style={{
+              width: "50px",
+              height: "1px",
+              backgroundColor: "#a3d1ef",
+              margin: "0 10px",
+            }}
+          ></span>
+        </div>
+      </h2>
+    </Row>
+  </Col>
 );
 
 const AccessSection = () => (
@@ -97,8 +99,8 @@ const AccessSection = () => (
       1,
       "Dịch vụ chuẩn quốc tế",
       `
-        <br />- Phòng khám Bệnh viện  được quản lý và vận hành theo tiêu chuẩn quốc tế, cơ sở vật chất hiện đại, tiện nghi, không gian khám chữa bệnh rộng rãi, sạch sẽ.
-        <br />- Thủ tục đặt hẹn tiện lợi qua tổng đài 1800 6023 (Miễn phí cuộc gọi) mà không cần phải xếp hàng lấy số.
+      <br />- Phòng khám Bệnh viện  được quản lý và vận hành theo tiêu chuẩn quốc tế, cơ sở vật chất hiện đại, tiện nghi, không gian khám chữa bệnh rộng rãi, sạch sẽ.
+      <br />- Thủ tục đặt hẹn tiện lợi qua tổng đài 1800 6023 (Miễn phí cuộc gọi) mà không cần phải xếp hàng lấy số.
       `
     )}
   </div>
