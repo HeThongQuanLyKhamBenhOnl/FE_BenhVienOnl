@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Select, Input, Button, message } from "antd";
+import { Select, Input, Button, message, Typography } from "antd";
 import moment from "moment";
 import { useSelector } from "react-redux";
 import { useCreateAppointmentMutation } from "../../Redux/Appointment/api";
-import { useGetScheduleQuery } from "../../Redux/Doctor/api";
+import {
+  useGetScheduleQuery,
+  useGetDoctorByIdQuery,
+} from "../../Redux/Doctor/api";
 import HeaderComponent from "../Header/Header";
 import FooterComponent from "../component/Footer";
 
 const { Option, OptGroup } = Select;
+const { Title, Text } = Typography;
 
 const BookAppointment = () => {
   const { doctorId } = useParams();
   const navigate = useNavigate();
   const [createAppointment, { isLoading }] = useCreateAppointmentMutation();
-
   const user = useSelector((state) => state.user.userInfo);
+
+  const { data: doctorData, isLoading: isDoctorLoading } =
+    useGetDoctorByIdQuery(doctorId);
 
   const {
     data: scheduleData,
@@ -27,7 +33,7 @@ const BookAppointment = () => {
   const [selectedShift, setSelectedShift] = useState(null);
   const [reasonForVisit, setReasonForVisit] = useState("");
   const [notes, setNotes] = useState("");
-  const [status, setStatus] = useState("pending");
+  const [status] = useState("pending");
 
   if (error) {
     message.error("Không thể tải lịch làm việc của bác sĩ.");
@@ -61,18 +67,51 @@ const BookAppointment = () => {
       <HeaderComponent />
       <div style={styles.container}>
         <div style={styles.wrapper}>
-          <div style={styles.notesContainer}>
-            <h3 style={styles.notesTitle}>Lưu ý :</h3>
-            <p style={styles.noteText}>
-              Lịch hẹn có hiệu lực sau khi có xác nhận chính thức từ phòng khám.
-            </p>
-            <p style={styles.noteText}>
-              Vui lòng cung cấp thông tin chính xác để được phục vụ tốt nhất.
-            </p>
+          {/* Thông tin bác sĩ */}
+          <div style={styles.doctorInfoContainer}>
+            {isDoctorLoading ? (
+              <Text>Đang tải thông tin bác sĩ...</Text>
+            ) : doctorData?.doctor ? (
+              <>
+                <Title level={4} style={styles.doctorTitle}>
+                  Thông Tin Bác Sĩ
+                </Title>
+                <img
+                  src={doctorData?.doctor?.images?.[0] || "default-image-url"}
+                  alt="Doctor"
+                  style={styles.doctorImage} // Thêm style mới
+                />
+                <Text>
+                  <strong>Bác Sĩ:</strong> {doctorData.doctor.user.fullName}
+                </Text>
+                <br />
+                <Text>
+                  <strong>Email:</strong> {doctorData.doctor.user.email}
+                </Text>
+                <br />
+                <Text>
+                  <strong>Số điện thoại:</strong> {doctorData.doctor.user.phone}
+                </Text>
+                <br />
+                <Text>
+                  <strong>Chuyên khoa:</strong> {doctorData.doctor.specialty}
+                </Text>
+                <br />
+                <Text>
+                  <strong>Kinh nghiệm:</strong> {doctorData.doctor.experience}{" "}
+                  năm
+                </Text>
+              </>
+            ) : (
+              <Text>Không tìm thấy thông tin bác sĩ</Text>
+            )}
           </div>
 
+          {/* Form Đăng Ký */}
           <div style={styles.formContainer}>
-            <h2 style={styles.title}>Đăng Ký Khám</h2>
+            <Title level={3} style={styles.title}>
+              Đăng Ký Khám
+            </Title>
             <form style={styles.form}>
               <div style={styles.formGroup}>
                 <Input
@@ -116,26 +155,30 @@ const BookAppointment = () => {
                   style={styles.inputBold}
                 />
               </div>
-
               <div style={styles.formGroup}>
                 <Select
                   placeholder="Chọn Lịch Khám"
                   onChange={(value) => {
-                    const [selectedDate, selectedShift] = value.split("|"); // Sử dụng '|' làm phân tách
+                    const [selectedDate, selectedShift] = value.split("|");
                     setSelectedDate(selectedDate);
                     setSelectedShift(selectedShift);
                   }}
                   loading={isScheduleLoading}
                   style={styles.selectStyled}
-                  optionLabelProp="label"
                 >
                   {scheduleData?.schedule &&
                     Object.entries(
                       scheduleData.schedule
                         .flatMap((item) => item.schedule)
                         .reduce((acc, slot) => {
-                          if (!acc[slot.date]) acc[slot.date] = [];
-                          acc[slot.date].push(slot);
+                          const today = new Date();
+                          const slotDate = new Date(slot.date);
+
+                          // Lọc chỉ lấy lịch khám từ ngày hiện tại trở về sau
+                          if (slotDate >= today) {
+                            if (!acc[slot.date]) acc[slot.date] = [];
+                            acc[slot.date].push(slot);
+                          }
                           return acc;
                         }, {})
                     ).map(([date, slots]) => (
@@ -145,17 +188,8 @@ const BookAppointment = () => {
                       >
                         {slots.map((slot) => (
                           <Option
-                            key={`${date}|${slot.shift}`} // Sử dụng '|' làm ký tự phân tách
-                            value={`${date}|${slot.shift}`} // Giá trị chứa cả ngày và ca
-                            label={`${new Date(date).toLocaleDateString(
-                              "vi-VN"
-                            )} - ${
-                              slot.shift === "morning"
-                                ? "Buổi sáng"
-                                : slot.shift === "afternoon"
-                                ? "Buổi chiều"
-                                : "Buổi tối"
-                            }`}
+                            key={`${date}|${slot.shift}`}
+                            value={`${date}|${slot.shift}`}
                           >
                             {slot.shift === "morning"
                               ? "Buổi sáng"
@@ -168,10 +202,9 @@ const BookAppointment = () => {
                     ))}
                 </Select>
               </div>
-
               <div style={styles.formGroup}>
                 <Input.TextArea
-                  rows={4}
+                  rows={3}
                   placeholder="Lý Do Khám"
                   value={reasonForVisit}
                   onChange={(e) => setReasonForVisit(e.target.value)}
@@ -180,7 +213,7 @@ const BookAppointment = () => {
               </div>
               <div style={styles.formGroup}>
                 <Input.TextArea
-                  rows={4}
+                  rows={3}
                   placeholder="Triệu chứng hoặc ghi chú thêm"
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
@@ -193,7 +226,7 @@ const BookAppointment = () => {
                 loading={isLoading}
                 style={styles.submitButton}
               >
-                {isLoading ? "Đang Đặt..." : "Xác Nhận Đặt Lịch"}
+                Xác Nhận Đặt Lịch
               </Button>
             </form>
           </div>
@@ -204,14 +237,15 @@ const BookAppointment = () => {
   );
 };
 
+// Styles
 const styles = {
   container: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#f4f6f9",
-    minHeight: "100vh",
-    padding: "20px",
+    padding: "30px",
+    marginTop: "64px",
   },
   wrapper: {
     display: "flex",
@@ -219,72 +253,76 @@ const styles = {
     maxWidth: "1200px",
     width: "100%",
   },
-  formContainer: {
-    backgroundColor: "#fff",
-    padding: "40px",
-    borderRadius: "12px",
-    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-    flex: 1,
-  },
-  notesContainer: {
-    flex: 0.5,
-    backgroundColor: "#007bff",
+  doctorInfoContainer: {
+    flex: 0.4,
+    backgroundColor: "#e6f7ff",
     padding: "20px",
-    borderRadius: "12px",
-    color: "#fff",
-    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+  },
+  formContainer: {
+    flex: 0.6,
+    backgroundColor: "#fff",
+    padding: "30px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
   },
   title: {
     textAlign: "center",
-    fontSize: "28px",
-    fontWeight: "bold",
     marginBottom: "20px",
+    fontWeight: "600",
     color: "#333",
   },
   formGroup: {
     display: "flex",
-    justifyContent: "space-between",
     gap: "20px",
+    marginBottom: "15px",
+  },
+  inputBold: {
+    flex: 1,
+    padding: "10px",
+    borderRadius: "8px",
+    border: "1px solid #dcdcdc",
+    fontWeight: "bold",
   },
   selectStyled: {
     width: "100%",
     borderRadius: "8px",
   },
-  inputBold: {
-    width: "100%",
-    padding: "10px",
-    borderRadius: "8px",
-    border: "1px solid #e0e0e0",
-    fontWeight: "bold",
-    color: "#333",
-    backgroundColor: "#f9f9f9",
-    fontSize: "16px",
-  },
   textArea: {
     width: "100%",
     padding: "10px",
     borderRadius: "8px",
-    border: "1px solid #e0e0e0",
+    border: "1px solid #dcdcdc",
   },
   submitButton: {
+    display: "block",
+    margin: "20px auto 0",
     width: "200px",
-    alignSelf: "center",
-    padding: "10px 20px",
-    backgroundColor: "#007bff",
-    color: "#fff",
+    height: "45px",
     fontSize: "16px",
-    fontWeight: "bold",
-    borderRadius: "8px",
-  },
-  notesTitle: {
-    fontSize: "20px",
-    fontWeight: "bold",
-    marginBottom: "10px",
-  },
-  noteText: {
-    fontSize: "14px",
+    backgroundColor: "#009eff",
     color: "#fff",
-    marginBottom: "10px",
+    borderRadius: "8px",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  doctorImage: {
+    width: "250px", // Chiều rộng ảnh nhỏ hơn
+    height: "250px", // Chiều cao ảnh nhỏ hơn
+    borderRadius: "50%", // Bo tròn ảnh
+    objectFit: "cover", // Giữ tỷ lệ ảnh không bị méo
+    margin: "10px auto", // Căn giữa ảnh trong container
+    display: "block", // Đảm bảo ảnh hiển thị là block
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Đổ bóng nhẹ cho ảnh
+  },
+  doctorInfoContainer: {
+    flex: 0.4,
+    backgroundColor: "#e6f7ff",
+    padding: "20px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    textAlign: "center", // Căn giữa nội dung trong container
   },
 };
 

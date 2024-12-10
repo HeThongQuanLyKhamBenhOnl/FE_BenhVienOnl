@@ -1,9 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import API from "../api";
 
-// const API = axios.create({
-//   baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000",
-// });
+export const sendOtpWithDetails = createAsyncThunk(
+  "user/sendOtpWithDetails",
+  async (userData, { rejectWithValue }) => {
+    try {
+      const response = await API.post("/api/users/send-otp", userData);
+      return response.data;
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      return rejectWithValue({ message });
+    }
+  }
+);
 
 export const registerUser = createAsyncThunk(
   "user/register",
@@ -376,6 +388,20 @@ const userSlice = createSlice({
       .addCase(forgotPassword.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload.message; // Đặt thông báo lỗi nếu có
+      })
+      .addCase(sendOtpWithDetails.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.successMessage = null;
+      })
+      .addCase(sendOtpWithDetails.fulfilled, (state, action) => {
+        state.loading = false;
+        state.successMessage = action.payload.message; // Lưu thông báo thành công
+        state.tempUser = action.payload.tempUser; // Lưu thông tin tạm thời
+      })
+      .addCase(sendOtpWithDetails.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message; // Lưu thông báo lỗi
       });
   },
 });

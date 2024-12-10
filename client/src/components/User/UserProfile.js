@@ -6,7 +6,6 @@ import {
   FaUser,
   FaCalendarAlt,
   FaFileMedical,
-  FaComments,
   FaCreditCard,
   FaSignOutAlt,
   FaPrescriptionBottleAlt,
@@ -16,38 +15,32 @@ import {
 const UserProfile = () => {
   // Lấy vai trò của người dùng (giả sử vai trò được lưu trong localStorage)
   const role = localStorage.getItem("role"); // Hoặc lấy từ Redux Store nếu bạn sử dụng Redux
-
   const menuItems = [
     { name: "Thông tin cá nhân", path: "/user/profile", icon: <FaUser /> },
     {
       name: "Lịch khám của tôi",
       path: "/user/appointments",
       icon: <FaCalendarAlt />,
-      allowedRoles: ["user"], // Chỉ hiển thị với người dùng thường
     },
     {
       name: "Hồ sơ bệnh án",
       path: "/user/medical-record",
       icon: <FaFileMedical />,
-      allowedRoles: ["user"], // Chỉ hiển thị với người dùng thường
     },
     {
       name: "Toa Thuốc Của tôi",
       path: "/user/medicine",
       icon: <FaPrescriptionBottleAlt />,
-      allowedRoles: ["user"], // Chỉ hiển thị với người dùng thường
     },
     {
       name: "Hóa Đơn Toa Thuốc",
       path: "/user/invoice",
       icon: <FaFileInvoice />,
-      allowedRoles: ["user"], // Chỉ hiển thị với người dùng thường
     },
     {
       name: "Quản lý thẻ",
       path: "/profile/manage-card",
       icon: <FaCreditCard />,
-      allowedRoles: ["user"], // Chỉ hiển thị với người dùng thường
     },
     { name: "Đăng xuất", path: "/logout", icon: <FaSignOutAlt /> },
   ];

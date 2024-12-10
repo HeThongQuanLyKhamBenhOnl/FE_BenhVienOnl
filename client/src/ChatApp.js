@@ -17,11 +17,16 @@ const ChatApp = () => {
     const fetchChatRooms = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/chatList", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "http://localhost:5000/api/chatList",
+          // const response = await axios.get(
+          //   "https://phongkhamonline.onrender.com/api/chatList",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setChatRooms(response.data.chats);
       } catch (error) {
         console.error("Lỗi khi lấy danh sách phòng chat:", error);
@@ -32,6 +37,7 @@ const ChatApp = () => {
   useEffect(() => {
     if (!activeChatId) return;
     const newSocket = io("http://localhost:5000");
+    // const newSocket = io("/");
     setSocket(newSocket);
     // Tham gia phòng chat
     newSocket.emit("joinChat", activeChatId);

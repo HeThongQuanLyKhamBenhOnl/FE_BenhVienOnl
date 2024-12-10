@@ -15,6 +15,17 @@ const Appointments = () => {
 
   const appointments = appointmentsData?.appointments || [];
 
+  // Hàm chuyển đổi trạng thái
+  const getStatusLabel = (status) => {
+    switch (status) {
+      case "pending":
+        return "Đang chờ";
+      case "Completed":
+        return "Xác nhận";
+      default:
+        return status; // Giữ nguyên trạng thái khác
+    }
+  };
   return (
     <div style={styles.container}>
       <div style={styles.wrapper}>
@@ -76,7 +87,9 @@ const Appointments = () => {
                 )}
                 <p>
                   <strong>Trạng thái:</strong>{" "}
-                  <span style={styles.status}>{appointment.status}</span>
+                  <span style={styles.status}>
+                    {getStatusLabel(appointment.status)}
+                  </span>
                 </p>
               </li>
             ))}

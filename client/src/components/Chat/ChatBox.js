@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import io from "socket.io-client";
 // Kết nối tới server Socket.IO
 const socket = io("http://localhost:5000");
+// const socket = io("/");
 const ChatBox = ({ chatId, doctorId, patientId }) => {
   const [messageContent, setMessageContent] = useState("");
   const { role, _id: userId } = useSelector(

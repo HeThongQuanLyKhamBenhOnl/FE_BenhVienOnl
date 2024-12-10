@@ -48,7 +48,7 @@ function App() {
         <div
           style={{
             position: "fixed",
-            top: 0,
+            top: 20,
             left: 0,
             width: "100vw",
             height: "100vh",
@@ -71,11 +71,13 @@ function App() {
               overflow: "hidden",
               display: "flex",
               flexDirection: "column",
+              marginTop: 40,
             }}
           >
             {/* Header của modal */}
             <div
               style={{
+                paddingTop: "1rem",
                 padding: "1rem",
                 borderBottom: "1px solid #e5e7eb",
                 display: "flex",

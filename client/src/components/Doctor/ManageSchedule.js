@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Form,
   DatePicker,
@@ -8,6 +8,7 @@ import {
   Card,
   Typography,
   List,
+  Tabs,
   Modal,
 } from "antd";
 import {
@@ -19,6 +20,7 @@ import moment from "moment";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
+const { TabPane } = Tabs;
 
 const ManageSchedule = () => {
   const [form] = Form.useForm();
@@ -29,6 +31,16 @@ const ManageSchedule = () => {
   const { data: scheduleData, refetch } = useGetDoctorScheduleQuery();
   const [createSchedule] = useCreateScheduleMutation();
   const [updateDoctorSchedule] = useUpdateDoctorScheduleMutation();
+
+  const today = moment().startOf("day");
+
+  const currentSchedules = scheduleData?.schedule.filter((item) =>
+    moment(item.date).isSameOrAfter(today)
+  );
+
+  const pastSchedules = scheduleData?.schedule.filter((item) =>
+    moment(item.date).isBefore(today)
+  );
 
   const handleCreate = async (values) => {
     const { date, shift } = values;
@@ -154,35 +166,59 @@ const ManageSchedule = () => {
           </Form.Item>
         </Form>
 
-        <Title level={4} style={styles.title}>
-          Lịch làm việc hiện tại
-        </Title>
-        <List
-          itemLayout="horizontal"
-          dataSource={scheduleData?.schedule}
-          renderItem={(item) => (
-            <List.Item
-              actions={[
-                <Button type="link" onClick={() => openUpdateModal(item)}>
-                  Cập nhật
-                </Button>,
-              ]}
-            >
-              <List.Item.Meta
-                title={
-                  <Text>
-                    Ngày: {moment(item.date).format("YYYY-MM-DD")} | Ca:{" "}
-                    {item.shift === "morning"
-                      ? "Buổi sáng"
-                      : item.shift === "afternoon"
-                      ? "Buổi trưa"
-                      : "Buổi tối"}
-                  </Text>
-                }
-              />
-            </List.Item>
-          )}
-        />
+        <Tabs defaultActiveKey="1">
+          <TabPane tab="Lịch làm việc hiện tại" key="1">
+            <List
+              itemLayout="horizontal"
+              dataSource={currentSchedules}
+              renderItem={(item) => (
+                <List.Item
+                  actions={[
+                    <Button type="link" onClick={() => openUpdateModal(item)}>
+                      Cập nhật
+                    </Button>,
+                  ]}
+                >
+                  <List.Item.Meta
+                    title={
+                      <Text>
+                        Ngày: {moment(item.date).format("YYYY-MM-DD")} | Ca:{" "}
+                        {item.shift === "morning"
+                          ? "Buổi sáng"
+                          : item.shift === "afternoon"
+                          ? "Buổi trưa"
+                          : "Buổi tối"}
+                      </Text>
+                    }
+                  />
+                </List.Item>
+              )}
+            />
+          </TabPane>
+
+          <TabPane tab="Lịch sử làm việc" key="2">
+            <List
+              itemLayout="horizontal"
+              dataSource={pastSchedules}
+              renderItem={(item) => (
+                <List.Item>
+                  <List.Item.Meta
+                    title={
+                      <Text>
+                        Ngày: {moment(item.date).format("YYYY-MM-DD")} | Ca:{" "}
+                        {item.shift === "morning"
+                          ? "Buổi sáng"
+                          : item.shift === "afternoon"
+                          ? "Buổi trưa"
+                          : "Buổi tối"}
+                      </Text>
+                    }
+                  />
+                </List.Item>
+              )}
+            />
+          </TabPane>
+        </Tabs>
 
         {/* Modal for updating schedule */}
         <Modal

@@ -113,6 +113,12 @@ const ManageAppointment = () => {
       title: "Trạng thái",
       dataIndex: "status",
       key: "status",
+      render: (status) =>
+        status === "pending"
+          ? "Đang chờ"
+          : status === "Completed"
+          ? "Xác nhận"
+          : status,
     },
     {
       title: "Hành động",
@@ -155,6 +161,12 @@ const ManageAppointment = () => {
       title: "Trạng thái",
       dataIndex: "status",
       key: "status",
+      render: (status) =>
+        status === "pending"
+          ? "Đang chờ"
+          : status === "Completed"
+          ? "Xác nhận"
+          : status,
     },
   ];
 

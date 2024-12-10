@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: "http://localhost:5000",
-  // baseURL: "https://phongkhamonline.onrender.com"
+  // baseURL: "https://phongkhamonline.onrender.com",
 });
 
 // Cấu hình để thêm token vào header của mọi yêu cầu

@@ -131,6 +131,7 @@ import PrescribeMedicine from "../components/Doctor/PrescribeMedicine";
 import MedicineUser from "../components/User/MedicineUser";
 import PatientInvoice from "../components/Doctor/PatientInvoice";
 import Invoice from "../components/User/Invoice";
+import OtpVerification from "../components/Login/OtpVerification";
 
 const ProtectedRoute = ({ element, redirectTo }) => {
   const { userInfo } = useSelector((state) => state.user);
@@ -155,6 +156,7 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/otp-verification" element={<OtpVerification />} />
         <Route path="/confirm-otp" element={<ConfirmOTP />} />
 
         <Route

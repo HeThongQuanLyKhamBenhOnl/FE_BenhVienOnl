@@ -67,6 +67,7 @@ const Invoice = () => {
                   <th style={styles.tableHeader}>Tên thuốc</th>
                   <th style={styles.tableHeader}>Số lượng</th>
                   <th style={styles.tableHeader}>Đơn giá</th>
+                  <th style={styles.tableHeader}>Tổng tiền</th>
                 </tr>
               </thead>
               <tbody>
@@ -79,8 +80,31 @@ const Invoice = () => {
                     <td style={styles.tableCell}>
                       {medicine.price?.toLocaleString()} VNĐ
                     </td>
+                    <td style={styles.tableCell}>
+                      {(medicine.quantity * medicine.price).toLocaleString()}{" "}
+                      VNĐ
+                    </td>
                   </tr>
                 ))}
+                {/* Tính tổng tiền của tất cả các loại thuốc */}
+                <tr>
+                  <td
+                    colSpan="3"
+                    style={{ ...styles.tableCell, fontWeight: "bold" }}
+                  >
+                    Tổng tiền
+                  </td>
+                  <td style={{ ...styles.tableCell, fontWeight: "bold" }}>
+                    {record.prescribedMedicines
+                      .reduce(
+                        (total, medicine) =>
+                          total + medicine.quantity * medicine.price,
+                        0
+                      )
+                      .toLocaleString()}{" "}
+                    VNĐ
+                  </td>
+                </tr>
               </tbody>
             </table>
             {record.paymentStatus !== "Paid" && record.paymentLink && (
